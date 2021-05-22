@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import data from '../data/EventByServiceData'
 import image from '../imgs/service-timing.jpg'
 import Banner from '../components/Banner'
-function Services() {
+const Services = () => {
   const { Title } = Typography
   const { Meta } = Card
   const [service, setService] = useState('Teo Chew/Chinese Service')
@@ -87,11 +87,11 @@ function Services() {
         <br />
         <br />
         <Row gutter={[64, 64]}>
-          {data.map((i) => {
+          {data.map((i, j) => {
             // Filter according to service
             if (i.congre === service) {
               return (
-                <Col sm={24} lg={8}>
+                <Col sm={24} lg={8} key={j}>
                   <Link
                     to={{
                       pathname: `/trbc_01/services/${i.key}`,
