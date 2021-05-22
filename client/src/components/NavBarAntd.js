@@ -37,28 +37,28 @@ const NavBarAntd = () => {
       style={{ border: 'None', padding: '10px' }}
     >
       <Menu.Item key="home" title="Home">
-        <Link to="/trbc_01/">Home</Link>
+        <Link to="/trbc_00/">Home</Link>
       </Menu.Item>
 
       <SubMenu key="aboutUs" title="About Us">
         {/* Need find way to change font */}
         <Menu.Item key="aboutUs1">
-          <Link to="/trbc_01/vision">Vision & Mission</Link>
+          <Link to="/trbc_00/vision">Vision & Mission</Link>
         </Menu.Item>
         <Menu.Item key="aboutUs2">
-          <Link to="/trbc_01/ourhistory">Our History</Link>
+          <Link to="/trbc_00/ourhistory">Our History</Link>
         </Menu.Item>
         <Menu.Item key="aboutUs3">
-          <Link to="/trbc_01/ourteam">Our Team</Link>
+          <Link to="/trbc_00/ourteam">Our Team</Link>
         </Menu.Item>
         <Menu.Item key="aboutUs4">
-          <Link to="/trbc_01/statement">Statement of Faith</Link>
+          <Link to="/trbc_00/statement">Statement of Faith</Link>
         </Menu.Item>
       </SubMenu>
       <SubMenu key="joinUs" title="Join Us">
         {/* Need find way to change font */}
         <Menu.Item key="services">
-          <Link to="/trbc_01/services">Services</Link>
+          <Link to="/trbc_00/services">Services</Link>
         </Menu.Item>
 
 
@@ -68,21 +68,21 @@ const NavBarAntd = () => {
         >
           {/* Need find way to change font */}
           <Menu.Item key="tc/sundayschool">
-            <Link to="/trbc_01/services/tc-main">Main</Link>
+            <Link to="/trbc_00/services/tc-main">Main</Link>
           </Menu.Item>
           <Menu.Item key="tc/prayermeeting">
-            <Link to="/trbc_01/services/tc-prayermeeting">
+            <Link to="/trbc_00/services/tc-prayermeeting">
               Prayer Meetings
             </Link>
           </Menu.Item>
           <Menu.Item key="tc/connectgroups">
-            <Link to="/trbc_01/services/tc-cellgroup">Cell Groups</Link>
+            <Link to="/trbc_00/services/tc-cellgroup">Cell Groups</Link>
           </Menu.Item>
           <Menu.Item key="tc/youth">
-            <Link to="/trbc_01/services/tc-youth">Youth</Link>
+            <Link to="/trbc_00/services/tc-youth">Youth</Link>
           </Menu.Item>
           <Menu.Item key="tc/children">
-            <Link to="/trbc_01/services/tc-children">Children</Link>
+            <Link to="/trbc_00/services/tc-children">Children</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu
@@ -91,21 +91,21 @@ const NavBarAntd = () => {
         >
           {/* Need find way to change font */}
           <Menu.Item key="s/sundayschool">
-            <Link to="/trbc_01/services/ss-main">Main</Link>
+            <Link to="/trbc_00/services/ss-main">Main</Link>
           </Menu.Item>
           <Menu.Item key="s/prayermeeting">
-            <Link to="/trbc_01/services/ss-prayermeeting">
+            <Link to="/trbc_00/services/ss-prayermeeting">
               Prayer Meetings
             </Link>
           </Menu.Item>
           <Menu.Item key="s/connectgroups">
-            <Link to="/trbc_01/services/ss-cellgroup">Cell Groups</Link>
+            <Link to="/trbc_00/services/ss-cellgroup">Cell Groups</Link>
           </Menu.Item>
           <Menu.Item key="s/youth">
-            <Link to="/trbc_01/services/ss-youth">Youth</Link>
+            <Link to="/trbc_00/services/ss-youth">Youth</Link>
           </Menu.Item>
           <Menu.Item key="s/children">
-            <Link to="/trbc_01/services/ss-children">Children</Link>
+            <Link to="/trbc_00/services/ss-children">Children</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu
@@ -114,47 +114,47 @@ const NavBarAntd = () => {
         >
           {/* Need find way to change font */}
           <Menu.Item key="e/sundayschool">
-            <Link to="/trbc_01/services/e-main">Main</Link>
+            <Link to="/trbc_00/services/e-main">Main</Link>
           </Menu.Item>
           <Menu.Item key="e/prayermeeting">
-            <Link to="/trbc_01/services/e-prayermeeting">
+            <Link to="/trbc_00/services/e-prayermeeting">
               Prayer Meetings
             </Link>
           </Menu.Item>
           <Menu.Item key="e/connectgroups">
-            <Link to="/trbc_01/services/e-cellgroup">Cell Groups</Link>
+            <Link to="/trbc_00/services/e-cellgroup">Cell Groups</Link>
           </Menu.Item>
           <Menu.Item key="e/youth">
-            <Link to="/trbc_01/services/e-youth">Youth</Link>
+            <Link to="/trbc_00/services/e-youth">Youth</Link>
           </Menu.Item>
           <Menu.Item key="e/children">
-            <Link to="/trbc_01/services/e-children">Children</Link>
+            <Link to="/trbc_00/services/e-children">Children</Link>
           </Menu.Item>
         </SubMenu>
       </SubMenu>
       <Menu.Item key="imNew">
-        <Link to="/trbc_01/imnew">I'm New</Link>
+        <Link to="/trbc_00/imnew">{'I\'m New'}</Link>
       </Menu.Item>
       <Menu.Item key="outreach">
-        <Link to="/trbc_01/outreach">Outreach</Link>
+        <Link to="/trbc_00/outreach">Outreach</Link>
       </Menu.Item>
       <Menu.Item key="missions">
-        <Link to="/trbc_01/missions">Missions</Link>
+        <Link to="/trbc_00/missions">Missions</Link>
       </Menu.Item>
       <Menu.Item key="discipleship">
-        <Link to="/trbc_01/discipleship">Discipleship</Link>
+        <Link to="/trbc_00/discipleship">Discipleship</Link>
       </Menu.Item>
       <Menu.Item key="facilities">
-        <Link to="/trbc_01/facilitybookings">Facility Bookings</Link>
+        <Link to="/trbc_00/facilitybookings">Facility Bookings</Link>
       </Menu.Item>
 
       <SubMenu key="admin" title="Resources">
         {/* Need find way to change font */}
         <Menu.Item key="admin1">
-          <Link to="/trbc_01/resources">Resources</Link>
+          <Link to="/trbc_00/resources">Resources</Link>
         </Menu.Item>
         {/* <Menu.Item key="aboutUs2">
-            <Link to="/trbc_01/admin">Admin</Link>
+            <Link to="/trbc_00/admin">Admin</Link>
           </Menu.Item> */}
       </SubMenu>
       <Menu.Item key="language" disabled>
@@ -197,7 +197,7 @@ const NavBarAntd = () => {
         maxHeight: '80px',
       }}
     >
-      <Link to="/trbc_01/">{trbcImage}</Link>
+      <Link to="/trbc_00/">{trbcImage}</Link>
       {/* {console.log(windowSize)} */}
       {isBigScreen ? menu('horizontal') : dropDown()}
     </div>

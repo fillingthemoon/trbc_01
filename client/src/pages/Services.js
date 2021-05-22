@@ -8,9 +8,6 @@ import Banner from '../components/Banner'
 function Services() {
   const { Title } = Typography
   const { Meta } = Card
-
-
-
   const [service, setService] = useState('Teo Chew/Chinese Service')
 
   return (
@@ -97,7 +94,7 @@ function Services() {
                 <Col sm={24} lg={8}>
                   <Link
                     to={{
-                      pathname: `/trbc_01/services/${i.key}`,
+                      pathname: `/trbc_00/services/${i.key}`,
                       state: i,
                     }}
                   >
