@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import NavBar from './components/NavBar'
 import Vision from './pages/Vision'
@@ -49,7 +49,10 @@ const App = () => {
       <NavBar />
       <Content>
         <Switch>
-          <Route path={['/', '/home']} exact>
+          <Route exact path='/'>
+            <Redirect to='/home' />
+          </Route>
+          <Route path='/home' exact>
             <Home />
           </Route>
           <Route path='/our-history' exact>

@@ -45,6 +45,7 @@ const NavBar = () => {
           <Link replace to='/statement'>Statement of Faith</Link>
         </Menu.Item>
       </SubMenu>
+
       <SubMenu key='join-us' title='Join Us'>
         {/* Need find way to change font */}
         <Menu.Item key='services'>
@@ -72,6 +73,7 @@ const NavBar = () => {
             <Link replace to='/services/tc-children'>Children</Link>
           </Menu.Item>
         </SubMenu>
+
         <SubMenu
           key='sunset'
           title='Sunset Congregation'
@@ -95,6 +97,7 @@ const NavBar = () => {
             <Link replace to='/services/ss-children'>Children</Link>
           </Menu.Item>
         </SubMenu>
+
         <SubMenu
           key='english'
           title='English Congregation'
@@ -119,6 +122,7 @@ const NavBar = () => {
           </Menu.Item>
         </SubMenu>
       </SubMenu>
+
       <Menu.Item key='im-new'>
         <Link replace to='/im-new'>{'I\'m New'}</Link>
       </Menu.Item>
@@ -137,13 +141,14 @@ const NavBar = () => {
 
       <SubMenu key='admin' title='Resources'>
         {/* Need find way to change font */}
-        <Menu.Item key='admin1'>
+        <Menu.Item key='resources'>
           <Link replace to='/resources'>Resources</Link>
         </Menu.Item>
-        {/* <Menu.Item key='aboutUs2'>
-            <Link replace to='/admin'>Admin</Link>
+        {/* <Menu.Item key='admin-page'>
+            <Link replace to='/admin-page'>Admin</Link>
           </Menu.Item> */}
       </SubMenu>
+
       <Menu.Item key='language' disabled>
         <Button
           onClick={() => language === 'ENGLISH' ? setLanguage('ENGLISH') : setLanguage('中文')}
@@ -184,13 +189,15 @@ const NavBar = () => {
         maxHeight: '80px',
       }}
     >
-      <Link replace to='/'>{
-        <img
-          style={{ maxHeight: '100px', maxWidth: '150px' }}
-          src={trbcLogo}
-          alt=''
-        />
-      }</Link>
+      <Link replace to='/home'>
+        {
+          <img
+            style={{ maxHeight: '100px', maxWidth: '150px' }}
+            src={trbcLogo}
+            alt=''
+          />
+        }
+      </Link>
       {isBigScreen ? menu('horizontal') : dropDown()}
     </Header>
   )
