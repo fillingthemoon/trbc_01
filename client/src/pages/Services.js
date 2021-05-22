@@ -94,7 +94,7 @@ function Services() {
                 <Col sm={24} lg={8}>
                   <Link
                     to={{
-                      pathname: `/trbc_00/services/${i.key}`,
+                      pathname: `/trbc_01/services/${i.key}`,
                       state: i,
                     }}
                   >
