@@ -142,7 +142,7 @@ function EditHistory() {
 
   return (
     <>
-      <Banner name={'Edit Vision Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Vision Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

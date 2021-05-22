@@ -1,11 +1,17 @@
 import React from 'react'
 
-const Banner = (props) => {
+import { Carousel } from 'antd'
+
+const Banner = ({ imageTitlePairs }) => {
   return (
-    <div className="top-img-container" >
-      <img className="top-img-exterior" src={props.image} alt="" />
-      <div className="top-img-title">{props.name}</div>
-    </div>
+    <Carousel autoplay>
+      {imageTitlePairs.map(({ image, title }, i) =>
+        <div className="top-img-container" key={i}>
+          <img className="top-img-exterior" src={image} alt="" />
+          <div className="top-img-title">{title}</div>
+        </div>
+      )}
+    </Carousel >
   )
 }
 

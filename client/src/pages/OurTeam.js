@@ -118,7 +118,7 @@ const OurTeam = () => {
 
   return (
     <>
-      <Banner name="Our Team" image={image}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Our Team', image: image }]} />
       <div className="main-container">
 
         {/* Use map to render reusable HTML content */}

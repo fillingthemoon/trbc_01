@@ -7,9 +7,7 @@ import {
 } from '@ant-design/icons'
 import Banner from '../components/Banner'
 import image from '../imgs/church-wide.jpg'
-// import Carousel from 'react-gallery-carousel';
-// import 'react-gallery-carousel/dist/index.css';
-// Event Page, with props given from parent component ChurchWide.
+
 function Event(props) {
   const { Title } = Typography
   var styles = {
@@ -32,7 +30,7 @@ function Event(props) {
 
   return (
     <>
-      <Banner name={state.type} image={image}></Banner>
+      <Banner imageTitlePairs={[{ title: state.type, image: image }]} />
       <div className="main-container">
         <br />
         <br />
@@ -49,7 +47,7 @@ function Event(props) {
             <Title style={{ textAlign: 'left' }}>{state.key}</Title>
             <hr align="left" className="thick-line"></hr>
             <p style={{ textAlign: 'left' }}>{state.writeup}</p>
-            {state.type === 'Community' |state.type ===  'Interest Groups' |state.type === 'Children'? (
+            {state.type === 'Community' | state.type === 'Interest Groups' | state.type === 'Children' ? (
               <Card
                 bodyStyle={{
                   backgroundColor: '#F2F2F2',

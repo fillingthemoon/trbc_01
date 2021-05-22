@@ -17,7 +17,6 @@ const NavBar = () => {
 
   const href = window.location.href.split('/')
   const pageUrl = href[href.length - 1]
-  console.log(pageUrl, current)
 
   const menu = (orientation) => (
     <Menu
@@ -31,7 +30,6 @@ const NavBar = () => {
       </Menu.Item>
 
       <SubMenu key='about-us' title='About Us'>
-        {/* Need find way to change font */}
         <Menu.Item key='vision'>
           <Link replace to='/vision'>Vision & Mission</Link>
         </Menu.Item>
@@ -47,21 +45,16 @@ const NavBar = () => {
       </SubMenu>
 
       <SubMenu key='join-us' title='Join Us'>
-        {/* Need find way to change font */}
         <Menu.Item key='services'>
           <Link replace to='/services'>Services</Link>
         </Menu.Item>
 
         <SubMenu key='tc' title='Teo Chew/Chinese Congregation'>
-
-          {/* Need find way to change font */}
           <Menu.Item key='tc-main'>
             <Link replace to='/services/tc-main'>Main</Link>
           </Menu.Item>
           <Menu.Item key='tc-prayermeeting'>
-            <Link replace to='/services/tc-prayermeeting'>
-              Prayer Meetings
-            </Link>
+            <Link replace to='/services/tc-prayermeeting'>Prayer Meetings</Link>
           </Menu.Item>
           <Menu.Item key='tc-cellgroup'>
             <Link replace to='/services/tc-cellgroup'>Cell Groups</Link>
@@ -74,18 +67,13 @@ const NavBar = () => {
           </Menu.Item>
         </SubMenu>
 
-        <SubMenu
-          key='sunset'
-          title='Sunset Congregation'
-        >
+        <SubMenu key='sunset' title='Sunset Congregation'>
           {/* Need find way to change font */}
           <Menu.Item key='ss-main'>
             <Link replace to='/services/ss-main'>Main</Link>
           </Menu.Item>
           <Menu.Item key='ss-prayermeeting'>
-            <Link replace to='/services/ss-prayermeeting'>
-              Prayer Meetings
-            </Link>
+            <Link replace to='/services/ss-prayermeeting'>Prayer Meetings</Link>
           </Menu.Item>
           <Menu.Item key='ss-cellgroup'>
             <Link replace to='/services/ss-cellgroup'>Cell Groups</Link>
@@ -98,11 +86,7 @@ const NavBar = () => {
           </Menu.Item>
         </SubMenu>
 
-        <SubMenu
-          key='english'
-          title='English Congregation'
-        >
-          {/* Need find way to change font */}
+        <SubMenu key='english' title='English Congregation'>
           <Menu.Item key='e-main'>
             <Link replace to='/services/e-main'>Main</Link>
           </Menu.Item>
@@ -140,7 +124,6 @@ const NavBar = () => {
       </Menu.Item>
 
       <SubMenu key='admin' title='Resources'>
-        {/* Need find way to change font */}
         <Menu.Item key='resources'>
           <Link replace to='/resources'>Resources</Link>
         </Menu.Item>
@@ -190,13 +173,11 @@ const NavBar = () => {
       }}
     >
       <Link replace to='/home'>
-        {
-          <img
-            style={{ maxHeight: '100px', maxWidth: '150px' }}
-            src={trbcLogo}
-            alt=''
-          />
-        }
+        {<img
+          style={{ maxHeight: '100px', maxWidth: '150px' }}
+          src={trbcLogo}
+          alt=''
+        />}
       </Link>
       {isBigScreen ? menu('horizontal') : dropDown()}
     </Header>

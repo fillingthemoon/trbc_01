@@ -170,7 +170,7 @@ function EditEnglish() {
 
   return (
     <>
-      <Banner name={'Edit English Service Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit English Service Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

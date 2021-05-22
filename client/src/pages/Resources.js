@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Card, Row, Col, Divider, Input , Collapse } from 'antd'
+import { List, Card, Row, Col, Divider, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
 import image from '../imgs/exterior.jpg'
 import Banner from '../components/Banner'
@@ -25,9 +25,7 @@ function Resources() {
 
   return (
     <>
-      <Banner name= "Resources" image={image}>
-
-      </Banner>
+      <Banner imageTitlePairs={[{ title: 'Resources', image: image }]} />
 
       <div className="main-container">
         <br />

@@ -60,7 +60,7 @@ function Admin() {
   var count = 0
   return (
     <>
-      <Banner name="Admin" image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Admin', image: churchWide }]} />
 
       <div className="main-container">
         <br />

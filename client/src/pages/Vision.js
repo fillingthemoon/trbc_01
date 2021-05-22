@@ -7,7 +7,7 @@ import image from '../imgs/exterior.jpg'
 function Vision() {
   return (
     <div id="home-container">
-      <Banner name="Mission and Vision" image={image}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Mission and Vision', image: image }]} />
       <div id="mission-vision-container">
         <Row gutter={16}>
           <Col sm={24} md={12}>

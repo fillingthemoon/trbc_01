@@ -62,8 +62,7 @@ function Outreach() {
   console.log(event)
   return (
     <div>
-      {/* Banner */}
-      <Banner name="Missions" image={image}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Missions', image: image }]} />
 
       {/* Church-Wide content separated into two rows: Second Language Class, Interest Groups */}
       <div className="main-container">

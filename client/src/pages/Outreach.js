@@ -89,10 +89,7 @@ function Outreach() {
   return (
     <div>
       {/* Banner */}
-      <Banner name= "Outreach" image={image}>
-
-      </Banner>
-
+      <Banner imageTitlePairs={[{ title: 'Outreach', image: image }]} />
       {/* Church-Wide content separated into two rows: Second Language Class, Interest Groups */}
       <div className="main-container">
         <br />

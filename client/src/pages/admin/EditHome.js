@@ -24,15 +24,12 @@ import Banner from '../../components/Banner'
 
 import axios from 'axios'
 import churchWide from '../../imgs/church-wide.jpg'
+
 function EditHome(props) {
-
-
-
-
-
-  return (<>
-    <Banner name={'Edit Home Page'} image={churchWide}></Banner>
-  </>
+  return (
+    <>
+      <Banner imageTitlePairs={[{ title: 'Edit Home Page', image: churchWide }]} />
+    </>
   )
 }
 

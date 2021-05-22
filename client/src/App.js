@@ -39,7 +39,7 @@ import EditPage from './pages/admin/EditPage'
 import EditDiscipleship from './pages/admin/EditDiscipleship'
 
 import { Layout } from 'antd'
-const { Content, Footer } = Layout
+const { Content } = Layout
 
 import './style.less'
 

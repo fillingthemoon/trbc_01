@@ -55,7 +55,7 @@ function Statement() {
   var key = 0
   return (
     <div>
-      <Banner name="Statement of Faith" image={image}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: image }]} />
       <div className="main-container">
         <br />
         <br />

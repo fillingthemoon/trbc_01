@@ -137,7 +137,7 @@ function EditService() {
 
   return (
     <>
-      <Banner name={'Edit Service Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Service Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

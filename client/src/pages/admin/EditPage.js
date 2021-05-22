@@ -93,7 +93,8 @@ function EditPage(props) {
 
   return (
     <>
-      <Banner name={state.type} image={image}></Banner>
+      <Banner imageTitlePairs={[{ title: state.type, image: image }]} />
+
       <div className="main-container">
         <br />
         <br />
@@ -166,30 +167,28 @@ function EditPage(props) {
             >
               Primary Button
             </Button>
-            {(state.type === 'Community') |
-              (state.type === 'Interest Groups') |
-              (state.type === 'Children') ? (
-                <Card
-                  bodyStyle={{
-                    backgroundColor: '#F2F2F2',
-                    textAlign: 'left',
-                  }}
-                >
-                  <p>
-                    <ClockCircleOutlined style={{ color: '#fa8c16' }} /> {'    '}
-                    {state.time}
-                  </p>
-                  <p>
-                    <PushpinOutlined style={{ color: '#fa8c16' }} /> {'    '}
-                    {state.location}
-                  </p>
-                  <p>
-                    <UserOutlined style={{ color: '#fa8c16' }} />
-                    {'   '}
-                    {state.leader}
-                  </p>
-                </Card>
-              ) : null}
+            {(state.type === 'Community') | (state.type === 'Interest Groups') | (state.type === 'Children') ? (
+              <Card
+                bodyStyle={{
+                  backgroundColor: '#F2F2F2',
+                  textAlign: 'left',
+                }}
+              >
+                <p>
+                  <ClockCircleOutlined style={{ color: '#fa8c16' }} /> {'    '}
+                  {state.time}
+                </p>
+                <p>
+                  <PushpinOutlined style={{ color: '#fa8c16' }} /> {'    '}
+                  {state.location}
+                </p>
+                <p>
+                  <UserOutlined style={{ color: '#fa8c16' }} />
+                  {'   '}
+                  {state.leader}
+                </p>
+              </Card>
+            ) : null}
           </Col>
         </Row>
       </div>

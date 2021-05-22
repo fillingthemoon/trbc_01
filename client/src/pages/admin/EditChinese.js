@@ -167,7 +167,7 @@ function EditChinese() {
 
   return (
     <>
-      <Banner name={'Edit Chinese Service Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Chinese Service Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

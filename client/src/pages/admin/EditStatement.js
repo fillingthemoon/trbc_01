@@ -106,7 +106,7 @@ function EditStatement() {
 
   return (
     <>
-      <Banner name={'Edit Statement Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Statement Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

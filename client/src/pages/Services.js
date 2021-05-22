@@ -12,10 +12,7 @@ const Services = () => {
 
   return (
     <div>
-      <Banner name= "Services" image={image}>
-
-      </Banner>
-
+      <Banner imageTitlePairs={[{ title: 'Services', image: image }]} />
       <div className="main-container">
         <br />
         <br />

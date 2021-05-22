@@ -144,7 +144,7 @@ function EditTeam() {
 
   return (
     <>
-      <Banner name={'Edit Team Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Team Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

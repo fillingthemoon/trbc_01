@@ -164,7 +164,7 @@ function EditSunset() {
 
   return (
     <>
-      <Banner name={'Edit Sunset Service Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Sunset Service Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

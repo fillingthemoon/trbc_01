@@ -162,7 +162,7 @@ function EditOutreach() {
 
   return (
     <>
-      <Banner name={'Edit Outreach Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Outreach Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

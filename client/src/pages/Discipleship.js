@@ -83,11 +83,11 @@ const pageContent = [
 const Discipleship = () => {
   return (
     <div id="about-us-container">
-      <Banner name="Discipleship" image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Discipleship', image: churchWide }]} />
       <AlternatingImageTextTemplate
         pageContent={pageContent}
       />
-    </div>
+    </div >
   )
 }
 

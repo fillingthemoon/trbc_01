@@ -83,7 +83,7 @@ const pageContent = [
 const OurHistory = () => {
   return (
     <div id="about-us-container">
-      <Banner name="Our History" image={image} ></Banner>
+      <Banner imageTitlePairs={[{ title: 'Our History', image: image }]} />
       <AlternatingImageTextTemplate
         pageContent={pageContent}
       />

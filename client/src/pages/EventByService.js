@@ -49,7 +49,8 @@ function EventByService(props) {
 
   return (
     <>
-      <Banner name={dataToInsert.key} image={image}></Banner>
+      <Banner imageTitlePairs={[{ title: dataToInsert.key, image: image }]} />
+
       <div className="main-container">
         <br />
         <br />

@@ -188,7 +188,7 @@ function Edit(props) {
 
   return (
     <>
-      <Banner name={'Edit Home Page'} image={churchWide}></Banner>
+      <Banner imageTitlePairs={[{ title: 'Edit Home Page', image: churchWide }]} />
 
       <div className="main-container">
         <br />

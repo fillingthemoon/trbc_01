@@ -17,9 +17,7 @@ function ImNew() {
   const { Option } = Select
   return (
     <div>
-      <Banner name= "I'm New" image={image}>
-
-      </Banner>
+      <Banner imageTitlePairs={[{ name: 'I\'m New', image: image }]} />
       <div className="main-container">
         <br />
         <br />
@@ -35,17 +33,17 @@ function ImNew() {
           </Col>
           <Col sm={11} lg={12}>
             <h2 style={{ textAlign: 'left' }}>
-              The best place to start? Join us for a worship service.
+            The best place to start? Join us for a worship service.
             </h2>
             <hr align="left" className="thick-line"></hr>
             <p style={{ textAlign: 'left' }}>
-              If you’re new to the area, new to church, or just looking for a
-              new start, our Sunday morning worship services offer you the
-              opportunity to build your faith in God and connect with new
-              people.
+            If you’re new to the area, new to church, or just looking for a
+            new start, our Sunday morning worship services offer you the
+            opportunity to build your faith in God and connect with new
+            people.
             </p>
             <Button type="link" size={'middle'} href={'./services'}>
-              View Services
+            View Services
             </Button>
           </Col>
         </Row>
@@ -54,12 +52,12 @@ function ImNew() {
         <Row gutter={[60, 60]}>
           <Col sm={11} lg={11}>
             <h2 style={{ textAlign: 'left' }}>
-              Find a small group that matches your life point.
+            Find a small group that matches your life point.
             </h2>
             <hr align="left" className="thick-line"></hr>
             <p style={{ textAlign: 'left' }}>
-              What makes church special is not just the event, but also the
-              relationships we build that help us stay faithful to God.
+            What makes church special is not just the event, but also the
+            relationships we build that help us stay faithful to God.
               <br />
               <br />
               Whether you’re a single professional, a college student or a
@@ -68,7 +66,7 @@ function ImNew() {
               small group that you can get connected with.
             </p>
             <Button type="link" size={'middle'} href={'./services'}>
-              View Ministries
+            View Ministries
             </Button>
           </Col>
           <Col sm={11} lg={11}>
@@ -95,14 +93,14 @@ function ImNew() {
           </Col>
           <Col sm={11} lg={12}>
             <h2 style={{ textAlign: 'left' }}>
-              Get involved in one of our doing good projects.
+            Get involved in one of our doing good projects.
             </h2>
             <hr align="left" className="thick-line"></hr>
             <p style={{ textAlign: 'left' }}>
-              A theme we embrace at the Bay Area Christian Church is “God and
-              Good.” We believe it’s important that as Christians we are
-              constantly working to do good in the lives of the people in our
-              community, regardless of religious affiliation.
+            A theme we embrace at the Bay Area Christian Church is “God and
+            Good.” We believe it’s important that as Christians we are
+            constantly working to do good in the lives of the people in our
+            community, regardless of religious affiliation.
               <br />
               <br />
               We’re proud of our members who’ve embraced this call, and are
@@ -111,7 +109,7 @@ function ImNew() {
               involved.
             </p>
             <Button type="link" size={'middle'} href={'./outreach'}>
-              Learn More
+            Learn More
             </Button>
           </Col>
         </Row>
@@ -193,13 +191,13 @@ function ImNew() {
 
             <Form.Item>
               <Button type="primary" htmlType="submit">
-                Submit
+              Submit
               </Button>
             </Form.Item>
           </Form>
         </Card>
       </div>
-    </div>
+    </div >
   )
 }
 
