@@ -94,7 +94,7 @@ const Services = () => {
                 <Col sm={24} lg={8} key={j}>
                   <Link
                     to={{
-                      pathname: `/trbc_01/services/${i.key}`,
+                      pathname: `/services/${i.key}`,
                       state: i,
                     }}
                   >

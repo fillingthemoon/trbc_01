@@ -1,7 +1,9 @@
 import React from 'react'
 import Banner from '../components/Banner'
-import image from '../imgs/exterior.jpg'
 import { Row, Col, Image } from 'antd'
+
+import image from '../imgs/exterior.jpg'
+
 function Vision() {
   return (
     <div id="home-container">

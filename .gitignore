@@ -10,6 +10,7 @@
 .DS_Store
 
 # server
+/server/build
 /server/node_modules
 /server/.env
 /server/serviceAccountKey.json
