@@ -1,11 +1,24 @@
 # TRBC Documentation
-This project was created with ReactJS, AntDesign, ExpressJS and MongoDB.
 
 The website is live at https://arcane-crag-98386.herokuapp.com/#/.
 
 ![ ](https://trbcbucket.s3-ap-southeast-1.amazonaws.com/diagram.JPG)
 
-# Backend
+## Frontend (client)
+- React
+- Redux
+- AntDesign
+- Linting: ESLint
+
+## Backend (server)
+- Node
+- Express
+- MongoDB Atlas
+- mongoose
+- Heroku
+- jsonwebtoken
+- Linting: ESLint
+
 Overview (Half Assed UML)
 
 ![ ](https://trbcbucket.s3-ap-southeast-1.amazonaws.com/Half-Ass+UML.jpg)
