@@ -135,7 +135,7 @@ const NavBar = () => {
 
       <Menu.Item key='language' disabled>
         <Button
-          onClick={() => language === 'ENGLISH' ? setLanguage('ENGLISH') : setLanguage('中文')}
+          onClick={() => language === 'ENGLISH' ? setLanguage('中文') : setLanguage('ENGLISH')}
           style={{
             backgroundColor: '#ffe7ba',
             color: '#fa8c16',

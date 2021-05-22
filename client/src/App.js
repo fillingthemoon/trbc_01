@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import NavBar from './components/NavBar'
@@ -14,7 +13,6 @@ import OurTeam from './pages/OurTeam'
 import Statement from './pages/Statement'
 import Resources from './pages/Resources'
 import ContactFooter from './components/ContactFooter'
-
 import Event from './pages/Event'
 import Services from './pages/Services'
 import EventByService from './pages/EventByService'
@@ -47,7 +45,7 @@ const App = () => {
   return (
     <Layout>
       <NavBar />
-      <Content>
+      <Content style={{ backgroundColor: '#ffffff' }}>
         <Switch>
           <Route exact path='/'>
             <Redirect to='/home' />
