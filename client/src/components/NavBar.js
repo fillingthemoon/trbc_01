@@ -22,8 +22,8 @@ const NavBar = () => {
   const menu = (orientation) => (
     <Menu
       mode={orientation}
-      // onClick={({ key }) => { setCurrent(key) }}
-      // selectedKeys={pageUrl}
+      onClick={({ key }) => { setCurrent(key) }}
+      selectedKeys={pageUrl}
       style={{ border: 'None', padding: '10px' }}
     >
       <Menu.Item key='home' title='Home'>
