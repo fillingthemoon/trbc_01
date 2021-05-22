@@ -4,6 +4,8 @@ import { UserOutlined } from '@ant-design/icons'
 
 import Banner from '../components/Banner'
 
+import trbcExterior from '../imgs/exterior.jpg'
+
 const contentStyle = {
   display: 'block',
   marginLeft: 'auto',
@@ -20,7 +22,7 @@ const contentStyle = {
 function Home() {
   return (
     <div>
-      <Banner image={require('../imgs/exterior.jpg')} title={'Thomson Road Baptist Church'}/>
+      <Banner image={trbcExterior} title={'Thomson Road Baptist Church'}/>
 
       {/* <Carousel autoplay>
         <div>

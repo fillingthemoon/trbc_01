@@ -2,6 +2,8 @@ import React from 'react'
 // import { IoMail, IoLocationSharp } from 'react-icons/io5';
 // import { AiFillPhone } from 'react-icons/ai';
 
+import trbcMap from '../imgs/trbc_map.jpg'
+
 function ContactFooter() {
   return (
     <div>
@@ -31,7 +33,7 @@ function ContactFooter() {
         </div>
         <img
           id="img-trbc-map"
-          src={require('../imgs/trbc_map.jpg')}
+          src={trbcMap}
           alt=""
         />
       </div>

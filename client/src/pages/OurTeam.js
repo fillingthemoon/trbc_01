@@ -1,9 +1,24 @@
 import React from 'react'
+
 import { Divider, Typography, Row, Col, Avatar, Image } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
+
 import image from '../imgs/exterior.jpg'
 import Banner from '../components/Banner'
-function OurTeam() {
+
+import revAdrianLim from '../imgs/ourteam/RevAdrianLim.jpg'
+import revChang from '../imgs/ourteam/RevChang.jpg'
+import revJerryGoh from '../imgs/ourteam/RevJerryGoh.jpg'
+import psLam from '../imgs/ourteam/PsLam.jpg'
+import yeoChongNim from '../imgs/ourteam/YeoChongNim.jpg'
+import jennyAng from '../imgs/ourteam/JennyAng.jpg'
+import leonardLee from '../imgs/ourteam/LeonardLee.jpg'
+import vincentLai from '../imgs/ourteam/VincentLai.jpg'
+import jasmineLee from '../imgs/ourteam/JasmineLee.jpg'
+import dongFan from '../imgs/ourteam/DongFan.jpg'
+import ivanChow from '../imgs/ourteam/IvanChow.jpg'
+
+const OurTeam = () => {
   const { Title } = Typography
   var styles = {
 
@@ -23,7 +38,7 @@ function OurTeam() {
           key: 1,
           name: 'Rev Adrian Lim',
           role: 'Senior Pastor',
-          image: require('../imgs/ourteam/RevAdrianLim.jpg'),
+          image: { revAdrianLim },
         },
 
 
@@ -31,17 +46,17 @@ function OurTeam() {
           key: 2,
           name: 'Rev Andrew Chang',
           role: 'Interim Pastoral Advisor of \n Teochew/Chinese Congregation',
-          image: require('../imgs/ourteam/RevChang.jpg'),
-        },        {
-          key:3,
-          name:'Rev Dr Jerry Goh',
+          image: { revChang },
+        }, {
+          key: 3,
+          name: 'Rev Dr Jerry Goh',
           role: 'Pastor of English Congregation',
-          image: require('../imgs/ourteam/RevJerryGoh.jpg'),
-        },{
+          image: { revJerryGoh },
+        }, {
           key: 4,
           name: 'Pastor Lam Yuen Foong',
           role: 'Pastor of Sunset Congregation',
-          image: require('../imgs/ourteam/PsLam.jpg'),
+          image: { psLam },
         }
 
       ],
@@ -57,13 +72,13 @@ function OurTeam() {
           key: 5,
           name: 'Mr Yeo Chong Nim',
           role: 'Outreach Ministry',
-          image: require('../imgs/ourteam/YeoChongNim.jpg'),
+          image: { yeoChongNim },
         },
         {
           key: 6,
           name: 'Ms Jenny Ang ',
           role: 'Children\'s Outreach Ministry',
-          image: require('../imgs/ourteam/JennyAng.jpg'),
+          image: { jennyAng },
         },
       ],
     },
@@ -75,31 +90,31 @@ function OurTeam() {
           key: 7,
           name: 'Mr Leonard Lee',
           role: 'Administration Manager',
-          image: require('../imgs/ourteam/LeonardLee.jpg'),
+          image: { leonardLee },
         },
         {
           key: 8,
           name: 'Mr Vincent Lai Seck Tong',
           role: 'Administrative Executive (Facilities & Maintenance)',
-          image: require('../imgs/ourteam/VincentLai.jpg'),
+          image: { vincentLai },
         },
         {
           key: 9,
           name: 'Ms Jasmine Lee',
           role: 'Administrative Executive',
-          image: require('../imgs/ourteam/JasmineLee.jpg'),
+          image: { jasmineLee },
         },
         {
           key: 10,
           name: 'Mr Dong Fan',
           role: 'Administrative Executive ',
-          image: require('../imgs/ourteam/DongFan.jpg'),
+          image: { dongFan },
         },
         {
           key: 11,
           name: 'Mr Ivan Chow',
           role: 'Church Caretaker',
-          image: require('../imgs/ourteam/IvanChow.jpg'),
+          image: { ivanChow },
         },
       ],
     },
@@ -107,9 +122,7 @@ function OurTeam() {
 
   return (
     <>
-      <Banner name= "Our Team" image={image}>
-
-      </Banner>
+      <Banner name="Our Team" image={image}></Banner>
       <div className="main-container">
         <br />
         <br />
@@ -122,8 +135,8 @@ function OurTeam() {
             <>
               {/* if groupName is "Mnistry" or "Administrative" it will render different title types */}
               {group.groupName === 'Ministry' ||
-              group.groupName === 'Administrative' ||
-              group.groupName === 'Pastoral'? (
+                group.groupName === 'Administrative' ||
+                group.groupName === 'Pastoral' ? (
                   <>
                     <Divider />
                     <Title style={{ textAlign: 'center' }}>
@@ -144,8 +157,8 @@ function OurTeam() {
               <Row
                 justify={
                   group.groupName === 'Ministry' ||
-                  group.groupName === 'Administrative'||
-                  group.groupName === 'Pastoral'
+                    group.groupName === 'Administrative' ||
+                    group.groupName === 'Pastoral'
                     ? 'space-around'
                     : 'start'
                 }
@@ -160,7 +173,7 @@ function OurTeam() {
                       key={staff.name + staff.key}
                     >
                       <div style={{ textAlign: 'center' }} >
-                        <Avatar size={120} src={staff.image}/>
+                        <Avatar size={120} src={staff.image} />
 
 
                         <p style={{ marginTop: '20px' }}>

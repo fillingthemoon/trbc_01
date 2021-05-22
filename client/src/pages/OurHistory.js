@@ -4,9 +4,16 @@ import image from '../imgs/exterior.jpg'
 
 import AlternatingImageTextTemplate from '../pageTemplates/AlternatingImageTextTemplate'
 
+import aboutUs1 from '../imgs/aboutus/1.jpg'
+import aboutUs2 from '../imgs/aboutus/2.jpg'
+import aboutUs3 from '../imgs/aboutus/3.jpg'
+import aboutUs4 from '../imgs/aboutus/4.jpg'
+import aboutUs5 from '../imgs/aboutus/5.jpg'
+import aboutUs6 from '../imgs/aboutus/6.jpg'
+
 const pageContent = [
   {
-    imageSource: require('../imgs/aboutus/1.jpg'),
+    imageSource: { aboutUs1 },
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -17,7 +24,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: require('../imgs/aboutus/2.jpg'),
+    imageSource: { aboutUs2 },
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -28,7 +35,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: require('../imgs/aboutus/3.jpg'),
+    imageSource: { aboutUs3 },
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -39,7 +46,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: require('../imgs/aboutus/4.jpg'),
+    imageSource: { aboutUs4 },
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -50,7 +57,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: require('../imgs/aboutus/5.jpg'),
+    imageSource: { aboutUs5 },
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -61,7 +68,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: require('../imgs/aboutus/6.jpg'),
+    imageSource: { aboutUs6 },
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada

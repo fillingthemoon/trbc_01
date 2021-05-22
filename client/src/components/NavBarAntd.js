@@ -6,6 +6,8 @@ import { MenuOutlined } from '@ant-design/icons'
 
 import { useMediaQuery } from 'react-responsive'
 
+import trbcLogo from '../imgs/logo.png'
+
 const { SubMenu } = Menu
 
 const NavBarAntd = () => {
@@ -22,7 +24,7 @@ const NavBarAntd = () => {
   const trbcImage = (
     <img
       style={{ maxHeight: '100px', maxWidth: '150px' }}
-      src={require('../imgs/logo.png')}
+      src={trbcLogo}
       alt=""
     />
   )
