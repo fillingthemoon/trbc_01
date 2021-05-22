@@ -1,13 +1,10 @@
+.DS_Store
+data_csvs
+
 # client
 /client/node_modules
 /client/.env
-
-# production
 /client/build/
-/build
-
-# misc
-.DS_Store
 
 # server
 /server/build
