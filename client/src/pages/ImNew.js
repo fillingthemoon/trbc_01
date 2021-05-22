@@ -22,7 +22,7 @@ const ImNew = () => {
   const { Option } = Select
   return (
     <div>
-      <Banner imageTitlePairs={[{ name: 'I\'m New', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'I\'m New', image: churchWide }]} />
       <div className="main-container">
         <br />
         <br />
