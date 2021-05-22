@@ -15,16 +15,17 @@ const imgStyle = {
 const textStyle = {
   display: 'flex',
   flexDirection: 'column',
-  gap: '50px',
   width: '500px',
-  margin: '20px 0'
+  margin: '20px 0',
+  justifyContent: 'space-between',
+  height: 350,
 }
 
 const MissionVision = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{ title: 'Mission and Vision', image: exterior }]} />
-      <div className='page-content'>
+      <div style={{ padding: 50 }}>
         <Row align='middle' justify='center' gutter={100}>
           <Col style={imgStyle}>
             <Image

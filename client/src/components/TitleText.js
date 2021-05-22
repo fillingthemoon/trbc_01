@@ -6,13 +6,15 @@ const TitleText = (props) => {
     text,
     titleStyle,
     textStyle,
+    titleClassName,
+    textClassName,
   } = props
 
   return (
     <div>
-      <h1 style={titleStyle}>{title}</h1>
+      <h1 style={titleStyle} className={titleClassName}>{title}</h1>
       <hr className="title-underline" />
-      <p style={textStyle}>{text}</p>
+      <p style={textStyle} className={textClassName}>{text}</p>
     </div>
   )
 }

@@ -1,12 +1,25 @@
 @import '~antd/dist/antd.less';
 @primary-color: #fa8c16;
 
+/* General */
 .ant-layout-content {
   background-color: #ffffff;
 }
 
-.page-content {
-  padding: 60px;
+.thick-line{
+  width: 35px;
+  height: 4px;
+  background-color: @primary-color;
+  border-style: none;
+}
+
+.title-underline {
+  width: 35px;
+  height: 4px;
+  background-color: @primary-color;
+  border-style: none;
+  margin-left: 0;
+  margin-bottom: 30px;
 }
 
 /* Banner Image */
@@ -30,7 +43,7 @@
   transform: translate(-50%, -50%);
   color: #ffffff;
   white-space: wrap;
-  
+  width: 100%;
 }
 
 @media (min-width:700px) {
@@ -39,62 +52,11 @@
   }
 }
 
-.title-underline {
-  width: 35px;
-  height: 4px;
-  background-color: @primary-color;
-  border-style: none;
-  margin-left: 0;
-  margin-bottom: 30px;
-}
-
-/* Contact Us */
-.icon {
-  display: flex;
-  color: @primary-color;
-  font-size: 1.2rem;
-}
-
-/* About Us */
-#about-us-header-container {
-  text-align: center;
-  padding: 20px 130px 40px 130px;
-}
-
-#about-us-header-container p {
-  font-weight: 200;
-}
-
-.about-us-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 100px 40px 100px;
-}
-
-.about-us-imgs {
-  margin: 30px;
-  width: 50%;
-}
-
-.about-us-text {
-  margin: 30px;
-  width: 50%;
-  font-weight: 200;
-}
-
 /* Join Us, Our Team, Statement, ChurchWide, Event */
 .main-container {
   width: 80%;
   margin: 50px auto;
   text-align: center;
-}
-
-.thick-line{
-  width: 35px;
-  height: 4px;
-  background-color: @primary-color;
-  border-style: none;
 }
 
 .services-pages-img {
@@ -111,4 +73,71 @@
   margin: 0;
   padding: 0;
   color: @primary-color;
+}
+
+/* Footer */
+.footer-row-container {
+  display: flex;
+  gap: 50px;
+  padding: 30px;
+  background-color: #4f4f4f;
+  color: #ffffff;
+  justify-content: left;
+}
+
+.footer-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.footer-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.footer-icon {
+  display: flex;
+  color: @primary-color;
+  font-size: 1.2rem;
+}
+
+.footer-trbc {
+  font-size: 1.2em;
+  margin-bottom: 15px; 
+}
+
+.footer-contact-details {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.footer-img-container {
+  display: flex;
+  justify-items: center;
+  width: 600px;
+}
+
+.footer-copyright {
+  padding: 15px;
+  color: #f2f2f2;
+  background-color: #333333;
+}
+
+@media (min-width:700px) {
+  .footer-row-container {
+    justify-content: center;
+  }
+
+  .footer-title {
+    font-size: 1.8rem;
+  }
+
+  .footer-trbc {
+    font-size: 1.6em;
+  }
+
+  .footer-contact-details {
+    font-size: 1rem;
+  }
 }

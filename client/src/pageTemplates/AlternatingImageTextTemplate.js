@@ -1,5 +1,7 @@
 import React from 'react'
 
+import TitleText from '../components/TitleText'
+
 import {
   Image,
   Row,
@@ -7,7 +9,7 @@ import {
 } from 'antd'
 
 const ImageColumn = ({ item }) => (
-  <Col sm={11} lg={11}>
+  <Col>
     <Image
       width={400}
       src={item.imageSource}
@@ -17,28 +19,26 @@ const ImageColumn = ({ item }) => (
 )
 
 const ContentColumn = ({ item }) => (
-  <Col sm={11} lg={12}>
-    <h2 style={{ textAlign: 'left' }}>
-      {item.contentTitle}
-    </h2>
-    <hr
-      align="left" className="thick-line"
-      style={{ marginBottom: '50px' }}
+  <Col>
+    <TitleText
+      title={item.contentTitle}
+      titleStyle={{ textAlign: 'left' }}
+      text={item.contentText}
+      textStyle={{ textAlign: 'left' }}
     />
-    <p style={{ textAlign: 'left' }}>
-      {item.contentText}
-    </p>
   </Col>
 )
 
 const mainStyle = {
   display: 'flex',
   flexDirection: 'column',
+  width: '80%',
+  justifyItems: 'center',
 }
 
 const AlternatingImageText = ({ pageContent }) => {
   return (
-    <div className="main-container" style={mainStyle}>
+    <div style={mainStyle}>
       {pageContent.map((item, i) =>
         <Row key={i} gutter={[60, 60]}
           style={{
