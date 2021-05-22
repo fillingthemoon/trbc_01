@@ -13,7 +13,7 @@ const { trbcMap } = general
 import TitleText from '../components/TitleText'
 
 const footerStyle = {
-  padding: '20px',
+  padding: '30px',
   backgroundColor: '#4f4f4f',
   color: '#ffffff',
 }
@@ -28,7 +28,6 @@ const footerInfo = {
   display: 'flex',
   flexDirection: 'column',
   padding: '20px',
-  gap: 10,
 }
 
 const copyrightStyle = {
@@ -43,18 +42,18 @@ const ContactFooter = () => {
       <Row align='middle' justify='center' gutter={60} style={footerStyle}>
         <Col style={footerInfo}>
           <TitleText title='Contact Us' titleStyle={{ color: '#ffffff', fontSize: '1.8rem' }} />
-          <Row style={{ fontSize: '1.5em' }}>Singapore Thomson Road Baptist Church</Row>
-          <Row gutter={10}>
+          <Row style={{ fontSize: '1.6em', marginBottom: '15px' }}>Singapore Thomson Road Baptist Church</Row>
+          <Row gutter={10} style={{ margin: '5px 0' }}>
             <Col className='icon'><IoLocationSharp /></Col>
-            <Col style={{ fontSize: '0.9rem' }}>45 Thomson Road Singapore 307584</Col>
+            <Col style={{ fontSize: '1rem', fontWeight: '200' }}>45 Thomson Road Singapore 307584</Col>
           </Row>
-          <Row gutter={10}>
+          <Row gutter={10} style={{ margin: '5px 0' }}>
             <Col className='icon'><IoMail /></Col>
-            <Col style={{ fontSize: '0.9rem' }}> admin@trbc.org.sg</Col>
+            <Col style={{ fontSize: '1rem', fontWeight: '200' }}> admin@trbc.org.sg</Col>
           </Row>
-          <Row gutter={10}>
+          <Row gutter={10} style={{ margin: '5px 0' }}>
             <Col className='icon'><AiFillPhone /></Col>
-            <Col style={{ fontSize: '0.9rem' }}> +65 6256 2277</Col>
+            <Col style={{ fontSize: '1rem', fontWeight: '200' }}> +65 6256 2277</Col>
           </Row>
         </Col>
         <Col style={imgStyle}>
