@@ -22,8 +22,8 @@ const NavBar = () => {
   const menu = (orientation) => (
     <Menu
       mode={orientation}
-      onClick={({ key }) => { setCurrent(key) }}
-      selectedKeys={pageUrl}
+      // onClick={({ key }) => { setCurrent(key) }}
+      // selectedKeys={pageUrl}
       style={{ border: 'None', padding: '10px' }}
     >
       <Menu.Item key='home' title='Home'>
@@ -57,18 +57,18 @@ const NavBar = () => {
           <Menu.Item key='tc-main'>
             <Link replace to='/services/tc-main'>Main</Link>
           </Menu.Item>
-          <Menu.Item key='/services/tc-prayermeeting'>
+          <Menu.Item key='tc-prayermeeting'>
             <Link replace to='/services/tc-prayermeeting'>
               Prayer Meetings
             </Link>
           </Menu.Item>
-          <Menu.Item key='tc/connectgroups'>
+          <Menu.Item key='tc-cellgroup'>
             <Link replace to='/services/tc-cellgroup'>Cell Groups</Link>
           </Menu.Item>
-          <Menu.Item key='tc/youth'>
+          <Menu.Item key='tc-youth'>
             <Link replace to='/services/tc-youth'>Youth</Link>
           </Menu.Item>
-          <Menu.Item key='tc/children'>
+          <Menu.Item key='tc-children'>
             <Link replace to='/services/tc-children'>Children</Link>
           </Menu.Item>
         </SubMenu>
@@ -77,21 +77,21 @@ const NavBar = () => {
           title='Sunset Congregation'
         >
           {/* Need find way to change font */}
-          <Menu.Item key='s/sundayschool'>
+          <Menu.Item key='ss-main'>
             <Link replace to='/services/ss-main'>Main</Link>
           </Menu.Item>
-          <Menu.Item key='s/prayermeeting'>
+          <Menu.Item key='ss-prayermeeting'>
             <Link replace to='/services/ss-prayermeeting'>
               Prayer Meetings
             </Link>
           </Menu.Item>
-          <Menu.Item key='s/connectgroups'>
+          <Menu.Item key='ss-cellgroup'>
             <Link replace to='/services/ss-cellgroup'>Cell Groups</Link>
           </Menu.Item>
-          <Menu.Item key='s/youth'>
+          <Menu.Item key='ss-youth'>
             <Link replace to='/services/ss-youth'>Youth</Link>
           </Menu.Item>
-          <Menu.Item key='s/children'>
+          <Menu.Item key='ss-children'>
             <Link replace to='/services/ss-children'>Children</Link>
           </Menu.Item>
         </SubMenu>
@@ -100,21 +100,21 @@ const NavBar = () => {
           title='English Congregation'
         >
           {/* Need find way to change font */}
-          <Menu.Item key='e/sundayschool'>
+          <Menu.Item key='e-main'>
             <Link replace to='/services/e-main'>Main</Link>
           </Menu.Item>
-          <Menu.Item key='e/prayermeeting'>
+          <Menu.Item key='e-prayermeeting'>
             <Link replace to='/services/e-prayermeeting'>
               Prayer Meetings
             </Link>
           </Menu.Item>
-          <Menu.Item key='e/connectgroups'>
+          <Menu.Item key='e-cellgroup'>
             <Link replace to='/services/e-cellgroup'>Cell Groups</Link>
           </Menu.Item>
-          <Menu.Item key='e/youth'>
+          <Menu.Item key='e-youth'>
             <Link replace to='/services/e-youth'>Youth</Link>
           </Menu.Item>
-          <Menu.Item key='e/children'>
+          <Menu.Item key='e-children'>
             <Link replace to='/services/e-children'>Children</Link>
           </Menu.Item>
         </SubMenu>

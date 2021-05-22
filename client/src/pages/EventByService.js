@@ -8,9 +8,11 @@ import {
 import image from '../imgs/church-wide.jpg'
 import data from '../data/EventByServiceData'
 import Banner from '../components/Banner'
+
 // import Carousel from "react-gallery-carousel";
 // import "react-gallery-carousel/dist/index.css";
 // Event Page, with props given from parent component ChurchWide.
+
 function EventByService(props) {
   const { Title } = Typography
   var styles = {
