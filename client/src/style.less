@@ -1,7 +1,15 @@
 @import '~antd/dist/antd.less';
 @primary-color: #fa8c16;
 
-/* Top Image */
+.ant-layout-content {
+  background-color: #ffffff;
+}
+
+.page-content {
+  padding: 60px;
+}
+
+/* Banner Image */
 .top-img-container {
   position: relative;
   text-align: center;
@@ -20,7 +28,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #FFFFFF;
+  color: #ffffff;
   white-space: wrap;
   
 }
@@ -32,35 +40,14 @@
 }
 
 /* Mission, Vision */
-#mission-vision-container {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 50px;
-}
 
-#mission-vision-container h1 {
-  margin-bottom: 0px;
-}
-
-#mission-vision-container p {
-  margin: 30px 0px 50px 0px;
-}
-
-#mv-thickline {
+.title-underline {
   width: 35px;
   height: 4px;
   background-color: @primary-color;
   border-style: none;
   margin-left: 0;
-}
-
-@media (min-width:900px) {
-  #mission-vision-container {
-    display: flex;
-    flex-direction: row;
-  }
+  margin-bottom: 30px;
 }
 
 /* Contact Us */
@@ -80,17 +67,9 @@
   margin: 0;
 }
 
-#cf-thickline {
-  width: 35px;
-  height: 4px;
-  background-color: @primary-color;
-  border-style: none;
-  margin-left: 0;
-}
-
 #cf-text h2 {
   color: #ffffff; 
-  margin: 30px 0px 20px 0px;
+  margin: 0 0 20px 0;
   font-size: 1.2em;
   font-weight: 400; 
 }

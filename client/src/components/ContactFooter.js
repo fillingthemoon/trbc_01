@@ -1,6 +1,4 @@
 import React from 'react'
-// import { IoMail, IoLocationSharp } from 'react-icons/io5';
-// import { AiFillPhone } from 'react-icons/ai';
 
 import { Layout } from 'antd'
 const { Footer } = Layout
@@ -17,7 +15,7 @@ const ContactFooter = () => {
       <div id="contact-footer-container">
         <div id="cf-text">
           <h1>Contact Us</h1>
-          <hr id="cf-thickline" />
+          <hr className="title-underline" />
           <h2>Singapore Thomson Road Baptist Church</h2>
           <div>
             <div className='icon'><IoLocationSharp /></div>

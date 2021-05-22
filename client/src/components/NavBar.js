@@ -31,8 +31,8 @@ const NavBar = () => {
       </Menu.Item>
 
       <SubMenu key='about-us' title='About Us'>
-        <Menu.Item key='vision'>
-          <Link replace to='/vision'>Vision & Mission</Link>
+        <Menu.Item key='mission-vision'>
+          <Link replace to='/mission-vision'>Mission & Vision</Link>
         </Menu.Item>
         <Menu.Item key='our-history'>
           <Link replace to='/our-history'>Our History</Link>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import NavBar from './components/NavBar'
-import Vision from './pages/Vision'
+import MissionVision from './pages/MissionVision'
 import OurHistory from './pages/OurHistory'
 import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
@@ -45,7 +45,7 @@ const App = () => {
   return (
     <Layout>
       <NavBar />
-      <Content style={{ backgroundColor: '#ffffff' }}>
+      <Content>
         <Switch>
           <Route exact path='/'>
             <Redirect to='/home' />
@@ -56,8 +56,8 @@ const App = () => {
           <Route path='/our-history' exact>
             <OurHistory />
           </Route>
-          <Route path='/vision' exact>
-            <Vision />
+          <Route path='/mission-vision' exact>
+            <MissionVision />
           </Route>
           <Route path='/im-new' exact>
             <ImNew />
