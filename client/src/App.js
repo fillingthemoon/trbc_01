@@ -45,48 +45,48 @@ function App() {
     <div>
       <NavBarAntd />
       <Switch>
-        <Route path="/trbc_00/" exact component={Home} />
-        <Route path="/trbc_00/ourhistory" exact component={OurHistory} />
-        <Route path="/trbc_00/vision" exact component={Vision} />
-        <Route path="/trbc_00/imnew" exact component={ImNew} />
-        <Route path="/trbc_00/outreach" exact component={Outreach} />
-        <Route path="/trbc_00/missions" exact component={Missions} />
-        <Route path="/trbc_00/discipleship" exact component={Discipleship} />
-        <Route path="/trbc_00/ourteam" exact component={OurTeam} />
-        <Route path="/trbc_00/statement" exact component={Statement} />
+        <Route path="/trbc_01/" exact component={Home} />
+        <Route path="/trbc_01/ourhistory" exact component={OurHistory} />
+        <Route path="/trbc_01/vision" exact component={Vision} />
+        <Route path="/trbc_01/imnew" exact component={ImNew} />
+        <Route path="/trbc_01/outreach" exact component={Outreach} />
+        <Route path="/trbc_01/missions" exact component={Missions} />
+        <Route path="/trbc_01/discipleship" exact component={Discipleship} />
+        <Route path="/trbc_01/ourteam" exact component={OurTeam} />
+        <Route path="/trbc_01/statement" exact component={Statement} />
 
-        <Route path="/trbc_00/services" exact component={Services} />
-        <Route exact path="/trbc_00/outreach/:id" component={Event} />
-        <Route exact path="/trbc_00/mission/:id" component={Event} />
+        <Route path="/trbc_01/services" exact component={Services} />
+        <Route exact path="/trbc_01/outreach/:id" component={Event} />
+        <Route exact path="/trbc_01/mission/:id" component={Event} />
         <Route
           exact
-          path="/trbc_00/services/:id"
+          path="/trbc_01/services/:id"
           component={EventByService}
         />
         <Route
-          path="/trbc_00/facilitybookings"
+          path="/trbc_01/facilitybookings"
           exact
           component={FacilityBookings}
         />
-        <Route path="/trbc_00/resources" component={Resources} />
-        <Route path="/trbc_00/admin" exact component={Admin} />
-        <Route exact path="/trbc_00/admin/home" component={EditHome} />
-        <Route exact path="/trbc_00/admin/team" component={EditTeam} />
+        <Route path="/trbc_01/resources" component={Resources} />
+        <Route path="/trbc_01/admin" exact component={Admin} />
+        <Route exact path="/trbc_01/admin/home" component={EditHome} />
+        <Route exact path="/trbc_01/admin/team" component={EditTeam} />
         <Route
           exact
-          path="/trbc_00/admin/outreach"
+          path="/trbc_01/admin/outreach"
           component={EditOutreach}
         />
-        <Route exact path="/trbc_00/admin/service" component={EditService} />
-        {/* //<Route exact path="/trbc_00/admin/history" component={EditHistory} /> */}
-        <Route exact path="/trbc_00/admin/english" component={EditEnglish} />
-        <Route exact path="/trbc_00/admin/chinese" component={EditChinese} />
-        <Route exact path="/trbc_00/admin/sunset" component={EditSunset} />
-        <Route exact path="/trbc_00/admin/vision" component={EditVision} />
-        <Route exact path="/trbc_00/admin/statement" component={EditStatement} />
-        <Route exact path="/trbc_00/admin/editmissions" component={EditMissions} />
-        <Route exact path="/trbc_00/admin/discipleship" component={EditDiscipleship} />
-        <Route exact path="/trbc_00/admin/editmissions/:id" component={EditPage} />
+        <Route exact path="/trbc_01/admin/service" component={EditService} />
+        {/* //<Route exact path="/trbc_01/admin/history" component={EditHistory} /> */}
+        <Route exact path="/trbc_01/admin/english" component={EditEnglish} />
+        <Route exact path="/trbc_01/admin/chinese" component={EditChinese} />
+        <Route exact path="/trbc_01/admin/sunset" component={EditSunset} />
+        <Route exact path="/trbc_01/admin/vision" component={EditVision} />
+        <Route exact path="/trbc_01/admin/statement" component={EditStatement} />
+        <Route exact path="/trbc_01/admin/editmissions" component={EditMissions} />
+        <Route exact path="/trbc_01/admin/discipleship" component={EditDiscipleship} />
+        <Route exact path="/trbc_01/admin/editmissions/:id" component={EditPage} />
       </Switch>
       <ContactFooter />
     </div>
