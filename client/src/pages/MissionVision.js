@@ -25,7 +25,7 @@ const MissionVision = () => {
     <div>
       <Banner imageTitlePairs={[{ title: 'Mission and Vision', image: exterior }]} />
       <div className='page-content'>
-        <Row align='middle' justify='center' gutter={70}>
+        <Row align='middle' justify='center' gutter={100}>
           <Col style={imgStyle}>
             <Image
               src=""
@@ -36,10 +36,14 @@ const MissionVision = () => {
             <TitleText
               title='Mission'
               text='To Be Disciples Moving as One Body in Christ, Bearing Fruit and Being the Salt and Light of the World.'
+              titleStyle={{ fontSize: '2rem' }}
+              textStyle={{ fontSize: '1rem' }}
             />
             <TitleText
               title='Vision'
-              text='One Church Growing Inwardly and Outwardly'
+              text='One Church Growing Inwardly and Outwardly.'
+              titleStyle={{ fontSize: '2rem' }}
+              textStyle={{ fontSize: '1rem' }}
             />
           </Col>
         </Row>

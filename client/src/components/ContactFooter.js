@@ -42,7 +42,7 @@ const ContactFooter = () => {
     <Footer style={{ padding: 0 }}>
       <Row align='middle' justify='center' gutter={60} style={footerStyle}>
         <Col style={footerInfo}>
-          <TitleText title='Contact Us' style={{ color: '#ffffff', fontSize: '1.8rem' }} />
+          <TitleText title='Contact Us' titleStyle={{ color: '#ffffff', fontSize: '1.8rem' }} />
           <Row style={{ fontSize: '1.5em' }}>Singapore Thomson Road Baptist Church</Row>
           <Row gutter={10}>
             <Col className='icon'><IoLocationSharp /></Col>
