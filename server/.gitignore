@@ -2,7 +2,6 @@
 .DS_Store
 
 # server
-build
 node_modules
 .env
 serviceAccountKey.json

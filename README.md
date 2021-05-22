@@ -1,7 +1,7 @@
 # TRBC Documentation
 This project was created with ReactJS, AntDesign, ExpressJS and MongoDB.
 
-The website is live at  [https://fillingthemoon.github.io/](https://fillingthemoon.github.io/).
+The website is live at https://dashboard.heroku.com/apps/arcane-crag-98386/settings.
 
 ![ ](https://trbcbucket.s3-ap-southeast-1.amazonaws.com/diagram.JPG)
 
