@@ -28,7 +28,7 @@ import EditTeam from './pages/admin/EditTeam'
 import EditOutreach from './pages/admin/EditOutreach'
 import EditService from './pages/admin/EditService'
 
-//import EditHistory from "./pages/admin/EditHistory";
+//import EditHistory from './pages/admin/EditHistory';
 import EditEnglish from './pages/admin/EditEnglish'
 import EditChinese from './pages/admin/EditChinese'
 import EditSunset from './pages/admin/EditSunset'
@@ -39,7 +39,7 @@ import EditPage from './pages/admin/EditPage'
 import EditDiscipleship from './pages/admin/EditDiscipleship'
 
 import { Layout } from 'antd'
-const { Header, Content, Footer } = Layout
+const { Content, Footer } = Layout
 
 import './style.less'
 
@@ -47,52 +47,95 @@ const App = () => {
   return (
     <Layout>
       <NavBar />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/ourhistory" exact component={OurHistory} />
-        <Route path="/vision" exact component={Vision} />
-        <Route path="/imnew" exact component={ImNew} />
-        <Route path="/outreach" exact component={Outreach} />
-        <Route path="/missions" exact component={Missions} />
-        <Route path="/discipleship" exact component={Discipleship} />
-        <Route path="/ourteam" exact component={OurTeam} />
-        <Route path="/statement" exact component={Statement} />
+      <Content>
+        <Switch>
+          <Route path={['/', '/home']} exact>
+            <Home />
+          </Route>
+          <Route path='/our-history' exact>
+            <OurHistory />
+          </Route>
+          <Route path='/vision' exact>
+            <Vision />
+          </Route>
+          <Route path='/im-new' exact>
+            <ImNew />
+          </Route>
+          <Route path='/outreach' exact>
+            <Outreach />
+          </Route>
+          <Route path='/missions' exact>
+            <Missions />
+          </Route>
+          <Route path='/discipleship' exact>
+            <Discipleship />
+          </Route >
+          <Route path='/our-team' exact>
+            <OurTeam />
+          </Route >
+          <Route path='/statement' exact>
+            <Statement />
+          </Route >
 
-        <Route path="/services" exact component={Services} />
-        <Route exact path="/outreach/:id" component={Event} />
-        <Route exact path="/mission/:id" component={Event} />
-        <Route
-          exact
-          path="/services/:id"
-          component={EventByService}
-        />
-        <Route
-          path="/facilitybookings"
-          exact
-          component={FacilityBookings}
-        />
-        <Route path="/resources" component={Resources} />
-        <Route path="/admin" exact component={Admin} />
-        <Route exact path="/admin/home" component={EditHome} />
-        <Route exact path="/admin/team" component={EditTeam} />
-        <Route
-          exact
-          path="/admin/outreach"
-          component={EditOutreach}
-        />
-        <Route exact path="/admin/service" component={EditService} />
-        {/* //<Route exact path="/admin/history" component={EditHistory} /> */}
-        <Route exact path="/admin/english" component={EditEnglish} />
-        <Route exact path="/admin/chinese" component={EditChinese} />
-        <Route exact path="/admin/sunset" component={EditSunset} />
-        <Route exact path="/admin/vision" component={EditVision} />
-        <Route exact path="/admin/statement" component={EditStatement} />
-        <Route exact path="/admin/editmissions" component={EditMissions} />
-        <Route exact path="/admin/discipleship" component={EditDiscipleship} />
-        <Route exact path="/admin/editmissions/:id" component={EditPage} />
-      </Switch>
+          <Route path='/services' exact>
+            <Services />
+          </Route >
+          <Route path={['/outreach/:id', '/mission/:id']} exact>
+            <Event />
+          </Route >
+          <Route path='/services/:id' exact>
+            <EventByService />
+          </Route>
+          <Route path='/facility-bookings' exact>
+            <FacilityBookings />
+          </Route >
+          <Route path='/resources'>
+            <Resources />
+          </Route >
+          <Route path='/admin' exact>
+            <Admin />
+          </Route >
+          <Route path='/admin/home' exact>
+            <EditHome />
+          </Route >
+          <Route path='/admin/team' exact>
+            <EditTeam />
+          </Route >
+          <Route path='/admin/outreach' exact>
+            <EditOutreach />
+          </Route >
+          <Route path='/admin/service' exact>
+            <EditService />
+          </Route >
+          {/* //<Route exact path='/admin/history' component={EditHistory} /> */}
+          < Route path='/admin/english' exact>
+            <EditEnglish />
+          </Route >
+          <Route path='/admin/chinese' exact>
+            <EditChinese />
+          </Route >
+          <Route path='/admin/sunset' exact>
+            <EditSunset />
+          </Route >
+          <Route path='/admin/vision' exact>
+            <EditVision />
+          </Route >
+          <Route path='/admin/statement' exact>
+            <EditStatement />
+          </Route >
+          <Route path='/admin/editmissions' exact>
+            <EditMissions />
+          </Route >
+          <Route path='/admin/discipleship' exact>
+            <EditDiscipleship />
+          </Route >
+          <Route path='/admin/editmissions/:id' exact>
+            <EditPage />
+          </Route >
+        </Switch >
+      </Content>
       <ContactFooter />
-    </Layout>
+    </Layout >
   )
 }
 

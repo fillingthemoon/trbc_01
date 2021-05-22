@@ -1,167 +1,152 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-import { Menu, Dropdown, Button } from 'antd'
-import { MenuOutlined } from '@ant-design/icons'
-
 import { useMediaQuery } from 'react-responsive'
 
-import trbcLogo from '../imgs/logo.png'
+import { Menu, Dropdown, Button, Layout } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
 
+const { Header } = Layout
 const { SubMenu } = Menu
+
+import trbcLogo from '../imgs/logo.png'
 
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1370px)' })
   const [current, setCurrent] = useState('home')
   const [language, setLanguage] = useState('ENGLISH')
 
-  const changeLanguage = () => {
-    if (language === 'ENGLISH') {
-      return setLanguage('中文')
-    }
-    return setLanguage('ENGLISH')
-  }
-  const trbcImage = (
-    <img
-      style={{ maxHeight: '100px', maxWidth: '150px' }}
-      src={trbcLogo}
-      alt=""
-    />
-  )
+  const href = window.location.href.split('/')
+  const pageUrl = href[href.length - 1]
+  console.log(pageUrl, current)
 
   const menu = (orientation) => (
     <Menu
       mode={orientation}
-      onClick={(e) => {
-        setCurrent(e.key)
-      }}
-      selectedKeys={current}
+      onClick={({ key }) => { setCurrent(key) }}
+      selectedKeys={pageUrl}
       style={{ border: 'None', padding: '10px' }}
     >
-      <Menu.Item key="home" title="Home">
-        <Link to="/">Home</Link>
+      <Menu.Item key='home' title='Home'>
+        <Link replace to='/home'>Home</Link>
       </Menu.Item>
 
-      <SubMenu key="aboutUs" title="About Us">
+      <SubMenu key='about-us' title='About Us'>
         {/* Need find way to change font */}
-        <Menu.Item key="aboutUs1">
-          <Link to="/vision">Vision & Mission</Link>
+        <Menu.Item key='vision'>
+          <Link replace to='/vision'>Vision & Mission</Link>
         </Menu.Item>
-        <Menu.Item key="aboutUs2">
-          <Link to="/ourhistory">Our History</Link>
+        <Menu.Item key='our-history'>
+          <Link replace to='/our-history'>Our History</Link>
         </Menu.Item>
-        <Menu.Item key="aboutUs3">
-          <Link to="/ourteam">Our Team</Link>
+        <Menu.Item key='our-team'>
+          <Link replace to='/our-team'>Our Team</Link>
         </Menu.Item>
-        <Menu.Item key="aboutUs4">
-          <Link to="/statement">Statement of Faith</Link>
+        <Menu.Item key='statement'>
+          <Link replace to='/statement'>Statement of Faith</Link>
         </Menu.Item>
       </SubMenu>
-      <SubMenu key="joinUs" title="Join Us">
+      <SubMenu key='join-us' title='Join Us'>
         {/* Need find way to change font */}
-        <Menu.Item key="services">
-          <Link to="/services">Services</Link>
+        <Menu.Item key='services'>
+          <Link replace to='/services'>Services</Link>
         </Menu.Item>
 
+        <SubMenu key='tc' title='Teo Chew/Chinese Congregation'>
 
-        <SubMenu
-          key="tc"
-          title="Teo Chew/Chinese Congregation"
-        >
           {/* Need find way to change font */}
-          <Menu.Item key="tc/sundayschool">
-            <Link to="/services/tc-main">Main</Link>
+          <Menu.Item key='tc-main'>
+            <Link replace to='/services/tc-main'>Main</Link>
           </Menu.Item>
-          <Menu.Item key="tc/prayermeeting">
-            <Link to="/services/tc-prayermeeting">
+          <Menu.Item key='/services/tc-prayermeeting'>
+            <Link replace to='/services/tc-prayermeeting'>
               Prayer Meetings
             </Link>
           </Menu.Item>
-          <Menu.Item key="tc/connectgroups">
-            <Link to="/services/tc-cellgroup">Cell Groups</Link>
+          <Menu.Item key='tc/connectgroups'>
+            <Link replace to='/services/tc-cellgroup'>Cell Groups</Link>
           </Menu.Item>
-          <Menu.Item key="tc/youth">
-            <Link to="/services/tc-youth">Youth</Link>
+          <Menu.Item key='tc/youth'>
+            <Link replace to='/services/tc-youth'>Youth</Link>
           </Menu.Item>
-          <Menu.Item key="tc/children">
-            <Link to="/services/tc-children">Children</Link>
+          <Menu.Item key='tc/children'>
+            <Link replace to='/services/tc-children'>Children</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu
-          key="sunset"
-          title="Sunset Congregation"
+          key='sunset'
+          title='Sunset Congregation'
         >
           {/* Need find way to change font */}
-          <Menu.Item key="s/sundayschool">
-            <Link to="/services/ss-main">Main</Link>
+          <Menu.Item key='s/sundayschool'>
+            <Link replace to='/services/ss-main'>Main</Link>
           </Menu.Item>
-          <Menu.Item key="s/prayermeeting">
-            <Link to="/services/ss-prayermeeting">
+          <Menu.Item key='s/prayermeeting'>
+            <Link replace to='/services/ss-prayermeeting'>
               Prayer Meetings
             </Link>
           </Menu.Item>
-          <Menu.Item key="s/connectgroups">
-            <Link to="/services/ss-cellgroup">Cell Groups</Link>
+          <Menu.Item key='s/connectgroups'>
+            <Link replace to='/services/ss-cellgroup'>Cell Groups</Link>
           </Menu.Item>
-          <Menu.Item key="s/youth">
-            <Link to="/services/ss-youth">Youth</Link>
+          <Menu.Item key='s/youth'>
+            <Link replace to='/services/ss-youth'>Youth</Link>
           </Menu.Item>
-          <Menu.Item key="s/children">
-            <Link to="/services/ss-children">Children</Link>
+          <Menu.Item key='s/children'>
+            <Link replace to='/services/ss-children'>Children</Link>
           </Menu.Item>
         </SubMenu>
         <SubMenu
-          key="english"
-          title="English Congregation"
+          key='english'
+          title='English Congregation'
         >
           {/* Need find way to change font */}
-          <Menu.Item key="e/sundayschool">
-            <Link to="/services/e-main">Main</Link>
+          <Menu.Item key='e/sundayschool'>
+            <Link replace to='/services/e-main'>Main</Link>
           </Menu.Item>
-          <Menu.Item key="e/prayermeeting">
-            <Link to="/services/e-prayermeeting">
+          <Menu.Item key='e/prayermeeting'>
+            <Link replace to='/services/e-prayermeeting'>
               Prayer Meetings
             </Link>
           </Menu.Item>
-          <Menu.Item key="e/connectgroups">
-            <Link to="/services/e-cellgroup">Cell Groups</Link>
+          <Menu.Item key='e/connectgroups'>
+            <Link replace to='/services/e-cellgroup'>Cell Groups</Link>
           </Menu.Item>
-          <Menu.Item key="e/youth">
-            <Link to="/services/e-youth">Youth</Link>
+          <Menu.Item key='e/youth'>
+            <Link replace to='/services/e-youth'>Youth</Link>
           </Menu.Item>
-          <Menu.Item key="e/children">
-            <Link to="/services/e-children">Children</Link>
+          <Menu.Item key='e/children'>
+            <Link replace to='/services/e-children'>Children</Link>
           </Menu.Item>
         </SubMenu>
       </SubMenu>
-      <Menu.Item key="imNew">
-        <Link to="/imnew">{'I\'m New'}</Link>
+      <Menu.Item key='im-new'>
+        <Link replace to='/im-new'>{'I\'m New'}</Link>
       </Menu.Item>
-      <Menu.Item key="outreach">
-        <Link to="/outreach">Outreach</Link>
+      <Menu.Item key='outreach'>
+        <Link replace to='/outreach'>Outreach</Link>
       </Menu.Item>
-      <Menu.Item key="missions">
-        <Link to="/missions">Missions</Link>
+      <Menu.Item key='missions'>
+        <Link replace to='/missions'>Missions</Link>
       </Menu.Item>
-      <Menu.Item key="discipleship">
-        <Link to="/discipleship">Discipleship</Link>
+      <Menu.Item key='discipleship'>
+        <Link replace to='/discipleship'>Discipleship</Link>
       </Menu.Item>
-      <Menu.Item key="facilities">
-        <Link to="/facilitybookings">Facility Bookings</Link>
+      <Menu.Item key='facility-bookings'>
+        <Link replace to='/facility-bookings'>Facility Bookings</Link>
       </Menu.Item>
 
-      <SubMenu key="admin" title="Resources">
+      <SubMenu key='admin' title='Resources'>
         {/* Need find way to change font */}
-        <Menu.Item key="admin1">
-          <Link to="/resources">Resources</Link>
+        <Menu.Item key='admin1'>
+          <Link replace to='/resources'>Resources</Link>
         </Menu.Item>
-        {/* <Menu.Item key="aboutUs2">
-            <Link to="/admin">Admin</Link>
+        {/* <Menu.Item key='aboutUs2'>
+            <Link replace to='/admin'>Admin</Link>
           </Menu.Item> */}
       </SubMenu>
-      <Menu.Item key="language" disabled>
+      <Menu.Item key='language' disabled>
         <Button
-          onClick={changeLanguage}
+          onClick={() => language === 'ENGLISH' ? setLanguage('ENGLISH') : setLanguage('中文')}
           style={{
             backgroundColor: '#ffe7ba',
             color: '#fa8c16',
@@ -189,7 +174,7 @@ const NavBar = () => {
   )
 
   return (
-    <div
+    <Header
       style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -199,10 +184,15 @@ const NavBar = () => {
         maxHeight: '80px',
       }}
     >
-      <Link to="/">{trbcImage}</Link>
-      {/* {console.log(windowSize)} */}
+      <Link replace to='/'>{
+        <img
+          style={{ maxHeight: '100px', maxWidth: '150px' }}
+          src={trbcLogo}
+          alt=''
+        />
+      }</Link>
       {isBigScreen ? menu('horizontal') : dropDown()}
-    </div>
+    </Header>
   )
 }
 export default NavBar
