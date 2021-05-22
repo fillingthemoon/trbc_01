@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Divider, Typography, Row, Col, Avatar, Image } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
+import { Divider, Typography, Row, Col, Avatar } from 'antd'
 
 import image from '../imgs/exterior.jpg'
 import Banner from '../components/Banner'
@@ -127,9 +126,9 @@ const OurTeam = () => {
         <hr className="thick-line"></hr> */}
 
         {/* Use map to render reusable HTML content */}
-        {data.map((group) => {
+        {data.map((group, i) => {
           return (
-            <>
+            <div key={group + i}>
               {/* if groupName is "Mnistry" or "Administrative" it will render different title types */}
               {group.groupName === 'Ministry' ||
                 group.groupName === 'Administrative' ||
@@ -144,11 +143,11 @@ const OurTeam = () => {
                     <br />
                   </>
                 ) : (
-                  <>
+                  <div key={group + i}>
                     <Divider orientation="left">
                       <Title level={3}>{group.groupName}</Title>
                     </Divider>
-                  </>
+                  </div>
                 )}
               {/* if groupName is "Mnistry" or "Administrative" it will render different styles of the justify property */}
               <Row
@@ -179,10 +178,10 @@ const OurTeam = () => {
                           {/* Need a better way to insert newline */}
                           {staff.role.split('\n').map((i) => {
                             return (
-                              <>
+                              <span key={i}>
                                 {i}
                                 <br />
-                              </>
+                              </span>
                             )
                           })}
                         </p>
@@ -191,7 +190,7 @@ const OurTeam = () => {
                   )
                 })}
               </Row>
-            </>
+            </div>
           )
         })}
         <br />
