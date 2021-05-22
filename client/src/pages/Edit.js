@@ -76,7 +76,7 @@ function Edit(props) {
   }, [])
 
   const columns = dataToColumns[pageName].fields.map((i) => {
-    if (i == 'image') {
+    if (i === 'image') {
       return {
         title: i,
         dataIndex: i,
@@ -123,7 +123,7 @@ function Edit(props) {
   const handleChange = (event) => {
     console.log(record)
     Object.entries(record).forEach((i) => {
-      if (i[0] == event.target.name) {
+      if (i[0] === event.target.name) {
         record[event.target.name] = event.target.value
         setRecordToEdit(record)
       }
@@ -159,7 +159,7 @@ function Edit(props) {
         initialValues={{ modifier: 'public' }}
       >
         {Object.entries(record).map((i) => {
-          if (i[0] == 'image') {
+          if (i[0] === 'image') {
             return (
               <Form.Item>
                 <Upload name="logo" action="/upload.do" listType="picture">
@@ -169,7 +169,7 @@ function Edit(props) {
                 </Upload>
               </Form.Item>
             )
-          } else if (i[0] != '_id' && i[0] != '__v') {
+          } else if (i[0] !== '_id' && i[0] !== '__v') {
             return (
               <Form.Item>
                 <Input
@@ -230,7 +230,7 @@ function Edit(props) {
             </Button>,
           ]}
         >
-          {record != null ? renderRecord(record) : null}
+          {record !== null ? renderRecord(record) : null}
         </Modal>
       </div>
     </>

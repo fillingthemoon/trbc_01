@@ -120,41 +120,33 @@ const OurTeam = () => {
     <>
       <Banner name="Our Team" image={image}></Banner>
       <div className="main-container">
-        <br />
-        <br />
-        {/* <Title>Pastoral</Title>
-        <hr className="thick-line"></hr> */}
 
         {/* Use map to render reusable HTML content */}
         {data.map((group, i) => {
           return (
             <div key={group + i}>
               {/* if groupName is "Mnistry" or "Administrative" it will render different title types */}
-              {group.groupName === 'Ministry' ||
-                group.groupName === 'Administrative' ||
-                group.groupName === 'Pastoral' ? (
-                  <>
-                    <Divider />
-                    <Title style={{ textAlign: 'center' }}>
-                      {group.groupName}
-                    </Title>
-                    <hr className="thick-line"></hr>
-                    <br />
-                    <br />
-                  </>
-                ) : (
-                  <div key={group + i}>
-                    <Divider orientation="left">
-                      <Title level={3}>{group.groupName}</Title>
-                    </Divider>
-                  </div>
-                )}
+              {group.groupName === 'Ministry' || group.groupName === 'Administrative' || group.groupName === 'Pastoral' ? (
+                <div>
+                  <Divider />
+                  <Title style={{ textAlign: 'center' }}>
+                    {group.groupName}
+                  </Title>
+                  <hr className="thick-line"></hr>
+                  <br />
+                  <br />
+                </div>
+              ) : (
+                <div key={group + i}>
+                  <Divider orientation="left">
+                    <Title level={3}>{group.groupName}</Title>
+                  </Divider>
+                </div>
+              )}
               {/* if groupName is "Mnistry" or "Administrative" it will render different styles of the justify property */}
               <Row
                 justify={
-                  group.groupName === 'Ministry' ||
-                    group.groupName === 'Administrative' ||
-                    group.groupName === 'Pastoral'
+                  group.groupName === 'Ministry' || group.groupName === 'Administrative' || group.groupName === 'Pastoral'
                     ? 'space-around'
                     : 'start'
                 }
@@ -171,10 +163,10 @@ const OurTeam = () => {
                       <div style={{ textAlign: 'center' }} >
                         <Avatar size={120} src={staff.image} />
 
-
                         <p style={{ marginTop: '20px' }}>
                           <strong>{staff.name}</strong>
                           <br />
+
                           {/* Need a better way to insert newline */}
                           {staff.role.split('\n').map((i) => {
                             return (
