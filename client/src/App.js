@@ -81,8 +81,9 @@ const App = () => {
           <Route path='/services' exact>
             <Services />
           </Route >
-          <Route path={['/outreach/:id', '/mission/:id']} exact>
-            <Event />
+          <Route path={['/outreach/:id', '/mission/:id']}
+            render={(props) => <Event {...props} />}
+            exact>
           </Route >
           <Route path='/services/:id'
             render={(props) => <EventByService {...props} />}

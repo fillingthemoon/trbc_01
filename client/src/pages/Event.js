@@ -21,14 +21,14 @@ function Event(props) {
       background: '#F2F2F2',
     },
   }
+
   const images = [900, 800, 700, 600, 500].map((size) => ({
     src: 'https://cdn.britannica.com/12/61412-050-A4FCE8CE/Ruins-pagodas-shrines-Buddhist-Myanmar-Pagan.jpg'
   }))
+
   const {
     location: { state },
   } = props
-  console.log(props)
-  console.log(state)
 
   return (
     <>
