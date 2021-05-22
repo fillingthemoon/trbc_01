@@ -1,0 +1,15 @@
+# client
+/client/node_modules
+/client/.env
+
+# production
+/client/build/
+/build
+
+# misc
+.DS_Store
+
+# server
+/server/node_modules
+/server/.env
+/server/serviceAccountKey.json

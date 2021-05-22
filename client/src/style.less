@@ -1,0 +1,225 @@
+@import '~antd/dist/antd.less';
+@primary-color: #fa8c16;
+
+body {
+  font-family: 'Heebo', sans-serif;
+  margin: 0;
+  color: #303030;
+}
+
+/* Top Image */
+.top-img-container {
+  position: relative;
+  text-align: center;
+}
+
+.top-img-exterior {
+  width: 100%;
+  height: auto;
+  filter: brightness(70%);
+}
+
+.top-img-title {
+  font-size: 2rem;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  white-space: wrap;
+  
+}
+
+@media (min-width:800px) {
+  .top-img-title{
+    font-size: 3rem;
+  }
+}
+
+/* Mission, Vision */
+#mission-vision-container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+#mission-vision-container h1 {
+  margin-bottom: 0px;
+}
+
+#mission-vision-container p {
+  margin: 30px 0px 50px 0px;
+}
+
+#mv-thickline {
+  width: 35px;
+  height: 4px;
+  background-color: @primary-color;
+  border-style: none;
+  margin-left: 0;
+}
+
+@media (min-width:900px) {
+  #mission-vision-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* Contact Us */
+#contact-footer-container {
+  padding: 30px;
+  background-color: #4f4f4f;
+}
+
+#cf-text {
+  color: #ffffff; 
+  font-weight: 200;
+}
+
+#cf-text h1 {
+  color: #ffffff; 
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#contact-us-thickline {
+  width: 35px;
+  height: 4px;
+  background-color: @primary-color;
+  border-style: none;
+  margin-left: 0;
+}
+
+#cf-text h2 {
+  color: #ffffff; 
+  margin: 30px 0px 20px 0px;
+  font-size: 1.2em;
+  font-weight: 400; 
+}
+
+#cf-text > div {
+  display: flex;
+  justify-items: center;
+  padding: 5px 0 5px 0;
+}
+
+.icon {
+  display: flex;
+  color: @primary-color;
+  font-size: 1.2rem;
+}
+
+#cf-text p {
+  margin: 0 0 0 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+#img-trbc-map {
+  margin-top: 30px;
+  width: 100%;
+}
+
+#cf-copyright {
+  padding: 20px;
+  text-align: right;
+  color: #F2F2F2;
+  background-color: #333333;
+}
+
+@media (min-width:900px) {
+  #contact-footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+  }
+
+  #cf-text h1 {
+    font-size: 2.5rem;
+  }
+
+  #cf-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    display: flex;
+    color: @primary-color;
+    font-size: 1.5rem;
+  }
+
+  #cf-text p {
+    margin: 0 0 0 10px;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+
+  #img-trbc-map {
+    width: 694px;
+    height: 265px;
+    margin: 0 0 0 60px;
+  }
+}
+
+/* About Us */
+#about-us-header-container {
+  text-align: center;
+  padding: 20px 130px 40px 130px;
+}
+
+#about-us-header-container p {
+  font-weight: 200;
+}
+
+.about-us-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 100px 40px 100px;
+}
+
+.about-us-imgs {
+  margin: 30px;
+  width: 50%;
+}
+
+.about-us-text {
+  margin: 30px;
+  width: 50%;
+  font-weight: 200;
+}
+
+/* Join Us, Our Team, Statement, ChurchWide, Event */
+.main-container {
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.thick-line{
+  width: 35px;
+  height: 4px;
+  background-color: @primary-color;
+  border-style: none;
+}
+
+.services-pages-img {
+  height: 300px; 
+  width: 300px;
+}
+
+.edit-delete-link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: @primary-color;
+}
