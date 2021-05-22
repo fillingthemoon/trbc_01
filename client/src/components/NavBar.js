@@ -10,7 +10,7 @@ import trbcLogo from '../imgs/logo.png'
 
 const { SubMenu } = Menu
 
-const NavBarAntd = () => {
+const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1370px)' })
   const [current, setCurrent] = useState('home')
   const [language, setLanguage] = useState('ENGLISH')
@@ -205,4 +205,4 @@ const NavBarAntd = () => {
     </div>
   )
 }
-export default NavBarAntd
+export default NavBar

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Switch, Route } from 'react-router-dom'
 
-import NavBarAntd from './components/NavBarAntd'
+import NavBar from './components/NavBar'
 import Vision from './pages/Vision'
 import OurHistory from './pages/OurHistory'
 import ImNew from './pages/ImNew'
@@ -39,13 +39,14 @@ import EditPage from './pages/admin/EditPage'
 import EditDiscipleship from './pages/admin/EditDiscipleship'
 
 import { Layout } from 'antd'
+const { Header, Content, Footer } = Layout
 
 import './style.less'
 
 const App = () => {
   return (
-    <div>
-      <NavBarAntd />
+    <Layout>
+      <NavBar />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/ourhistory" exact component={OurHistory} />
@@ -91,7 +92,7 @@ const App = () => {
         <Route exact path="/admin/editmissions/:id" component={EditPage} />
       </Switch>
       <ContactFooter />
-    </div>
+    </Layout>
   )
 }
 
