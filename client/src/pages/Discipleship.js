@@ -13,7 +13,7 @@ import aboutUs6 from '../imgs/aboutus/6.jpg'
 
 const pageContent = [
   {
-    imageSource: { aboutUs1 },
+    imageSource: aboutUs1,
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -24,7 +24,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: { aboutUs2 },
+    imageSource: aboutUs2,
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -35,7 +35,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: { aboutUs3 },
+    imageSource: aboutUs3,
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -46,7 +46,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: { aboutUs4 },
+    imageSource: aboutUs4,
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -57,7 +57,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: { aboutUs5 },
+    imageSource: aboutUs5,
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -68,7 +68,7 @@ const pageContent = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: { aboutUs6 },
+    imageSource: aboutUs6,
     contentTitle: 'Pellentesque habitant morbi tristique.',
     contentText:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
