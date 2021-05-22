@@ -278,10 +278,14 @@
 import React, { useState, useEffect } from 'react'
 import { Typography, Row, Col, Image } from 'antd'
 import Banner from '../../components/Banner'
-import image from '../../imgs/church-wide.jpg'
+
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-function EditMissions() {
+
+import { general } from '../../images'
+const { churchWide } = general
+
+const EditMissions = () => {
   const { Title } = Typography
   const [data, setData] = useState()
   async function fetchData() {
@@ -356,7 +360,7 @@ function EditMissions() {
   return (
     <div>
       {/* Banner */}
-      <Banner imageTitlePairs={[{ title: 'Edit Missions', image: image }]} />
+      <Banner imageTitlePairs={[{ title: 'Edit Missions', image: churchWide }]} />
 
       {/* Church-Wide content separated into two rows: Second Language Class, Interest Groups */}
       <div className="main-container">

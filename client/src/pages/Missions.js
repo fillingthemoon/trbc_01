@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom'
 import { Typography, Row, Col, Image } from 'antd'
 
 import Banner from '../components/Banner'
-import image from '../imgs/church-wide.jpg'
 
-function Outreach() {
+import { general } from '../images'
+const { churchWide } = general
+
+const Outreach = () => {
   const { Title } = Typography
 
   const data = [
@@ -62,7 +64,7 @@ function Outreach() {
   console.log(event)
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Missions', image: image }]} />
+      <Banner imageTitlePairs={[{ title: 'Missions', image: churchWide }]} />
 
       {/* Church-Wide content separated into two rows: Second Language Class, Interest Groups */}
       <div className="main-container">

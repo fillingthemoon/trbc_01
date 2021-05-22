@@ -2,20 +2,24 @@ import React from 'react'
 
 import { Divider, Typography, Row, Col, Avatar } from 'antd'
 
-import image from '../imgs/exterior.jpg'
 import Banner from '../components/Banner'
 
-import revAdrianLim from '../imgs/ourteam/RevAdrianLim.jpg'
-import revChang from '../imgs/ourteam/RevChang.jpg'
-import revJerryGoh from '../imgs/ourteam/RevJerryGoh.jpg'
-import psLam from '../imgs/ourteam/PsLam.jpg'
-import yeoChongNim from '../imgs/ourteam/YeoChongNim.jpg'
-import jennyAng from '../imgs/ourteam/JennyAng.jpg'
-import leonardLee from '../imgs/ourteam/LeonardLee.jpg'
-import vincentLai from '../imgs/ourteam/VincentLai.jpg'
-import jasmineLee from '../imgs/ourteam/JasmineLee.jpg'
-import dongFan from '../imgs/ourteam/DongFan.jpg'
-import ivanChow from '../imgs/ourteam/IvanChow.jpg'
+import { general, ourTeam } from '../images'
+const { exterior } = general
+
+const {
+  dongFan,
+  ivanChow,
+  jasmineLee,
+  jennyAng,
+  leonardLee,
+  psLam,
+  revAdrianLim,
+  revChang,
+  revJerryGoh,
+  vincentLai,
+  yeoChongNim,
+} = ourTeam
 
 const OurTeam = () => {
   const { Title } = Typography
@@ -118,7 +122,7 @@ const OurTeam = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Our Team', image: image }]} />
+      <Banner imageTitlePairs={[{ title: 'Our Team', image: exterior }]} />
       <div className="main-container">
 
         {/* Use map to render reusable HTML content */}

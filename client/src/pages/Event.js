@@ -6,7 +6,9 @@ import {
   UserOutlined,
 } from '@ant-design/icons'
 import Banner from '../components/Banner'
-import image from '../imgs/church-wide.jpg'
+
+import { general } from '../images'
+const { churchWide } = general
 
 function Event(props) {
   const { Title } = Typography
@@ -30,7 +32,7 @@ function Event(props) {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: state.type, image: image }]} />
+      <Banner imageTitlePairs={[{ title: state.type, image: churchWide }]} />
       <div className="main-container">
         <br />
         <br />

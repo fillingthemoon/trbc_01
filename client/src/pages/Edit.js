@@ -16,17 +16,20 @@ import {
   Input,
   Radio,
 } from 'antd'
+
 import {
   EditOutlined,
   EllipsisOutlined,
   SettingOutlined,
   UploadOutlined,
 } from '@ant-design/icons'
-// Similiar to Our History Page
-import churchWide from '../imgs/church-wide.jpg'
+
 import axios from 'axios'
 
-function Edit(props) {
+import { general } from '../images'
+const { churchWide } = general
+
+const Edit = (props) => {
   console.log(props.location.state)
 
   const { Title } = Typography

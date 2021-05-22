@@ -12,10 +12,13 @@ import {
   Form,
   Input,
 } from 'antd'
-import churchWide from '../../imgs/church-wide.jpg'
+
 import axios from 'axios'
 
-function EditStatement() {
+import { general } from '../../images'
+const { churchWide } = general
+
+const EditStatement = () => {
   const { Title } = Typography
 
   const columns = [

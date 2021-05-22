@@ -1,9 +1,12 @@
 import React from 'react'
 import { List, Card, Row, Col, Divider, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
-import image from '../imgs/exterior.jpg'
 import Banner from '../components/Banner'
-function Resources() {
+
+import { general } from '../images'
+const { churchWide } = general
+
+const Resources = () => {
   const { Search } = Input
   const { Panel } = Collapse
 
@@ -25,7 +28,7 @@ function Resources() {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Resources', image: image }]} />
+      <Banner imageTitlePairs={[{ title: 'Resources', image: churchWide }]} />
 
       <div className="main-container">
         <br />

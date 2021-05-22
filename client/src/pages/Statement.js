@@ -1,8 +1,11 @@
 import React from 'react'
 import { Typography, Row, Col, Card } from 'antd'
 import Banner from '../components/Banner'
-import image from '../imgs/exterior.jpg'
-function Statement() {
+
+import { general } from '../images'
+const { churchWide } = general
+
+const Statement = () => {
   const { Title } = Typography
   var styles = {
     verseStyle: {
@@ -55,7 +58,7 @@ function Statement() {
   var key = 0
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: image }]} />
+      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: churchWide }]} />
       <div className="main-container">
         <br />
         <br />

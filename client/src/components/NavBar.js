@@ -8,7 +8,8 @@ import { MenuOutlined } from '@ant-design/icons'
 const { Header } = Layout
 const { SubMenu } = Menu
 
-import trbcLogo from '../imgs/logo.png'
+import { general } from '../images'
+const { trbcLogo } = general
 
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1370px)' })

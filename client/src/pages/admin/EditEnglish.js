@@ -20,10 +20,13 @@ import {
   UploadOutlined,
 } from '@ant-design/icons'
 // Similiar to Our History Page
-import churchWide from '../../imgs/church-wide.jpg'
+
 import axios from 'axios'
 
-function EditEnglish() {
+import { general } from '../../images'
+const { churchWide } = general
+
+const EditEnglish = () => {
   const { Title } = Typography
 
   const columns = [

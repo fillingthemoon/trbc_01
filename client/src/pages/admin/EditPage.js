@@ -9,9 +9,9 @@ import {
 
 import { UploadOutlined } from '@ant-design/icons'
 import Banner from '../../components/Banner'
-import image from '../../imgs/church-wide.jpg'
-// import Carousel from "react-gallery-carousel";
-// import "react-gallery-carousel/dist/index.css";
+
+import { general } from '../../images'
+const { churchWide } = general
 
 import axios from 'axios'
 
@@ -93,7 +93,7 @@ function EditPage(props) {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: state.type, image: image }]} />
+      <Banner imageTitlePairs={[{ title: state.type, image: churchWide }]} />
 
       <div className="main-container">
         <br />

@@ -1,15 +1,18 @@
 import React from 'react'
 import Banner from '../components/Banner'
-import churchWide from '../imgs/church-wide.jpg'
 
 import AlternatingImageTextTemplate from '../pageTemplates/AlternatingImageTextTemplate'
 
-import aboutUs1 from '../imgs/aboutus/1.jpg'
-import aboutUs2 from '../imgs/aboutus/2.jpg'
-import aboutUs3 from '../imgs/aboutus/3.jpg'
-import aboutUs4 from '../imgs/aboutus/4.jpg'
-import aboutUs5 from '../imgs/aboutus/5.jpg'
-import aboutUs6 from '../imgs/aboutus/6.jpg'
+import { general, aboutUs } from '../images'
+const { churchWide } = general
+const {
+  aboutUs1,
+  aboutUs2,
+  aboutUs3,
+  aboutUs4,
+  aboutUs5,
+  aboutUs6,
+} = aboutUs
 
 const pageContent = [
   {

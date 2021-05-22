@@ -8,7 +8,8 @@ const { Footer } = Layout
 import { IoMail, IoLocationSharp } from 'react-icons/io5'
 import { AiFillPhone } from 'react-icons/ai'
 
-import trbcMap from '../imgs/trbc_map.jpg'
+import { general } from '../images'
+const { trbcMap } = general
 
 const ContactFooter = () => {
   return (

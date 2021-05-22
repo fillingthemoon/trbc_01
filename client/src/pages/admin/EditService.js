@@ -19,8 +19,10 @@ import {
   SettingOutlined,
   UploadOutlined,
 } from '@ant-design/icons'
-// Similiar to Our History Page
-import churchWide from '../../imgs/church-wide.jpg'
+
+import { general } from '../../images'
+const { churchWide } = general
+
 import axios from 'axios'
 
 function EditService() {

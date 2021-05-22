@@ -2,12 +2,13 @@ import React from 'react'
 import Banner from '../components/Banner'
 import { Row, Col, Image } from 'antd'
 
-import image from '../imgs/exterior.jpg'
+import { general } from '../images'
+const { churchWide } = general
 
 function Vision() {
   return (
     <div id="home-container">
-      <Banner imageTitlePairs={[{ title: 'Mission and Vision', image: image }]} />
+      <Banner imageTitlePairs={[{ title: 'Mission and Vision', image: churchWide }]} />
       <div id="mission-vision-container">
         <Row gutter={16}>
           <Col sm={24} md={12}>

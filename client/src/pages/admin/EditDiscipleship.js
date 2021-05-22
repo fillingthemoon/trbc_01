@@ -14,10 +14,13 @@ import {
 } from 'antd'
 
 // Similiar to Our History Page
-import churchWide from '../../imgs/church-wide.jpg'
+
 import axios from 'axios'
 
-function EditDiscipleship() {
+import { general } from '../../images'
+const { churchWide } = general
+
+const EditDiscipleship = () => {
   const { Title } = Typography
 
   const columns = [

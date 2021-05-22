@@ -23,9 +23,11 @@ import Banner from '../../components/Banner'
 // // Similiar to Our History Page
 
 import axios from 'axios'
-import churchWide from '../../imgs/church-wide.jpg'
 
-function EditHome(props) {
+import { general } from '../../images'
+const { churchWide } = general
+
+const EditHome = (props) => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Edit Home Page', image: churchWide }]} />

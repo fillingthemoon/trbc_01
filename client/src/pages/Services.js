@@ -3,8 +3,11 @@ import { Typography, Row, Col, Divider, Menu, Card, Button } from 'antd'
 import { ClockCircleOutlined, PushpinOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import data from '../data/EventByServiceData'
-import image from '../imgs/service-timing.jpg'
 import Banner from '../components/Banner'
+
+import { general } from '../images'
+const { churchWide } = general
+
 const Services = () => {
   const { Title } = Typography
   const { Meta } = Card
@@ -12,7 +15,7 @@ const Services = () => {
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Services', image: image }]} />
+      <Banner imageTitlePairs={[{ title: 'Services', image: churchWide }]} />
       <div className="main-container">
         <br />
         <br />

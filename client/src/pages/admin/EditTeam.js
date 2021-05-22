@@ -16,10 +16,13 @@ import {
 } from 'antd'
 
 // Similiar to Our History Page
-import churchWide from '../../imgs/church-wide.jpg'
+
 import axios from 'axios'
 
-function EditTeam() {
+import { general } from '../../images'
+const { churchWide } = general
+
+const EditTeam = () => {
   const { Title } = Typography
 
   const columns = [

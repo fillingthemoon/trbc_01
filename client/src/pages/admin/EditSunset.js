@@ -14,10 +14,13 @@ import {
   Input,
 } from 'antd'
 // Similiar to Our History Page
-import churchWide from '../../imgs/church-wide.jpg'
+
 import axios from 'axios'
 
-function EditSunset() {
+import { general } from '../../images'
+const { churchWide } = general
+
+const EditSunset = () => {
   const { Title } = Typography
 
   const columns = [

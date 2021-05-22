@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button } from 'antd'
+
 import {
+  Button,
   Typography,
   Image,
   Row,
@@ -11,13 +12,17 @@ import {
   Input,
   Select,
 } from 'antd'
-import image from '../imgs/church-wide.jpg'
+
 import Banner from '../components/Banner'
-function ImNew() {
+
+import { general } from '../images'
+const { churchWide } = general
+
+const ImNew = () => {
   const { Option } = Select
   return (
     <div>
-      <Banner imageTitlePairs={[{ name: 'I\'m New', image: image }]} />
+      <Banner imageTitlePairs={[{ name: 'I\'m New', image: churchWide }]} />
       <div className="main-container">
         <br />
         <br />

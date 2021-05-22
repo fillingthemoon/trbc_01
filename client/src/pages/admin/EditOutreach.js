@@ -13,15 +13,18 @@ import {
   Form,
   Input,
 } from 'antd'
+
 import {
   EditOutlined,
   EllipsisOutlined,
   SettingOutlined,
   UploadOutlined,
 } from '@ant-design/icons'
-// Similiar to Our History Page
-import churchWide from '../../imgs/church-wide.jpg'
+
 import axios from 'axios'
+
+import { general } from '../../images'
+const { churchWide } = general
 
 function EditOutreach() {
   const { Title } = Typography

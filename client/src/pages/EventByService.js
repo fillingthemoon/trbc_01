@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { Typography, Image, Row, Col, Card, Carousel } from 'antd'
+
 import {
   ClockCircleOutlined,
   PushpinOutlined,
   UserOutlined,
 } from '@ant-design/icons'
-import image from '../imgs/church-wide.jpg'
+
 import data from '../data/EventByServiceData'
 import Banner from '../components/Banner'
+
+import { general } from '../images'
+const { churchWide } = general
 
 // import Carousel from "react-gallery-carousel";
 // import "react-gallery-carousel/dist/index.css";
@@ -49,7 +53,7 @@ function EventByService(props) {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: dataToInsert.key, image: image }]} />
+      <Banner imageTitlePairs={[{ title: dataToInsert.key, image: churchWide }]} />
 
       <div className="main-container">
         <br />
