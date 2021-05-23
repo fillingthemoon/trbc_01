@@ -35,7 +35,7 @@
 }
 
 .banner-title {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 500;
   position: absolute;
   top: 50%;
@@ -46,9 +46,9 @@
   width: 100%;
 }
 
-@media (min-width:700px) {
+@media (max-width:700px) {
   .banner-title{
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -75,13 +75,58 @@
   color: @primary-color;
 }
 
+
+/* Alternating Image Text Template */
+.aitt-main {
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+}
+
+.aitt-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aitt-img {
+  display: flex;
+  width: 350px;
+  max-height: 300px;
+  object-fit: scale-down;
+}
+
+.aitt-content-col-img-text {
+  max-width: 500px;
+  margin: 50px 0 50px 50px;
+}
+
+.aitt-content-col-text-img {
+  max-width: 500px;
+  margin: 50px 50px 50px 0;
+}
+
+.aitt-link {
+  width: 100%;
+}
+
+@media (max-width:700px) {
+  .aitt-content-col-img-text {
+    margin: 40px;
+  }
+  
+  .aitt-content-col-text-img {
+    margin: 40px;
+  }
+}
+
 /* Footer */
 .footer-row-container {
   display: flex;
   padding: 30px;
   background-color: #4f4f4f;
   color: #ffffff;
-  justify-content: left;
+  justify-content: center;
 }
 
 .footer-info-container {
@@ -92,7 +137,7 @@
 
 .footer-title {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 .footer-icon {
@@ -102,12 +147,12 @@
 }
 
 .footer-trbc {
-  font-size: 1.2em;
-  margin-bottom: 15px; 
+  font-size: 1.6em;
+  margin-bottom: 15px;
 }
 
 .footer-contact-details {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 200;
 }
 
@@ -115,7 +160,7 @@
   display: flex;
   justify-items: center;
   width: 700px;
-  padding: 0px 30px;
+  padding: 0 30px;
 }
 
 .footer-copyright {
@@ -124,20 +169,30 @@
   background-color: #333333;
 }
 
-@media (min-width:700px) {
+@media (max-width:700px) {
   .footer-row-container {
-    justify-content: center;
+    justify-content: left;
+  }
+
+  .footer-info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
   }
 
   .footer-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   .footer-trbc {
-    font-size: 1.6em;
+    font-size: 1.2em;
   }
 
   .footer-contact-details {
-    font-size: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-img-container {
+    padding: 0;
   }
 }

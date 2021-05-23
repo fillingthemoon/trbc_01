@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <div>
       <Banner imageTitlePairs={[
-        { title: 'Thomson Road Baptist Church', image: exterior },
-        { title: 'Thomson Road Baptist Church', image: churchWide },
-        { title: 'Thomson Road Baptist Church', image: serviceTiming },
+        { title: 'Welcome!', image: exterior },
+        { title: 'Welcome!', image: churchWide },
+        { title: 'Welcome!', image: serviceTiming },
       ]} />
     </div>
   )
