@@ -13,9 +13,7 @@ import OurTeam from './pages/OurTeam'
 import Statement from './pages/Statement'
 import Resources from './pages/Resources'
 import ContactFooter from './components/ContactFooter'
-import Event from './pages/Event'
 import Services from './pages/Services'
-import EventByService from './pages/EventByService'
 import Home from './pages/Home'
 
 import Admin from './pages/admin/Admin'
@@ -81,14 +79,6 @@ const App = () => {
           <Route path='/services' exact>
             <Services />
           </Route >
-          <Route path={['/outreach/:id', '/mission/:id']}
-            render={(props) => <Event {...props} />}
-            exact>
-          </Route >
-          <Route path='/services/:id'
-            render={(props) => <EventByService {...props} />}
-            exact>
-          </Route>
           <Route path='/facility-bookings' exact>
             <FacilityBookings />
           </Route >

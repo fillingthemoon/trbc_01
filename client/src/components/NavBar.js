@@ -44,70 +44,9 @@ const NavBar = () => {
           <Link replace to='/statement'>Statement of Faith</Link>
         </Menu.Item>
       </SubMenu>
-
-      <SubMenu key='join-us' title='Join Us'>
-        <Menu.Item key='services'>
-          <Link replace to='/services'>Services</Link>
-        </Menu.Item>
-
-        <SubMenu key='tc' title='Teo Chew/Chinese Congregation'>
-          <Menu.Item key='tc-main'>
-            <Link replace to='/services/tc-main'>Main</Link>
-          </Menu.Item>
-          <Menu.Item key='tc-prayermeeting'>
-            <Link replace to='/services/tc-prayermeeting'>Prayer Meetings</Link>
-          </Menu.Item>
-          <Menu.Item key='tc-cellgroup'>
-            <Link replace to='/services/tc-cellgroup'>Cell Groups</Link>
-          </Menu.Item>
-          <Menu.Item key='tc-youth'>
-            <Link replace to='/services/tc-youth'>Youth</Link>
-          </Menu.Item>
-          <Menu.Item key='tc-children'>
-            <Link replace to='/services/tc-children'>Children</Link>
-          </Menu.Item>
-        </SubMenu>
-
-        <SubMenu key='sunset' title='Sunset Congregation'>
-          {/* Need find way to change font */}
-          <Menu.Item key='ss-main'>
-            <Link replace to='/services/ss-main'>Main</Link>
-          </Menu.Item>
-          <Menu.Item key='ss-prayermeeting'>
-            <Link replace to='/services/ss-prayermeeting'>Prayer Meetings</Link>
-          </Menu.Item>
-          <Menu.Item key='ss-cellgroup'>
-            <Link replace to='/services/ss-cellgroup'>Cell Groups</Link>
-          </Menu.Item>
-          <Menu.Item key='ss-youth'>
-            <Link replace to='/services/ss-youth'>Youth</Link>
-          </Menu.Item>
-          <Menu.Item key='ss-children'>
-            <Link replace to='/services/ss-children'>Children</Link>
-          </Menu.Item>
-        </SubMenu>
-
-        <SubMenu key='english' title='English Congregation'>
-          <Menu.Item key='e-main'>
-            <Link replace to='/services/e-main'>Main</Link>
-          </Menu.Item>
-          <Menu.Item key='e-prayermeeting'>
-            <Link replace to='/services/e-prayermeeting'>
-              Prayer Meetings
-            </Link>
-          </Menu.Item>
-          <Menu.Item key='e-cellgroup'>
-            <Link replace to='/services/e-cellgroup'>Cell Groups</Link>
-          </Menu.Item>
-          <Menu.Item key='e-youth'>
-            <Link replace to='/services/e-youth'>Youth</Link>
-          </Menu.Item>
-          <Menu.Item key='e-children'>
-            <Link replace to='/services/e-children'>Children</Link>
-          </Menu.Item>
-        </SubMenu>
-      </SubMenu>
-
+      <Menu.Item key='services'>
+        <Link replace to='/services'>Services</Link>
+      </Menu.Item>
       <Menu.Item key='im-new'>
         <Link replace to='/im-new'>{'I\'m New'}</Link>
       </Menu.Item>
