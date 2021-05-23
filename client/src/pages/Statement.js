@@ -60,26 +60,27 @@ const statementData = [
   }
 ]
 
-const titleUnderlineStyle = {
-  display: 'flex',
-  justifyContent: 'center',
+const statementStyle = {
+  maxWidth: '800px',
+  fontSize: '1rem',
+  lineHeight: '30px',
+  fontWeight: 250,
+  textAlign: 'justify',
 }
 
 const Statement = () => {
   return (
     <div>
-      <Banner titleStyle={{ textAlign: 'justify' }} imageTitlePairs={[{ title: 'Statement of Faith', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: churchWide }]} />
       <div className='all-statement-container'>
         {statementData.map((statement, i) =>
           <div key={i} className='statement-container'>
             <TitleText
-              titleUnderlineStyle={titleUnderlineStyle}
               title={statement.title}
               underlineAlign='center'
+              text={statement.text}
+              textStyle={statementStyle}
             ></TitleText>
-            <div className='statement'>
-              {statement.text}
-            </div>
           </div>
         )}
       </div>
