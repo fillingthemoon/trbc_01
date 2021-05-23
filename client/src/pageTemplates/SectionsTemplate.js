@@ -8,10 +8,9 @@ import {
   Divider, Row, Col
 } from 'antd'
 
-const sectionTitleStyle = {
-  margin: 'auto',
-  textAlign: 'center',
-  inlineSize: 'min-content',
+const titleUnderlineStyle = {
+  display: 'flex',
+  justifyContent: 'center',
 }
 
 const Section = ({ section, displayType }) => {
@@ -21,7 +20,7 @@ const Section = ({ section, displayType }) => {
 
   return (
     <div>
-      <TitleText title={sectionName} titleStyle={sectionTitleStyle} underlineAlign='center' />
+      <TitleText titleUnderlineStyle={titleUnderlineStyle} title={sectionName} underlineAlign='center' />
       <Row style={{ display: 'flex', justifyContent: 'center' }}>
         {items.map((item, i) =>
           <Col key={i} style={{ display: 'flex' }}>

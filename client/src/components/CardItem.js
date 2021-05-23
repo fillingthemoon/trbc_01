@@ -3,11 +3,13 @@ import React from 'react'
 import {
   Card,
   Typography,
+  Divider,
 } from 'antd'
 
 import { FieldTimeOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons'
 
-const { Title, Paragraph, Text, Divider } = Typography
+const { Title, Paragraph, Text } = Typography
+const { Meta } = Card
 
 const cardStyle = {
   display: 'flex',
@@ -46,7 +48,6 @@ const CardItem = ({ item }) => {
     >
       <Title style={{ fontSize: '1.2rem', margin: '10px 0' }}>{title}</Title>
       <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '40px 0' }}>{description}</Paragraph>
-
       { details &&
         <div style={{ textAlign: 'left', margin: '0 20px' }}>
           <Paragraph>

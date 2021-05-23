@@ -60,7 +60,7 @@ const statementData = [
   }
 ]
 
-const sectionTitleStyle = {
+const titleUnderlineStyle = {
   display: 'flex',
   justifyContent: 'center',
 }
@@ -73,7 +73,7 @@ const Statement = () => {
         {statementData.map((statement, i) =>
           <div key={i} className='statement-container'>
             <TitleText
-              titleUnderlineStyle={sectionTitleStyle}
+              titleUnderlineStyle={titleUnderlineStyle}
               title={statement.title}
               underlineAlign='center'
             ></TitleText>

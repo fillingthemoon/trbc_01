@@ -3,7 +3,7 @@ import React from 'react'
 import {
   Typography
 } from 'antd'
-const { Title, Text } = Typography
+const { Title, Paragraph } = Typography
 
 const TitleText = (props) => {
   const {
@@ -26,7 +26,7 @@ const TitleText = (props) => {
         </Title>
       </div>
 
-      <Text style={textStyle} className={textClassName}>{text}</Text>
+      <Paragraph style={textStyle} className={textClassName}>{text}</Paragraph>
     </>
   )
 }
