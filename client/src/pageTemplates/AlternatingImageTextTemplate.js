@@ -28,7 +28,9 @@ const ContentColumn = ({ item, lr }) => (
       text={item.contentText}
       textStyle={{ textAlign: 'justify', lineHeight: '30px', fontSize: '1rem', fontWeight: '200' }}
     />
-    <Link className='aitt-link' to={item.linkPath}>{item.linkText}</Link>
+    {(item.linkPath && item.linkText) &&
+      <Link className='aitt-link' to={item.linkPath}>{item.linkText}</Link>
+    }
   </Col>
 )
 
