@@ -9,6 +9,8 @@ import {
 
 import Banner from '../components/Banner'
 
+import SectionsTemplate from '../pageTemplates/SectionsTemplate'
+
 import { general, ourTeam } from '../images'
 const { exterior } = general
 const {
@@ -27,8 +29,7 @@ const {
 
 const teamData = [
   {
-    groupName: 'Pastoral',
-    key: 'Pastoral',
+    sectionName: 'Pastoral',
     staff: [
       {
         name: 'Rev. Adrian Lim',
@@ -52,8 +53,7 @@ const teamData = [
   },
 
   {
-    groupName: 'Ministry',
-    key: 'Ministry',
+    sectionName: 'Ministry',
     staff: [
       {
         name: 'Mr. Yeo Chong Nim',
@@ -68,8 +68,7 @@ const teamData = [
     ],
   },
   {
-    groupName: 'Administrative',
-    key: 'Admin',
+    sectionName: 'Administrative',
     staff: [
       {
         name: 'Mr. Leonard Lee',
@@ -100,35 +99,11 @@ const teamData = [
   },
 ]
 
-const TeamSection = ({ section }) => {
-  const { groupName, staff } = section
-
-  return (
-    <div>
-      <TitleText title={groupName} titleClassName='ot-title' underlineAlign='center' />
-      <Row className='ot-people'>
-        {staff.map((staff, i) =>
-          <Col key={staff.name + i}>
-            <PersonProfile {...staff} />
-          </Col>
-        )}
-      </Row>
-    </div>
-  )
-}
-
 const OurTeam = () => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Our Team', image: exterior }]} />
-      <div className='our-team'>
-        {teamData.map((section, i) =>
-          <>
-            <TeamSection section={section} key={i} />
-            {i !== teamData.length - 1 && <Divider />}
-          </>
-        )}
-      </div>
+      <SectionsTemplate data={teamData} displayType='personProfile'/>
     </>
   )
 }
