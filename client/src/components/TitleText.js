@@ -26,7 +26,12 @@ const TitleText = (props) => {
         </Title>
       </div>
 
-      <Paragraph style={textStyle} className={textClassName}>{text}</Paragraph>
+      {Array.isArray(text)
+        ? text.map((t, i) =>
+          <Paragraph key={i} style={textStyle} className={textClassName}>{t}</Paragraph>
+        )
+        : <Paragraph style={textStyle} className={textClassName}>{text}</Paragraph>
+      }
     </div>
   )
 }

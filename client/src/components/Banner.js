@@ -4,7 +4,7 @@ import { Carousel } from 'antd'
 
 const Banner = ({ imageTitlePairs }) => {
   return (
-    <Carousel autoplay autoplaySpeed={3000} adaptiveHeight={true}>
+    <Carousel autoplay autoplaySpeed={3000} adaptiveHeight={true} height='500px' accessibility>
       {imageTitlePairs.map(({ image, title }, i) =>
         <div className="banner-container" key={i}>
           <img className="banner-exterior" src={image} alt="" />

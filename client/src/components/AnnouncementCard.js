@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Row, Card, Typography } from 'antd'
+import { Card, Typography } from 'antd'
 const { Title, Text, Paragraph, Link } = Typography
 
 const cardStyle = {
@@ -23,29 +23,40 @@ const linkStyle = {
 const AnnouncementCard = ({ announcement }) => {
   const {
     title,
-    description,
+    texts,
     imageSource,
-    urls,
   } = announcement
 
   return (
-    <Row>
-      <Card cover={<img alt="img" src={imageSource} style={imgStyle} />}
-        style={cardStyle}
-      >
-        <Title style={{ fontSize: '1.2rem', margin: '10px 0' }}>{title}</Title>
-        {description.map((paragraph, i) =>
-          <Paragraph key={i} style={{ fontSize: '1rem', fontWeight: '300', margin: '40px 0' }}>
-            {paragraph}
-          </Paragraph>
-        )}
-        {urls.map((url, i) =>
-          <Link key={i} href={url} target='_blank' style={linkStyle}>
-            {url}
-          </Link>
-        )}
-      </Card>
-    </Row>
+    <Card cover={<img alt="img" src={imageSource} style={imgStyle} />}
+      style={cardStyle}
+    >
+      <Title style={{ fontSize: '1.4rem', margin: '10px 0' }}>{title}</Title>
+      {texts.map((text, i) => {
+        if (Array.isArray(text)) {
+          return (
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', margin: '20px' }}>
+              {text.map((line, j) =>
+                <Text key={j} style={{ fontSize: '1rem', fontWeight: '300' }}>{line}</Text>
+              )}
+            </div>
+          )
+        } else if (text.substring(0, 8) === 'https://') {
+          return (
+            <Link key={i} href={text} target='_blank' style={linkStyle}>
+              {text}
+            </Link>
+          )
+        } else {
+          return (
+            <Paragraph key={i} style={{ fontSize: '1rem', fontWeight: '300', margin: '30px 0' }}>
+              {text}
+            </Paragraph>
+          )
+        }
+      }
+      )}
+    </Card>
   )
 }
 
