@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 import Banner from '../components/Banner'
-import ServicePage from '../components/ServicePage'
+import ServicePage from '../page_templates/ServicePage'
 
 import { general } from '../images'
 
@@ -8,7 +10,7 @@ import { Menu, Typography } from 'antd'
 
 import servicesData from '../data/EventByServiceData'
 
-const { churchWide } = general
+const { exterior } = general
 const { Title } = Typography
 
 const ServicesNavBar = (props) => {
@@ -21,16 +23,16 @@ const ServicesNavBar = (props) => {
       mode="horizontal"
       selectedKeys={currService}
       onClick={({ key }) => setCurrService(key)}
-      style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}
+      style={{ display: 'flex', width: '100%', justifyContent: 'space-between', border: 'none' }}
     >
       <Menu.Item key="tc">
-        <Title level={4}>Teo Chew/Chinese Service</Title>
+        <Link to='/services/tc'>Teo Chew/Chinese Service</Link>
       </Menu.Item>
       <Menu.Item key="en">
-        <Title level={4}>English Service</Title>
+        <Link to='/services/en'>English Service</Link>
       </Menu.Item>
       <Menu.Item key="ss">
-        <Title level={4}>Sunset Service (Eng & Chi)</Title>
+        <Link to='/services/ss'>Sunset Service (English/Mandarin)</Link>
       </Menu.Item>
     </Menu>
   )
@@ -47,7 +49,7 @@ const Services = () => {
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Services', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'Services', image: exterior }]} />
       <div className='services'>
         <ServicesNavBar currService={currService} setCurrService={setCurrService} />
         <ServicePage currService={currService} currServiceData={currServiceData} />

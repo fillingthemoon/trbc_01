@@ -19,7 +19,7 @@ const announcementsData = [
       'Join us on YouTube at any of the following worship service timings.',
       [
         '8.30am - English Service',
-        '10.30am - Chinese / Teochew Service',
+        '10.30am - Chinese/Teochew Service',
         '5.00pm - Sunset Service (English/Mandarin)',
       ],
       'https://www.youtube.com/channel/UCLdT5PZRFghsCWlTJPY5VPQ',

@@ -75,8 +75,7 @@ const App = () => {
           <Route path='/statement' exact>
             <Statement />
           </Route >
-
-          <Route path='/services' exact>
+          <Route path={['/services', '/services/tc', '/services/en', '/services/ss']} exact>
             <Services />
           </Route >
           <Route path='/facility-bookings' exact>

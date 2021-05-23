@@ -64,7 +64,7 @@ const data = [
   },
   {
     key: 'ss-main',
-    congre: 'Sunset Service (Eng & Chi)',
+    congre: 'Sunset Service (English/Mandarin)',
     title: 'Main (Sunset)',
 
     writeup: `Our Sunset Worship Service is held on Sunday evenings. Service is conducted in both English and Mandarin. We hope that through our weekly service and various activities, you wil discover our Lord's promise of salvation and eternal life, gain confidence in eternity, grow together and live a christian life that exhibits both faith and deeds.<br/>
@@ -74,7 +74,7 @@ const data = [
   },
   {
     key: 'ss-youth',
-    congre: 'Sunset Service (Eng & Chi)',
+    congre: 'Sunset Service (English/Mandarin)',
     title: 'Youth (SPUR)',
 
     writeup: `(<b>S</b>eeking <b>P</b>erfect <b>U</b>nderstanding of <b>R</b>econciliation 2 Cor 5:11-21)\n<br/>
@@ -91,7 +91,7 @@ const data = [
   },
   {
     key: 'ss-children',
-    congre: 'Sunset Service (Eng & Chi)',
+    congre: 'Sunset Service (English/Mandarin)',
     title: 'Children (Sunset)',
 
     writeup: `<b>Vision:</b> 'Train a child in the way he should go, and when he is old he will not turn from it.' <br/><b >Proverbs 22:6</b>\n
@@ -104,7 +104,7 @@ const data = [
   },
   {
     key: 'ss-cellgroup',
-    congre: 'Sunset Service (Eng & Chi)',
+    congre: 'Sunset Service (English/Mandarin)',
     title: 'Cell Groups (Sunset)',
 
     writeup: `"I have given them the glory that you gave me, that they may be one as we are one— 23 I in them and you in me—so that they may be brought to complete unity. Then the world will know that you sent me and have loved them even as you have loved me."<br/> <b>John 17:22-23</b><br/><br/>\n
@@ -121,7 +121,7 @@ const data = [
   },
   {
     key: 'ss-prayermeeting',
-    congre: 'Sunset Service (Eng & Chi)',
+    congre: 'Sunset Service (English/Mandarin)',
     title: 'Prayer Meeting (Sunset)',
 
     writeup:

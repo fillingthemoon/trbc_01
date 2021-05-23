@@ -4,7 +4,7 @@ import Banner from '../components/Banner'
 import AlternatingImageTextTemplate from '../pageTemplates/AlternatingImageTextTemplate'
 
 import { general, aboutUs } from '../images'
-const { churchWide } = general
+const { exterior } = general
 const {
   aboutUs1,
   aboutUs2,
@@ -86,7 +86,7 @@ const pageContent = [
 const OurHistory = () => {
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Our History', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'Our History', image: exterior }]} />
       <AlternatingImageTextTemplate
         pageContent={pageContent}
       />
