@@ -7,6 +7,8 @@ import {
   Divider, Row, Col, Card
 } from 'antd'
 
+const { Meta } = Card
+
 const sectionTitleStyle = {
   margin: 'auto',
   textAlign: 'center',
@@ -23,13 +25,26 @@ const Section = ({ section, displayType }) => {
       <TitleText title={sectionName} titleStyle={sectionTitleStyle} underlineAlign='center' />
       <Row className='ot-people'>
         {items.map((item, i) =>
-          <Col key={item.name + i}>
+          <Col key={i}>
             {(() => {
               switch (displayType) {
                 case ('personProfile'):
                   return <PersonProfile {...item} />
-                case ('card'):
-                  return <Card />
+                case ('card'): {
+                  const info = Object.keys(item)
+                  return (
+                    <Card
+                      cover={
+                        <img
+                          alt="img"
+                          src={item[info[2]]}
+                        />
+                      }
+                    >
+                      <Meta title={item[info[0]]} description={item[info[1]]} />
+                    </Card>
+                  )
+                }
               }
             })()}
           </Col>

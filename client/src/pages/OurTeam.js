@@ -1,12 +1,5 @@
 import React from 'react'
 
-import TitleText from '../components/TitleText'
-import PersonProfile from '../components/PersonProfile'
-
-import {
-  Divider, Row, Col
-} from 'antd'
-
 import Banner from '../components/Banner'
 
 import SectionsTemplate from '../pageTemplates/SectionsTemplate'
