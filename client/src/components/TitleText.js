@@ -14,14 +14,17 @@ const TitleText = (props) => {
     titleClassName,
     textClassName,
     underlineAlign,
+    titleUnderlineStyle,
   } = props
 
   return (
     <>
-      <Title style={{ ...titleStyle }} className={titleClassName}>
-        {title}
-        <hr className={underlineAlign === 'center' ? 'title-underline-center' : 'title-underline-left'}/>
-      </Title>
+      <div style={titleUnderlineStyle}>
+        <Title style={{ ...titleStyle }} className={titleClassName}>
+          {title}
+          <hr className={underlineAlign === 'center' ? 'title-underline-center' : 'title-underline-left'} />
+        </Title>
+      </div>
 
       <Text style={textStyle} className={textClassName}>{text}</Text>
     </>

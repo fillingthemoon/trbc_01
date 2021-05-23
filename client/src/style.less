@@ -90,6 +90,36 @@
   inline-size: min-content;
 }
 
+
+/* Statement of Faith */
+.all-statement-container {
+  display: flex;
+  padding: 50px;
+}
+
+.statement-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.statement {
+  max-width: 800px;
+  font-size: 1rem;
+  line-height: 30px;
+  font-weight: 250;
+  text-align: justify;
+}
+
+@media (max-width:1000px) {
+  .all-statement-container {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+
 /* Alternating Image Text Template */
 .aitt-main {
   display: flex;

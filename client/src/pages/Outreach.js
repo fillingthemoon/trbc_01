@@ -91,8 +91,7 @@ const outreachData = [
 ]
 
 const Outreach = () => {
-  const [event, setEvent] = useState('')
-  console.log(event)
+  // const [event, setEvent] = useState('')
   return (
     <div>
       <Banner imageTitlePairs={[{ title: 'Outreach', image: churchWide }]} />
