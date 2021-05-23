@@ -26,7 +26,7 @@ const pageContent = [
       opportunity to build your faith in God and connect with new
       people.`,
     linkPath: './services',
-    linkText: 'View Serices',
+    linkText: 'View Services',
   },
   {
     imageSource: aboutUs2,

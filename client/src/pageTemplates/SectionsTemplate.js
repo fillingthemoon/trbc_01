@@ -23,7 +23,7 @@ const Section = ({ section, displayType }) => {
   return (
     <div>
       <TitleText title={sectionName} titleStyle={sectionTitleStyle} underlineAlign='center' />
-      <Row className='ot-people'>
+      <Row style={{ display: 'flex', justifyContent: 'center' }}>
         {items.map((item, i) =>
           <Col key={i}>
             {(() => {
@@ -57,7 +57,7 @@ const Section = ({ section, displayType }) => {
 const SectionsTemplate = ({ data, displayType }) => {
 
   return (
-    <div className='our-team'>
+    <div style={{ padding: '50px 0' }}>
       {data.map((section, i) =>
         <div key={i}>
           <Section section={section} displayType={displayType} />

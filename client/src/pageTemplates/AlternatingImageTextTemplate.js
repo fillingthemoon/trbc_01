@@ -8,10 +8,7 @@ import {
   Row,
   Col,
   Divider,
-  Typography
 } from 'antd'
-
-const { Link: AntDLink } = Typography
 
 const ImageColumn = ({ item, lr }) => (
   <Col>
@@ -31,9 +28,7 @@ const ContentColumn = ({ item, lr }) => (
       text={item.contentText}
       textStyle={{ textAlign: 'justify', lineHeight: '30px', fontSize: '1rem', fontWeight: '200' }}
     />
-    <AntDLink className='aitt-link'>
-      <Link to={item.linkPath}>{item.linkText}</Link>
-    </AntDLink>
+    <Link className='aitt-link' to={item.linkPath}>{item.linkText}</Link>
   </Col>
 )
 
@@ -41,8 +36,8 @@ const AlternatingImageText = ({ pageContent }) => {
   return (
     <div className='aitt-main'>
       {pageContent.map((item, i) =>
-        <>
-          <Row key={i} className='aitt-row'>
+        <div key={i}>
+          <Row className='aitt-row'>
             {
               i % 2 === 0
                 ?
@@ -58,7 +53,7 @@ const AlternatingImageText = ({ pageContent }) => {
             }
           </Row>
           {i !== pageContent.length - 1 && <Divider />}
-        </>
+        </div>
       )}
     </div>
   )
