@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Banner from '../components/Banner'
-import SectionsTemplate from '../pageTemplates/SectionsTemplate'
+import SectionsTemplate from '../page_templates/SectionsTemplate'
 
 import { general } from '../images'
 const { exterior } = general

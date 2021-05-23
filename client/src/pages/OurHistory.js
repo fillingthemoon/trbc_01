@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from '../components/Banner'
 
-import AlternatingImageTextTemplate from '../pageTemplates/AlternatingImageTextTemplate'
+import AlternatingImageTextTemplate from '../page_templates/AlternatingImageTextTemplate'
 
 import { general, aboutUs } from '../images'
 const { exterior } = general

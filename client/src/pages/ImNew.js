@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AlternatingImageTextTemplate2 from '../pageTemplates/AlternatingImageTextTemplate2'
+import AlternatingImageTextTemplate2 from '../page_templates/AlternatingImageTextTemplate2'
 import Banner from '../components/Banner'
 import ConnectForm from '../components/ConnectForm'
 

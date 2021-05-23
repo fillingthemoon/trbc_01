@@ -2,7 +2,7 @@ import React from 'react'
 
 import Banner from '../components/Banner'
 
-import SectionsTemplate from '../pageTemplates/SectionsTemplate'
+import SectionsTemplate from '../page_templates/SectionsTemplate'
 
 import { general, ourTeam } from '../images'
 const { exterior } = general
