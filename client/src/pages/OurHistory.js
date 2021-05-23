@@ -85,12 +85,12 @@ const pageContent = [
 
 const OurHistory = () => {
   return (
-    <div id="about-us-container">
+    <>
       <Banner imageTitlePairs={[{ title: 'Our History', image: churchWide }]} />
       <AlternatingImageTextTemplate
         pageContent={pageContent}
       />
-    </div>
+    </>
   )
 }
 

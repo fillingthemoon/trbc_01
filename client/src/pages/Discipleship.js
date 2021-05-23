@@ -85,12 +85,12 @@ const pageContent = [
 
 const Discipleship = () => {
   return (
-    <div>
+    <>
       <Banner imageTitlePairs={[{ title: 'Discipleship', image: churchWide }]} />
       <AlternatingImageTextTemplate
         pageContent={pageContent}
       />
-    </div>
+    </>
   )
 }
 

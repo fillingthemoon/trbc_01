@@ -17,7 +17,7 @@ const ContactFooter = () => {
     <Footer style={{ padding: 0 }}>
       <Row align='middle' className='footer-row-container'>
         <Col className='footer-info-container'>
-          <TitleText title='Contact Us' titleClassName='footer-title' />
+          <TitleText title='Contact Us'/>
           <Row className='footer-trbc'>Singapore Thomson Road Baptist Church</Row>
           <Row gutter={10} style={{ margin: '5px 0' }}>
             <Col className='footer-icon'><IoLocationSharp /></Col>

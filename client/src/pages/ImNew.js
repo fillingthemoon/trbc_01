@@ -62,13 +62,13 @@ const pageContent = [
 
 const ImNew = () => {
   return (
-    <div id="about-us-container">
+    <>
       <Banner imageTitlePairs={[{ title: 'I\'m New', image: churchWide }]} />
       <AlternatingImageTextTemplate
         pageContent={pageContent}
       />
       <ConnectForm />
-    </div >
+    </>
   )
 }
 

@@ -1,12 +1,16 @@
 import React from 'react'
 
-import { Divider, Typography, Row, Col, Avatar } from 'antd'
+import TitleText from '../components/TitleText'
+import PersonProfile from '../components/PersonProfile'
+
+import {
+  Divider, Row, Col
+} from 'antd'
 
 import Banner from '../components/Banner'
 
 import { general, ourTeam } from '../images'
 const { exterior } = general
-
 const {
   dongFan,
   ivanChow,
@@ -21,175 +25,109 @@ const {
   yeoChongNim,
 } = ourTeam
 
+const teamData = [
+  {
+    groupName: 'Pastoral',
+    key: 'Pastoral',
+    staff: [
+      {
+        name: 'Rev. Adrian Lim',
+        role: 'Senior Pastor',
+        image: revAdrianLim,
+      },
+      {
+        name: 'Rev. Andrew Chang',
+        role: 'Interim Pastoral Advisor of \n Teochew/Chinese Congregation',
+        image: revChang,
+      }, {
+        name: 'Rev. Dr. Jerry Goh',
+        role: 'Pastor of English Congregation',
+        image: revJerryGoh,
+      }, {
+        name: 'Ps. Lam Yuen Foong',
+        role: 'Pastor of Sunset Congregation',
+        image: psLam,
+      }
+    ],
+  },
+
+  {
+    groupName: 'Ministry',
+    key: 'Ministry',
+    staff: [
+      {
+        name: 'Mr. Yeo Chong Nim',
+        role: 'Outreach Ministry',
+        image: yeoChongNim,
+      },
+      {
+        name: 'Ms. Jenny Ang ',
+        role: 'Children\'s Outreach Ministry',
+        image: jennyAng,
+      },
+    ],
+  },
+  {
+    groupName: 'Administrative',
+    key: 'Admin',
+    staff: [
+      {
+        name: 'Mr. Leonard Lee',
+        role: 'Administration Manager',
+        image: leonardLee,
+      },
+      {
+        name: 'Mr. Vincent Lai Seck Tong',
+        role: 'Administrative Executive (Facilities & Maintenance)',
+        image: vincentLai,
+      },
+      {
+        name: 'Ms. Jasmine Lee',
+        role: 'Administrative Executive',
+        image: jasmineLee,
+      },
+      {
+        name: 'Mr. Dong Fan',
+        role: 'Administrative Executive ',
+        image: dongFan,
+      },
+      {
+        name: 'Mr. Ivan Chow',
+        role: 'Church Caretaker',
+        image: ivanChow,
+      },
+    ],
+  },
+]
+
+const TeamSection = ({ section }) => {
+  const { groupName, staff } = section
+
+  return (
+    <div>
+      <TitleText title={groupName} titleClassName='ot-title' underlineAlign='center' />
+      <Row className='ot-people'>
+        {staff.map((staff, i) =>
+          <Col key={staff.name + i}>
+            <PersonProfile {...staff} />
+          </Col>
+        )}
+      </Row>
+    </div>
+  )
+}
+
 const OurTeam = () => {
-  const { Title } = Typography
-  var styles = {
-
-    thickLine: {
-      width: '35px',
-      height: '4px',
-      backgroundColor: '#F37021',
-      borderStyle: 'none',
-    },
-  }
-  var data = [
-    {
-      groupName: 'Pastoral',
-      key: 'Pastoral',
-      staff: [
-        {
-          key: 1,
-          name: 'Rev Adrian Lim',
-          role: 'Senior Pastor',
-          image: revAdrianLim,
-        },
-        {
-          key: 2,
-          name: 'Rev Andrew Chang',
-          role: 'Interim Pastoral Advisor of \n Teochew/Chinese Congregation',
-          image: revChang,
-        }, {
-          key: 3,
-          name: 'Rev Dr Jerry Goh',
-          role: 'Pastor of English Congregation',
-          image: revJerryGoh,
-        }, {
-          key: 4,
-          name: 'Pastor Lam Yuen Foong',
-          role: 'Pastor of Sunset Congregation',
-          image: psLam,
-        }
-      ],
-    },
-
-
-
-    {
-      groupName: 'Ministry',
-      key: 'Ministry',
-      staff: [
-        {
-          key: 5,
-          name: 'Mr Yeo Chong Nim',
-          role: 'Outreach Ministry',
-          image: yeoChongNim,
-        },
-        {
-          key: 6,
-          name: 'Ms Jenny Ang ',
-          role: 'Children\'s Outreach Ministry',
-          image: jennyAng,
-        },
-      ],
-    },
-    {
-      groupName: 'Administrative',
-      key: 'Admin',
-      staff: [
-        {
-          key: 7,
-          name: 'Mr Leonard Lee',
-          role: 'Administration Manager',
-          image: leonardLee,
-        },
-        {
-          key: 8,
-          name: 'Mr Vincent Lai Seck Tong',
-          role: 'Administrative Executive (Facilities & Maintenance)',
-          image: vincentLai,
-        },
-        {
-          key: 9,
-          name: 'Ms Jasmine Lee',
-          role: 'Administrative Executive',
-          image: jasmineLee,
-        },
-        {
-          key: 10,
-          name: 'Mr Dong Fan',
-          role: 'Administrative Executive ',
-          image: dongFan,
-        },
-        {
-          key: 11,
-          name: 'Mr Ivan Chow',
-          role: 'Church Caretaker',
-          image: ivanChow,
-        },
-      ],
-    },
-  ]
-
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Our Team', image: exterior }]} />
-      <div className="main-container">
-
-        {/* Use map to render reusable HTML content */}
-        {data.map((group, i) => {
-          return (
-            <div key={group + i}>
-              {/* if groupName is "Mnistry" or "Administrative" it will render different title types */}
-              {group.groupName === 'Ministry' || group.groupName === 'Administrative' || group.groupName === 'Pastoral' ? (
-                <div>
-                  <Divider />
-                  <Title style={{ textAlign: 'center' }}>
-                    {group.groupName}
-                  </Title>
-                  <hr className="thick-line"></hr>
-                  <br />
-                  <br />
-                </div>
-              ) : (
-                <div key={group + i}>
-                  <Divider orientation="left">
-                    <Title level={3}>{group.groupName}</Title>
-                  </Divider>
-                </div>
-              )}
-              {/* if groupName is "Mnistry" or "Administrative" it will render different styles of the justify property */}
-              <Row
-                justify={
-                  group.groupName === 'Ministry' || group.groupName === 'Administrative' || group.groupName === 'Pastoral'
-                    ? 'space-around'
-                    : 'start'
-                }
-              >
-                {group.staff.map((staff) => {
-
-                  return (
-                    <Col
-                      sm={24}
-                      lg={8}
-                      style={{ display: 'flex', justifyContent: 'center' }}
-                      key={staff.name + staff.key}
-                    >
-                      <div style={{ textAlign: 'center' }} >
-                        <Avatar size={120} src={staff.image} />
-
-                        <p style={{ marginTop: '20px' }}>
-                          <strong>{staff.name}</strong>
-                          <br />
-
-                          {/* Need a better way to insert newline */}
-                          {staff.role.split('\n').map((i) => {
-                            return (
-                              <span key={i}>
-                                {i}
-                                <br />
-                              </span>
-                            )
-                          })}
-                        </p>
-                      </div>
-                    </Col>
-                  )
-                })}
-              </Row>
-            </div>
-          )
-        })}
-        <br />
+      <div className='our-team'>
+        {teamData.map((section, i) =>
+          <>
+            <TeamSection section={section} key={i} />
+            {i !== teamData.length - 1 && <Divider />}
+          </>
+        )}
       </div>
     </>
   )

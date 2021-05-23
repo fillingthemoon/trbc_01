@@ -13,12 +13,20 @@
   border-style: none;
 }
 
-.title-underline {
+.title-underline-left {
   width: 35px;
   height: 4px;
   background-color: @primary-color;
   border-style: none;
   margin-left: 0;
+  margin-bottom: 30px;
+}
+
+.title-underline-center {
+  width: 35px;
+  height: 4px;
+  background-color: @primary-color;
+  border-style: none;
   margin-bottom: 30px;
 }
 
@@ -75,12 +83,27 @@
   color: @primary-color;
 }
 
+/* Our Team */
+.our-team {
+  padding: 50px 0;
+}
+
+.ot-title {
+  margin: auto;
+  text-align: center;
+  inline-size: min-content;
+}
+
+.ot-people {
+  display: flex;
+  justify-content: center;
+}
 
 /* Alternating Image Text Template */
 .aitt-main {
   display: flex;
   flex-direction: column;
-  margin: 60px auto;
+  padding: 50px 0;
 }
 
 .aitt-row{
@@ -107,6 +130,9 @@
 }
 
 .aitt-link {
+  margin-top: 20px;
+  text-align: center;
+  display: block;
   width: 100%;
 }
 
@@ -135,9 +161,9 @@
   padding: 20px 30px;
 }
 
-.footer-title {
+.footer-row-container .ant-typography {
   color: #ffffff;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .footer-icon {
@@ -177,11 +203,11 @@
   .footer-info-container {
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
   }
 
-  .footer-title {
-    font-size: 1.2rem;
+  .footer-row-container .ant-typography {
+    font-size: 1.5rem;
   }
 
   .footer-trbc {

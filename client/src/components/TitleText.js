@@ -1,5 +1,10 @@
 import React from 'react'
 
+import {
+  Typography
+} from 'antd'
+const { Title, Text } = Typography
+
 const TitleText = (props) => {
   const {
     title,
@@ -8,14 +13,18 @@ const TitleText = (props) => {
     textStyle,
     titleClassName,
     textClassName,
+    underlineAlign,
   } = props
 
   return (
-    <div>
-      <h1 style={titleStyle} className={titleClassName}>{title}</h1>
-      <hr className="title-underline" />
-      <p style={textStyle} className={textClassName}>{text}</p>
-    </div>
+    <>
+      <Title style={{ ...titleStyle }} className={titleClassName}>
+        {title}
+        <hr className={underlineAlign === 'center' ? 'title-underline-center' : 'title-underline-left'}/>
+      </Title>
+
+      <Text style={textStyle} className={textClassName}>{text}</Text>
+    </>
   )
 }
 

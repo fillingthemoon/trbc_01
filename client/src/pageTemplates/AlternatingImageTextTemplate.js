@@ -7,8 +7,11 @@ import {
   Image,
   Row,
   Col,
-  Button,
+  Divider,
+  Typography
 } from 'antd'
+
+const { Link: AntDLink } = Typography
 
 const ImageColumn = ({ item, lr }) => (
   <Col>
@@ -24,13 +27,13 @@ const ContentColumn = ({ item, lr }) => (
   <Col className={lr === 'imgText' ? 'aitt-content-col-img-text' : 'aitt-content-col-text-img'}>
     <TitleText
       title={item.contentTitle}
-      titleStyle={{ textAlign: 'left' }}
+      titleStyle={{ textAlign: 'left', fontSize: '1.6rem' }}
       text={item.contentText}
       textStyle={{ textAlign: 'justify', lineHeight: '30px', fontSize: '1rem', fontWeight: '200' }}
     />
-    <Button type="link" size='middle' className='aitt-link'>
+    <AntDLink className='aitt-link'>
       <Link to={item.linkPath}>{item.linkText}</Link>
-    </Button>
+    </AntDLink>
   </Col>
 )
 
@@ -38,21 +41,24 @@ const AlternatingImageText = ({ pageContent }) => {
   return (
     <div className='aitt-main'>
       {pageContent.map((item, i) =>
-        <Row key={i} className='aitt-row'>
-          {
-            i % 2 === 0
-              ?
-              (<>
-                <ImageColumn item={item} lr='imgText' />
-                <ContentColumn item={item} lr='imgText' />
-              </>)
-              :
-              (<>
-                <ContentColumn item={item} lr='textImg' />
-                <ImageColumn item={item} lr='textImg' />
-              </>)
-          }
-        </Row>
+        <>
+          <Row key={i} className='aitt-row'>
+            {
+              i % 2 === 0
+                ?
+                (<>
+                  <ImageColumn item={item} lr='imgText' />
+                  <ContentColumn item={item} lr='imgText' />
+                </>)
+                :
+                (<>
+                  <ContentColumn item={item} lr='textImg' />
+                  <ImageColumn item={item} lr='textImg' />
+                </>)
+            }
+          </Row>
+          {i !== pageContent.length - 1 && <Divider />}
+        </>
       )}
     </div>
   )
