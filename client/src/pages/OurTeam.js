@@ -22,73 +22,70 @@ const {
 
 const teamData = [
   {
+    title: 'Rev. Adrian Lim',
+    description: 'Senior Pastor',
+    image: revAdrianLim,
     sectionName: 'Pastoral',
-    staff: [
-      {
-        name: 'Rev. Adrian Lim',
-        role: 'Senior Pastor',
-        image: revAdrianLim,
-      },
-      {
-        name: 'Rev. Andrew Chang',
-        role: 'Interim Pastoral Advisor of \n Teochew/Chinese Congregation',
-        image: revChang,
-      }, {
-        name: 'Rev. Dr. Jerry Goh',
-        role: 'Pastor of English Congregation',
-        image: revJerryGoh,
-      }, {
-        name: 'Ps. Lam Yuen Foong',
-        role: 'Pastor of Sunset Congregation',
-        image: psLam,
-      }
-    ],
   },
-
   {
+    title: 'Rev. Andrew Chang',
+    description: 'Interim Pastoral Advisor of \n Teochew/Chinese Congregation',
+    image: revChang,
+    sectionName: 'Pastoral',
+  },
+  {
+    title: 'Rev. Dr. Jerry Goh',
+    description: 'Pastor of English Congregation',
+    image: revJerryGoh,
+    sectionName: 'Pastoral',
+  },
+  {
+    title: 'Ps. Lam Yuen Foong',
+    description: 'Pastor of Sunset Congregation',
+    image: psLam,
+    sectionName: 'Pastoral',
+  },
+  {
+    title: 'Mr. Yeo Chong Nim',
+    description: 'Outreach Ministry',
+    image: yeoChongNim,
     sectionName: 'Ministry',
-    staff: [
-      {
-        name: 'Mr. Yeo Chong Nim',
-        role: 'Outreach Ministry',
-        image: yeoChongNim,
-      },
-      {
-        name: 'Ms. Jenny Ang ',
-        role: 'Children\'s Outreach Ministry',
-        image: jennyAng,
-      },
-    ],
   },
   {
+    title: 'Ms. Jenny Ang ',
+    description: 'Children\'s Outreach Ministry',
+    image: jennyAng,
+    sectionName: 'Ministry',
+  },
+  {
+    title: 'Mr. Leonard Lee',
+    description: 'Administration Manager',
+    image: leonardLee,
     sectionName: 'Administrative',
-    staff: [
-      {
-        name: 'Mr. Leonard Lee',
-        role: 'Administration Manager',
-        image: leonardLee,
-      },
-      {
-        name: 'Mr. Vincent Lai Seck Tong',
-        role: 'Administrative Executive (Facilities & Maintenance)',
-        image: vincentLai,
-      },
-      {
-        name: 'Ms. Jasmine Lee',
-        role: 'Administrative Executive',
-        image: jasmineLee,
-      },
-      {
-        name: 'Mr. Dong Fan',
-        role: 'Administrative Executive ',
-        image: dongFan,
-      },
-      {
-        name: 'Mr. Ivan Chow',
-        role: 'Church Caretaker',
-        image: ivanChow,
-      },
-    ],
+  },
+  {
+    title: 'Mr. Vincent Lai Seck Tong',
+    description: 'Administrative Executive (Facilities & Maintenance)',
+    image: vincentLai,
+    sectionName: 'Administrative',
+  },
+  {
+    title: 'Ms. Jasmine Lee',
+    description: 'Administrative Executive',
+    image: jasmineLee,
+    sectionName: 'Administrative',
+  },
+  {
+    title: 'Mr. Dong Fan',
+    description: 'Administrative Executive ',
+    image: dongFan,
+    sectionName: 'Administrative',
+  },
+  {
+    title: 'Mr. Ivan Chow',
+    description: 'Church Caretaker',
+    image: ivanChow,
+    sectionName: 'Administrative',
   },
 ]
 
@@ -96,7 +93,7 @@ const OurTeam = () => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Our Team', image: exterior }]} />
-      <SectionsTemplate data={teamData} displayType='personProfile'/>
+      <SectionsTemplate data={teamData} displayType='personProfile' />
     </>
   )
 }
