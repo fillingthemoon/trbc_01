@@ -4,6 +4,7 @@ import exterior from './imgs/general/exterior.jpg'
 import trbcLogo from './imgs/general/logo.png'
 import serviceTiming from './imgs/general/service-timing.jpg'
 import trbcMap from './imgs/general/trbc-map.jpg'
+import trbcSanc from './imgs/general/trbc-sanctuary.jpg'
 
 // about-us
 import aboutUs1 from './imgs/about-us/1.jpg'
@@ -32,6 +33,7 @@ const general = {
   trbcLogo,
   serviceTiming,
   trbcMap,
+  trbcSanc,
 }
 
 const aboutUs = {

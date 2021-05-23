@@ -18,7 +18,7 @@ const TitleText = (props) => {
   } = props
 
   return (
-    <>
+    <div>
       <div style={titleUnderlineStyle}>
         <Title style={{ ...titleStyle }} className={titleClassName}>
           {title}
@@ -27,7 +27,7 @@ const TitleText = (props) => {
       </div>
 
       <Paragraph style={textStyle} className={textClassName}>{text}</Paragraph>
-    </>
+    </div>
   )
 }
 

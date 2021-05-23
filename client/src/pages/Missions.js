@@ -3,7 +3,7 @@ import Banner from '../components/Banner'
 import SectionsTemplate from '../pageTemplates/SectionsTemplate'
 
 import { general } from '../images'
-const { churchWide } = general
+const { exterior } = general
 
 const missionsData = [
   {
@@ -11,21 +11,21 @@ const missionsData = [
     title: 'Myanmar',
     description:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    image: churchWide
+    image: exterior
   },
   {
     sectionName: 'Missions',
     title: 'Bintan Island',
     description:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    image: churchWide
+    image: exterior
   },
   {
     sectionName: 'Missions',
     title: 'Nepal',
     description:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    image: churchWide
+    image: exterior
   },
   {
     sectionName: 'Missions',
@@ -33,14 +33,14 @@ const missionsData = [
     title: 'China',
     description:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    image: churchWide
+    image: exterior
   },
   {
     sectionName: 'Missions',
     title: 'India',
     description:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    image: churchWide,
+    image: exterior,
   },
 ]
 
@@ -48,7 +48,7 @@ const Outreach = () => {
   const [event, setEvent] = useState('')
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Missions', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'Missions', image: exterior }]} />
       <SectionsTemplate data={missionsData} displayType='card' />
     </div>
   )

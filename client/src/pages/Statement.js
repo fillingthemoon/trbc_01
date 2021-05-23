@@ -5,7 +5,7 @@ import TitleText from '../components/TitleText'
 import { Card } from 'antd'
 
 import { general } from '../images'
-const { churchWide } = general
+const { exterior } = general
 
 const statementData = [
   {
@@ -71,15 +71,16 @@ const statementStyle = {
 const Statement = () => {
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: exterior }]} />
       <div className='all-statement-container'>
         {statementData.map((statement, i) =>
-          <div key={i} className='statement-container'>
+          <div key={i} style={{ padding: '30px' }}>
             <TitleText
               title={statement.title}
               underlineAlign='center'
               text={statement.text}
               textStyle={statementStyle}
+              titleUnderlineStyle={{ display: 'flex', justifyContent: 'center' }}
             ></TitleText>
           </div>
         )}

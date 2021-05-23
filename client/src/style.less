@@ -1,5 +1,6 @@
 @import '~antd/dist/antd.less';
 @primary-color: #fa8c16;
+@background-color: #f4f4f4;
 
 /* General */
 .ant-layout-content {
@@ -43,7 +44,7 @@
 }
 
 .banner-title {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 500;
   position: absolute;
   top: 50%;
@@ -54,9 +55,30 @@
   width: 100%;
 }
 
-@media (max-width:700px) {
+@media (max-width:500px) {
   .banner-title{
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+}
+
+/* Home */
+.home {
+  padding: 80px 0;
+}
+
+.announcements-container {
+  padding: 50px;
+  background-color: @background-color;
+}
+
+.announcements {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width:500px) {
+  .announcements-container {
+    padding: 50px 0;
   }
 }
 
@@ -90,18 +112,10 @@
   inline-size: min-content;
 }
 
-
 /* Statement of Faith */
 .all-statement-container {
   display: flex;
   padding: 50px;
-}
-
-.statement-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
 }
 
 @media (max-width:1000px) {
@@ -134,20 +148,18 @@
 }
 
 /* Alternating Image Text Template */
-.aitt-main {
-  display: flex;
-  flex-direction: column;
-  padding: 50px 0;
-}
-
-.aitt-row{
+.aitt-row {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 0;
+}
+
+.aitt-img-col {
+  display: flex;
 }
 
 .aitt-img {
-  display: flex;
   width: 350px;
   max-height: 300px;
   object-fit: scale-down;
@@ -155,12 +167,12 @@
 
 .aitt-content-col-img-text {
   max-width: 600px;
-  margin: 20px 0 20px 50px;
+  margin: 0 0 0 50px;
 }
 
 .aitt-content-col-text-img {
   max-width: 600px;
-  margin: 20px 50px 20px 0;
+  margin: 0 50px 0 0;
 }
 
 .aitt-link {

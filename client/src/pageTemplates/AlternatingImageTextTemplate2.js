@@ -34,12 +34,19 @@ const ContentColumn = ({ item, lr }) => (
   </Col>
 )
 
+const rowStyle = (i) => {
+  return {
+    backgroundColor: '#f4f4f4',
+    margin: i % 2 === 0 ? '60px 15% 60px 0' : '60px 0 60px 15%',
+  }
+}
+
 const AlternatingImageText = ({ pageContent }) => {
   return (
     <div>
       {pageContent.map((item, i) =>
         <div key={i}>
-          <Row className='aitt-row' style={i % 2 === 0 && { backgroundColor: '#f4f4f4' }}>
+          <Row className='aitt-row' style={rowStyle(i)}>
             {
               i % 2 === 0
                 ?
