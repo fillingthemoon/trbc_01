@@ -1,42 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 
 import Banner from '../components/Banner'
 import ServicePage from '../page_templates/ServicePage'
+import ServicesNavBar from '../components/ServicesNavBar'
 
 import { general } from '../images'
-
-import { Menu, Typography } from 'antd'
 
 import servicesData from '../data/EventByServiceData'
 
 const { exterior } = general
-const { Title } = Typography
-
-const ServicesNavBar = (props) => {
-  const {
-    currService, setCurrService
-  } = props
-
-  return (
-    <Menu
-      mode="horizontal"
-      selectedKeys={currService}
-      onClick={({ key }) => setCurrService(key)}
-      style={{ display: 'flex', width: '100%', justifyContent: 'space-between', border: 'none' }}
-    >
-      <Menu.Item key="tc">
-        <Link to='/services/tc'>Teo Chew/Chinese Service</Link>
-      </Menu.Item>
-      <Menu.Item key="en">
-        <Link to='/services/en'>English Service</Link>
-      </Menu.Item>
-      <Menu.Item key="ss">
-        <Link to='/services/ss'>Sunset Service (English/Mandarin)</Link>
-      </Menu.Item>
-    </Menu>
-  )
-}
 
 const Services = () => {
   const [currService, setCurrService] = useState('tc')
