@@ -29,7 +29,6 @@ const Section = ({ section, displayType }) => {
                 case ('personProfile'):
                   return <PersonProfile {...item} />
                 case ('card'): {
-                  const info = Object.keys(item)
                   return <CardItem item={item} />
                 }
               }
