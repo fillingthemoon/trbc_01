@@ -130,7 +130,7 @@ const data = [
     location: 'Choir Room, 3rd Floor',
   },
   {
-    key: 'e-main',
+    key: 'en-main',
     congre: 'English Service',
     title: 'Main (English)',
 
@@ -139,7 +139,7 @@ const data = [
     location: 'Main Sanctuary, 2nd Floor',
   },
   {
-    key: 'e-youth',
+    key: 'en-youth',
     congre: 'English Service',
     title: 'Youth (English)',
 
@@ -148,7 +148,7 @@ const data = [
     location: '3rd Floor ',
   },
   {
-    key: 'e-children',
+    key: 'en-children',
     congre: 'English Service',
     title: 'Children (Wonderkids)',
 
@@ -159,7 +159,7 @@ const data = [
     location: 'Fellowship Hall, 3rd Floor ',
   },
   {
-    key: 'e-cellgroup',
+    key: 'en-cellgroup',
     congre: 'English Service',
     title: 'Cell Groups (English)',
 
@@ -168,7 +168,7 @@ const data = [
     location: 'TBC',
   },
   {
-    key: 'e-prayermeeting',
+    key: 'en-prayermeeting',
     congre: 'English Service',
     title: 'Prayer Meeting (English)',
 
