@@ -9,7 +9,6 @@ const menuItemStyle = {
   fontWeight: '300',
   textAlign: 'center',
   border: 'none',
-  marginTop: '50px',
 }
 
 const ServicesNavBar = (props) => {
@@ -27,7 +26,8 @@ const ServicesNavBar = (props) => {
         flexDirection: isBigScreen ? 'row' : 'column',
         width: '100%',
         justifyContent: 'space-evenly',
-        border: 'none'
+        border: 'none',
+        margin: '50px 0',
       }}
     >
       <Menu.Item key='tc' style={menuItemStyle}>

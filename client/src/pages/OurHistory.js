@@ -12,7 +12,7 @@ const OurHistory = () => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Our History', image: exterior }]} />
-      <AlternatingImageTextTemplate pageContent={ourHistoryData} />
+      <AlternatingImageTextTemplate data={ourHistoryData} rowType='1' imgTextType='1' />
     </>
   )
 }

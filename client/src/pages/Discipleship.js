@@ -12,7 +12,7 @@ const Discipleship = () => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Discipleship', image: exterior }]} />
-      <AlternatingImageTextTemplate pageContent={discipleshipData}/>
+      <AlternatingImageTextTemplate data={discipleshipData} rowType='4' imgTextType='1'/>
     </>
   )
 }

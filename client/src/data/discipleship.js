@@ -10,7 +10,7 @@ const {
 
 const discipleshipData = [
   {
-    imageSource: aboutUs1,
+    imgSrc: aboutUs1,
     title: 'Pellentesque habitant morbi tristique.',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -21,7 +21,7 @@ const discipleshipData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs2,
+    imgSrc: aboutUs2,
     title: 'Pellentesque habitant morbi tristique.',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -32,7 +32,7 @@ const discipleshipData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs3,
+    imgSrc: aboutUs3,
     title: 'Pellentesque habitant morbi tristique.',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -43,7 +43,7 @@ const discipleshipData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs4,
+    imgSrc: aboutUs4,
     title: 'Pellentesque habitant morbi tristique.',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -54,7 +54,7 @@ const discipleshipData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs5,
+    imgSrc: aboutUs5,
     title: 'Pellentesque habitant morbi tristique.',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -65,7 +65,7 @@ const discipleshipData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs6,
+    imgSrc: aboutUs6,
     title: 'Pellentesque habitant morbi tristique.',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada

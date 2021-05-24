@@ -33,32 +33,89 @@ const ContentColumn = ({ item, lr }) => (
   </Col>
 )
 
-const rowStyle = (i) => {
-  return {
-    backgroundColor: '#f4f4f4',
-    margin: i % 2 === 0 ? '60px 15% 60px 0' : '60px 0 60px 15%',
+const rowStyle = (i, rowType) => {
+  switch (rowType) {
+    case ('1'): {
+      return {
+        backgroundColor: i % 2 === 0 ? '#ffffff' : '#f4f4f4',
+      }
+    }
+    case ('2'): {
+      return {
+        backgroundColor: i % 2 === 0 ? '#f4f4f4' : '#ffffff',
+      }
+    }
+    case ('3'): {
+      return {
+        backgroundColor: '#f4f4f4',
+        margin: i % 2 === 0 ? '60px 15% 60px 0' : '60px 0 60px 15%',
+      }
+    }
+    case ('4'): {
+      return {
+        backgroundColor: '#f4f4f4',
+        margin: '60px 15% 60px 0',
+      }
+    }
+    case ('5'): {
+      return {
+        backgroundColor: '#f4f4f4',
+        margin: '60px 0 60px 15%',
+      }
+    }
   }
 }
 
-const AlternatingImageText = ({ pageContent }) => {
+const imgColLayout = (i, item, imgTextType) => {
+  switch (imgTextType) {
+    case ('1'): {
+      if (i % 2 === 0) {
+        return (<>
+          <ImageColumn item={item} lr='imgText' />
+          <ContentColumn item={item} lr='imgText' />
+        </>)
+      } else {
+        return (<>
+          <ContentColumn item={item} lr='textImg' />
+          <ImageColumn item={item} lr='textImg' />
+        </>)
+      }
+    }
+    case ('2'): {
+      if (i % 2 === 0) {
+        return (<>
+          <ContentColumn item={item} lr='textImg' />
+          <ImageColumn item={item} lr='textImg' />
+        </>)
+      } else {
+        return (<>
+          <ImageColumn item={item} lr='imgText' />
+          <ContentColumn item={item} lr='imgText' />
+        </>)
+      }
+    }
+    case ('3'): {
+      return (<>
+        <ImageColumn item={item} lr='imgText' />
+        <ContentColumn item={item} lr='imgText' />
+      </>)
+    }
+    case ('4'): {
+      return (<>
+        <ContentColumn item={item} lr='textImg' />
+        <ImageColumn item={item} lr='textImg' />
+      </>)
+    }
+  }
+}
+
+const AlternatingImageText = ({ data, rowType, imgTextType }) => {
   return (
     <div>
-      {pageContent.map((item, i) =>
+      {data.map((item, i) =>
         <div key={i}>
-          <Row className='aitt-row' style={rowStyle(i)}>
-            {
-              i % 2 === 0
-                ?
-                (<>
-                  <ImageColumn item={item} lr='imgText' />
-                  <ContentColumn item={item} lr='imgText' />
-                </>)
-                :
-                (<>
-                  <ContentColumn item={item} lr='textImg' />
-                  <ImageColumn item={item} lr='textImg' />
-                </>)
-            }
+          <Row className='aitt-row' style={rowStyle(i, rowType)}>
+            {imgColLayout(i, item, imgTextType)}
           </Row>
         </div>
       )}
