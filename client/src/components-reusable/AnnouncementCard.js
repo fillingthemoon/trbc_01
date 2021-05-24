@@ -20,10 +20,18 @@ const linkStyle = {
   wordBreak: 'break-word',
 }
 
+const splitLines = (text) => {
+  const splitText = text.split('\n')
+  const trimmedText = splitText.map(text =>
+    text.trim()
+  )
+  return trimmedText
+}
+
 const AnnouncementCard = ({ announcement }) => {
   const {
     title,
-    texts,
+    text,
     imageSource,
   } = announcement
 
@@ -31,31 +39,23 @@ const AnnouncementCard = ({ announcement }) => {
     <Card cover={<img alt="img" src={imageSource} style={imgStyle} />}
       style={cardStyle}
     >
-      <Title style={{ fontSize: '1.4rem', margin: '10px 0' }}>{title}</Title>
-      {texts.map((text, i) => {
-        if (Array.isArray(text)) {
-          return (
-            <div key={i} style={{ display: 'flex', flexDirection: 'column', margin: '20px' }}>
-              {text.map((line, j) =>
-                <Text key={j} style={{ fontSize: '1rem', fontWeight: '300' }}>{line}</Text>
-              )}
-            </div>
-          )
-        } else if (text.substring(0, 8) === 'https://') {
-          return (
-            <Link key={i} href={text} target='_blank' style={linkStyle}>
-              {text}
-            </Link>
-          )
-        } else {
-          return (
-            <Paragraph key={i} style={{ fontSize: '1rem', fontWeight: '300', margin: '30px 0' }}>
-              {text}
-            </Paragraph>
-          )
-        }
-      }
-      )}
+      <Title style={{ fontSize: '1.4rem', margin: '20px 0' }}>{title}</Title>
+      <div style={{ margin: '40px 0' }}>
+        {splitLines(text).map((paragraph, i) =>
+          <Paragraph key={i} style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}>
+            {(() => {
+              if (paragraph.substring(0, 8) === 'https://') {
+                return <Link href={paragraph} style={linkStyle} target='_blank'>{paragraph}</Link>
+              } else if (paragraph === '') {
+                return <span>&nbsp;</span>
+              } else {
+                return paragraph
+              }
+            })()}
+            {console.log(splitLines(text))}
+          </Paragraph>
+        )}
+      </div>
     </Card>
   )
 }
