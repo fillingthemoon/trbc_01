@@ -5,84 +5,84 @@ const outreachData = [
   {
     sectionName: 'Community',
     title: 'Chinese as a Second Language (CSL)',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
-    image: churchWide,
+    imgSrc: churchWide,
   },
   {
     sectionName: 'Community',
     title: 'English as a Second Language (ESL)',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
-    image: churchWide,
+    imgSrc: churchWide,
   },
   {
     sectionName: 'Interest Groups',
     title: 'Gardening Fellowship',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
-    image: churchWide,
+    imgSrc: churchWide,
   },
   {
     sectionName: 'Interest Groups',
     title: 'Ping Pong Fellowship',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
-    image: churchWide,
+    imgSrc: churchWide,
   },
   {
     sectionName: 'Interest Groups',
     title: 'HPB Sit Down Excercises',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
-    image: churchWide,
+    imgSrc: churchWide,
   }, {
     sectionName: 'Children',
     title: 'Kindergarten',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
-    image: churchWide,
+    imgSrc: churchWide,
   }, {
     sectionName: 'Children',
     title: 'CEC',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
-    image: churchWide,
+    imgSrc: churchWide,
   },
 ]
 

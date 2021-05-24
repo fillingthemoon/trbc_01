@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AlternatingImageTextTemplate2 from '../page_templates/AlternatingImageTextTemplate2'
+import AlternatingImageTextTemplate from '../page_templates/AlternatingImageTextTemplate'
 import Banner from '../components/Banner'
 import ConnectForm from '../components/ConnectForm'
 
@@ -13,7 +13,7 @@ const ImNew = () => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'I\'m New', image: churchWide }]} />
-      <AlternatingImageTextTemplate2
+      <AlternatingImageTextTemplate
         pageContent={imNewData}
       />
       <ConnectForm />

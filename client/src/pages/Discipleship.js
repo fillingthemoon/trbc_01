@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from '../components/Banner'
 
-import AlternatingImageTextTemplate2 from '../page_templates/AlternatingImageTextTemplate2'
+import AlternatingImageTextTemplate from '../page_templates/AlternatingImageTextTemplate'
 
 import { general } from '../images'
 const { exterior } = general
@@ -12,7 +12,7 @@ const Discipleship = () => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Discipleship', image: exterior }]} />
-      <AlternatingImageTextTemplate2
+      <AlternatingImageTextTemplate
         pageContent={discipleshipData}
       />
     </>

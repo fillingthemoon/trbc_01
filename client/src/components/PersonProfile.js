@@ -22,17 +22,17 @@ const roleStyle = {
 
 const PersonProfile = (props) => {
   const {
-    title, description, image
+    title, text, imgSrc
   } = props
 
   return (
     <div style={mainStyle}>
-      <Avatar size={150} src={image} style={{ marginBottom: '40px' }} />
+      <Avatar size={150} src={imgSrc} style={{ marginBottom: '40px' }} />
 
       <Title style={{ fontSize: '1.3rem' }}>
         {title}
       </Title>
-      <Text style={roleStyle}>{description}</Text>
+      <Text style={roleStyle}>{text}</Text>
     </div>
   )
 }

@@ -35,13 +35,13 @@ const iconStyle = {
 }
 
 const CardItem = ({ item }) => {
-  const { title, description, image, details } = item
+  const { title, description, imgSrc, details } = item
 
   const { time, location, leader } = details ? details : { time: null, location: null, leader: null }
 
   return (
     <Card
-      cover={<img alt="img" src={image} style={imgStyle} />}
+      cover={<img alt="img" src={imgSrc} style={imgStyle} />}
       style={cardStyle}
       // hoverable
     >

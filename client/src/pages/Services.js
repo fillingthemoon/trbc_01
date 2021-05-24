@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
 import Banner from '../components/Banner'
-import ServicePage from '../page_templates/ServicePage'
 import ServicesNavBar from '../components/ServicesNavBar'
 
 import { general } from '../images'
+const { exterior } = general
 
 import servicesData from '../data/services'
 
-const { exterior } = general
+import AlternatingImageTextTemplate from '../page_templates/AlternatingImageTextTemplate'
 
 const Services = () => {
   const [currService, setCurrService] = useState('tc')
@@ -22,10 +22,8 @@ const Services = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{ title: 'Services', image: exterior }]} />
-      <div className='services'>
-        <ServicesNavBar currService={currService} setCurrService={setCurrService} />
-        <ServicePage currService={currService} currServiceData={currServiceData} />
-      </div>
+      <ServicesNavBar currService={currService} setCurrService={setCurrService} />
+      <AlternatingImageTextTemplate pageContent={currServiceData} />
     </div>
   )
 }

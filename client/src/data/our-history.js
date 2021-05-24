@@ -10,9 +10,9 @@ const {
 
 const ourHistoryData = [
   {
-    imageSource: aboutUs1,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    imgSrc: aboutUs1,
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -21,9 +21,9 @@ const ourHistoryData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs2,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    imgSrc: aboutUs2,
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -32,9 +32,9 @@ const ourHistoryData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs3,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    imgSrc: aboutUs3,
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -43,9 +43,9 @@ const ourHistoryData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs4,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    imgSrc: aboutUs4,
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -54,9 +54,9 @@ const ourHistoryData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs5,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    imgSrc: aboutUs5,
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -65,9 +65,9 @@ const ourHistoryData = [
       ultrices viverra nec sit amet lacus.`,
   },
   {
-    imageSource: aboutUs6,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    imgSrc: aboutUs6,
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim

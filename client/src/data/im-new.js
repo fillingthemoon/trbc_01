@@ -7,9 +7,9 @@ const {
 
 const imNewData = [
   {
-    imageSource: aboutUs1,
-    contentTitle: 'The best place to start? Join us for a worship service.',
-    contentText:
+    imgSrc: aboutUs1,
+    title: 'The best place to start? Join us for a worship service.',
+    text:
       `If you’re new to the area, new to church, or just looking for a
       new start, our Sunday morning worship services offer you the
       opportunity to build your faith in God and connect with new
@@ -18,9 +18,9 @@ const imNewData = [
     linkText: 'View Services',
   },
   {
-    imageSource: aboutUs2,
-    contentTitle: 'What makes church special is not just the event, but also the relationships we build that help us stay faithful to God.',
-    contentText:
+    imgSrc: aboutUs2,
+    title: 'What makes church special is not just the event, but also the relationships we build that help us stay faithful to God.',
+    text:
       `What makes church special is not just the event, but also the
       relationships we build that help us stay faithful to God.
       
@@ -32,9 +32,9 @@ const imNewData = [
     linkText: 'View Ministries',
   },
   {
-    imageSource: aboutUs3,
-    contentTitle: 'Get involved in one of our doing good projects.',
-    contentText:
+    imgSrc: aboutUs3,
+    title: 'Get involved in one of our doing good projects.',
+    text:
       `A theme we embrace at the Bay Area Christian Church is “God and
       Good.” We believe it’s important that as Christians we are
       constantly working to do good in the lives of the people in our
