@@ -13,7 +13,7 @@ const ImNew = () => {
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'I\'m New', image: churchWide }]} />
-      <AlternatingImageTextTemplate data={imNewData} rowType='3' imgTextType='1' />
+      <AlternatingImageTextTemplate data={imNewData} rowType='7' imgTextType='1' colorScheme='0'/>
       <ConnectForm />
     </>
   )

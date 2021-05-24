@@ -31,13 +31,13 @@ const ServicesNavBar = (props) => {
       }}
     >
       <Menu.Item key='tc' style={menuItemStyle}>
-        <Link to='/services/'>Teo Chew/Chinese Service</Link>
+        <Link replace to='/services/'>Teo Chew/Chinese Service</Link>
       </Menu.Item>
       <Menu.Item key='en' style={menuItemStyle}>
-        <Link to='/services/'>English Service</Link>
+        <Link replace to='/services/'>English Service</Link>
       </Menu.Item>
       <Menu.Item key='ss' style={menuItemStyle}>
-        <Link to='/services/'>Sunset Service (English/Mandarin)</Link>
+        <Link replace to='/services/'>Sunset Service (English/Mandarin)</Link>
       </Menu.Item>
     </Menu>
   )

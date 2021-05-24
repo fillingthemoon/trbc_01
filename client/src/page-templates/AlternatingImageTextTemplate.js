@@ -9,6 +9,13 @@ import {
   Col,
 } from 'antd'
 
+const colorLGray = '#f4f4f4'
+const colorMGray = '#4f4f4f'
+const colorDGray = '#333333'
+const colorMOrange = '#fa9932'
+const colorSOrange = '#fa8c16'
+const colorLOrange = '#fff3e0'
+
 const ImageColumn = ({ item, lr }) => (
   <Col className='aitt-img-col'>
     <Image
@@ -23,7 +30,7 @@ const titleStyle = (bColor) => {
   return {
     textAlign: 'left',
     fontSize: '1.6rem',
-    color: ['#fa8c16', '#333333', '#4f4f4f'].includes(bColor) && '#ffffff'
+    color: [colorMGray].includes(bColor) && '#ffffff'
   }
 }
 
@@ -32,9 +39,21 @@ const textStyle = (bColor) => {
     textAlign: 'justify',
     lineHeight: '30px',
     fontSize: '1rem',
-    fontWeight: '200',
+    fontWeight: '300',
     margin: 0,
-    color: ['#fa8c16', '#333333', '#4f4f4f'].includes(bColor) && '#ffffff'
+    color: [colorMGray].includes(bColor) && '#ffffff'
+  }
+}
+
+const underlineStyle = (bColor) => {
+  return {
+    backgroundColor: [].includes(bColor) && '#4f4f4f'
+  }
+}
+
+const linkStyle = (bColor) => {
+  return {
+    color: [].includes(bColor) && '#4f4f4f'
   }
 }
 
@@ -45,42 +64,38 @@ const ContentColumn = ({ item, lr, bColor }) => (
       titleStyle={titleStyle(bColor)}
       text={item.text}
       textStyle={textStyle(bColor)}
+      underlineStyle={underlineStyle(bColor)}
     />
     {(item.linkPath && item.linkText) &&
-      <Link className='aitt-link' to={item.linkPath}>{item.linkText}</Link>
+      <Link className='aitt-link' style={linkStyle(bColor)} to={item.linkPath}>{item.linkText}</Link>
     }
   </Col>
 )
 
 const getColorScheme = (colorScheme) => {
   switch (colorScheme) {
-    case ('1'):
-      return '#f4f4f4'
-    case ('2'):
-      return '#4f4f4f'
-    case ('3'):
-      return '#fa8c16'
-    case ('4'):
-      return '#333333'
+    case (0):
+      return colorMGray
+    case (1):
+      return colorLGray
+    case (2):
+      return colorLOrange
+    // case ('4'):
+    //   return '#333333'
   }
 }
 
 const backgroundColorLayout = (backgroundColorLayoutType, i, colorScheme) => {
   switch (backgroundColorLayoutType) {
     case ('1'):
-      return i % 2 === 0 ? '#ffffff' : getColorScheme(colorScheme)
+      return i % 2 === 0 ? '#ffffff' : getColorScheme(Number(colorScheme))
     case ('2'):
-      return i % 2 === 0 ? getColorScheme(colorScheme) : '#ffffff'
-    case ('3'):
-      return (() => {
-        if (i % 3 === 0) {
-          return getColorScheme(colorScheme)
-        } else if (i % 3 === 1) {
-          return getColorScheme(((Number(colorScheme) + 1) % 4).toString())
-        } else if (i % 3 === 2) {
-          return getColorScheme(((Number(colorScheme) + 2) % 4).toString())
-        }
-      })()
+      console.log(getColorScheme(Number(colorScheme)))
+      return i % 2 === 0 ? getColorScheme(Number(colorScheme)) : '#ffffff'
+    case ('3'): {
+      const numColorSchemes = 3
+      return getColorScheme(((Number(colorScheme) + (i % numColorSchemes)) % numColorSchemes))
+    }
   }
 }
 
@@ -93,10 +108,12 @@ const marginLayout = (marginLayoutType, i) => {
       return i % 2 === 0 ? '60px 0 60px 15%' : '60px 15% 60px 0'
     }
     case ('3'): {
-      return '60px 15% 60px 0'
+      // return '60px 15% 60px 0'
+      return i % 2 === 0 ? '60px 30% 60px 0' : '60px 15% 60px 0'
     }
     case ('4'): {
-      return '60px 0 60px 15%'
+      // return '60px 0 60px 15%'
+      return i % 2 === 0 ? '60px 0 60px 30%' : '60px 0 60px 15%'
     }
   }
 }
@@ -113,7 +130,7 @@ const rowLayout = (i, rowType, colorScheme) => {
     case ('8'):
     case ('12'):
       return {
-        backgroundColor: getColorScheme(colorScheme),
+        backgroundColor: getColorScheme(Number(colorScheme)),
         margin: marginLayout((Number(rowType) / 4).toString(), i),
       }
     case ('5'):
@@ -134,13 +151,13 @@ const rowLayout = (i, rowType, colorScheme) => {
     case ('14'):
     case ('15'):
       return {
-        backgroundColor: backgroundColorLayout((Number(rowType) - 11).toString(), i, colorScheme),
-        margin: marginLayout('2', i),
+        backgroundColor: backgroundColorLayout((Number(rowType) - 12).toString(), i, colorScheme),
+        margin: marginLayout('3', i),
       }
   }
 }
 
-const imgColLayout = (i, item, imgTextType, bColor) => {
+const imgTextLayout = (i, item, imgTextType, bColor) => {
   switch (imgTextType) {
     case ('1'):
       if (i % 2 === 0) {
@@ -179,18 +196,22 @@ const imgColLayout = (i, item, imgTextType, bColor) => {
   }
 }
 
+/**
+ * rowType: 1-15
+ * imgTextType: 1-4
+ * colorScheme: 0-2
+ */
 const AlternatingImageText = ({ data, rowType, imgTextType, colorScheme }) => {
   return (
     <div>
       {data.map((item, i) =>
-        <div key={i}>
-          <Row className='aitt-row' style={rowLayout(i, rowType, colorScheme)}>
-            {(() => {
-              const bColor = rowLayout(i, rowType, colorScheme).backgroundColor
-              return imgColLayout(i, item, imgTextType, bColor)
-            })()}
-          </Row>
-        </div>
+        <Row key={i} className='aitt-row' style={rowLayout(i, rowType, colorScheme)}>
+          {(() => {
+            const bColor = rowLayout(i, rowType, colorScheme).backgroundColor
+            // console.log(bColor)
+            return imgTextLayout(i, item, imgTextType, bColor)
+          })()}
+        </Row>
       )}
     </div>
   )
