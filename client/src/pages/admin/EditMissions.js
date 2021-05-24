@@ -1,5 +1,5 @@
 // import React, { useEffect, useState, useReducer } from "react";
-// import Banner from "../../components/Banner";
+// import Banner from "../../components-reusable/Banner";
 
 // import {
 //   Card,
@@ -277,7 +277,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Typography, Row, Col, Image } from 'antd'
-import Banner from '../../components/Banner'
+import Banner from '../../components-reusable/Banner'
 
 import { Link } from 'react-router-dom'
 import axios from 'axios'

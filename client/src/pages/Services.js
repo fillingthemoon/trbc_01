@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import Banner from '../components/Banner'
+import Banner from '../components-reusable/Banner'
 import ServicesNavBar from '../components/ServicesNavBar'
 
 import { general } from '../images'
@@ -8,7 +8,7 @@ const { exterior } = general
 
 import servicesData from '../data/services'
 
-import AlternatingImageTextTemplate from '../page_templates/AlternatingImageTextTemplate'
+import AlternatingImageTextTemplate from '../page-templates/AlternatingImageTextTemplate'
 
 const Services = () => {
   const [currService, setCurrService] = useState('tc')

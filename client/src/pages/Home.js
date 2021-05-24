@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Banner from '../components/Banner'
+import Banner from '../components-reusable/Banner'
 import Announcements from '../components/Announcements'
 
 import { general } from '../images'

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Banner from '../components/Banner'
+import Banner from '../components-reusable/Banner'
 
-import SectionsTemplate from '../page_templates/SectionsTemplate'
+import SectionsTemplate from '../page-templates/SectionsTemplate'
 
 import { general } from '../images'
 const { exterior } = general

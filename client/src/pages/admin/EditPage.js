@@ -8,7 +8,7 @@ import {
 } from '@ant-design/icons'
 
 import { UploadOutlined } from '@ant-design/icons'
-import Banner from '../../components/Banner'
+import Banner from '../../components-reusable/Banner'
 
 import { general } from '../../images'
 const { churchWide } = general

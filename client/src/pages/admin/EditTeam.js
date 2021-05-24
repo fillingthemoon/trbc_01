@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer } from 'react'
-import Banner from '../../components/Banner'
+import Banner from '../../components-reusable/Banner'
 
 import {
   message,

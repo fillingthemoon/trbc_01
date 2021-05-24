@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import TitleText from '../components/TitleText'
+import TitleText from '../components-reusable/TitleText'
 
 import {
   Image,

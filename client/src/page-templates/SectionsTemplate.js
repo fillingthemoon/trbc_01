@@ -1,8 +1,8 @@
 import React from 'react'
 
-import TitleText from '../components/TitleText'
-import PersonProfile from '../components/PersonProfile'
-import CardItem from '../components/CardItem'
+import TitleText from '../components-reusable/TitleText'
+import PersonProfile from '../components-reusable/PersonProfile'
+import CardItem from '../components-reusable/CardItem'
 
 import {
   Divider, Row, Col

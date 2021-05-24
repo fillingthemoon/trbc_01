@@ -10,7 +10,7 @@ import { AiFillPhone } from 'react-icons/ai'
 import { general } from '../images'
 const { trbcMap } = general
 
-import TitleText from '../components/TitleText'
+import TitleText from '../components-reusable/TitleText'
 
 const ContactFooter = () => {
   return (

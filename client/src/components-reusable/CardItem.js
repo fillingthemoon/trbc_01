@@ -3,7 +3,6 @@ import React from 'react'
 import {
   Card,
   Typography,
-  Divider,
 } from 'antd'
 
 import { FieldTimeOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons'

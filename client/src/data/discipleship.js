@@ -11,8 +11,8 @@ const {
 const discipleshipData = [
   {
     imageSource: aboutUs1,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -22,8 +22,8 @@ const discipleshipData = [
   },
   {
     imageSource: aboutUs2,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -33,8 +33,8 @@ const discipleshipData = [
   },
   {
     imageSource: aboutUs3,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -44,8 +44,8 @@ const discipleshipData = [
   },
   {
     imageSource: aboutUs4,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -55,8 +55,8 @@ const discipleshipData = [
   },
   {
     imageSource: aboutUs5,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
@@ -66,8 +66,8 @@ const discipleshipData = [
   },
   {
     imageSource: aboutUs6,
-    contentTitle: 'Pellentesque habitant morbi tristique.',
-    contentText:
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada
       fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
       lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim

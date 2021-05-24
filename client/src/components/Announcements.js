@@ -1,7 +1,7 @@
 import React from 'react'
 
-import TitleText from '../components/TitleText'
-import AnnouncementCard from '../components/AnnouncementCard'
+import TitleText from '../components-reusable/TitleText'
+import AnnouncementCard from '../components-reusable/AnnouncementCard'
 
 import { Row } from 'antd'
 

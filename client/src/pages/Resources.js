@@ -1,7 +1,7 @@
 import React from 'react'
 import { List, Card, Row, Col, Divider, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
-import Banner from '../components/Banner'
+import Banner from '../components-reusable/Banner'
 
 import { general } from '../images'
 const { churchWide } = general

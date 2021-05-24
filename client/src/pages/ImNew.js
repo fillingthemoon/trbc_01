@@ -1,8 +1,8 @@
 import React from 'react'
 
-import AlternatingImageTextTemplate from '../page_templates/AlternatingImageTextTemplate'
-import Banner from '../components/Banner'
-import ConnectForm from '../components/ConnectForm'
+import AlternatingImageTextTemplate from '../page-templates/AlternatingImageTextTemplate'
+import Banner from '../components-reusable/Banner'
+import ConnectForm from '../components-reusable/ConnectForm'
 
 import { general } from '../images'
 const { churchWide } = general

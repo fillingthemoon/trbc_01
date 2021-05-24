@@ -8,7 +8,7 @@ import {
 } from '@ant-design/icons'
 
 import data from '../data/services'
-import Banner from '../components/Banner'
+import Banner from '../components-reusable/Banner'
 
 import { general } from '../images'
 const { churchWide } = general

@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from '../../components/Banner'
+import Banner from '../../components-reusable/Banner'
 
 import { Link } from 'react-router-dom'
 import { Card, Avatar, Typography, Row, Col, Button } from 'antd'

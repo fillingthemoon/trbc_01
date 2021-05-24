@@ -76,7 +76,7 @@ const servicesData = [
     key: 'ss-children',
     congre: 'Sunset Service (English/Mandarin)',
     title: 'Children (Sunset)',
-    text: `Vision: 'Train a child in the way he should go, and when he is old he will not turn from it.' <b >Proverbs 22:6    
+    text: `Vision: 'Train a child in the way he should go, and when he is old he will not turn from it.' Proverbs 22:6    
     Mission: To disciple children into Christ-likeness through the teaching and obedience of His Word, to bear witness for Christ and to serve and worship God.
       The Children's Ministry consists of Children Worship and Sunday School.`,
     time: 'Sunday, 5 - 645pm',

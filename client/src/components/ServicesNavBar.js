@@ -9,12 +9,11 @@ const menuItemStyle = {
   fontWeight: '300',
   textAlign: 'center',
   border: 'none',
+  marginTop: '50px',
 }
 
 const ServicesNavBar = (props) => {
-  const {
-    currService, setCurrService
-  } = props
+  const { currService, setCurrService } = props
 
   const isBigScreen = useMediaQuery({ query: '(min-width: 950px)' })
 

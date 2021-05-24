@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from '../components/Banner'
-import TitleText from '../components/TitleText'
+import Banner from '../components-reusable/Banner'
+import TitleText from '../components-reusable/TitleText'
 
 import { Row, Col, Image } from 'antd'
 
