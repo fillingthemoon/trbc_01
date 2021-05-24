@@ -1,5 +1,6 @@
 const servicesData = [
   {
+    page:'services',
     key: 'tc-main',
     congre: 'Teo Chew/Chinese Service',
     title: 'Main (TC)',
@@ -15,6 +16,7 @@ const servicesData = [
     华语崇拜: 二楼音乐厅`,
   },
   {
+    page:'services',
     key: 'tc-children',
     congre: 'Teo Chew/Chinese Service',
     title: '儿童崇拜与初级助道会',
@@ -26,6 +28,7 @@ const servicesData = [
     location: '3楼儿童室',
   },
   {
+    page:'services',
     key: 'tc-youth',
     congre: 'Teo Chew/Chinese Service',
     title: '少助道会',
@@ -35,6 +38,7 @@ const servicesData = [
     location: '三楼少年室',
   },
   {
+    page:'services',
     key: 'tc-prayermeeting',
     congre: 'Teo Chew/Chinese Service',
     title: 'Prayer Meeting',
@@ -43,6 +47,7 @@ const servicesData = [
     location: 'Level 2, Joy Room ',
   },
   {
+    page:'services',
     key: 'tc-cellgroup',
     congre: 'Teo Chew/Chinese Service',
     title: '小组团契',
@@ -51,6 +56,7 @@ const servicesData = [
     location: 'TBC',
   },
   {
+    page:'services',
     key: 'ss-main',
     congre: 'Sunset Service (English/Mandarin)',
     title: 'Main (Sunset)',
@@ -60,6 +66,7 @@ const servicesData = [
     location: 'Main Sanctuary, 2nd Floor',
   },
   {
+    page:'services',
     key: 'ss-youth',
     congre: 'Sunset Service (English/Mandarin)',
     title: 'Youth (SPUR)',
@@ -73,6 +80,7 @@ const servicesData = [
     location: 'Choir Room/Fellowship Hall, 3rd Floor',
   },
   {
+    page:'services',
     key: 'ss-children',
     congre: 'Sunset Service (English/Mandarin)',
     title: 'Children (Sunset)',
@@ -83,6 +91,7 @@ const servicesData = [
     location: 'Fellowship Hall, 3rd Floor ',
   },
   {
+    page:'services',
     key: 'ss-cellgroup',
     congre: 'Sunset Service (English/Mandarin)',
     title: 'Cell Groups (Sunset)',
@@ -98,6 +107,7 @@ const servicesData = [
     location: 'TBC',
   },
   {
+    page:'services',
     key: 'ss-prayermeeting',
     congre: 'Sunset Service (English/Mandarin)',
     title: 'Prayer Meeting (Sunset)',
@@ -107,6 +117,7 @@ const servicesData = [
     location: 'Choir Room, 3rd Floor',
   },
   {
+    page:'services',
     key: 'en-main',
     congre: 'English Service',
     title: 'Main (English)',
@@ -115,6 +126,7 @@ const servicesData = [
     location: 'Main Sanctuary, 2nd Floor',
   },
   {
+    page:'services',
     key: 'en-youth',
     congre: 'English Service',
     title: 'Youth (English)',
@@ -123,6 +135,7 @@ const servicesData = [
     location: '3rd Floor ',
   },
   {
+    page:'services',
     key: 'en-children',
     congre: 'English Service',
     title: 'Children (Wonderkids)',
@@ -133,6 +146,7 @@ const servicesData = [
     location: 'Fellowship Hall, 3rd Floor ',
   },
   {
+    page:'services',
     key: 'en-cellgroup',
     congre: 'English Service',
     title: 'Cell Groups (English)',
@@ -141,6 +155,7 @@ const servicesData = [
     location: 'TBC',
   },
   {
+    page:'services',
     key: 'en-prayermeeting',
     congre: 'English Service',
     title: 'Prayer Meeting (English)',

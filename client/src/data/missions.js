@@ -3,38 +3,43 @@ const { exterior } = general
 
 const missionsData = [
   {
+    page:'missions',
     sectionName: 'Missions',
     title: 'Myanmar',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: exterior
   },
   {
+    page:'missions',
     sectionName: 'Missions',
     title: 'Bintan Island',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: exterior
   },
   {
+    page:'missions',
     sectionName: 'Missions',
     title: 'Nepal',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: exterior
   },
   {
+    page:'missions',
     sectionName: 'Missions',
 
     title: 'China',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: exterior
   },
   {
+    page:'missions',
     sectionName: 'Missions',
     title: 'India',
-    description:
+    text:
       'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: exterior,
   },

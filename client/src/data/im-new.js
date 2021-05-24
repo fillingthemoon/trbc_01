@@ -7,6 +7,7 @@ const {
 
 const imNewData = [
   {
+    page:'im-new',
     imgSrc: aboutUs1,
     title: 'The best place to start? Join us for a worship service.',
     text:
@@ -18,6 +19,7 @@ const imNewData = [
     linkText: 'View Services',
   },
   {
+    page:'im-new',
     imgSrc: aboutUs2,
     title: 'What makes church special is not just the event, but also the relationships we build that help us stay faithful to God.',
     text:
@@ -32,6 +34,7 @@ const imNewData = [
     linkText: 'View Ministries',
   },
   {
+    page:'im-new',
     imgSrc: aboutUs3,
     title: 'Get involved in one of our doing good projects.',
     text:

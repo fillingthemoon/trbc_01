@@ -3,6 +3,7 @@ const { churchWide } = general
 
 const outreachData = [
   {
+    page: 'outreach',
     sectionName: 'Community',
     title: 'Chinese as a Second Language (CSL)',
     text:
@@ -15,6 +16,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    page: 'outreach',
     sectionName: 'Community',
     title: 'English as a Second Language (ESL)',
     text:
@@ -27,6 +29,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    page: 'outreach',
     sectionName: 'Interest Groups',
     title: 'Gardening Fellowship',
     text:
@@ -39,6 +42,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    page: 'outreach',
     sectionName: 'Interest Groups',
     title: 'Ping Pong Fellowship',
     text:
@@ -51,6 +55,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    page: 'outreach',
     sectionName: 'Interest Groups',
     title: 'HPB Sit Down Excercises',
     text:
@@ -61,7 +66,9 @@ const outreachData = [
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
     imgSrc: churchWide,
-  }, {
+  },
+  {
+    page: 'outreach',
     sectionName: 'Children',
     title: 'Kindergarten',
     text:
@@ -72,7 +79,9 @@ const outreachData = [
       leader: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
     },
     imgSrc: churchWide,
-  }, {
+  },
+  {
+    page: 'outreach',
     sectionName: 'Children',
     title: 'CEC',
     text:

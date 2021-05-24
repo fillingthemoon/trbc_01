@@ -7,12 +7,11 @@ const cardStyle = {
   display: 'flex',
   flexDirection: 'column',
   textAlign: 'center',
-  margin: '40px',
-  maxWidth: '600px',
+  maxWidth: '550px',
 }
 
 const imgStyle = {
-  maxHeight: '300px',
+  maxHeight: '200px',
   objectFit: 'cover',
 }
 
@@ -39,10 +38,10 @@ const AnnouncementCard = ({ announcement }) => {
     <Card cover={<img alt="img" src={imageSource} style={imgStyle} />}
       style={cardStyle}
     >
-      <Title style={{ fontSize: '1.4rem', margin: '20px 0' }}>{title}</Title>
-      <div style={{ margin: '40px 0' }}>
+      <Title style={{ fontSize: '1.2rem', margin: '0 0 20px 0' }}>{title}</Title>
+      <div>
         {splitLines(text).map((paragraph, i) =>
-          <Paragraph key={i} style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}>
+          <Paragraph key={i} style={{ fontSize: '0.95rem', fontWeight: '300', margin: '0' }}>
             {(() => {
               if (paragraph.substring(0, 8) === 'https://') {
                 return <Link href={paragraph} style={linkStyle} target='_blank'>{paragraph}</Link>
