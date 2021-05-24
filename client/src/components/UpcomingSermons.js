@@ -43,15 +43,15 @@ const cardStyle = {
   textAlign: 'left',
   margin: '20px',
   maxWidth: '320px',
+  border: 'none',
+  boxShadow: '2px 2px 2px 2px rgba(100, 100, 100, 0.1)'
 }
 
 const UpcomingSermon = ({ upcomingSermon }) => {
-  const { title, text, speaker, date, passage } = upcomingSermon
+  const { title, speaker, date, passage } = upcomingSermon
 
   return (
-    <Card
-      style={cardStyle}
-    >
+    <Card style={cardStyle}>
       <Title style={{ fontSize: '1.2rem', fontWeight: '700', display: 'block' }}>{passage}</Title>
       <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}>{title}</Paragraph>
       <Text style={{ fontSize: '1rem', fontWeight: '300', display: 'block', margin: '20px 0' }}>{speaker}</Text>
