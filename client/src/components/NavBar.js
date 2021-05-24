@@ -25,11 +25,12 @@ const NavBar = () => {
       onClick={({ key }) => { setCurrent(key) }}
       selectedKeys={pageUrl}
       style={{ border: 'None', padding: '10px' }}
+      subMenuCloseDelay={0}
+      subMenuOpenDelay={0}
     >
       <Menu.Item key='home' title='Home'>
         <Link replace to='/home'>Home</Link>
       </Menu.Item>
-
       <SubMenu key='about-us' title='About Us'>
         <Menu.Item key='mission-vision'>
           <Link replace to='/mission-vision'>Mission & Vision</Link>
