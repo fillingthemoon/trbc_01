@@ -23,7 +23,7 @@ const titleStyle = (bColor) => {
   return {
     textAlign: 'left',
     fontSize: '1.6rem',
-    color: ['#fa8c16', '333333', '4f4f4f'].includes(bColor) && '#ffffff'
+    color: ['#fa8c16', '#333333', '#4f4f4f'].includes(bColor) && '#ffffff'
   }
 }
 
@@ -34,7 +34,7 @@ const textStyle = (bColor) => {
     fontSize: '1rem',
     fontWeight: '200',
     margin: 0,
-    color: ['#fa8c16', '333333', '4f4f4f'].includes(bColor) && '#ffffff'
+    color: ['#fa8c16', '#333333', '#4f4f4f'].includes(bColor) && '#ffffff'
   }
 }
 
@@ -114,28 +114,28 @@ const rowLayout = (i, rowType, colorScheme) => {
     case ('12'):
       return {
         backgroundColor: getColorScheme(colorScheme),
-        margin: marginLayout((rowType / 4).toString()),
+        margin: marginLayout((Number(rowType) / 4).toString(), i),
       }
     case ('5'):
     case ('6'):
     case ('7'):
       return {
-        backgroundColor: backgroundColorLayout((rowType - 4).toString(), i, colorScheme),
-        margin: marginLayout('1'),
+        backgroundColor: backgroundColorLayout((Number(rowType) - 4).toString(), i, colorScheme),
+        margin: marginLayout('1', i),
       }
     case ('9'):
     case ('10'):
     case ('11'):
       return {
-        backgroundColor: backgroundColorLayout((rowType - 8).toString(), i, colorScheme),
-        margin: marginLayout('2'),
+        backgroundColor: backgroundColorLayout((Number(rowType) - 8).toString(), i, colorScheme),
+        margin: marginLayout('2', i),
       }
     case ('13'):
     case ('14'):
     case ('15'):
       return {
-        backgroundColor: backgroundColorLayout((rowType - 11).toString(), i, colorScheme),
-        margin: marginLayout('2'),
+        backgroundColor: backgroundColorLayout((Number(rowType) - 11).toString(), i, colorScheme),
+        margin: marginLayout('2', i),
       }
   }
 }
