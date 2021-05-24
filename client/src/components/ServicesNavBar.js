@@ -6,8 +6,9 @@ import { Menu } from 'antd'
 
 const menuItemStyle = {
   fontSize: '1.3rem',
-  fontWeight: '200',
+  fontWeight: '300',
   textAlign: 'center',
+  border: 'none',
 }
 
 const ServicesNavBar = (props) => {
@@ -20,8 +21,8 @@ const ServicesNavBar = (props) => {
   return (
     <Menu
       mode={isBigScreen ? 'horizontal' : 'vertical'}
-      selectedKeys={currService}
       onClick={({ key }) => setCurrService(key)}
+      selectedKeys={currService}
       style={{
         display: 'flex',
         flexDirection: isBigScreen ? 'row' : 'column',
@@ -31,13 +32,13 @@ const ServicesNavBar = (props) => {
       }}
     >
       <Menu.Item key='tc' style={menuItemStyle}>
-        <Link to='/services/tc'>Teo Chew/Chinese Service</Link>
+        <Link to='/services/'>Teo Chew/Chinese Service</Link>
       </Menu.Item>
       <Menu.Item key='en' style={menuItemStyle}>
-        <Link to='/services/en'>English Service</Link>
+        <Link to='/services/'>English Service</Link>
       </Menu.Item>
       <Menu.Item key='ss' style={menuItemStyle}>
-        <Link to='/services/ss'>Sunset Service (English/Mandarin)</Link>
+        <Link to='/services/'>Sunset Service (English/Mandarin)</Link>
       </Menu.Item>
     </Menu>
   )

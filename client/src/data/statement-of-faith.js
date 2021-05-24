@@ -1,13 +1,4 @@
-import React from 'react'
-import Banner from '../components/Banner'
-import TitleText from '../components/TitleText'
-
-import { Card } from 'antd'
-
-import { general } from '../images'
-const { exterior } = general
-
-const statementData = [
+const statementOfFaithData = [
   {
     title: 'We Believe',
     text:
@@ -60,33 +51,4 @@ const statementData = [
   }
 ]
 
-const statementStyle = {
-  maxWidth: '800px',
-  fontSize: '1rem',
-  lineHeight: '30px',
-  fontWeight: 250,
-  textAlign: 'justify',
-}
-
-const Statement = () => {
-  return (
-    <div>
-      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: exterior }]} />
-      <div className='all-statement-container'>
-        {statementData.map((statement, i) =>
-          <div key={i} style={{ padding: '30px' }}>
-            <TitleText
-              title={statement.title}
-              underlineAlign='center'
-              text={statement.text}
-              textStyle={statementStyle}
-              titleUnderlineStyle={{ display: 'flex', justifyContent: 'center' }}
-            ></TitleText>
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
-
-export default Statement
+export default statementOfFaithData

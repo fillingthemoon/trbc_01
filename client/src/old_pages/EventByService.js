@@ -7,7 +7,7 @@ import {
   UserOutlined,
 } from '@ant-design/icons'
 
-import data from '../data/EventByServiceData'
+import data from '../data/services'
 import Banner from '../components/Banner'
 
 import { general } from '../images'

@@ -36,11 +36,6 @@ const rowStyle = (i) => {
   }
 }
 
-const titleUnderlineStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-}
-
 const ServicePage = (props) => {
   const {
     currService,
@@ -53,7 +48,6 @@ const ServicePage = (props) => {
 
   return (
     <div className='service-page-container'>
-      {/* <TitleText titleUnderlineStyle={titleUnderlineStyle} title={currServiceData[0].congre} underlineAlign='center' /> */}
       {currServiceData.map((item, i) =>
         <Row key={i} className='aitt-row' style={rowStyle(i)}>
           {

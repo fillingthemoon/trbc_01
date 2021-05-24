@@ -10,7 +10,7 @@ import Missions from './pages/Missions'
 import Discipleship from './pages/Discipleship'
 import FacilityBookings from './pages/FacilityBookings'
 import OurTeam from './pages/OurTeam'
-import Statement from './pages/Statement'
+import StatementOfFaith from './pages/StatementOfFaith'
 import Resources from './pages/Resources'
 import ContactFooter from './components/ContactFooter'
 import Services from './pages/Services'
@@ -72,10 +72,10 @@ const App = () => {
           <Route path='/our-team' exact>
             <OurTeam />
           </Route >
-          <Route path='/statement' exact>
-            <Statement />
+          <Route path='/statement-of-faith' exact>
+            <StatementOfFaith />
           </Route >
-          <Route path={['/services', '/services/tc', '/services/en', '/services/ss']} exact>
+          <Route path='/services' exact>
             <Services />
           </Route >
           <Route path='/facility-bookings' exact>

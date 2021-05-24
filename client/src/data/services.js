@@ -1,4 +1,4 @@
-const data = [
+const servicesData = [
   {
     key: 'tc-main',
     congre: 'Teo Chew/Chinese Service',
@@ -179,4 +179,5 @@ const data = [
     location: 'Choir Room, 3rd Floor',
   },
 ]
-export default data
+
+export default servicesData

@@ -6,7 +6,7 @@ import ServicesNavBar from '../components/ServicesNavBar'
 
 import { general } from '../images'
 
-import servicesData from '../data/EventByServiceData'
+import servicesData from '../data/services'
 
 const { exterior } = general
 

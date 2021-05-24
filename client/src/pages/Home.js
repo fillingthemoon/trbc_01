@@ -1,12 +1,7 @@
 import React from 'react'
 
 import Banner from '../components/Banner'
-import TitleText from '../components/TitleText'
-import AnnouncementCard from '../components/AnnouncementCard'
-
-import SlateTextEditor from '../components/SlateTextEditor.js'
-
-import { Row } from 'antd'
+import Announcements from '../components/Announcements'
 
 import { general } from '../images'
 const { exterior, serviceTiming, paSystem, trbcSanc } = general
@@ -30,24 +25,6 @@ const announcementsData = [
   }
 ]
 
-const titleUnderlineStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-}
-
-const Announcements = () => {
-  return (
-    <div className='announcements-container'>
-      <TitleText titleUnderlineStyle={titleUnderlineStyle} title='Announcements' underlineAlign='center' />
-      <Row justify='center'>
-        {announcementsData.map((announcement, i) => (
-          <AnnouncementCard key={i} announcement={announcement} />
-        ))}
-      </Row>
-    </div>
-  )
-}
-
 const Home = () => {
   return (
     <div>
@@ -57,8 +34,7 @@ const Home = () => {
         { title: 'Welcome', image: paSystem },
       ]} />
       <div className='home'>
-        <Announcements />
-        <SlateTextEditor />
+        <Announcements announcementsData={announcementsData} />
       </div>
     </div>
   )

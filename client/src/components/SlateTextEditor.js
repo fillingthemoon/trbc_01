@@ -11,9 +11,8 @@ import {
 import { withHistory } from 'slate-history'
 
 import { Button } from 'antd'
-
-// const div = <div></div>
-// const div = <div></div>
+// import Icon from
+// import Toolbar from
 
 const HOTKEYS = {
   'mod+b': 'bold',

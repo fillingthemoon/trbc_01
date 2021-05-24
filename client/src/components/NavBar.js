@@ -40,8 +40,8 @@ const NavBar = () => {
         <Menu.Item key='our-team'>
           <Link replace to='/our-team'>Our Team</Link>
         </Menu.Item>
-        <Menu.Item key='statement'>
-          <Link replace to='/statement'>Statement of Faith</Link>
+        <Menu.Item key='statement-of-faith'>
+          <Link replace to='/statement-of-faith'>Statement of Faith</Link>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key='services'>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Typography, Row, Col, Divider, Menu, Card, Button } from 'antd'
 import { ClockCircleOutlined, PushpinOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
-import data from '../data/EventByServiceData'
+import data from '../data/services'
 import Banner from '../components/Banner'
 
 import { general } from '../images'
