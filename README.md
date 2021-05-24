@@ -1,4 +1,4 @@
-# TRBC Documentation
+# Thomson Road Baptist Church Website
 
 The website is live at https://arcane-crag-98386.herokuapp.com/#/.
 

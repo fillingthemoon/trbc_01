@@ -25,7 +25,6 @@ const NavBar = () => {
       onClick={({ key }) => { setCurrent(key) }}
       selectedKeys={pageUrl}
       style={{ border: 'None', padding: '10px' }}
-      subMenuCloseDelay={0}
       subMenuOpenDelay={0}
     >
       <Menu.Item key='home' title='Home'>
