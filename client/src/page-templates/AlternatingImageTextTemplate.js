@@ -19,13 +19,32 @@ const ImageColumn = ({ item, lr }) => (
   </Col>
 )
 
-const ContentColumn = ({ item, lr }) => (
+const titleStyle = (bColor) => {
+  return {
+    textAlign: 'left',
+    fontSize: '1.6rem',
+    color: ['#fa8c16', '333333', '4f4f4f'].includes(bColor) && '#ffffff'
+  }
+}
+
+const textStyle = (bColor) => {
+  return {
+    textAlign: 'justify',
+    lineHeight: '30px',
+    fontSize: '1rem',
+    fontWeight: '200',
+    margin: 0,
+    color: ['#fa8c16', '333333', '4f4f4f'].includes(bColor) && '#ffffff'
+  }
+}
+
+const ContentColumn = ({ item, lr, bColor }) => (
   <Col className={lr === 'imgText' ? 'aitt-content-col-img-text' : 'aitt-content-col-text-img'}>
     <TitleText
       title={item.title}
-      titleStyle={{ textAlign: 'left', fontSize: '1.6rem' }}
+      titleStyle={titleStyle(bColor)}
       text={item.text}
-      textStyle={{ textAlign: 'justify', lineHeight: '30px', fontSize: '1rem', fontWeight: '200', margin: 0 }}
+      textStyle={textStyle(bColor)}
     />
     {(item.linkPath && item.linkText) &&
       <Link className='aitt-link' to={item.linkPath}>{item.linkText}</Link>
@@ -33,89 +52,143 @@ const ContentColumn = ({ item, lr }) => (
   </Col>
 )
 
-const rowStyle = (i, rowType) => {
-  switch (rowType) {
+const getColorScheme = (colorScheme) => {
+  switch (colorScheme) {
+    case ('1'):
+      return '#f4f4f4'
+    case ('2'):
+      return '#4f4f4f'
+    case ('3'):
+      return '#fa8c16'
+    case ('4'):
+      return '#333333'
+  }
+}
+
+const backgroundColorLayout = (backgroundColorLayoutType, i, colorScheme) => {
+  switch (backgroundColorLayoutType) {
+    case ('1'):
+      return i % 2 === 0 ? '#ffffff' : getColorScheme(colorScheme)
+    case ('2'):
+      return i % 2 === 0 ? getColorScheme(colorScheme) : '#ffffff'
+    case ('3'):
+      return (() => {
+        if (i % 3 === 0) {
+          return getColorScheme(colorScheme)
+        } else if (i % 3 === 1) {
+          return getColorScheme(((Number(colorScheme) + 1) % 4).toString())
+        } else if (i % 3 === 2) {
+          return getColorScheme(((Number(colorScheme) + 2) % 4).toString())
+        }
+      })()
+  }
+}
+
+const marginLayout = (marginLayoutType, i) => {
+  switch (marginLayoutType) {
     case ('1'): {
-      return {
-        backgroundColor: i % 2 === 0 ? '#ffffff' : '#f4f4f4',
-      }
+      return i % 2 === 0 ? '60px 15% 60px 0' : '60px 0 60px 15%'
     }
     case ('2'): {
-      return {
-        backgroundColor: i % 2 === 0 ? '#f4f4f4' : '#ffffff',
-      }
+      return i % 2 === 0 ? '60px 0 60px 15%' : '60px 15% 60px 0'
     }
     case ('3'): {
-      return {
-        backgroundColor: '#f4f4f4',
-        margin: i % 2 === 0 ? '60px 15% 60px 0' : '60px 0 60px 15%',
-      }
+      return '60px 15% 60px 0'
     }
     case ('4'): {
-      return {
-        backgroundColor: '#f4f4f4',
-        margin: '60px 15% 60px 0',
-      }
-    }
-    case ('5'): {
-      return {
-        backgroundColor: '#f4f4f4',
-        margin: '60px 0 60px 15%',
-      }
+      return '60px 0 60px 15%'
     }
   }
 }
 
-const imgColLayout = (i, item, imgTextType) => {
+const rowLayout = (i, rowType, colorScheme) => {
+  switch (rowType) {
+    case ('1'):
+    case ('2'):
+    case ('3'):
+      return {
+        backgroundColor: backgroundColorLayout(rowType, i, colorScheme),
+      }
+    case ('4'):
+    case ('8'):
+    case ('12'):
+      return {
+        backgroundColor: getColorScheme(colorScheme),
+        margin: marginLayout((rowType / 4).toString()),
+      }
+    case ('5'):
+    case ('6'):
+    case ('7'):
+      return {
+        backgroundColor: backgroundColorLayout((rowType - 4).toString(), i, colorScheme),
+        margin: marginLayout('1'),
+      }
+    case ('9'):
+    case ('10'):
+    case ('11'):
+      return {
+        backgroundColor: backgroundColorLayout((rowType - 8).toString(), i, colorScheme),
+        margin: marginLayout('2'),
+      }
+    case ('13'):
+    case ('14'):
+    case ('15'):
+      return {
+        backgroundColor: backgroundColorLayout((rowType - 11).toString(), i, colorScheme),
+        margin: marginLayout('2'),
+      }
+  }
+}
+
+const imgColLayout = (i, item, imgTextType, bColor) => {
   switch (imgTextType) {
-    case ('1'): {
+    case ('1'):
       if (i % 2 === 0) {
         return (<>
           <ImageColumn item={item} lr='imgText' />
-          <ContentColumn item={item} lr='imgText' />
+          <ContentColumn item={item} lr='imgText' bColor={bColor} />
         </>)
       } else {
+        return (<>
+          <ContentColumn item={item} lr='textImg' bColor={bColor} />
+          <ImageColumn item={item} lr='textImg' />
+        </>)
+      }
+    case ('2'):
+      if (i % 2 === 0) {
         return (<>
           <ContentColumn item={item} lr='textImg' />
           <ImageColumn item={item} lr='textImg' />
         </>)
-      }
-    }
-    case ('2'): {
-      if (i % 2 === 0) {
-        return (<>
-          <ContentColumn item={item} lr='textImg' />
-          <ImageColumn item={item} lr='textImg' />
-        </>)
       } else {
         return (<>
           <ImageColumn item={item} lr='imgText' />
           <ContentColumn item={item} lr='imgText' />
         </>)
       }
-    }
-    case ('3'): {
+    case ('3'):
       return (<>
         <ImageColumn item={item} lr='imgText' />
         <ContentColumn item={item} lr='imgText' />
       </>)
-    }
-    case ('4'): {
+    case ('4'):
       return (<>
         <ContentColumn item={item} lr='textImg' />
         <ImageColumn item={item} lr='textImg' />
       </>)
-    }
   }
 }
 
-const AlternatingImageText = ({ data, rowType, imgTextType }) => {
+const AlternatingImageText = ({ data, rowType, imgTextType, colorScheme }) => {
   return (
     <div>
       {data.map((item, i) =>
         <div key={i}>
-          <Row className='aitt-row' style={rowStyle(i, rowType)}>
-            {imgColLayout(i, item, imgTextType)}
+          <Row className='aitt-row' style={rowLayout(i, rowType, colorScheme)}>
+            {(() => {
+              const bColor = rowLayout(i, rowType, colorScheme).backgroundColor
+              return imgColLayout(i, item, imgTextType, bColor)
+            })()}
           </Row>
         </div>
       )}

@@ -23,7 +23,7 @@ const Services = () => {
     <div>
       <Banner imageTitlePairs={[{ title: 'Services', image: exterior }]} />
       <ServicesNavBar currService={currService} setCurrService={setCurrService} />
-      <AlternatingImageTextTemplate data={currServiceData} rowType='3' imgTextType='1'/>
+      <AlternatingImageTextTemplate data={currServiceData} rowType='1' imgTextType='1'/>
     </div>
   )
 }

@@ -2,6 +2,9 @@ import React from 'react'
 
 import { Carousel } from 'antd'
 
+import { Typography } from 'antd'
+const { Title } = Typography
+
 const Banner = ({ imageTitlePairs }) => {
   return (
     <Carousel autoplay autoplaySpeed={3000} adaptiveHeight={true} height='500px' accessibility>
