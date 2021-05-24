@@ -4,6 +4,8 @@ import Banner from '../components/Banner'
 import TitleText from '../components/TitleText'
 import AnnouncementCard from '../components/AnnouncementCard'
 
+import SlateTextEditor from '../components/SlateTextEditor.js'
+
 import { Row } from 'antd'
 
 import { general } from '../images'
@@ -56,6 +58,7 @@ const Home = () => {
       ]} />
       <div className='home'>
         <Announcements />
+        <SlateTextEditor />
       </div>
     </div>
   )
