@@ -14,7 +14,7 @@ const cardStyle = {
   flexDirection: 'column',
   textAlign: 'center',
   margin: '40px',
-  maxWidth: '500px',
+  maxWidth: '400px',
 }
 
 const imgStyle = {
@@ -30,7 +30,7 @@ const detailsStyle = {
 const iconStyle = {
   fontSize: '1.2rem',
   marginRight: '10px',
-  color: '#fa8c16',
+  color: '#f37021',
 }
 
 const CardItem = ({ item }) => {

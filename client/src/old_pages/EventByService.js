@@ -94,11 +94,11 @@ function EventByService(props) {
               }}
             >
               <p>
-                <ClockCircleOutlined style={{ color: '#fa8c16' }} /> {'    '}
+                <ClockCircleOutlined style={{ color: '#f37021' }} /> {'    '}
                 {dataToInsert.time}
               </p>
               <p>
-                <PushpinOutlined style={{ color: '#fa8c16' }} /> {'    '}
+                <PushpinOutlined style={{ color: '#f37021' }} /> {'    '}
                 {dataToInsert.location}
               </p>
             </Card>

@@ -76,11 +76,13 @@ const NavBar = () => {
         <Button
           onClick={() => language === 'ENGLISH' ? setLanguage('中文') : setLanguage('ENGLISH')}
           style={{
-            backgroundColor: '#ffe7ba',
-            color: '#fa8c16',
-            borderRadius: '5px',
+            backgroundColor: '#fff3e0',
+            color: '#f37021',
+            borderRadius: '10px',
             borderStyle: 'none',
-            width: '90px',
+            width: '100px',
+            height: '40px',
+            fontWeight: '600',
           }}
         >
           {language}

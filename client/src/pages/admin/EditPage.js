@@ -175,15 +175,15 @@ function EditPage(props) {
                 }}
               >
                 <p>
-                  <ClockCircleOutlined style={{ color: '#fa8c16' }} /> {'    '}
+                  <ClockCircleOutlined style={{ color: '#f37021' }} /> {'    '}
                   {state.time}
                 </p>
                 <p>
-                  <PushpinOutlined style={{ color: '#fa8c16' }} /> {'    '}
+                  <PushpinOutlined style={{ color: '#f37021' }} /> {'    '}
                   {state.location}
                 </p>
                 <p>
-                  <UserOutlined style={{ color: '#fa8c16' }} />
+                  <UserOutlined style={{ color: '#f37021' }} />
                   {'   '}
                   {state.leader}
                 </p>

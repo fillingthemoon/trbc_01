@@ -115,7 +115,7 @@ const Services = () => {
                       <Meta
                         style={{ textAlign: 'left' }}
                         avatar={
-                          <ClockCircleOutlined style={{ color: '#fa8c16' }} />
+                          <ClockCircleOutlined style={{ color: '#f37021' }} />
                         }
                         title={i.time}
                       />
@@ -123,7 +123,7 @@ const Services = () => {
                       <Meta
                         style={{ textAlign: 'left' }}
                         avatar={
-                          <PushpinOutlined style={{ color: '#fa8c16' }} />
+                          <PushpinOutlined style={{ color: '#f37021' }} />
                         }
                         title={i.location}
                       />

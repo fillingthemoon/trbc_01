@@ -44,7 +44,6 @@ const cardStyle = {
   margin: '20px',
   maxWidth: '320px',
   border: 'none',
-  boxShadow: '2px 2px 2px 2px rgba(100, 100, 100, 0.1)'
 }
 
 const UpcomingSermon = ({ upcomingSermon }) => {
