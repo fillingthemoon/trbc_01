@@ -29,7 +29,7 @@ const cecData = [
     If you want to host a Children’s Camp in your church, but don’t know where to start, we will be very happy to chat with you and share our experiences and know-how with you and your co-workers!  Just give us an email at cec@trbc.org.sg and we’ll be in touch!`,
   },
   {
-    title: 'Contant Details',
+    title: 'Contact Details',
     text: `Address: Singapore Thomson Road Baptist Church
     45 Thomson Road, Singapore 307584
     Tel: 6256-2277

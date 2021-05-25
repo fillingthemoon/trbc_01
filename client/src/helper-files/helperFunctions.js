@@ -21,7 +21,7 @@ const formatParagraph = (paragraph) => {
     return (
       splitParagraph.map((text, i) =>
         text.includes('https://')
-          ? <AntdLink key={i} href={text}>{text}</AntdLink>
+          ? <AntdLink key={i} href={text} target='_blank'>{text}</AntdLink>
           : text
       )
     )
