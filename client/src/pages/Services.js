@@ -20,11 +20,18 @@ const Services = () => {
   }, [currService])
 
   return (
-    <div>
+    <>
       <Banner imageTitlePairs={[{ title: 'Services', image: exterior }]} />
       <ServicesNavBar currService={currService} setCurrService={setCurrService} />
-      <AlternatingImageTextTemplate data={currServiceData} rowType={8} imgTextType={2} primaryColor={1}/>
-    </div>
+      <AlternatingImageTextTemplate
+        data={currServiceData}
+        primaryColor={2}
+        colorLayout={3}
+        rowLengthType={0}
+        rowLayout={1}
+        imgTextLayout={0}
+      />
+    </>
   )
 }
 
