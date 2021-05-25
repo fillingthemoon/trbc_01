@@ -34,12 +34,14 @@ const titleUnderlineStyle = {
 const Announcements = () => {
   return (
     <div className='announcements-container'>
-      <TitleText titleUnderlineStyle={titleUnderlineStyle} title='Announcements' underlineAlign='center' />
-      <Row justify='center'>
-        {announcementsData.map((announcement, i) => (
-          <AnnouncementCard key={i} announcement={announcement} />
-        ))}
-      </Row>
+      <div>
+        <TitleText titleUnderlineStyle={titleUnderlineStyle} title='Announcements' underlineAlign='center' />
+        <Row justify='center'>
+          {announcementsData.map((announcement, i) => (
+            <AnnouncementCard key={i} announcement={announcement} />
+          ))}
+        </Row>
+      </div>
     </div>
   )
 }

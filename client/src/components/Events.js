@@ -39,7 +39,7 @@ const cardStyle = {
   flexDirection: 'column',
   textAlign: 'left',
   margin: '20px',
-  maxWidth: '550px',
+  maxWidth: '450px',
   border: 'none',
   backgroundColor: cardColor,
 }
@@ -111,18 +111,20 @@ const Events = () => {
 
   return (
     <div className='events-container'>
-      <TitleText
-        titleUnderlineStyle={titleUnderlineStyle}
-        title='Events'
-        underlineAlign='left'
-        titleStyle={{ margin: '0 20px' }}
-      />
-      <Row justify='left'>
-        {eventsData.map((event, i) =>
-          <Event key={i} event={event} />
-        )}
-      </Row>
-    </div>
+      <div >
+        <TitleText
+          titleUnderlineStyle={titleUnderlineStyle}
+          title='Events'
+          underlineAlign='left'
+          titleStyle={{ margin: '0 20px' }}
+        />
+        <Row justify='left'>
+          {eventsData.map((event, i) =>
+            <Event key={i} event={event} />
+          )}
+        </Row>
+      </div>
+    </div >
   )
 }
 

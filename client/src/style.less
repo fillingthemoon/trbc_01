@@ -62,22 +62,34 @@
 }
 
 /* Home */
-.announcements-container {
-  margin: 80px 0;
-  padding: 50px;
-  background-color: @background-light-gray;
+.upcoming-sermons-container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 60px 0;
 }
 
-.upcoming-sermons-container {
-  margin: 80px 20% 80px 0;
+.upcoming-sermons-container > div {
+  width: 80%;
   padding: 50px 50px;
   background-color: @orange-light;
 }
 
 .events-container {
-  margin: 80px 0 80px 20%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 60px 0;
+}
+
+.events-container > div {
+  width: 80%;
   padding: 50px 50px;
   background-color: @background-white;
+}
+
+.announcements-container > div {
+  margin: 60px 0;
+  padding: 50px;
+  background-color: @background-light-gray;
 }
 
 @media (max-width:800px) {

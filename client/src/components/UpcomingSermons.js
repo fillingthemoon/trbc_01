@@ -49,7 +49,7 @@ const cardStyle = {
   flexDirection: 'column',
   textAlign: 'left',
   margin: '20px',
-  maxWidth: '320px',
+  maxWidth: '300px',
   border: 'none',
 }
 
@@ -71,7 +71,7 @@ const UpcomingSermon = ({ upcomingSermon }) => {
         avatar={<UserOutlined style={iconStyle} />}
         description={speaker}
       />
-      <br/>
+      <br />
       <Meta
         style={{ textAlign: 'left' }}
         avatar={<CalendarOutlined style={iconStyle} />}
@@ -90,17 +90,19 @@ const UpcomingSermons = () => {
 
   return (
     <div className='upcoming-sermons-container'>
-      <TitleText
-        titleUnderlineStyle={titleUnderlineStyle}
-        title='Upcoming Sermons'
-        underlineAlign='left'
-        titleStyle={{ margin: '0 20px' }}
-      />
-      <Row justify='left'>
-        {upcomingSermonsData.map((upcomingSermon, i) =>
-          <UpcomingSermon key={i} upcomingSermon={upcomingSermon} />
-        )}
-      </Row>
+      <div>
+        <TitleText
+          titleUnderlineStyle={titleUnderlineStyle}
+          title='Upcoming Sermons'
+          underlineAlign='left'
+          titleStyle={{ margin: '0 20px' }}
+        />
+        <Row justify='left'>
+          {upcomingSermonsData.map((upcomingSermon, i) =>
+            <UpcomingSermon key={i} upcomingSermon={upcomingSermon} />
+          )}
+        </Row>
+      </div>
     </div>
   )
 }
