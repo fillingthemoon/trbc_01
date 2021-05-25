@@ -51,12 +51,21 @@ const App = () => {
           <Route path='/home' exact>
             <Home />
           </Route>
-          <Route path='/our-history' exact>
-            <OurHistory />
-          </Route>
           <Route path='/mission-vision' exact>
             <MissionVision />
           </Route>
+          <Route path='/our-history' exact>
+            <OurHistory />
+          </Route>
+          <Route path='/our-team' exact>
+            <OurTeam />
+          </Route >
+          <Route path='/statement-of-faith' exact>
+            <StatementOfFaith />
+          </Route >
+          <Route path='/services' exact>
+            <Services />
+          </Route >
           <Route path='/im-new' exact>
             <ImNew />
           </Route>
@@ -68,15 +77,6 @@ const App = () => {
           </Route>
           <Route path='/discipleship' exact>
             <Discipleship />
-          </Route >
-          <Route path='/our-team' exact>
-            <OurTeam />
-          </Route >
-          <Route path='/statement-of-faith' exact>
-            <StatementOfFaith />
-          </Route >
-          <Route path='/services' exact>
-            <Services />
           </Route >
           <Route path='/facility-bookings' exact>
             <FacilityBookings />

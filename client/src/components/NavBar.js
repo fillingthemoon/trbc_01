@@ -55,27 +55,26 @@ const NavBar = () => {
       <Menu.Item key='im-new'>
         <Link replace to='/im-new'>{'I\'m New'}</Link>
       </Menu.Item>
-      <Menu.Item key='outreach'>
-        <Link replace to='/outreach'>Outreach</Link>
-      </Menu.Item>
-      <Menu.Item key='missions'>
-        <Link replace to='/missions'>Missions</Link>
-      </Menu.Item>
-      <Menu.Item key='discipleship'>
-        <Link replace to='/discipleship'>Discipleship</Link>
+      <SubMenu key='ministries' title='Ministries'>
+        <Menu.Item key='outreach'>
+          <Link replace to='/outreach'>Outreach</Link>
+        </Menu.Item>
+        <Menu.Item key='missions'>
+          <Link replace to='/missions'>Missions</Link>
+        </Menu.Item>
+        <Menu.Item key='discipleship'>
+          <Link replace to='/discipleship'>Discipleship</Link>
+        </Menu.Item>
+      </SubMenu>
+      <Menu.Item key='resources'>
+        <Link replace to='/resources'>Resources</Link>
       </Menu.Item>
       <Menu.Item key='facility-bookings'>
         <Link replace to='/facility-bookings'>Facility Bookings</Link>
       </Menu.Item>
-
-      <SubMenu key='admin' title='Resources'>
-        <Menu.Item key='resources'>
-          <Link replace to='/resources'>Resources</Link>
-        </Menu.Item>
-        {/* <Menu.Item key='admin-page'>
+      {/* <Menu.Item key='admin-page'>
             <Link replace to='/admin-page'>Admin</Link>
           </Menu.Item> */}
-      </SubMenu>
 
       <Menu.Item key='language' disabled>
         <Button
