@@ -5,7 +5,7 @@ import Announcements from '../components/Announcements'
 import UpcomingSermons from '../components/UpcomingSermons'
 import Events from '../components/Events'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior, serviceTiming, paSystem } = general
 
 const Home = () => {

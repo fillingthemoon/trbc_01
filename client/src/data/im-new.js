@@ -1,4 +1,4 @@
-import { aboutUs } from '../images'
+import { aboutUs } from '../helper-files/images'
 const {
   aboutUs1,
   aboutUs2,

@@ -3,7 +3,7 @@ import Banner from '../components-reusable/Banner'
 
 import AlternatingImageTextTemplate from '../page-templates/AlternatingImageTextTemplate'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior } = general
 
 import ourHistoryData from '../data/our-history'

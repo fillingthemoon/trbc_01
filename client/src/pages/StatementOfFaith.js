@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior } = general
 
 import statementOfFaithData from '../data/statement-of-faith'

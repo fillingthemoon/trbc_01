@@ -15,7 +15,7 @@ import {
 
 import axios from 'axios'
 
-import { general } from '../../images'
+import { general } from '../../helper-files/images'
 const { churchWide } = general
 
 const EditStatement = () => {

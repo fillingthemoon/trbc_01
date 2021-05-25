@@ -6,13 +6,14 @@ import Home from './pages/Home'
 import MissionVision from './pages/MissionVision'
 import OurHistory from './pages/OurHistory'
 import OurTeam from './pages/OurTeam'
+import StatementOfFaith from './pages/StatementOfFaith'
 import Services from './pages/Services'
 import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
 import Missions from './pages/Missions'
 import Discipleship from './pages/Discipleship'
+import CEC from './pages/CEC'
 import FacilityBookings from './pages/FacilityBookings'
-import StatementOfFaith from './pages/StatementOfFaith'
 import Resources from './pages/Resources'
 import Admin from './pages/admin/Admin'
 import ContactFooter from './components/ContactFooter'
@@ -76,6 +77,9 @@ const App = () => {
           </Route>
           <Route path='/discipleship' exact>
             <Discipleship />
+          </Route >
+          <Route path='/cec' exact>
+            <CEC />
           </Route >
           <Route path='/facility-bookings' exact>
             <FacilityBookings />

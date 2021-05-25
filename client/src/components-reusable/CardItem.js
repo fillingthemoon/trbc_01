@@ -10,7 +10,7 @@ import { FieldTimeOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons
 
 import {
   colorPrimaryOrange as iconColor,
-} from '../colors'
+} from '../helper-files/colors'
 
 const { Title, Paragraph } = Typography
 const { Meta } = Card

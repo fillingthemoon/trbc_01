@@ -14,7 +14,7 @@ import {
   colorMGray,
   colorLOrange,
   colorWhite,
-} from '../colors'
+} from '../helper-files/colors'
 
 const ImageColumn = ({ item, lr }) => (
   <Col className='aitt-img-col'>

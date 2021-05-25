@@ -7,7 +7,7 @@ import { Row, Col, Image } from 'antd'
 import { IoMail, IoLocationSharp } from 'react-icons/io5'
 import { AiFillPhone } from 'react-icons/ai'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { trbcMap } = general
 
 import TitleText from '../components-reusable/TitleText'

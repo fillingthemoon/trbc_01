@@ -4,7 +4,7 @@ import AlternatingImageTextTemplate from '../page-templates/AlternatingImageText
 import Banner from '../components-reusable/Banner'
 import ConnectForm from '../components-reusable/ConnectForm'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { churchWide } = general
 
 import imNewData from '../data/im-new'

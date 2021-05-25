@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from '../components-reusable/Banner'
 import SectionsTemplate from '../page-templates/SectionsTemplate'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { churchWide } = general
 
 import outreachData from '../data/outreach'

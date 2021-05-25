@@ -1,4 +1,4 @@
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior } = general
 
 const missionsData = [

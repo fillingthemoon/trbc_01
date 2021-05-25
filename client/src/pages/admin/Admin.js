@@ -10,7 +10,7 @@ import {
   SettingOutlined,
 } from '@ant-design/icons'
 
-import { general } from '../../images'
+import { general } from '../../helper-files/images'
 const { churchWide } = general
 
 function Admin() {

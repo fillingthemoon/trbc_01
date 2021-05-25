@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Banner from '../components-reusable/Banner'
 import SectionsTemplate from '../page-templates/SectionsTemplate'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior } = general
 
 import missionsData from '../data/missions'

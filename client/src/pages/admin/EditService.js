@@ -20,7 +20,7 @@ import {
   UploadOutlined,
 } from '@ant-design/icons'
 
-import { general } from '../../images'
+import { general } from '../../helper-files/images'
 const { churchWide } = general
 
 import axios from 'axios'

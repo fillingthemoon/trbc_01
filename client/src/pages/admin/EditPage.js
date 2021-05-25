@@ -10,7 +10,7 @@ import {
 import { UploadOutlined } from '@ant-design/icons'
 import Banner from '../../components-reusable/Banner'
 
-import { general } from '../../images'
+import { general } from '../../helper-files/images'
 const { churchWide } = general
 
 import axios from 'axios'

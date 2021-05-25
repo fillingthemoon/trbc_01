@@ -4,7 +4,7 @@ import Banner from '../components-reusable/Banner'
 
 import SectionsTemplate from '../page-templates/SectionsTemplate'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior } = general
 
 import ourTeamData from '../data/our-team'

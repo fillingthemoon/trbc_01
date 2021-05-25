@@ -3,7 +3,7 @@ import { List, Card, Row, Col, Divider, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
 import Banner from '../components-reusable/Banner'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { churchWide } = general
 
 const Resources = () => {

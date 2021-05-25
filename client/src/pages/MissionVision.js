@@ -4,7 +4,7 @@ import TitleText from '../components-reusable/TitleText'
 
 import { Row, Col, Image } from 'antd'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior } = general
 
 const MissionVision = () => {

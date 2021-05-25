@@ -8,13 +8,13 @@ import { MenuOutlined } from '@ant-design/icons'
 const { Header } = Layout
 const { SubMenu } = Menu
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { trbcLogo } = general
 
 import {
   colorPrimaryOrange,
   colorLOrange,
-} from '../colors'
+} from '../helper-files/colors'
 
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1370px)' })
@@ -64,6 +64,9 @@ const NavBar = () => {
         </Menu.Item>
         <Menu.Item key='discipleship'>
           <Link replace to='/discipleship'>Discipleship</Link>
+        </Menu.Item>
+        <Menu.Item key='cec'>
+          <Link replace to='/cec'>{'Children\'s Enrichment Camp'}</Link>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key='resources'>

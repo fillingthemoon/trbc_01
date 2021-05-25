@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Banner from '../components-reusable/Banner'
 import ServicesNavBar from '../components/ServicesNavBar'
 
-import { general } from '../images'
+import { general } from '../helper-files/images'
 const { exterior } = general
 
 import servicesData from '../data/services'

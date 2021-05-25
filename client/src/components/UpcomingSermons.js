@@ -4,7 +4,7 @@ import TitleText from '../components-reusable/TitleText'
 
 import {
   colorPrimaryOrange as iconColor,
-} from '../colors'
+} from '../helper-files/colors'
 
 import { UserOutlined, CalendarOutlined } from '@ant-design/icons'
 

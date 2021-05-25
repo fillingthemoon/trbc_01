@@ -7,7 +7,7 @@ const { Option } = Select
 
 import {
   colorLOrange,
-} from '../colors'
+} from '../helper-files/colors'
 
 const ConnectForm = () => {
 

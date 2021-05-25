@@ -1,11 +1,13 @@
 import React from 'react'
 
 import TitleText from '../components-reusable/TitleText'
-import AnnouncementCard from '../components-reusable/AnnouncementCard'
 
-import { Row } from 'antd'
+import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
 
-import { general } from '../images'
+import { Row, Card, Typography } from 'antd'
+const { Title, Paragraph, Link } = Typography
+
+import { general } from '../helper-files/images'
 const { trbcSanc } = general
 
 const announcementsData = [
@@ -25,6 +27,41 @@ const announcementsData = [
     imageSource: trbcSanc
   }
 ]
+
+const cardStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center',
+  maxWidth: '550px',
+}
+
+const imgStyle = {
+  maxHeight: '200px',
+  objectFit: 'cover',
+}
+
+const AnnouncementCard = ({ announcement }) => {
+  const {
+    title,
+    text,
+    imageSource,
+  } = announcement
+
+  return (
+    <Card cover={<img alt="img" src={imageSource} style={imgStyle} />}
+      style={cardStyle}
+    >
+      <Title style={{ fontSize: '1.2rem', marginBottom: '20px' }}>{title}</Title>
+      <div>
+        {splitLines(text).map((paragraph, i) =>
+          <Paragraph key={i} style={{ fontSize: '0.95rem', fontWeight: '300', margin: '0' }}>
+            {formatParagraph(paragraph)}
+          </Paragraph>
+        )}
+      </div>
+    </Card>
+  )
+}
 
 const titleUnderlineStyle = {
   display: 'flex',

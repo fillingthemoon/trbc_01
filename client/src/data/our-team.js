@@ -1,4 +1,4 @@
-import { ourTeam } from '../images'
+import { ourTeam } from '../helper-files/images'
 const {
   dongFan,
   ivanChow,
