@@ -3,42 +3,34 @@ import React from 'react'
 import TitleText from '../components-reusable/TitleText'
 
 import {
+  colorLGray as cardColor,
   colorPrimaryOrange as iconColor,
 } from '../colors'
 
-import { UserOutlined, CalendarOutlined } from '@ant-design/icons'
-
 import { Card, Typography, Row, Divider } from 'antd'
 const { Title, Paragraph, Text } = Typography
-const { Meta } = Card
 
-const upcomingSermonsData = [
+const eventsData = [
   {
     page: 'home',
-    section: 'upcoming-sermons',
+    section: 'events',
     title: 'Pellentesque habitant morbi tristique senectus et',
-    speaker: 'Pastor Name',
     text: 'Pellentesque habitant morbi tristique senectus et',
-    passage: 'Colossians 2:6-7',
     date: '23 May 2021',
   },
   {
     page: 'home',
-    section: 'upcoming-sermons',
+    section: 'events',
     title: 'Pellentesque habitant morbi tristique senectus et',
-    speaker: 'Pastor Name',
     text: 'Pellentesque habitant morbi tristique senectus et',
-    passage: 'Colossians 2:6-7',
     date: '23 May 2021',
 
   },
   {
     page: 'home',
-    section: 'upcoming-sermons',
+    section: 'events',
     title: 'Pellentesque habitant morbi tristique senectus et',
-    speaker: 'Pastor Name',
     text: 'Pellentesque habitant morbi tristique senectus et',
-    passage: 'Colossians 2:6-7',
     date: '23 May 2021',
 
   },
@@ -51,36 +43,19 @@ const cardStyle = {
   margin: '20px',
   maxWidth: '320px',
   border: 'none',
+  backgroundColor: cardColor,
 }
 
-const iconStyle = {
-  fontSize: '1rem',
-  color: iconColor,
-}
-
-const UpcomingSermon = ({ upcomingSermon }) => {
-  const { title, speaker, date, passage } = upcomingSermon
+const Event = ({ event }) => {
+  const { title, date } = event
 
   return (
     <Card style={cardStyle}>
-      <Title style={{ fontSize: '1.2rem', fontWeight: '700', display: 'block' }}>{passage}</Title>
+      <Title style={{ fontSize: '1.2rem', fontWeight: '700', display: 'block' }}>
+        {title}
+      </Title>
       <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}>{title}</Paragraph>
-      <Divider />
-      <Meta
-        style={{ textAlign: 'left' }}
-        avatar={
-          <UserOutlined style={iconStyle} />
-        }
-        title={speaker}
-      />
-      <br/>
-      <Meta
-        style={{ textAlign: 'left' }}
-        avatar={
-          <CalendarOutlined style={iconStyle} />
-        }
-        title={date}
-      />
+      <Text style={{ fontSize: '1rem', fontWeight: '500', display: 'block', margin: '30px 0 0 0' }}>{date}</Text>
     </Card>
   )
 }
@@ -90,23 +65,29 @@ const titleUnderlineStyle = {
   justifyContent: 'left',
 }
 
-const UpcomingSermons = () => {
+const iconStyle = {
+  fontSize: '1.2rem',
+  marginRight: '10px',
+  color: iconColor,
+}
+
+const Events = () => {
 
   return (
-    <div className='upcoming-sermons-container'>
+    <div className='events-container'>
       <TitleText
         titleUnderlineStyle={titleUnderlineStyle}
-        title='Upcoming Sermons'
+        title='Events'
         underlineAlign='left'
         titleStyle={{ margin: '0 20px' }}
       />
       <Row justify='left'>
-        {upcomingSermonsData.map((upcomingSermon, i) =>
-          <UpcomingSermon key={i} upcomingSermon={upcomingSermon} />
+        {eventsData.map((event, i) =>
+          <Event key={i} event={event} />
         )}
       </Row>
     </div>
   )
 }
 
-export default UpcomingSermons
+export default Events

@@ -3,6 +3,7 @@ import React from 'react'
 import Banner from '../components-reusable/Banner'
 import Announcements from '../components/Announcements'
 import UpcomingSermons from '../components/UpcomingSermons'
+import Events from '../components/Events'
 
 import { general } from '../images'
 const { exterior, serviceTiming, paSystem } = general
@@ -17,6 +18,7 @@ const Home = () => {
       ]} />
       <div className='home'>
         <UpcomingSermons />
+        <Events />
         <Announcements />
       </div>
     </div>

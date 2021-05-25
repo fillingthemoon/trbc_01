@@ -3,12 +3,13 @@ import React from 'react'
 import {
   Card,
   Typography,
+  Divider,
 } from 'antd'
 
 import { FieldTimeOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons'
 
 import {
-  colorPrimaryOrange,
+  colorPrimaryOrange as iconColor,
 } from '../colors'
 
 const { Title, Paragraph, Text } = Typography
@@ -27,6 +28,15 @@ const imgStyle = {
 }
 
 const detailsStyle = {
+  textAlign: 'left',
+  margin: '0 20px',
+  display: 'flex',
+  flexDirection: 'column',
+  height: '80px',
+  justifyContent: 'space-between'
+}
+
+const detailsTextStyle = {
   fontSize: '0.9rem',
   fontWeight: 500,
 }
@@ -34,7 +44,7 @@ const detailsStyle = {
 const iconStyle = {
   fontSize: '1.2rem',
   marginRight: '10px',
-  color: colorPrimaryOrange,
+  color: iconColor,
 }
 
 const CardItem = ({ item }) => {
@@ -49,28 +59,31 @@ const CardItem = ({ item }) => {
     // hoverable
     >
       <Title style={{ fontSize: '1.2rem', margin: '10px 0' }}>{title}</Title>
-      <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '40px 0' }}>{text}</Paragraph>
+      <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '20px 0' }}>{text}</Paragraph>
       { details &&
-        <div style={{ textAlign: 'left', margin: '0 20px' }}>
-          {time &&
-            <Paragraph>
-              <FieldTimeOutlined style={iconStyle} />
-              <Text style={detailsStyle}>{time}</Text>
-            </Paragraph>
-          }
-          {location &&
-            <Paragraph>
-              <HomeOutlined style={iconStyle} />
-              <Text style={detailsStyle}>{location}</Text>
-            </Paragraph>
-          }
-          {leader &&
-            <Paragraph>
-              <UserOutlined style={iconStyle} />
-              <Text style={detailsStyle}>{leader}</Text>
-            </Paragraph>
-          }
-        </div>
+        <>
+          <Divider style={{ margin: '20px 0' }} />
+          <div style={detailsStyle}>
+            {time &&
+              <div>
+                <FieldTimeOutlined style={iconStyle} />
+                <Text style={detailsTextStyle}>{time}</Text>
+              </div>
+            }
+            {location &&
+              <div>
+                <HomeOutlined style={iconStyle} />
+                <Text style={detailsTextStyle}>{location}</Text>
+              </div>
+            }
+            {leader &&
+              <div>
+                <UserOutlined style={iconStyle} />
+                <Text style={detailsTextStyle}>{leader}</Text>
+              </div>
+            }
+          </div>
+        </>
       }
     </Card>
   )

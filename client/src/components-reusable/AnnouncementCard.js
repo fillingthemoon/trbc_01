@@ -51,7 +51,6 @@ const AnnouncementCard = ({ announcement }) => {
                 return paragraph
               }
             })()}
-            {console.log(splitLines(text))}
           </Paragraph>
         )}
       </div>

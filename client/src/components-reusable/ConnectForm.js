@@ -5,12 +5,16 @@ import {
 } from 'antd'
 const { Option } = Select
 
+import {
+  colorLOrange,
+} from '../colors'
+
 const ConnectForm = () => {
 
   return (
     <div
       style={{
-        backgroundColor: '#FFF3E0',
+        backgroundColor: colorLOrange,
         margin: 'auto',
         textAlign: 'center',
         display: 'flex',
