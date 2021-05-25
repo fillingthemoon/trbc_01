@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Card, Typography } from 'antd'
-const { Title, Text, Paragraph, Link } = Typography
+const { Title, Paragraph, Link } = Typography
 
 const cardStyle = {
   display: 'flex',

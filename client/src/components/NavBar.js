@@ -11,6 +11,11 @@ const { SubMenu } = Menu
 import { general } from '../images'
 const { trbcLogo } = general
 
+import {
+  colorPrimaryOrange,
+  colorLOrange,
+} from '../colors'
+
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1370px)' })
   const [current, setCurrent] = useState('home')
@@ -76,8 +81,8 @@ const NavBar = () => {
         <Button
           onClick={() => language === 'ENGLISH' ? setLanguage('中文') : setLanguage('ENGLISH')}
           style={{
-            backgroundColor: '#fff3e0',
-            color: '#f37021',
+            backgroundColor: colorLOrange,
+            color: colorPrimaryOrange,
             borderRadius: '10px',
             borderStyle: 'none',
             width: '100px',

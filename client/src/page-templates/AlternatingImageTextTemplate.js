@@ -9,12 +9,12 @@ import {
   Col,
 } from 'antd'
 
-const colorLGray = '#f4f4f4'
-const colorMGray = '#4f4f4f'
-const colorDGray = '#333333'
-const colorMOrange = '#fa9932'
-const colorSOrange = '#f37021'
-const colorLOrange = '#fff3e0'
+import {
+  colorLGray,
+  colorMGray,
+  colorLOrange,
+  colorWhite,
+} from '../colors'
 
 const ImageColumn = ({ item, lr }) => (
   <Col className='aitt-img-col'>
@@ -41,19 +41,19 @@ const textStyle = (bColor) => {
     fontSize: '1rem',
     fontWeight: '300',
     margin: 0,
-    color: [colorMGray].includes(bColor) && '#ffffff'
+    color: [colorMGray].includes(bColor) && colorWhite
   }
 }
 
 const underlineStyle = (bColor) => {
   return {
-    backgroundColor: [].includes(bColor) && '#4f4f4f'
+    backgroundColor: [].includes(bColor) && colorLGray
   }
 }
 
 const linkStyle = (bColor) => {
   return {
-    color: [].includes(bColor) && '#4f4f4f'
+    color: [].includes(bColor) && colorLGray
   }
 }
 
@@ -72,94 +72,86 @@ const ContentColumn = ({ item, lr, bColor }) => (
   </Col>
 )
 
-const getColorScheme = (colorScheme) => {
-  switch (colorScheme) {
-    case (0):
-      return colorMGray
-    case (1):
-      return colorLGray
-    case (2):
-      return colorLOrange
-    // case ('4'):
-    //   return '#333333'
-  }
-}
+const colors = [
+  colorMGray,
+  colorLGray,
+  colorLOrange,
+]
 
-const backgroundColorLayout = (backgroundColorLayoutType, i, colorScheme) => {
-  switch (backgroundColorLayoutType) {
-    case ('1'):
-      return i % 2 === 0 ? '#ffffff' : getColorScheme(Number(colorScheme))
-    case ('2'):
-      console.log(getColorScheme(Number(colorScheme)))
-      return i % 2 === 0 ? getColorScheme(Number(colorScheme)) : '#ffffff'
-    case ('3'): {
-      const numColorSchemes = 3
-      return getColorScheme(((Number(colorScheme) + (i % numColorSchemes)) % numColorSchemes))
+const getBackgroundColor = (rowType, i, primaryColor) => {
+  switch (rowType) {
+    case (1):
+      return i % 2 === 0 ? '#ffffff' : colors[primaryColor]
+    case (2):
+      return i % 2 === 0 ? colors[primaryColor] : '#ffffff'
+    case (3): {
+      const rotatedColorScheme = (primaryColor + (i % colors.length)) % colors.length
+      return colors[rotatedColorScheme]
     }
   }
 }
 
 const marginLayout = (marginLayoutType, i) => {
   switch (marginLayoutType) {
-    case ('1'): {
+    case (1): {
       return i % 2 === 0 ? '60px 15% 60px 0' : '60px 0 60px 15%'
     }
-    case ('2'): {
+    case (2): {
       return i % 2 === 0 ? '60px 0 60px 15%' : '60px 15% 60px 0'
     }
-    case ('3'): {
+    case (3): {
       // return '60px 15% 60px 0'
       return i % 2 === 0 ? '60px 30% 60px 0' : '60px 15% 60px 0'
     }
-    case ('4'): {
+    case (4): {
       // return '60px 0 60px 15%'
       return i % 2 === 0 ? '60px 0 60px 30%' : '60px 0 60px 15%'
     }
   }
 }
 
-const rowLayout = (i, rowType, colorScheme) => {
+const rowLayout = (i, rowType, primaryColor) => {
   switch (rowType) {
-    case ('1'):
-    case ('2'):
-    case ('3'):
+    case (1):
+    case (2):
+    case (3):
       return {
-        backgroundColor: backgroundColorLayout(rowType, i, colorScheme),
+        backgroundColor: getBackgroundColor(rowType, i, primaryColor),
       }
-    case ('4'):
-    case ('8'):
-    case ('12'):
+    case (4):
+    case (8):
+    case (12):
       return {
-        backgroundColor: getColorScheme(Number(colorScheme)),
-        margin: marginLayout((Number(rowType) / 4).toString(), i),
+        backgroundColor: colors[primaryColor],
+        margin: marginLayout(rowType / 4, i),
       }
-    case ('5'):
-    case ('6'):
-    case ('7'):
+    case (5):
+    case (6):
+    case (7):
       return {
-        backgroundColor: backgroundColorLayout((Number(rowType) - 4).toString(), i, colorScheme),
-        margin: marginLayout('1', i),
+        backgroundColor: getBackgroundColor(rowType - 4, i, primaryColor),
+        margin: marginLayout(1, i),
       }
-    case ('9'):
-    case ('10'):
-    case ('11'):
+    case (9):
+    case (10):
+    case (11):
       return {
-        backgroundColor: backgroundColorLayout((Number(rowType) - 8).toString(), i, colorScheme),
-        margin: marginLayout('2', i),
+        backgroundColor: getBackgroundColor(rowType - 8, i, primaryColor),
+        margin: marginLayout(2, i),
       }
-    case ('13'):
-    case ('14'):
-    case ('15'):
+    case (13):
+    case (14):
+    case (15):
       return {
-        backgroundColor: backgroundColorLayout((Number(rowType) - 12).toString(), i, colorScheme),
-        margin: marginLayout('3', i),
+        backgroundColor: getBackgroundColor(rowType - 12, i, primaryColor),
+        margin: marginLayout(3, i),
       }
   }
 }
 
 const imgTextLayout = (i, item, imgTextType, bColor) => {
   switch (imgTextType) {
-    case ('1'):
+    case (1):
       if (i % 2 === 0) {
         return (<>
           <ImageColumn item={item} lr='imgText' />
@@ -171,7 +163,7 @@ const imgTextLayout = (i, item, imgTextType, bColor) => {
           <ImageColumn item={item} lr='textImg' />
         </>)
       }
-    case ('2'):
+    case (2):
       if (i % 2 === 0) {
         return (<>
           <ContentColumn item={item} lr='textImg' />
@@ -183,12 +175,12 @@ const imgTextLayout = (i, item, imgTextType, bColor) => {
           <ContentColumn item={item} lr='imgText' />
         </>)
       }
-    case ('3'):
+    case (3):
       return (<>
         <ImageColumn item={item} lr='imgText' />
         <ContentColumn item={item} lr='imgText' />
       </>)
-    case ('4'):
+    case (4):
       return (<>
         <ContentColumn item={item} lr='textImg' />
         <ImageColumn item={item} lr='textImg' />
@@ -201,13 +193,13 @@ const imgTextLayout = (i, item, imgTextType, bColor) => {
  * imgTextType: 1-4
  * colorScheme: 0-2
  */
-const AlternatingImageText = ({ data, rowType, imgTextType, colorScheme }) => {
+const AlternatingImageText = ({ data, rowType, imgTextType, primaryColor }) => {
   return (
     <div>
       {data.map((item, i) =>
-        <Row key={i} className='aitt-row' style={rowLayout(i, rowType, colorScheme)}>
+        <Row key={i} className='aitt-row' style={rowLayout(i, rowType, primaryColor)}>
           {(() => {
-            const bColor = rowLayout(i, rowType, colorScheme).backgroundColor
+            const bColor = rowLayout(i, rowType, primaryColor).backgroundColor
             // console.log(bColor)
             return imgTextLayout(i, item, imgTextType, bColor)
           })()}

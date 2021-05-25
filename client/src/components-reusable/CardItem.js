@@ -7,6 +7,10 @@ import {
 
 import { FieldTimeOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons'
 
+import {
+  colorPrimaryOrange,
+} from '../colors'
+
 const { Title, Paragraph, Text } = Typography
 
 const cardStyle = {
@@ -30,7 +34,7 @@ const detailsStyle = {
 const iconStyle = {
   fontSize: '1.2rem',
   marginRight: '10px',
-  color: '#f37021',
+  color: colorPrimaryOrange,
 }
 
 const CardItem = ({ item }) => {
