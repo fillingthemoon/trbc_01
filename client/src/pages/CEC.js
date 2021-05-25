@@ -14,7 +14,9 @@ const cecData = [
     title: 'About Children\'s Enrichment Camp (CEC)',
     text: `The Children’s Enrichment Camp (or CEC) is the annual Children’s Enrichment Camp, organised by the Singapore Thomson Road Baptist Church. Held every year-end, our attendance averages approximately 230 children each time we hold the camp! Using materials designed by Lifeway Christian Resources, each camp is a unique experience – for both the children, as well as for all the volunteers involved!
     Since our inaugural camp in 2004, TRBC has seen God’s blessing on this ministry as it grows from strength to strength. From an initial ministry involving 200 children (and almost an equal number of volunteers!), we have since expanded our ministry capacity to 250 children – which is as far as our church premises can stretch! God has indeed extended much of his grace to this ministry, and we are continually grateful for His provision to His children.
-    2006 was another watershed year for this ministry, as we partnered a sister church, Shelter Baptist Church, in organising the camp. As the camp moves onward each year, and as we reach a landmark 10 year of hosting this camp in 2013, we bear testimony and witness to God’s goodness and grace towards this ministry. Do keep us in your prayers as we continue this work of developing Christian children’s camps in Singapore!`,
+    2006 was another watershed year for this ministry, as we partnered a sister church, Shelter Baptist Church, in organising the camp. As the camp moves onward each year, and as we reach a landmark 10 year of hosting this camp in 2013, we bear testimony and witness to God’s goodness and grace towards this ministry. Do keep us in your prayers as we continue this work of developing Christian children’s camps in Singapore!
+    
+    Find out more @ https://trbccec.wordpress.com.`,
   },
   {
     title: 'Run Your Own Camp!',
@@ -41,21 +43,21 @@ const CEC = () => {
     <div>
       <Banner imageTitlePairs={[{ title: 'Children\'s Enrichment Camp (CEC)', image: exterior }]} />
       <div style={{ padding: '50px 200px' }}>
-        {cecData.map(item =>
-          <>
+        {cecData.map((item, i) =>
+          <div key={i}>
             <TitleText
               title={item.title}
               titleStyle={{ marginTop: '60px' }}
               text={
-                splitLines(item.text).map((paragraph, i) =>
-                  // <Paragraph key={i} style={{ fontSize: '1rem', fontWeight: '300', margin: '20px 0' }}>
-                  formatParagraph(paragraph)
-                  // </Paragraph>
+                splitLines(item.text).map((paragraph, j) =>
+                  <span key={j}>
+                    {formatParagraph(paragraph)}
+                  </span>
                 )
               }
               textStyle={{ fontSize: '1rem', fontWeight: 300 }}
             />
-          </>
+          </div>
         )}
       </div>
     </div >

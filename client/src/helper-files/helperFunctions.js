@@ -1,5 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import { Typography } from 'antd'
+const { Link: AntdLink } = Typography
 
 const splitLines = (text) => {
   const splitText = text.split('\n')
@@ -11,9 +13,18 @@ const splitLines = (text) => {
 
 const formatParagraph = (paragraph) => {
   if (paragraph.substring(0, 8) === 'https://') {
-    return <Link href={paragraph} style={{ wordBreak: 'break-word' }} target='_blank'>{paragraph}</Link>
+    return <AntdLink href={paragraph} style={{ wordBreak: 'break-word' }} target='_blank'>{paragraph}</AntdLink>
   } else if (paragraph === '') {
     return <span>&nbsp;</span>
+  } else if (paragraph.match('https://')) {
+    const splitParagraph = paragraph.split(/(https:\/\/[\w.-]*[^.])/)
+    return (
+      splitParagraph.map((text, i) =>
+        text.includes('https://')
+          ? <AntdLink key={i} href={text}>{text}</AntdLink>
+          : text
+      )
+    )
   } else {
     return paragraph
   }
