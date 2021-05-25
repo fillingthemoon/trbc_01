@@ -32,6 +32,7 @@ const cardStyle = {
   display: 'flex',
   flexDirection: 'column',
   textAlign: 'center',
+  margin: '20px',
   maxWidth: '550px',
 }
 
