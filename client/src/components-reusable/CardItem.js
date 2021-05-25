@@ -12,7 +12,8 @@ import {
   colorPrimaryOrange as iconColor,
 } from '../colors'
 
-const { Title, Paragraph, Text } = Typography
+const { Title, Paragraph } = Typography
+const { Meta } = Card
 
 const cardStyle = {
   display: 'flex',
@@ -36,14 +37,8 @@ const detailsStyle = {
   justifyContent: 'space-between'
 }
 
-const detailsTextStyle = {
-  fontSize: '0.9rem',
-  fontWeight: 500,
-}
-
 const iconStyle = {
-  fontSize: '1.2rem',
-  marginRight: '10px',
+  fontSize: '1rem',
   color: iconColor,
 }
 
@@ -65,22 +60,34 @@ const CardItem = ({ item }) => {
           <Divider style={{ margin: '20px 0' }} />
           <div style={detailsStyle}>
             {time &&
-              <div>
-                <FieldTimeOutlined style={iconStyle} />
-                <Text style={detailsTextStyle}>{time}</Text>
-              </div>
+              <>
+                <Meta
+                  style={{ textAlign: 'left' }}
+                  avatar={<FieldTimeOutlined style={iconStyle} />}
+                  description={time}
+                />
+                <br />
+              </>
             }
             {location &&
-              <div>
-                <HomeOutlined style={iconStyle} />
-                <Text style={detailsTextStyle}>{location}</Text>
-              </div>
+              <>
+                <Meta
+                  style={{ textAlign: 'left' }}
+                  avatar={<HomeOutlined style={iconStyle} />}
+                  description={location}
+                />
+                <br />
+              </>
             }
             {leader &&
-              <div>
-                <UserOutlined style={iconStyle} />
-                <Text style={detailsTextStyle}>{leader}</Text>
-              </div>
+              <>
+                <Meta
+                  style={{ textAlign: 'left' }}
+                  avatar={<UserOutlined style={iconStyle} />}
+                  description={leader}
+                />
+                <br />
+              </>
             }
           </div>
         </>

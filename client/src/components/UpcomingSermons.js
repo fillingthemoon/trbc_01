@@ -9,7 +9,7 @@ import {
 import { UserOutlined, CalendarOutlined } from '@ant-design/icons'
 
 import { Card, Typography, Row, Divider } from 'antd'
-const { Title, Paragraph, Text } = Typography
+const { Title, Paragraph } = Typography
 const { Meta } = Card
 
 const upcomingSermonsData = [
@@ -20,7 +20,7 @@ const upcomingSermonsData = [
     speaker: 'Pastor Name',
     text: 'Pellentesque habitant morbi tristique senectus et',
     passage: 'Colossians 2:6-7',
-    date: '23 May 2021',
+    date: '23 May 2021, 11am',
   },
   {
     page: 'home',
@@ -29,7 +29,7 @@ const upcomingSermonsData = [
     speaker: 'Pastor Name',
     text: 'Pellentesque habitant morbi tristique senectus et',
     passage: 'Colossians 2:6-7',
-    date: '23 May 2021',
+    date: '23 May 2021, 9:30am',
 
   },
   {
@@ -39,7 +39,7 @@ const upcomingSermonsData = [
     speaker: 'Pastor Name',
     text: 'Pellentesque habitant morbi tristique senectus et',
     passage: 'Colossians 2:6-7',
-    date: '23 May 2021',
+    date: '23 May 2021, 5pm',
 
   },
 ]
@@ -68,18 +68,14 @@ const UpcomingSermon = ({ upcomingSermon }) => {
       <Divider />
       <Meta
         style={{ textAlign: 'left' }}
-        avatar={
-          <UserOutlined style={iconStyle} />
-        }
-        title={speaker}
+        avatar={<UserOutlined style={iconStyle} />}
+        description={speaker}
       />
       <br/>
       <Meta
         style={{ textAlign: 'left' }}
-        avatar={
-          <CalendarOutlined style={iconStyle} />
-        }
-        title={date}
+        avatar={<CalendarOutlined style={iconStyle} />}
+        description={date}
       />
     </Card>
   )

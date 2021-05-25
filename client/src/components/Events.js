@@ -7,32 +7,47 @@ import {
   colorPrimaryOrange as iconColor,
 } from '../colors'
 
+import { CalendarOutlined } from '@ant-design/icons'
+
 import { Card, Typography, Row, Divider } from 'antd'
-const { Title, Paragraph, Text } = Typography
+const { Title, Paragraph } = Typography
+const { Meta } = Card
 
 const eventsData = [
   {
     page: 'home',
     section: 'events',
-    title: 'Pellentesque habitant morbi tristique senectus et',
-    text: 'Pellentesque habitant morbi tristique senectus et',
-    date: '23 May 2021',
+    title: 'Church Retreat 2019',
+    text: 'Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. Ntesque habitant morbi tristique sene.',
+    date: '21-25 May 2021',
   },
   {
     page: 'home',
     section: 'events',
-    title: 'Pellentesque habitant morbi tristique senectus et',
-    text: 'Pellentesque habitant morbi tristique senectus et',
-    date: '23 May 2021',
-
+    title: 'Church Retreat 2019',
+    text: 'Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. Ntesque habitant morbi tristique sene.',
+    date: '21-25 May 2021',
   },
   {
     page: 'home',
     section: 'events',
-    title: 'Pellentesque habitant morbi tristique senectus et',
-    text: 'Pellentesque habitant morbi tristique senectus et',
-    date: '23 May 2021',
-
+    title: 'Church Retreat 2019',
+    text: 'Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. Ntesque habitant morbi tristique sene.',
+    date: '21-25 May 2021',
+  },
+  {
+    page: 'home',
+    section: 'events',
+    title: 'Church Retreat 2019',
+    text: 'Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. Ntesque habitant morbi tristique sene.',
+    date: '21-25 May 2021',
+  },
+  {
+    page: 'home',
+    section: 'events',
+    title: 'Church Retreat 2019',
+    text: 'Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. Ntesque habitant morbi tristique sene.',
+    date: '21-25 May 2021',
   },
 ]
 
@@ -46,16 +61,26 @@ const cardStyle = {
   backgroundColor: cardColor,
 }
 
+const iconStyle = {
+  fontSize: '1rem',
+  color: iconColor,
+}
+
 const Event = ({ event }) => {
-  const { title, date } = event
+  const { title, text, date } = event
 
   return (
     <Card style={cardStyle}>
       <Title style={{ fontSize: '1.2rem', fontWeight: '700', display: 'block' }}>
         {title}
       </Title>
-      <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}>{title}</Paragraph>
-      <Text style={{ fontSize: '1rem', fontWeight: '500', display: 'block', margin: '30px 0 0 0' }}>{date}</Text>
+      <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '20px 0' }}>{text}</Paragraph>
+      <Divider />
+      <Meta
+        style={{ textAlign: 'left' }}
+        avatar={<CalendarOutlined style={iconStyle} />}
+        description={date}
+      />
     </Card>
   )
 }
@@ -63,12 +88,6 @@ const Event = ({ event }) => {
 const titleUnderlineStyle = {
   display: 'flex',
   justifyContent: 'left',
-}
-
-const iconStyle = {
-  fontSize: '1.2rem',
-  marginRight: '10px',
-  color: iconColor,
 }
 
 const Events = () => {
