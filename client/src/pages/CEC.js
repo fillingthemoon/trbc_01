@@ -28,11 +28,12 @@ const CEC = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{ title: 'Children\'s Enrichment Camp (CEC)', image: exterior }]} />
-      <div style={{ padding: '10%' }}>
+      <div style={{ padding: '20px 10%' }}>
         {cecData.map((item, i) =>
           <div key={i}>
             <TitleText
               title={item.title}
+              titleStyle={{ marginTop: '60px' }}
               text={
                 splitLines(item.text).map((paragraph, j) =>
                   <Paragraph key={j}>
