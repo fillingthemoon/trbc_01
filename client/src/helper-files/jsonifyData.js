@@ -9,14 +9,14 @@ import outreachData from '../data/outreach.js'
 import servicesData from '../data/services.js'
 import statementOfFaithData from '../data/statement-of-faith.js'
 
-const discipleshipDataJSON = JSON.stringify(discipleshipData, null, 4)
-const imNewDataJSON = JSON.stringify(imNewData, null, 4)
-const missionsDataJSON = JSON.stringify(missionsData, null, 4)
-const ourHistoryDataJSON = JSON.stringify(ourHistoryData, null, 4)
-const ourTeamDataJSON = JSON.stringify(ourTeamData, null, 4)
-const outreachDataJSON = JSON.stringify(outreachData, null, 4)
-const servicesDataJSON = JSON.stringify(servicesData, null, 4)
-const statementOfFaithDataJSON = JSON.stringify(statementOfFaithData, null, 4)
+const discipleshipDataJSON = JSON.stringify(discipleshipData, null, 2)
+const imNewDataJSON = JSON.stringify(imNewData, null, 2)
+const missionsDataJSON = JSON.stringify(missionsData, null, 2)
+const ourHistoryDataJSON = JSON.stringify(ourHistoryData, null, 2)
+const ourTeamDataJSON = JSON.stringify(ourTeamData, null, 2)
+const outreachDataJSON = JSON.stringify(outreachData, null, 2)
+const servicesDataJSON = JSON.stringify(servicesData, null, 2)
+const statementOfFaithDataJSON = JSON.stringify(statementOfFaithData, null, 2)
 
 const callbackFunc = (err, result) => {
   if (err) {
@@ -27,6 +27,9 @@ const callbackFunc = (err, result) => {
 /* IMPORTANT! */
 /* Can only run the following command from the client folder */
 /* $ node ./src/helper-files/jsonifyData.js */
+
+/* Alternative, as declared in package.json, use: */
+/* $ npm run jsonify-data */
 
 fs.writeFile('./src/data-json/discipleship.json', discipleshipDataJSON, callbackFunc)
 fs.writeFile('./src/data-json/im-new.json', imNewDataJSON, callbackFunc)

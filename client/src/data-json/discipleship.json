@@ -1,38 +1,38 @@
 [
-    {
-        "page": "discipleship",
-        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/1.jpg",
-        "title": "Pellentesque habitant morbi tristique.",
-        "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada\n      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper\n      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim\n      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet\n      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat\n      ultrices viverra nec sit amet lacus."
-    },
-    {
-        "page": "discipleship",
-        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/2.jpg",
-        "title": "Pellentesque habitant morbi tristique.",
-        "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada\n      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper\n      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim\n      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet\n      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat\n      ultrices viverra nec sit amet lacus."
-    },
-    {
-        "page": "discipleship",
-        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/3.jpg",
-        "title": "Pellentesque habitant morbi tristique.",
-        "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada\n      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper\n      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim\n      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet\n      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat\n      ultrices viverra nec sit amet lacus."
-    },
-    {
-        "page": "discipleship",
-        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/4.jpg",
-        "title": "Pellentesque habitant morbi tristique.",
-        "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada\n      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper\n      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim\n      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet\n      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat\n      ultrices viverra nec sit amet lacus."
-    },
-    {
-        "page": "discipleship",
-        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/5.jpg",
-        "title": "Pellentesque habitant morbi tristique.",
-        "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada\n      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper\n      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim\n      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet\n      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat\n      ultrices viverra nec sit amet lacus."
-    },
-    {
-        "page": "discipleship",
-        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/6.jpg",
-        "title": "Pellentesque habitant morbi tristique.",
-        "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada\n      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper\n      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim\n      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet\n      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat\n      ultrices viverra nec sit amet lacus."
-    }
+  {
+    "page": "discipleship",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/1.jpg",
+    "title": "Pellentesque habitant morbi tristique.",
+    "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus."
+  },
+  {
+    "page": "discipleship",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/2.jpg",
+    "title": "Pellentesque habitant morbi tristique.",
+    "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus."
+  },
+  {
+    "page": "discipleship",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/3.jpg",
+    "title": "Pellentesque habitant morbi tristique.",
+    "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus."
+  },
+  {
+    "page": "discipleship",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/4.jpg",
+    "title": "Pellentesque habitant morbi tristique.",
+    "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus."
+  },
+  {
+    "page": "discipleship",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/5.jpg",
+    "title": "Pellentesque habitant morbi tristique.",
+    "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus."
+  },
+  {
+    "page": "discipleship",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/6.jpg",
+    "title": "Pellentesque habitant morbi tristique.",
+    "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus."
+  }
 ]

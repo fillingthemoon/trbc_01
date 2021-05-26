@@ -13,73 +13,37 @@ const discipleshipData = [
     page:'discipleship',
     imgSrc: aboutUs1,
     title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada
-      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
-      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
-      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet
-      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat
-      ultrices viverra nec sit amet lacus.`,
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
   {
     page:'discipleship',
     imgSrc: aboutUs2,
     title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada
-      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
-      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
-      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet
-      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat
-      ultrices viverra nec sit amet lacus.`,
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
   {
     page:'discipleship',
     imgSrc: aboutUs3,
     title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada
-      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
-      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
-      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet
-      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat
-      ultrices viverra nec sit amet lacus.`,
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
   {
     page:'discipleship',
     imgSrc: aboutUs4,
     title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada
-      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
-      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
-      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet
-      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat
-      ultrices viverra nec sit amet lacus.`,
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
   {
     page:'discipleship',
     imgSrc: aboutUs5,
     title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada
-      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
-      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
-      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet
-      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat
-      ultrices viverra nec sit amet lacus.`,
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
   {
     page:'discipleship',
     imgSrc: aboutUs6,
     title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada
-      fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper
-      lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim
-      consequat.Etiam id lectus consectetur, commodo tortor id, laoreet
-      ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat
-      ultrices viverra nec sit amet lacus.`,
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
 ]
 

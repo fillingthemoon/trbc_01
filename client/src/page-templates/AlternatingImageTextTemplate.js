@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
+
 import TitleText from '../components-reusable/TitleText'
 
 import {
@@ -70,7 +72,13 @@ const ContentColumn = ({ item, lr, bColor }) => (
     <TitleText
       title={item.title}
       titleStyle={titleStyle(bColor)}
-      text={item.text}
+      text={
+        splitLines(item.text).map((paragraph, j) =>
+          <span key={j}>
+            {formatParagraph(paragraph)}
+          </span>
+        )
+      }
       textStyle={textStyle(bColor)}
       underlineStyle={underlineStyle(bColor)}
     />
