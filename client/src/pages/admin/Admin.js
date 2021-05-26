@@ -17,6 +17,8 @@ const Admin = () => {
   const handleLogin = (e) => {
     e.preventDefault()
 
+    setUsername('')
+    setPassword('')
   }
 
   return (
@@ -27,26 +29,27 @@ const Admin = () => {
           onFinish={handleLogin}
           className='login-form'
         >
-          <Form.Item>
-            <TileText title={'Log In Here'} />
-          </Form.Item>
+          <Form.Item><TileText title={'Log In Here'} /></Form.Item>
           <Form.Item
-            label='Username'
+            name='username'
+            rules={[{ required: true, message: 'Please input your Username!' }]}
           >
             <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
+              prefix={<UserOutlined />}
               placeholder="Username"
               className='input-username'
               type="text"
               value={username}
               onChange={({ target }) => setUsername(target.value)}
+              rules={[{ required: true, message: 'Please input your Username!' }]}
             />
           </Form.Item>
           <Form.Item
-            label='Password'
+            name='password'
+            rules={[{ required: true, message: 'Please input your Password!' }]}
           >
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
+              prefix={<LockOutlined />}
               placeholder="Password"
               className='input-password'
               type="password"
@@ -59,7 +62,7 @@ const Admin = () => {
               className='login-btn'
               type="primary"
               htmlType='submit'
-            >login</Button>
+            >Log In</Button>
           </Form.Item>
         </Form>
       </div>

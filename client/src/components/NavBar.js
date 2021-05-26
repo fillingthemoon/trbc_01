@@ -17,7 +17,7 @@ import {
 } from '../helper-files/colors'
 
 const NavBar = () => {
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1100px)' })
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1200px)' })
   const [current, setCurrent] = useState('home')
   const [language, setLanguage] = useState('ENGLISH')
 
