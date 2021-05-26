@@ -26,11 +26,11 @@ const AnnouncementCard = ({ announcement }) => {
   const {
     title,
     text,
-    imageSource,
+    imgSrc,
   } = announcement
 
   return (
-    <Card cover={<img alt="img" src={imageSource} style={imgStyle} />}
+    <Card cover={<img alt="img" src={imgSrc} style={imgStyle} />}
       style={cardStyle}
     >
       <Title style={{ fontSize: '1.2rem', marginBottom: '20px' }}>{title}</Title>

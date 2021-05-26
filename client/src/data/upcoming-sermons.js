@@ -1,7 +1,7 @@
 const upcomingSermonsData = [
   {
     page: 'home',
-    sectionName: 'upcoming-sermons',
+    sectionName: 'Upcoming Sermons',
     title: 'Pellentesque habitant morbi tristique senectus et',
     text: 'Pellentesque habitant morbi tristique senectus et',
     details: {
@@ -13,7 +13,7 @@ const upcomingSermonsData = [
   },
   {
     page: 'home',
-    sectionName: 'upcoming-sermons',
+    sectionName: 'Upcoming Sermons',
     title: 'Pellentesque habitant morbi tristique senectus et',
     text: 'Pellentesque habitant morbi tristique senectus et',
     details: {
@@ -25,7 +25,7 @@ const upcomingSermonsData = [
   },
   {
     page: 'home',
-    sectionName: 'upcoming-sermons',
+    sectionName: 'Upcoming Sermons',
     title: 'Pellentesque habitant morbi tristique senectus et',
     text: 'Pellentesque habitant morbi tristique senectus et',
     details: {

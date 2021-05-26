@@ -11,7 +11,7 @@ import ourTeamData from '../data/our-team.js'
 import outreachData from '../data/outreach.js'
 import servicesData from '../data/services.js'
 import statementOfFaithData from '../data/statement-of-faith.js'
-import upcomingSermonsData from '../data/upcoming-sermons'
+import upcomingSermonsData from '../data/upcoming-sermons.js'
 
 const announcementsDataJSON = JSON.stringify(announcementsData, null, 2)
 const cecDataJSON = JSON.stringify(cecData, null, 2)

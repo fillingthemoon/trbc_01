@@ -1,6 +1,7 @@
 const statementOfFaithData = [
   {
     page:'statement-of-faith',
+    sectionName: 'Statement of Faith',
     title: 'We Believe',
     text:
       `We believe that the whole Bible, comprising both Old and New Testaments, was written under the inspiration of God. The Bible is the basis of our faith, and a guide for our lives.
@@ -18,6 +19,7 @@ const statementOfFaithData = [
   },
   {
     page:'statement-of-faith',
+    sectionName: 'Statement of Faith',
     title: '信仰宣言',
     text:
       `我们相信，新旧约全部的圣经乃神所默示, 是我们信仰与生活的 无上准则。
