@@ -19,7 +19,7 @@ const cardStyle = {
   flexDirection: 'column',
   textAlign: 'left',
   margin: '20px',
-  maxWidth: '300px',
+  width: '300px',
   border: 'none',
 }
 
