@@ -24,9 +24,9 @@ This website is live at https://arcane-crag-98386.herokuapp.com/#/.
 
 ---
 
-## Set-up Instructions for Contributors
+## Workflow for Contributors
 
-### Setting up files
+### Setting Up Files
 ```
 # Fork this repository (superproject) and clone your fork
 
@@ -51,7 +51,7 @@ $ git push origin main
 // Now your superproject fork's server directory should point to your submodule fork on Github. But if it doesn't, it is still fine and you may continue developing in these 2 git repositories separately, which are essentially the client and server.
 ``` 
 
-### Starting up application
+### Starting Up Application
 ```
 # Create a .env file with MONGODB_URI, PORT, and TOKEN information
 
@@ -74,7 +74,7 @@ $ git commit -m 'commit message'
 $ git push heroku master
 ```
 
-### Pushing your changes to your forks
+### Pushing Your Changes to Your Forks
 ```
 $ cd ../server/
 $ git push origin master
@@ -90,9 +90,9 @@ $ git push origin main
 
 ---
 
-## Set-up Instructions for Collaborators
+## Workflow for Collaborators
 
-### Setting up files
+### Setting Up Files
 ```
 $ git clone git@github.com:fillingthemoon/trbc_01.git
 $ cd trbc_01/
@@ -105,7 +105,7 @@ $ cd ../server/
 $ npm install
 ```
 
-### Starting up application
+### Starting Up application
 ```
 # Create a .env file with MONGODB_URI, PORT, and TOKEN information
 
@@ -129,7 +129,7 @@ $ git commit -m 'commit message'
 $ git push heroku master
 ```
 
-### Pushing your changes
+### Pushing Your Changes
 ```
 $ cd ../server/
 $ git push origin master
