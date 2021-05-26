@@ -26,16 +26,16 @@ const callbackFunc = (err, result) => {
 
 /* IMPORTANT! */
 /* Can only run the following command from the client folder */
-/* $ node ./src/helper-files/jsonifyData.js */
+/* $ node ../server/helper-files/jsonifyData.js */
 
 /* Alternative, as declared in package.json, use: */
 /* $ npm run jsonify-data */
 
-fs.writeFile('./src/data-json/discipleship.json', discipleshipDataJSON, callbackFunc)
-fs.writeFile('./src/data-json/im-new.json', imNewDataJSON, callbackFunc)
-fs.writeFile('./src/data-json/missions.json', missionsDataJSON, callbackFunc)
-fs.writeFile('./src/data-json/our-history.json', ourHistoryDataJSON, callbackFunc)
-fs.writeFile('./src/data-json/our-team.json', ourTeamDataJSON, callbackFunc)
-fs.writeFile('./src/data-json/outreach.json', outreachDataJSON, callbackFunc)
-fs.writeFile('./src/data-json/services.json', servicesDataJSON, callbackFunc)
-fs.writeFile('./src/data-json/statement-of-faith.json', statementOfFaithDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/discipleship.json', discipleshipDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/im-new.json', imNewDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/missions.json', missionsDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/our-history.json', ourHistoryDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/our-team.json', ourTeamDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/outreach.json', outreachDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/services.json', servicesDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/statement-of-faith.json', statementOfFaithDataJSON, callbackFunc)

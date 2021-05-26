@@ -15,7 +15,7 @@ const Services = () => {
   const [currServiceData, setCurrServiceData] = useState([])
 
   useEffect(() => {
-    const newData = servicesData.filter(serviceData => serviceData.key.substring(0, 2) === currService)
+    const newData = servicesData.filter(serviceData => serviceData.service.substring(0, 2) === currService)
     setCurrServiceData(newData)
   }, [currService])
 

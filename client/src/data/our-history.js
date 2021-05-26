@@ -10,49 +10,55 @@ const {
 
 const ourHistoryData = [
   {
-    page:'our-history',
+    page: 'our-history',
+    sectionName: 'Our History',
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
+      `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
+      
+      Etiam id lectus consectetur, commodo tortor id, laoreet ipsum. Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.`,
     imgSrc: aboutUs1,
-    title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
-      
-      Etiam id lectus consectetur, commodo tortor id, laoreet ipsum. Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.`,
   },
   {
-    page:'our-history',
+    page: 'our-history',
+    sectionName: 'Our History',
+    title: 'Pellentesque habitant morbi tristique.',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
     imgSrc: aboutUs2,
-    title: 'Pellentesque habitant morbi tristique.',
-    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
   {
-    page:'our-history',
+    page: 'our-history',
+    sectionName: 'Our History',
+    title: 'Pellentesque habitant morbi tristique.',
+    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
     imgSrc: aboutUs3,
-    title: 'Pellentesque habitant morbi tristique.',
-    text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
   },
   {
-    page:'our-history',
+    page: 'our-history',
+    sectionName: 'Our History',
+    title: 'Pellentesque habitant morbi tristique.',
+    text:
+      `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
+      
+      Etiam id lectus consectetur, commodo tortor id, laoreet ipsum. Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.`,
     imgSrc: aboutUs4,
+  },
+  {
+    page: 'our-history',
+    sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
       
       Etiam id lectus consectetur, commodo tortor id, laoreet ipsum. Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.`,
-  },
-  {
-    page:'our-history',
     imgSrc: aboutUs5,
-    title: 'Pellentesque habitant morbi tristique.',
-    text:
-      `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
-      
-      Etiam id lectus consectetur, commodo tortor id, laoreet ipsum. Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.`,
   },
   {
-    page:'our-history',
-    imgSrc: aboutUs6,
+    page: 'our-history',
+    sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',
     text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
+    imgSrc: aboutUs6,
   },
 ]
 
