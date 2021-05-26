@@ -1,12 +1,12 @@
 import React from 'react'
-import { List, Card, Row, Col, Divider, Input, Collapse } from 'antd'
+import { List, Card, Row, Col, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
 import Banner from '../components-reusable/Banner'
 
 import { general } from '../helper-files/images'
 const { churchWide } = general
 
-const Resources = () => {
+const ResourceLibrary = () => {
   const { Search } = Input
   const { Panel } = Collapse
 
@@ -28,7 +28,7 @@ const Resources = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Resources', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'Resource Library', image: churchWide }]} />
 
       <div className="main-container">
         <br />
@@ -82,4 +82,4 @@ const Resources = () => {
   )
 }
 
-export default Resources
+export default ResourceLibrary

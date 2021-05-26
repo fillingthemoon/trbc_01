@@ -17,7 +17,7 @@ import {
 } from '../helper-files/colors'
 
 const NavBar = () => {
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1370px)' })
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1100px)' })
   const [current, setCurrent] = useState('home')
   const [language, setLanguage] = useState('ENGLISH')
 
@@ -69,11 +69,16 @@ const NavBar = () => {
           <Link replace to='/cec'>{'Children\'s Enrichment Camp'}</Link>
         </Menu.Item>
       </SubMenu>
-      <Menu.Item key='resources'>
-        <Link replace to='/resources'>Resources</Link>
-      </Menu.Item>
-      <Menu.Item key='facility-bookings'>
-        <Link replace to='/facility-bookings'>Facility Bookings</Link>
+      <SubMenu key='resources' title='Resources'>
+        <Menu.Item key='resource-library'>
+          <Link replace to='/resource-library'>Resource Library</Link>
+        </Menu.Item>
+        <Menu.Item key='facility-booking'>
+          <Link replace to='/facility-booking'>Facility Booking</Link>
+        </Menu.Item>
+      </SubMenu>
+      <Menu.Item key='admin'>
+        <Link replace to='/admin'>Admin</Link>
       </Menu.Item>
       {/* <Menu.Item key='admin-page'>
             <Link replace to='/admin-page'>Admin</Link>
