@@ -1,0 +1,79 @@
+[
+  {
+    "page": "our-team",
+    "sectionName": "Pastoral",
+    "title": "Rev. Adrian Lim",
+    "text": "Senior Pastor",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/rev-adrian-lim.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Pastoral",
+    "title": "Rev. Andrew Chang",
+    "text": "Interim Pastoral Advisor of Teochew/Chinese Congregation",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/rev-chang.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Pastoral",
+    "title": "Rev. Dr. Jerry Goh",
+    "text": "Pastor of English Congregation",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/rev-jerry-goh.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Pastoral",
+    "title": "Ps. Lam Yuen Foong",
+    "text": "Pastor of Sunset Congregation",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/ps-lam.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Ministry",
+    "title": "Mr. Yeo Chong Nim",
+    "text": "Outreach Ministry",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/yeo-chong-nim.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Ministry",
+    "title": "Ms. Jenny Ang ",
+    "text": "Children's Outreach Ministry",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/jenny-ang.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Administrative",
+    "title": "Mr. Leonard Lee",
+    "text": "Administration Manager",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/leonard-lee.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Administrative",
+    "title": "Mr. Vincent Lai Seck Tong",
+    "text": "Administrative Executive (Facilities & Maintenance)",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/vincent-lai.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Administrative",
+    "title": "Ms. Jasmine Lee",
+    "text": "Administrative Executive",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/jasmine-lee.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Administrative",
+    "title": "Mr. Dong Fan",
+    "text": "Administrative Executive ",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/dong-fan.jpg"
+  },
+  {
+    "page": "our-team",
+    "sectionName": "Administrative",
+    "title": "Mr. Ivan Chow",
+    "text": "Church Caretaker",
+    "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/ivan-chow.jpg"
+  }
+]
