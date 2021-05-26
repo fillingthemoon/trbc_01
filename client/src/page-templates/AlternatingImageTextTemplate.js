@@ -74,8 +74,8 @@ const ContentColumn = ({ item, lr, bColor }) => (
       textStyle={textStyle(bColor)}
       underlineStyle={underlineStyle(bColor)}
     />
-    {(item.linkPath && item.linkText) &&
-      <Link className='aitt-link' style={linkStyle(bColor)} to={item.linkPath}>{item.linkText}</Link>
+    {(item.link) &&
+      <Link className='aitt-link' style={linkStyle(bColor)} to={item.link.path}>{item.link.text}</Link>
     }
   </Col>
 )

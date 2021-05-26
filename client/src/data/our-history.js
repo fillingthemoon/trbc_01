@@ -1,4 +1,4 @@
-import { aboutUs } from '../helper-files/images'
+import { aboutUs } from '../helper-files/images.js'
 const {
   aboutUs1,
   aboutUs2,

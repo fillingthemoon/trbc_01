@@ -1,4 +1,4 @@
-import { general } from '../helper-files/images'
+import { general } from '../helper-files/images.js'
 const { churchWide } = general
 
 const outreachData = [

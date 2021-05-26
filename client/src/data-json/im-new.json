@@ -1,0 +1,32 @@
+[
+    {
+        "page": "im-new",
+        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/1.jpg",
+        "title": "The best place to start? Join us for a worship service.",
+        "text": "If you’re new to the area, new to church, or just looking for a\n      new start, our Sunday morning worship services offer you the\n      opportunity to build your faith in God and connect with new\n      people.",
+        "link": {
+            "path": "./services",
+            "text": "View Services"
+        }
+    },
+    {
+        "page": "im-new",
+        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/2.jpg",
+        "title": "What makes church special is not just the event, but also the relationships we build that help us stay faithful to God.",
+        "text": "What makes church special is not just the event, but also the\n      relationships we build that help us stay faithful to God.\n      \n      Whether you’re a single professional, a college student or a\n      parent of a special needs child, we have a ministry that we’d love\n      for you to be a part of. Check out our ministries page to find a\n      small group that you can get connected with.",
+        "link": {
+            "path": "./services",
+            "text": "View Ministries"
+        }
+    },
+    {
+        "page": "im-new",
+        "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/about-us/3.jpg",
+        "title": "Get involved in one of our doing good projects.",
+        "text": "A theme we embrace at the Bay Area Christian Church is “God and\n      Good.” We believe it’s important that as Christians we are\n      constantly working to do good in the lives of the people in our\n      community, regardless of religious affiliation.\n      \n      We’re proud of our members who’ve embraced this call, and are\n      inspired by the different “doing good” efforts they’ve championed.\n      Check out our volunteer page to learn about how you can get\n      involved.",
+        "link": {
+            "path": "./outreach",
+            "text": "Learn More"
+        }
+    }
+]

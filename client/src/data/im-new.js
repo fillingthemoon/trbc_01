@@ -1,4 +1,4 @@
-import { aboutUs } from '../helper-files/images'
+import { aboutUs } from '../helper-files/images.js'
 const {
   aboutUs1,
   aboutUs2,
@@ -7,7 +7,7 @@ const {
 
 const imNewData = [
   {
-    page:'im-new',
+    page: 'im-new',
     imgSrc: aboutUs1,
     title: 'The best place to start? Join us for a worship service.',
     text:
@@ -15,11 +15,13 @@ const imNewData = [
       new start, our Sunday morning worship services offer you the
       opportunity to build your faith in God and connect with new
       people.`,
-    linkPath: './services',
-    linkText: 'View Services',
+    link: {
+      path: './services',
+      text: 'View Services',
+    },
   },
   {
-    page:'im-new',
+    page: 'im-new',
     imgSrc: aboutUs2,
     title: 'What makes church special is not just the event, but also the relationships we build that help us stay faithful to God.',
     text:
@@ -30,11 +32,13 @@ const imNewData = [
       parent of a special needs child, we have a ministry that we’d love
       for you to be a part of. Check out our ministries page to find a
       small group that you can get connected with.`,
-    linkPath: './services',
-    linkText: 'View Ministries',
+    link: {
+      path: './services',
+      text: 'View Ministries',
+    },
   },
   {
-    page:'im-new',
+    page: 'im-new',
     imgSrc: aboutUs3,
     title: 'Get involved in one of our doing good projects.',
     text:
@@ -47,8 +51,10 @@ const imNewData = [
       inspired by the different “doing good” efforts they’ve championed.
       Check out our volunteer page to learn about how you can get
       involved.`,
-    linkPath: './outreach',
-    linkText: 'Learn More',
+    link: {
+      path: './outreach',
+      text: 'Learn More',
+    },
   }
 ]
 
