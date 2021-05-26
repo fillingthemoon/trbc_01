@@ -11,6 +11,7 @@ import ourTeamData from '../data/our-team.js'
 import outreachData from '../data/outreach.js'
 import servicesData from '../data/services.js'
 import statementOfFaithData from '../data/statement-of-faith.js'
+import upcomingSermonsData from '../data/upcoming-sermons'
 
 const announcementsDataJSON = JSON.stringify(announcementsData, null, 2)
 const cecDataJSON = JSON.stringify(cecData, null, 2)
@@ -23,6 +24,7 @@ const ourTeamDataJSON = JSON.stringify(ourTeamData, null, 2)
 const outreachDataJSON = JSON.stringify(outreachData, null, 2)
 const servicesDataJSON = JSON.stringify(servicesData, null, 2)
 const statementOfFaithDataJSON = JSON.stringify(statementOfFaithData, null, 2)
+const upcomingSermonsDataJSON = JSON.stringify(upcomingSermonsData, null, 2)
 
 const callbackFunc = (err, result) => {
   if (err) {
@@ -48,3 +50,4 @@ fs.writeFile('../server/data-json/our-team.json', ourTeamDataJSON, callbackFunc)
 fs.writeFile('../server/data-json/outreach.json', outreachDataJSON, callbackFunc)
 fs.writeFile('../server/data-json/services.json', servicesDataJSON, callbackFunc)
 fs.writeFile('../server/data-json/statement-of-faith.json', statementOfFaithDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/upcoming-sermons.json', upcomingSermonsDataJSON, callbackFunc)

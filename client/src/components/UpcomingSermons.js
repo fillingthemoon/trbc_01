@@ -6,43 +6,13 @@ import {
   colorPrimaryOrange as iconColor,
 } from '../helper-files/colors'
 
+import upcomingSermonsData from '../data/upcoming-sermons'
+
 import { UserOutlined, CalendarOutlined } from '@ant-design/icons'
 
 import { Card, Typography, Row, Divider } from 'antd'
 const { Title, Paragraph } = Typography
 const { Meta } = Card
-
-const upcomingSermonsData = [
-  {
-    page: 'home',
-    section: 'upcoming-sermons',
-    title: 'Pellentesque habitant morbi tristique senectus et',
-    speaker: 'Pastor Name',
-    text: 'Pellentesque habitant morbi tristique senectus et',
-    passage: 'Colossians 2:6-7',
-    date: '23 May 2021, 11am',
-  },
-  {
-    page: 'home',
-    section: 'upcoming-sermons',
-    title: 'Pellentesque habitant morbi tristique senectus et',
-    speaker: 'Pastor Name',
-    text: 'Pellentesque habitant morbi tristique senectus et',
-    passage: 'Colossians 2:6-7',
-    date: '23 May 2021, 9:30am',
-
-  },
-  {
-    page: 'home',
-    section: 'upcoming-sermons',
-    title: 'Pellentesque habitant morbi tristique senectus et',
-    speaker: 'Pastor Name',
-    text: 'Pellentesque habitant morbi tristique senectus et',
-    passage: 'Colossians 2:6-7',
-    date: '23 May 2021, 5pm',
-
-  },
-]
 
 const cardStyle = {
   display: 'flex',
@@ -59,7 +29,8 @@ const iconStyle = {
 }
 
 const UpcomingSermon = ({ upcomingSermon }) => {
-  const { title, speaker, date, passage } = upcomingSermon
+  const { title, details } = upcomingSermon
+  const { date, time, person, passage } = details
 
   return (
     <Card style={cardStyle}>
@@ -69,13 +40,13 @@ const UpcomingSermon = ({ upcomingSermon }) => {
       <Meta
         style={{ textAlign: 'left' }}
         avatar={<UserOutlined style={iconStyle} />}
-        description={speaker}
+        description={person}
       />
       <br />
       <Meta
         style={{ textAlign: 'left' }}
         avatar={<CalendarOutlined style={iconStyle} />}
-        description={date}
+        description={`${date}, ${time}`}
       />
     </Card>
   )

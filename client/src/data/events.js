@@ -1,7 +1,7 @@
 const eventsData = [
   {
     page: 'home',
-    section: 'events',
+    sectionName: 'events',
     title: 'TRBC - TRBK Carnival',
     text:
     `Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et. Ntesque habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et. Ntesque habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et.
@@ -11,7 +11,7 @@ const eventsData = [
   },
   {
     page: 'home',
-    section: 'events',
+    sectionName: 'events',
     title: 'Combined Church Camp',
     text:
     `Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi tristique senectus et. Ntesque habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et.
