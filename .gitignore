@@ -1,14 +1,16 @@
 .DS_Store
-data_csvs
 
 # client
 /client/node_modules
 /client/.env
-/client/build/
+/client/build
+/client/data
 
 # server
 /server/build
 /server/node_modules
 /server/.env
 /server/serviceAccountKey.json
-/server/mongodb_import_cmd.txt
+/server/mongodb-import-cmds.txt
+/server/mongodb-import-data.sh
+/server/data-json

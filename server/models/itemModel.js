@@ -13,7 +13,7 @@ const linkSchema = {
 
 const detailsSchema = {
   date: {
-    type: Date,
+    type: String,
   },
   time: {
     type: String,
@@ -22,6 +22,9 @@ const detailsSchema = {
     type: String,
   },
   person: {
+    type: String,
+  },
+  passage: {
     type: String,
   },
 }
@@ -35,6 +38,9 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  congre: {
+    type: String,
+  },
   title: {
     type: String,
     required: true,
@@ -43,15 +49,15 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  details: {
+    type: detailsSchema,
+  },
   imgSrc: {
     type: String,
   },
   link: {
     type: linkSchema,
   },
-  details: {
-    type: detailsSchema,
-  }
 })
 
 itemSchema.set('toJSON', {
