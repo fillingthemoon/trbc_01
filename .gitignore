@@ -7,6 +7,7 @@
 /client/data
 
 # server
+/server
 /server/.git
 /server/build
 /server/node_modules
