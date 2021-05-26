@@ -29,7 +29,7 @@ const Admin = () => {
           onFinish={handleLogin}
           className='login-form'
         >
-          <Form.Item><TileText title={'Log In Here'} /></Form.Item>
+          <Form.Item><TileText title={'Admin Portal'} /></Form.Item>
           <Form.Item
             name='username'
             rules={[{ required: true, message: 'Please input your Username!' }]}
