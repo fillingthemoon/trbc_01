@@ -1,0 +1,3 @@
+[submodule "server"]
+	path = server
+	url = git@github.com:fillingthemoon/trbc_01_server.git
