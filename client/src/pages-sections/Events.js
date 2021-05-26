@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
 
@@ -11,7 +12,7 @@ import {
 
 import { CalendarOutlined } from '@ant-design/icons'
 
-import eventsData from '../data/events'
+import { getEvents } from '../reducers/eventsReducer'
 
 import { Card, Typography, Row, Divider } from 'antd'
 const { Title, Paragraph } = Typography
@@ -71,6 +72,15 @@ const titleUnderlineStyle = {
 }
 
 const Events = () => {
+  const dispatch = useDispatch()
+
+  const eventsData = useSelector(state => state.events)
+
+  useEffect(() => {
+    dispatch(getEvents())
+  }, [])
+
+  if (!eventsData) { return null }
 
   return (
     <div className='events-container'>

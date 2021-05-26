@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 import Banner from '../components-reusable/Banner'
 
 import AlternatingImageTextTemplate from '../page-templates/AlternatingImageTextTemplate'
@@ -6,9 +8,19 @@ import AlternatingImageTextTemplate from '../page-templates/AlternatingImageText
 import { general } from '../helper-files/images'
 const { exterior } = general
 
-import discipleshipData from '../data/discipleship'
+import { getDiscipleship } from '../reducers/discipleshipReducer'
 
 const Discipleship = () => {
+  const dispatch = useDispatch()
+
+  const discipleshipData = useSelector(state => state.discipleship)
+
+  useEffect(() => {
+    dispatch(getDiscipleship())
+  }, [])
+
+  if (!discipleshipData) { return null }
+
   return (
     <>
       <Banner imageTitlePairs={[{ title: 'Discipleship', image: exterior }]} />

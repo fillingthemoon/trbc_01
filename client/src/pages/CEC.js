@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
@@ -11,9 +12,18 @@ const { exterior } = general
 import { Typography } from 'antd'
 const { Paragraph } = Typography
 
-import cecData from '../data/cec'
+import { getCec } from '../reducers/cecReducer'
 
 const CEC = () => {
+  const dispatch = useDispatch()
+
+  const cecData = useSelector(state => state.cec)
+
+  useEffect(() => {
+    dispatch(getCec())
+  }, [])
+
+  if (!cecData) { return null }
 
   return (
     <div>

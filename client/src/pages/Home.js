@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Banner from '../components-reusable/Banner'
-import Announcements from '../components/Announcements'
-import UpcomingSermons from '../components/UpcomingSermons'
-import Events from '../components/Events'
+import Announcements from '../pages-sections/Announcements'
+import UpcomingSermons from '../pages-sections/UpcomingSermons'
+import Events from '../pages-sections/Events'
 
 import { general } from '../helper-files/images'
 const { exterior, serviceTiming, paSystem } = general

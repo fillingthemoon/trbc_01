@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import TitleText from '../components-reusable/TitleText'
 
@@ -7,7 +8,7 @@ import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
 import { Row, Card, Typography } from 'antd'
 const { Title, Paragraph } = Typography
 
-import announcementsData from '../data/announcements'
+import { getAnnouncements } from '../reducers/announcementsReducer'
 
 const cardStyle = {
   display: 'flex',
@@ -51,6 +52,16 @@ const titleUnderlineStyle = {
 }
 
 const Announcements = () => {
+  const dispatch = useDispatch()
+
+  const announcementsData = useSelector(state => state.announcements)
+
+  useEffect(() => {
+    dispatch(getAnnouncements())
+  }, [])
+
+  if (!announcementsData) { return null }
+
   return (
     <div className='announcements-container'>
       <div>
