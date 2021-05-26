@@ -1,6 +1,6 @@
 import announcementsService from '../services/announcementsService'
 
-const episodeLinesReducer = (state = null, action) => {
+const episodeLinesReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_ANNOUNCEMENTS': {
       return action.data.announcements

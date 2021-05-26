@@ -1,13 +1,13 @@
 import axios from 'axios'
-const baseUrl = '/api/announcements/'
+const baseUrl = '/api/upcoming-sermons/'
 
-const getAnnouncements = () => {
-  const request = axios.get(baseUrl)
-  return request.then(response => response.data)
+const getUpcomingSermons = async () => {
+  const response = await axios.get(baseUrl)
+  return response.data
 }
 
-const announcementsService = {
-  getAnnouncements,
+const upcomingSermonsService = {
+  getUpcomingSermons,
 }
 
-export default announcementsService
+export default upcomingSermonsService

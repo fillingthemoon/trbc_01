@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import Banner from '../components-reusable/Banner'
 import ServicesNavBar from '../components/ServicesNavBar'
@@ -6,18 +7,28 @@ import ServicesNavBar from '../components/ServicesNavBar'
 import { general } from '../helper-files/images'
 const { exterior } = general
 
-import servicesData from '../data/services'
-
 import AlternatingImageTextTemplate from '../page-templates/AlternatingImageTextTemplate'
+
+import { getServices } from '../reducers/servicesReducer'
 
 const Services = () => {
   const [currService, setCurrService] = useState('tc')
   const [currServiceData, setCurrServiceData] = useState([])
 
+  const dispatch = useDispatch()
+
+  const servicesData = useSelector(state => state.services)
+
+  useEffect(() => {
+    dispatch(getServices())
+  }, [])
+
   useEffect(() => {
     const newData = servicesData.filter(serviceData => serviceData.service.substring(0, 2) === currService)
     setCurrServiceData(newData)
   }, [currService])
+
+  if (!servicesData) { return null }
 
   return (
     <>

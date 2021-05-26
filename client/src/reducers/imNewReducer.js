@@ -1,9 +1,9 @@
-import announcementsService from '../services/announcementsService'
+import imNewService from '../services/imNewService'
 
-const episodeLinesReducer = (state = null, action) => {
+const imNewReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET_ANNOUNCEMENTS': {
-      return action.data.announcements
+    case 'GET_IM_NEW': {
+      return action.data.imNew
     }
     default: {
       return state
@@ -11,16 +11,16 @@ const episodeLinesReducer = (state = null, action) => {
   }
 }
 
-export const getAnnouncements = () => {
+export const getImNew = () => {
   return async dispatch => {
 
     try {
-      const announcements = await announcementsService.getAnnouncements()
+      const imNew = await imNewService.getImNew()
 
       dispatch({
-        type: 'GET_ANNOUNCEMENTS',
+        type: 'GET_IM_NEW',
         data: {
-          announcements,
+          imNew,
         }
       })
     } catch (error) {
@@ -29,4 +29,4 @@ export const getAnnouncements = () => {
   }
 }
 
-export default episodeLinesReducer
+export default imNewReducer

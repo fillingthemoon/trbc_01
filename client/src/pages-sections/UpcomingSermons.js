@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import TitleText from '../components-reusable/TitleText'
 
@@ -6,13 +7,12 @@ import {
   colorPrimaryOrange as iconColor,
 } from '../helper-files/colors'
 
-import upcomingSermonsData from '../data/upcoming-sermons'
-
 import { UserOutlined, CalendarOutlined } from '@ant-design/icons'
-
 import { Card, Typography, Row, Divider } from 'antd'
 const { Title, Paragraph } = Typography
 const { Meta } = Card
+
+import { getUpcomingSermons } from '../reducers/upcomingSermonsReducer'
 
 const cardStyle = {
   display: 'flex',
@@ -58,6 +58,15 @@ const titleUnderlineStyle = {
 }
 
 const UpcomingSermons = () => {
+  const dispatch = useDispatch()
+
+  const upcomingSermonsData = useSelector(state => state.upcomingSermons)
+
+  useEffect(() => {
+    dispatch(getUpcomingSermons())
+  }, [])
+
+  if (!upcomingSermonsData) { return null }
 
   return (
     <div className='upcoming-sermons-container'>

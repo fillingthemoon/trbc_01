@@ -1,9 +1,9 @@
-import announcementsService from '../services/announcementsService'
+import ourHistoryService from '../services/ourHistoryService'
 
-const episodeLinesReducer = (state = null, action) => {
+const ourHistoryReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET_ANNOUNCEMENTS': {
-      return action.data.announcements
+    case 'GET_OUR_HISTORY': {
+      return action.data.ourHistory
     }
     default: {
       return state
@@ -11,16 +11,16 @@ const episodeLinesReducer = (state = null, action) => {
   }
 }
 
-export const getAnnouncements = () => {
+export const getOurHistory = () => {
   return async dispatch => {
 
     try {
-      const announcements = await announcementsService.getAnnouncements()
+      const ourHistory = await ourHistoryService.getOurHistory()
 
       dispatch({
-        type: 'GET_ANNOUNCEMENTS',
+        type: 'GET_OUR_HISTORY',
         data: {
-          announcements,
+          ourHistory,
         }
       })
     } catch (error) {
@@ -29,4 +29,4 @@ export const getAnnouncements = () => {
   }
 }
 
-export default episodeLinesReducer
+export default ourHistoryReducer

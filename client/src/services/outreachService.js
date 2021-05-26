@@ -1,13 +1,13 @@
 import axios from 'axios'
-const baseUrl = '/api/announcements/'
+const baseUrl = '/api/outreach/'
 
-const getAnnouncements = () => {
-  const request = axios.get(baseUrl)
-  return request.then(response => response.data)
+const getOutreach = async () => {
+  const response = await axios.get(baseUrl)
+  return response.data
 }
 
-const announcementsService = {
-  getAnnouncements,
+const outreachService = {
+  getOutreach,
 }
 
-export default announcementsService
+export default outreachService

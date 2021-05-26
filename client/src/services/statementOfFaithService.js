@@ -1,13 +1,13 @@
 import axios from 'axios'
-const baseUrl = '/api/announcements/'
+const baseUrl = '/api/statement-of-faith/'
 
-const getAnnouncements = () => {
-  const request = axios.get(baseUrl)
-  return request.then(response => response.data)
+const getStatementOfFaith = async () => {
+  const response = await axios.get(baseUrl)
+  return response.data
 }
 
-const announcementsService = {
-  getAnnouncements,
+const statementOfFaithService = {
+  getStatementOfFaith,
 }
 
-export default announcementsService
+export default statementOfFaithService

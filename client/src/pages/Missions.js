@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 import Banner from '../components-reusable/Banner'
 import SectionsTemplate from '../page-templates/SectionsTemplate'
 
 import { general } from '../helper-files/images'
 const { exterior } = general
 
-import missionsData from '../data/missions'
+import { getMissions } from '../reducers/missionsReducer'
 
 const Outreach = () => {
+  const dispatch = useDispatch()
+
+  const missionsData = useSelector(state => state.missions)
+
+  useEffect(() => {
+    dispatch(getMissions())
+  }, [])
+
+  if (!missionsData) { return null }
+
   return (
     <div>
       <Banner imageTitlePairs={[{ title: 'Missions', image: exterior }]} />

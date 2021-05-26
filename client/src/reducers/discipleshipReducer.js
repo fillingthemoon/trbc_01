@@ -1,6 +1,6 @@
 import discipleshipService from '../services/discipleshipService'
 
-const discipleshipReducer = (state = null, action) => {
+const discipleshipReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_DISCIPLESHIP': {
       return action.data.discipleship

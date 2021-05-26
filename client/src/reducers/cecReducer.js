@@ -1,6 +1,6 @@
 import cecService from '../services/cecService'
 
-const cecReducer = (state = null, action) => {
+const cecReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_CEC': {
       return action.data.cec

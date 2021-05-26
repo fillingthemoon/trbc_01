@@ -1,9 +1,9 @@
 import axios from 'axios'
 const baseUrl = '/api/cec/'
 
-const getCec = () => {
-  const request = axios.get(baseUrl)
-  return request.then(response => response.data)
+const getCec = async () => {
+  const response = await axios.get(baseUrl)
+  return response.data
 }
 
 const cecService = {

@@ -1,9 +1,9 @@
-import announcementsService from '../services/announcementsService'
+import statementOfFaithService from '../services/statementOfFaithService'
 
-const episodeLinesReducer = (state = null, action) => {
+const statementOfFaithReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET_ANNOUNCEMENTS': {
-      return action.data.announcements
+    case 'GET_STATEMENT_OF_FAITH': {
+      return action.data.statementOfFaith
     }
     default: {
       return state
@@ -11,16 +11,16 @@ const episodeLinesReducer = (state = null, action) => {
   }
 }
 
-export const getAnnouncements = () => {
+export const getStatementOfFaith = () => {
   return async dispatch => {
 
     try {
-      const announcements = await announcementsService.getAnnouncements()
+      const statementOfFaith = await statementOfFaithService.getStatementOfFaith()
 
       dispatch({
-        type: 'GET_ANNOUNCEMENTS',
+        type: 'GET_STATEMENT_OF_FAITH',
         data: {
-          announcements,
+          statementOfFaith,
         }
       })
     } catch (error) {
@@ -29,4 +29,4 @@ export const getAnnouncements = () => {
   }
 }
 
-export default episodeLinesReducer
+export default statementOfFaithReducer

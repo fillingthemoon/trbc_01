@@ -1,9 +1,9 @@
 import axios from 'axios'
 const baseUrl = '/api/announcements/'
 
-const getAnnouncements = () => {
-  const request = axios.get(baseUrl)
-  return request.then(response => response.data)
+const getAnnouncements = async () => {
+  const response = await axios.get(baseUrl)
+  return response.data
 }
 
 const announcementsService = {

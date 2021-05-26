@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
 import { general } from '../helper-files/images'
 const { exterior } = general
 
-import statementOfFaithData from '../data/statement-of-faith'
+import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 const statementStyle = {
   maxWidth: '800px',
@@ -16,6 +18,16 @@ const statementStyle = {
 }
 
 const StatementOfFaith = () => {
+  const dispatch = useDispatch()
+
+  const statementOfFaithData = useSelector(state => state.statementOfFaith)
+
+  useEffect(() => {
+    dispatch(getStatementOfFaith())
+  }, [])
+
+  if (!statementOfFaithData) { return null }
+
   return (
     <div>
       <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: exterior }]} />

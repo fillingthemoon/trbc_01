@@ -1,9 +1,9 @@
-import announcementsService from '../services/announcementsService'
+import upcomingSermonsService from '../services/upcomingSermonsService'
 
-const episodeLinesReducer = (state = null, action) => {
+const upcomingSermonsReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET_ANNOUNCEMENTS': {
-      return action.data.announcements
+    case 'GET_UPCOMING_SERMONS': {
+      return action.data.upcomingSermons
     }
     default: {
       return state
@@ -11,16 +11,16 @@ const episodeLinesReducer = (state = null, action) => {
   }
 }
 
-export const getAnnouncements = () => {
+export const getUpcomingSermons = () => {
   return async dispatch => {
 
     try {
-      const announcements = await announcementsService.getAnnouncements()
+      const upcomingSermons = await upcomingSermonsService.getUpcomingSermons()
 
       dispatch({
-        type: 'GET_ANNOUNCEMENTS',
+        type: 'GET_UPCOMING_SERMONS',
         data: {
-          announcements,
+          upcomingSermons,
         }
       })
     } catch (error) {
@@ -29,4 +29,4 @@ export const getAnnouncements = () => {
   }
 }
 
-export default episodeLinesReducer
+export default upcomingSermonsReducer

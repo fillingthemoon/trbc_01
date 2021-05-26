@@ -1,6 +1,6 @@
 import eventsService from '../services/eventsService'
 
-const eventsReducer = (state = null, action) => {
+const eventsReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_EVENTS': {
       return action.data.events

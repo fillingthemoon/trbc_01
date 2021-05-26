@@ -1,9 +1,9 @@
 import axios from 'axios'
 const baseUrl = '/api/events/'
 
-const getEvents = () => {
-  const request = axios.get(baseUrl)
-  return request.then(response => response.data)
+const getEvents = async () => {
+  const response = await axios.get(baseUrl)
+  return response.data
 }
 
 const eventsService = {
