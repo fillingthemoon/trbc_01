@@ -11,3 +11,4 @@ data_csvs
 /server/node_modules
 /server/.env
 /server/serviceAccountKey.json
+/server/mongodb_import_cmd.txt
