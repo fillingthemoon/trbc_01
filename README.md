@@ -1,15 +1,8 @@
-# Thomson Road Baptist Church Website
+# Singapore Thomson Road Baptist Church Website
 
 The website is live at https://arcane-crag-98386.herokuapp.com/#/.
 
-## Setup Instructions for Contributors
-
-```
-$ git clone git@github.com:fillingthemoon/trbc_01.git
-$ cd trbc_01/
-$ git submodule init
-$ git submodule update
-``` 
+---
 
 ## Condensed Architecture of Application
 ![ ](https://trbcbucket.s3-ap-southeast-1.amazonaws.com/diagram.JPG)
@@ -29,7 +22,126 @@ $ git submodule update
 - jsonwebtoken
 - Linting: ESLint
 
-Overview (Half Assed UML)
+---
+
+## Set-up Instructions for Contributors
+
+### Setting up files
+```
+# Fork this repository (superproject) and clone your fork
+
+$ cd trbc_01/
+$ cd client/
+$ npm install --force
+
+
+# Fork the server submodule (trbc_01_server repository)
+
+$ cd ../server
+$ git init
+$ git remote add origin <your-fork>.git
+$ git pull origin master
+$ npm install
+
+$ cd ../
+$ git add server
+$ git commit -m 'commit message'
+$ git push origin main
+
+// Now your superproject fork's server directory should point to your submodule fork on Github. But if it doesn't, it is still fine and you may continue developing in these 2 git repositories separately, which are essentially the client and server.
+``` 
+
+### Starting up application
+```
+# Create a .env file with MONGODB_URI, PORT, and TOKEN information
+
+$ cd ../client/
+$ npm start
+$ cd ../server/
+$ npm run dev
+```
+
+### Deploying Application
+```
+# Develop...
+
+$ cd ../client/
+$ npm run build
+$ cp -r build ../server
+$ cd ../server/
+$ git add .
+$ git commit -m 'commit message'
+$ git push heroku master
+```
+
+### Pushing your changes to your forks
+```
+$ cd ../server/
+$ git push origin master
+$ cd ../client/
+$ git add .
+$ git commit -m 'commit message'
+$ git push origin main
+
+# Make your pull requests:
+# - One PR for trbc_01
+# - One PR for trbc_01_server
+```
+
+---
+
+## Set-up Instructions for Collaborators
+
+### Setting up files
+```
+$ git clone git@github.com:fillingthemoon/trbc_01.git
+$ cd trbc_01/
+$ git submodule init
+$ git submodule update
+
+$ cd client/
+$ npm install --force
+$ cd ../server/
+$ npm install
+```
+
+### Starting up application
+```
+# Create a .env file with MONGODB_URI, PORT, and TOKEN information
+
+$ cd ..client/
+$ npm start
+$ cd ../server/
+$ npm run dev
+
+```
+
+### Deploying Application
+```
+# Develop...
+
+$ cd ../client/
+$ npm run build
+$ cp -r build ../server
+$ cd ../server/
+$ git add .
+$ git commit -m 'commit message'
+$ git push heroku master
+```
+
+### Pushing your changes
+```
+$ cd ../server/
+$ git push origin master
+$ cd ../client/
+$ git add .
+$ git commit -m 'commit message'
+$ git push origin main
+```
+
+---
+
+## Overview (Half Assed UML)
 
 ![ ](https://trbcbucket.s3-ap-southeast-1.amazonaws.com/Half-Ass+UML.jpg)
 
@@ -38,7 +150,6 @@ cd server
 npm start
 ```
 
-##
 Our Team endpoint
 ```
 http://localhost:8080/team
@@ -64,22 +175,26 @@ POST (Body)
 "image": "s3://trbcbucket/IvanChow.jpg"
 }
 ```
-POST (Success)
-    
-    [{
-        "name": "Ivan Lim",
-        "designation": "Caretaker",
-        "image": "s3://trbcbucket/IvanChow.jpg",
-        "_id": "604429422ddf340e909c5d1f"
-    }]
-PUT (Body)
 
-    {
-    "_id": "604429422ddf340e909c5d1f",
-    "name":"Ivan Li m",
-    "designation":"Caretaker",
-    "image": "s3://trbcbucket/IvanChow.jpg"
-    }
+POST (Success)
+```   
+[{
+    "name": "Ivan Lim",
+    "designation": "Caretaker",
+    "image": "s3://trbcbucket/IvanChow.jpg",
+    "_id": "604429422ddf340e909c5d1f"
+}]
+```
+
+PUT (Body)
+```
+{
+"_id": "604429422ddf340e909c5d1f",
+"name":"Ivan Li m",
+"designation":"Caretaker",
+"image": "s3://trbcbucket/IvanChow.jpg"
+}
+```
 
 PUT (Success)
 ```
