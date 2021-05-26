@@ -61,7 +61,7 @@ $ cd ../server/
 $ npm run dev
 ```
 
-### Deploying Application
+### Deploying Application to Heroku
 ```
 # Develop...
 
@@ -116,7 +116,7 @@ $ npm run dev
 
 ```
 
-### Deploying Application
+### Deploying Application to Heroku
 ```
 # Develop...
 
