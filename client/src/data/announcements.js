@@ -1,4 +1,4 @@
-import { general } from '../helper-files/images'
+import { general } from '../helper-files/images.js'
 const { trbcSanc } = general
 
 const announcementsData = [
@@ -13,8 +13,7 @@ const announcementsData = [
       
       8.30am - English Service
       10.30am - Chinese/Teochew Service
-      5.00pm - Sunset Service (English/Mandarin)`
-    ,
+      5.00pm - Sunset Service (English/Mandarin)`,
     imageSource: trbcSanc
   }
 ]
