@@ -1,5 +1,6 @@
 const servicesData = [
   {
+    item_id: 1,
     page: 'services',
     sectionName: 'Teo Chew/Chinese Service',
     service: 'tc',
@@ -21,6 +22,7 @@ const servicesData = [
       华语崇拜: 二楼音乐厅`,
   },
   {
+    item_id: 2,
     page: 'services',
     sectionName: 'Teo Chew/Chinese Service',
     service: 'tc',
@@ -36,6 +38,7 @@ const servicesData = [
     location: '3楼儿童室',
   },
   {
+    item_id: 3,
     page: 'services',
     sectionName: 'Teo Chew/Chinese Service',
     service: 'tc',
@@ -48,6 +51,7 @@ const servicesData = [
     location: '三楼少年室',
   },
   {
+    item_id: 4,
     page: 'services',
     sectionName: 'Teo Chew/Chinese Service',
     service: 'tc',
@@ -57,6 +61,7 @@ const servicesData = [
     location: 'Level 2, Joy Room ',
   },
   {
+    item_id: 5,
     page: 'services',
     sectionName: 'Teo Chew/Chinese Service',
     service: 'tc',
@@ -66,6 +71,7 @@ const servicesData = [
     location: 'TBC',
   },
   {
+    item_id: 6,
     page: 'services',
     sectionName: 'English Service',
     service: 'en',
@@ -75,6 +81,7 @@ const servicesData = [
     location: 'Main Sanctuary, 2nd Floor',
   },
   {
+    item_id: 7,
     page: 'services',
     sectionName: 'English Service',
     service: 'en',
@@ -84,6 +91,7 @@ const servicesData = [
     location: '3rd Floor ',
   },
   {
+    item_id: 8,
     page: 'services',
     sectionName: 'English Service',
     service: 'en',
@@ -98,6 +106,7 @@ const servicesData = [
     location: 'Fellowship Hall, 3rd Floor ',
   },
   {
+    item_id: 9,
     page: 'services',
     sectionName: 'English Service',
     service: 'en',
@@ -107,6 +116,7 @@ const servicesData = [
     location: 'TBC',
   },
   {
+    item_id: 10,
     page: 'services',
     sectionName: 'English Service',
     service: 'en',
@@ -119,6 +129,7 @@ const servicesData = [
     location: 'Choir Room, 3rd Floor',
   },
   {
+    item_id: 11,
     page: 'services',
     sectionName: 'Sunset Service (English/Mandarin)',
     service: 'ss',
@@ -128,6 +139,7 @@ const servicesData = [
     location: 'Main Sanctuary, 2nd Floor',
   },
   {
+    item_id: 12,
     page: 'services',
     sectionName: 'Sunset Service (English/Mandarin)',
     service: 'ss',
@@ -145,6 +157,7 @@ const servicesData = [
     location: 'Choir Room/Fellowship Hall, 3rd Floor',
   },
   {
+    item_id: 14,
     page: 'services',
     sectionName: 'Sunset Service (English/Mandarin)',
     service: 'ss',
@@ -159,6 +172,7 @@ const servicesData = [
     location: 'Fellowship Hall, 3rd Floor ',
   },
   {
+    item_id: 15,
     page: 'services',
     sectionName: 'Sunset Service (English/Mandarin)',
     service: 'ss',
@@ -177,6 +191,7 @@ const servicesData = [
     location: 'TBC',
   },
   {
+    item_id: 16,
     page: 'services',
     sectionName: 'Sunset Service (English/Mandarin)',
     service: 'ss',

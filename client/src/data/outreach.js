@@ -3,6 +3,7 @@ const { churchWide } = general
 
 const outreachData = [
   {
+    item_id: 1,
     page: 'outreach',
     sectionName: 'Community',
     title: 'Chinese as a Second Language (CSL)',
@@ -15,6 +16,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    item_id: 2,
     page: 'outreach',
     sectionName: 'Community',
     title: 'English as a Second Language (ESL)',
@@ -27,6 +29,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    item_id: 3,
     page: 'outreach',
     sectionName: 'Interest Groups',
     title: 'Gardening Fellowship',
@@ -39,6 +42,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    item_id: 4,
     page: 'outreach',
     sectionName: 'Interest Groups',
     title: 'Ping Pong Fellowship',
@@ -51,6 +55,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    item_id: 5,
     page: 'outreach',
     sectionName: 'Interest Groups',
     title: 'HPB Sit Down Excercises',
@@ -63,6 +68,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    item_id: 6,
     page: 'outreach',
     sectionName: 'Children',
     title: 'Kindergarten',
@@ -75,6 +81,7 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
+    item_id: 7,
     page: 'outreach',
     sectionName: 'Children',
     title: 'CEC',

@@ -1,5 +1,6 @@
 [
   {
+    "item_id": 1,
     "page": "missions",
     "sectionName": "Missions",
     "title": "Myanmar",
@@ -7,6 +8,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/exterior.jpg"
   },
   {
+    "item_id": 2,
     "page": "missions",
     "sectionName": "Missions",
     "title": "Bintan Island",
@@ -14,6 +16,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/exterior.jpg"
   },
   {
+    "item_id": 3,
     "page": "missions",
     "sectionName": "Missions",
     "title": "Nepal",
@@ -21,6 +24,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/exterior.jpg"
   },
   {
+    "item_id": 4,
     "page": "missions",
     "sectionName": "Missions",
     "title": "China",
@@ -28,6 +32,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/exterior.jpg"
   },
   {
+    "item_id": 5,
     "page": "missions",
     "sectionName": "Missions",
     "title": "India",

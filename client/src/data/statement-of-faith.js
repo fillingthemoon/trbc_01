@@ -1,5 +1,6 @@
 const statementOfFaithData = [
   {
+    item_id: 1,
     page:'statement-of-faith',
     sectionName: 'Statement of Faith',
     title: 'We Believe',
@@ -18,6 +19,7 @@ const statementOfFaithData = [
     language: 'english',
   },
   {
+    item_id: 2,
     page:'statement-of-faith',
     sectionName: 'Statement of Faith',
     title: '信仰宣言',

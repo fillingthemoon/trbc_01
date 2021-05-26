@@ -1,5 +1,6 @@
 const cecData = [
   {
+    item_id: 1,
     page: 'cec',
     sectionName: 'CEC',
     title: 'About Children\'s Enrichment Camp (CEC)',
@@ -11,6 +12,7 @@ const cecData = [
       Find out more @ https://trbccec.wordpress.com.`,
   },
   {
+    item_id: 2,
     page: 'cec',
     sectionName: 'CEC',
     title: 'Run Your Own Camp!',
@@ -24,6 +26,7 @@ const cecData = [
       If you want to host a Children’s Camp in your church, but don’t know where to start, we will be very happy to chat with you and share our experiences and know-how with you and your co-workers!  Just give us an email at cec@trbc.org.sg and we’ll be in touch!`,
   },
   {
+    item_id: 3,
     page: 'cec',
     sectionName: 'CEC',
     title: 'Contact Details',

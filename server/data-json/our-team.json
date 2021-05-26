@@ -1,5 +1,6 @@
 [
   {
+    "item_id": 1,
     "page": "our-team",
     "sectionName": "Pastoral",
     "title": "Rev. Adrian Lim",
@@ -7,6 +8,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/rev-adrian-lim.jpg"
   },
   {
+    "item_id": 2,
     "page": "our-team",
     "sectionName": "Pastoral",
     "title": "Rev. Andrew Chang",
@@ -14,6 +16,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/rev-chang.jpg"
   },
   {
+    "item_id": 3,
     "page": "our-team",
     "sectionName": "Pastoral",
     "title": "Rev. Dr. Jerry Goh",
@@ -21,6 +24,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/rev-jerry-goh.jpg"
   },
   {
+    "item_id": 4,
     "page": "our-team",
     "sectionName": "Pastoral",
     "title": "Ps. Lam Yuen Foong",
@@ -28,6 +32,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/ps-lam.jpg"
   },
   {
+    "item_id": 5,
     "page": "our-team",
     "sectionName": "Ministry",
     "title": "Mr. Yeo Chong Nim",
@@ -35,6 +40,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/yeo-chong-nim.jpg"
   },
   {
+    "item_id": 6,
     "page": "our-team",
     "sectionName": "Ministry",
     "title": "Ms. Jenny Ang ",
@@ -42,6 +48,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/jenny-ang.jpg"
   },
   {
+    "item_id": 7,
     "page": "our-team",
     "sectionName": "Administrative",
     "title": "Mr. Leonard Lee",
@@ -49,6 +56,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/leonard-lee.jpg"
   },
   {
+    "item_id": 8,
     "page": "our-team",
     "sectionName": "Administrative",
     "title": "Mr. Vincent Lai Seck Tong",
@@ -56,6 +64,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/vincent-lai.jpg"
   },
   {
+    "item_id": 9,
     "page": "our-team",
     "sectionName": "Administrative",
     "title": "Ms. Jasmine Lee",
@@ -63,6 +72,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/jasmine-lee.jpg"
   },
   {
+    "item_id": 10,
     "page": "our-team",
     "sectionName": "Administrative",
     "title": "Mr. Dong Fan",
@@ -70,6 +80,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/our-team/dong-fan.jpg"
   },
   {
+    "item_id": 11,
     "page": "our-team",
     "sectionName": "Administrative",
     "title": "Mr. Ivan Chow",

@@ -3,6 +3,7 @@ const { trbcSanc } = general
 
 const announcementsData = [
   {
+    item_id: 1,
     page: 'home',
     sectionName: 'Announcements',
     title: 'Livestreaming Services',

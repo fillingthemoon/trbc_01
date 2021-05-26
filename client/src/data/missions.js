@@ -3,6 +3,7 @@ const { exterior } = general
 
 const missionsData = [
   {
+    item_id: 1,
     page:'missions',
     sectionName: 'Missions',
     title: 'Myanmar',
@@ -10,6 +11,7 @@ const missionsData = [
     imgSrc: exterior
   },
   {
+    item_id: 2,
     page:'missions',
     sectionName: 'Missions',
     title: 'Bintan Island',
@@ -17,6 +19,7 @@ const missionsData = [
     imgSrc: exterior
   },
   {
+    item_id: 3,
     page:'missions',
     sectionName: 'Missions',
     title: 'Nepal',
@@ -24,6 +27,7 @@ const missionsData = [
     imgSrc: exterior
   },
   {
+    item_id: 4,
     page:'missions',
     sectionName: 'Missions',
     title: 'China',
@@ -31,6 +35,7 @@ const missionsData = [
     imgSrc: exterior
   },
   {
+    item_id: 5,
     page:'missions',
     sectionName: 'Missions',
     title: 'India',

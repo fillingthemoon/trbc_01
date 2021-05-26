@@ -26,7 +26,7 @@ const Services = () => {
   useEffect(() => {
     const newData = servicesData.filter(serviceData => serviceData.service.substring(0, 2) === currService)
     setCurrServiceData(newData)
-  }, [currService])
+  }, [servicesData, currService])
 
   if (!servicesData) { return null }
 

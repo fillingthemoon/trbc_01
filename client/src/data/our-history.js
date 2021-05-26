@@ -10,6 +10,7 @@ const {
 
 const ourHistoryData = [
   {
+    item_id: 1,
     page: 'our-history',
     sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',
@@ -20,6 +21,7 @@ const ourHistoryData = [
     imgSrc: aboutUs1,
   },
   {
+    item_id: 2,
     page: 'our-history',
     sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',
@@ -27,6 +29,7 @@ const ourHistoryData = [
     imgSrc: aboutUs2,
   },
   {
+    item_id: 3,
     page: 'our-history',
     sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',
@@ -34,6 +37,7 @@ const ourHistoryData = [
     imgSrc: aboutUs3,
   },
   {
+    item_id: 4,
     page: 'our-history',
     sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',
@@ -44,6 +48,7 @@ const ourHistoryData = [
     imgSrc: aboutUs4,
   },
   {
+    item_id: 5,
     page: 'our-history',
     sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',
@@ -54,6 +59,7 @@ const ourHistoryData = [
     imgSrc: aboutUs5,
   },
   {
+    item_id: 6,
     page: 'our-history',
     sectionName: 'Our History',
     title: 'Pellentesque habitant morbi tristique.',

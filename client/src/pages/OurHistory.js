@@ -13,7 +13,7 @@ import { getOurHistory } from '../reducers/ourHistoryReducer'
 const OurHistory = () => {
   const dispatch = useDispatch()
 
-  const ourHistoryData = useSelector(state => state.discipleship)
+  const ourHistoryData = useSelector(state => state.ourHistory)
 
   useEffect(() => {
     dispatch(getOurHistory())

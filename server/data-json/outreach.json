@@ -1,5 +1,6 @@
 [
   {
+    "item_id": 1,
     "page": "outreach",
     "sectionName": "Community",
     "title": "Chinese as a Second Language (CSL)",
@@ -12,6 +13,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/church-wide.jpg"
   },
   {
+    "item_id": 2,
     "page": "outreach",
     "sectionName": "Community",
     "title": "English as a Second Language (ESL)",
@@ -24,6 +26,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/church-wide.jpg"
   },
   {
+    "item_id": 3,
     "page": "outreach",
     "sectionName": "Interest Groups",
     "title": "Gardening Fellowship",
@@ -36,6 +39,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/church-wide.jpg"
   },
   {
+    "item_id": 4,
     "page": "outreach",
     "sectionName": "Interest Groups",
     "title": "Ping Pong Fellowship",
@@ -48,6 +52,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/church-wide.jpg"
   },
   {
+    "item_id": 5,
     "page": "outreach",
     "sectionName": "Interest Groups",
     "title": "HPB Sit Down Excercises",
@@ -60,6 +65,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/church-wide.jpg"
   },
   {
+    "item_id": 6,
     "page": "outreach",
     "sectionName": "Children",
     "title": "Kindergarten",
@@ -72,6 +78,7 @@
     "imgSrc": "https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/church-wide.jpg"
   },
   {
+    "item_id": 7,
     "page": "outreach",
     "sectionName": "Children",
     "title": "CEC",

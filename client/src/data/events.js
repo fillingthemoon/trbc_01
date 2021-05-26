@@ -1,5 +1,6 @@
 const eventsData = [
   {
+    item_id: 1,
     page: 'home',
     sectionName: 'Events',
     title: 'TRBC - TRBK Carnival',
@@ -10,6 +11,7 @@ const eventsData = [
     date: '21-25 May 2021',
   },
   {
+    item_id: 2,
     page: 'home',
     sectionName: 'Events',
     title: 'Combined Church Camp',

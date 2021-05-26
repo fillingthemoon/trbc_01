@@ -7,6 +7,7 @@ const {
 
 const imNewData = [
   {
+    item_id: 1,
     page: 'im-new',
     sectionName: 'I\'m New',
     title: 'The best place to start? Join us for a worship service.',
@@ -18,6 +19,7 @@ const imNewData = [
     },
   },
   {
+    item_id: 2,
     page: 'im-new',
     sectionName: 'I\'m New',
     title: 'What makes church special is not just the event, but also the relationships we build that help us stay faithful to God.',
@@ -32,6 +34,7 @@ const imNewData = [
     },
   },
   {
+    item_id: 3,
     page: 'im-new',
     sectionName: 'I\'m New',
     title: 'Get involved in one of our doing good projects.',

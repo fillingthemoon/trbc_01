@@ -15,6 +15,7 @@ const {
 
 const ourTeamData = [
   {
+    item_id: 1,
     page:'our-team',
     sectionName: 'Pastoral',
     title: 'Rev. Adrian Lim',
@@ -22,6 +23,7 @@ const ourTeamData = [
     imgSrc: revAdrianLim,
   },
   {
+    item_id: 2,
     page:'our-team',
     sectionName: 'Pastoral',
     title: 'Rev. Andrew Chang',
@@ -29,6 +31,7 @@ const ourTeamData = [
     imgSrc: revChang,
   },
   {
+    item_id: 3,
     page:'our-team',
     sectionName: 'Pastoral',
     title: 'Rev. Dr. Jerry Goh',
@@ -36,6 +39,7 @@ const ourTeamData = [
     imgSrc: revJerryGoh,
   },
   {
+    item_id: 4,
     page:'our-team',
     sectionName: 'Pastoral',
     title: 'Ps. Lam Yuen Foong',
@@ -43,6 +47,7 @@ const ourTeamData = [
     imgSrc: psLam,
   },
   {
+    item_id: 5,
     page:'our-team',
     sectionName: 'Ministry',
     title: 'Mr. Yeo Chong Nim',
@@ -50,6 +55,7 @@ const ourTeamData = [
     imgSrc: yeoChongNim,
   },
   {
+    item_id: 6,
     page:'our-team',
     sectionName: 'Ministry',
     title: 'Ms. Jenny Ang ',
@@ -57,6 +63,7 @@ const ourTeamData = [
     imgSrc: jennyAng,
   },
   {
+    item_id: 7,
     page:'our-team',
     sectionName: 'Administrative',
     title: 'Mr. Leonard Lee',
@@ -64,6 +71,7 @@ const ourTeamData = [
     imgSrc: leonardLee,
   },
   {
+    item_id: 8,
     page:'our-team',
     sectionName: 'Administrative',
     title: 'Mr. Vincent Lai Seck Tong',
@@ -71,6 +79,7 @@ const ourTeamData = [
     imgSrc: vincentLai,
   },
   {
+    item_id: 9,
     page:'our-team',
     sectionName: 'Administrative',
     title: 'Ms. Jasmine Lee',
@@ -78,6 +87,7 @@ const ourTeamData = [
     imgSrc: jasmineLee,
   },
   {
+    item_id: 10,
     page:'our-team',
     sectionName: 'Administrative',
     title: 'Mr. Dong Fan',
@@ -85,6 +95,7 @@ const ourTeamData = [
     imgSrc: dongFan,
   },
   {
+    item_id: 11,
     page:'our-team',
     sectionName: 'Administrative',
     title: 'Mr. Ivan Chow',

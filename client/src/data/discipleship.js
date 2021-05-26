@@ -10,6 +10,7 @@ const {
 
 const discipleshipData = [
   {
+    item_id: 1,
     page:'discipleship',
     sectionName:'Discipleship',
     title: 'Pellentesque habitant morbi tristique.',
@@ -17,6 +18,7 @@ const discipleshipData = [
     imgSrc: aboutUs1,
   },
   {
+    item_id: 2,
     page:'discipleship',
     sectionName:'Discipleship',
     title: 'Pellentesque habitant morbi tristique.',
@@ -24,6 +26,7 @@ const discipleshipData = [
     imgSrc: aboutUs2,
   },
   {
+    item_id: 3,
     page:'discipleship',
     sectionName:'Discipleship',
     title: 'Pellentesque habitant morbi tristique.',
@@ -31,6 +34,7 @@ const discipleshipData = [
     imgSrc: aboutUs3,
   },
   {
+    item_id: 4,
     page:'discipleship',
     sectionName:'Discipleship',
     title: 'Pellentesque habitant morbi tristique.',
@@ -38,6 +42,7 @@ const discipleshipData = [
     imgSrc: aboutUs4,
   },
   {
+    item_id: 5,
     page:'discipleship',
     sectionName:'Discipleship',
     title: 'Pellentesque habitant morbi tristique.',
@@ -45,6 +50,7 @@ const discipleshipData = [
     imgSrc: aboutUs5,
   },
   {
+    item_id: 6,
     page:'discipleship',
     sectionName:'Discipleship',
     title: 'Pellentesque habitant morbi tristique.',
