@@ -24,7 +24,7 @@ const ourTeamData = [
   {
     page:'our-team',
     title: 'Rev. Andrew Chang',
-    text: 'Interim Pastoral Advisor of \n Teochew/Chinese Congregation',
+    text: 'Interim Pastoral Advisor of Teochew/Chinese Congregation',
     imgSrc: revChang,
     sectionName: 'Pastoral',
   },
