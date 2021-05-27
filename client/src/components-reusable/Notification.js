@@ -11,7 +11,7 @@ const Notification = ({ notification }) => {
       showIcon
       banner
       closable
-      style={{ textAlign: 'center' }}
+      style={{ textAlign: 'center', position: 'absolute', width: '100%' }}
     />
   )
 }
