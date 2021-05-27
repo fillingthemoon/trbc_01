@@ -10,9 +10,7 @@ import { Form, Input, Button } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-
+  const [form] = Form.useForm()
   const dispatch = useDispatch()
 
   // Stay logged in
@@ -25,15 +23,18 @@ const LoginForm = () => {
   }, [])
 
   // Handle log in
-  const handleLogin = () => {
+  const handleLogin = (values) => {
+    const username = values.username
+    const password = values.password
+
     dispatch(logUserIn(username, password))
 
-    setUsername('')
-    setPassword('')
+    form.resetFields()
   }
 
   return (
     <Form
+      form={form}
       onFinish={handleLogin}
       className='login-form'
     >
@@ -45,11 +46,6 @@ const LoginForm = () => {
         <Input
           prefix={<UserOutlined />}
           placeholder="Username"
-          className='input-username'
-          type="text"
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-          rules={[{ required: true, message: 'Please input your Username!' }]}
         />
       </Form.Item>
       <Form.Item
@@ -59,15 +55,12 @@ const LoginForm = () => {
         <Input
           prefix={<LockOutlined />}
           placeholder="Password"
-          className='input-password'
           type="password"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
         />
       </Form.Item>
       <Form.Item>
         <Button
-          className='login-btn'
+          style={{ width: '100%' }}
           type="primary"
           htmlType='submit'
         >Log In</Button>

@@ -23,7 +23,7 @@ export const logUserIn = (username, password) => {
       })
       window.localStorage.setItem('loggedInAdminUser', JSON.stringify(user))
       // upcomingSermonsService.setToken(user.token)
-      dispatch(setNotification('success', 'Log in successful!', 3))
+      dispatch(setNotification('success', 'Log in successful!', 5))
 
       dispatch({
         type: 'LOG_USER_IN',
@@ -32,7 +32,7 @@ export const logUserIn = (username, password) => {
         }
       })
     } catch (error) {
-      dispatch(setNotification('error', 'Invalid username or password', 3))
+      dispatch(setNotification('error', 'Invalid username or password', 5))
     }
   }
 }
