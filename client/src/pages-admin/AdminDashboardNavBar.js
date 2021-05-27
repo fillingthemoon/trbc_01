@@ -22,7 +22,7 @@ const loggedInUserMenu = (handleLogout, loggedInUser) => {
       <Menu.Item disabled>
         {loggedInUser.username}
       </Menu.Item>
-      <Divider style={{ margin: '5px 0' }} />
+      <Menu.Divider />
       <Menu.Item onClick={handleLogout}>
         Log Out
       </Menu.Item>
