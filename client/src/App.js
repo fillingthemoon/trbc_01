@@ -21,6 +21,8 @@ import ContactFooter from './components/ContactFooter'
 // Admin Pages
 import Admin from './pages-admin/Admin'
 
+import EditPage from './pages-admin/pages-edit/EditPage'
+
 import { Layout } from 'antd'
 const { Content } = Layout
 
@@ -77,9 +79,9 @@ const App = () => {
           <Route path='/admin' exact>
             <Admin />
           </Route >
-          {/* <Route path='/admin/home' exact>
-            <EditHome />
-          </Route > */}
+          <Route path='/admin/:sectionId' exact>
+            <EditPage/>
+          </Route >
         </Switch >
       </Content>
       <ContactFooter />
