@@ -2,28 +2,18 @@ import React, { useState, useEffect } from 'react'
 
 import itemService from '../services/itemService'
 
+import TitleText from '../components-reusable/TitleText'
+import PageCard from '../components-admin/PageCard'
+
 import {
   colorWhite,
 } from '../helper-files/colors'
 
 import { Row } from 'antd'
 
-const lowerCaseWords = ['of', 'to']
-
-const convertPageNames = (pages) => {
-  const convertedPages = pages.map(page => {
-    const pageName = page._id
-    page._id = pageName.split('-')
-      .map(pageNameWord => {
-        let firstLetter = pageNameWord[0]
-        if (!lowerCaseWords.includes(pageNameWord)) {
-          firstLetter = pageNameWord[0].toUpperCase()
-        }
-        return firstLetter.concat(pageNameWord.substring(1, pageNameWord.length))
-      })
-    return page._id.join(' ')
-  })
-  return convertedPages
+const titleUnderlineStyle = {
+  display: 'flex',
+  justifyContent: 'center',
 }
 
 const AdminDashboardContent = () => {
@@ -31,8 +21,7 @@ const AdminDashboardContent = () => {
 
   const fetchPages = async () => {
     const pages = await itemService.getPages()
-    const convertedPages = convertPageNames(pages)
-    setPages(convertedPages)
+    setPages(pages)
   }
 
   useEffect(() => {
@@ -40,11 +29,14 @@ const AdminDashboardContent = () => {
   }, [])
 
   return (
-    <Row style={{ display: 'flex', justifyContent: 'center', padding: '50px 0', backgroundColor: colorWhite }}>
-      {pages.map((page, i) => {
-        return <p key={i}>{page}</p>
-      })}
-    </Row>
+    <>
+      <TitleText titleUnderlineStyle={titleUnderlineStyle} title={'Admin Dashboard'} underlineAlign='center' />
+      <Row style={{ display: 'flex', justifyContent: 'center', backgroundColor: colorWhite }}>
+        {pages.map((page, i) => {
+          return <PageCard key={i} pageName={page._id} />
+        })}
+      </Row>
+    </>
   )
 }
 

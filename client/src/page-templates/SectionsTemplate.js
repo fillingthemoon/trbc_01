@@ -2,7 +2,7 @@ import React from 'react'
 
 import TitleText from '../components-reusable/TitleText'
 import PersonProfile from '../components-reusable/PersonProfile'
-import CardItem from '../components-reusable/CardItem'
+import ItemCard from '../components-reusable/ItemCard'
 
 import {
   Divider, Row, Col
@@ -29,7 +29,7 @@ const Section = ({ section, displayType }) => {
                 case ('personProfile'):
                   return <PersonProfile {...item} />
                 case ('card'): {
-                  return <CardItem item={item} />
+                  return <ItemCard item={item} />
                 }
               }
             })()}

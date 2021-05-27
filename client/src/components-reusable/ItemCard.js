@@ -42,7 +42,7 @@ const iconStyle = {
   color: iconColor,
 }
 
-const CardItem = ({ item }) => {
+const ItemCard = ({ item }) => {
   const { title, text, imgSrc, details } = item
 
   const { time, location, leader } = details ? details : { time: null, location: null, leader: null }
@@ -96,4 +96,4 @@ const CardItem = ({ item }) => {
   )
 }
 
-export default CardItem
+export default ItemCard
