@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { UserOutlined } from '@ant-design/icons'
-
 import {
   colorWhite,
 } from '../helper-files/colors'
 
-import { Layout, Button, Menu, Dropdown, Divider } from 'antd'
+import { UserOutlined } from '@ant-design/icons'
+import { HiViewGrid } from 'react-icons/hi'
+
+import { Layout, Button, Menu, Dropdown } from 'antd'
 const { Header } = Layout
 
 const loggedInUserMenu = (handleLogout, loggedInUser) => {
@@ -46,17 +47,28 @@ const AdminDashboardNavBar = (props) => {
         backgroundColor: colorWhite,
       }}
     >
-      <Button
-        style={{ border: 'none', lineHeight: 0, }}
-      >Admin Home
-        <Link replace to='/admin'></Link>
-      </Button>
+      <Link replace to='/admin'>
+        <Button
+          style={{
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            padding: '10px',
+            width: '130px',
+            border: 'none',
+            lineHeight: 0,
+          }}
+          icon={<HiViewGrid style={{ fontSize: '1.5rem' }} />}
+        >
+          Dashboard
+        </Button>
+      </Link>
       <Dropdown
         overlay={() => loggedInUserMenu(handleLogout, loggedInUser)}
         trigger={['click']}
       >
         <Button
-          icon={<UserOutlined style={{ fontSize: '25px' }} />}
+          icon={<UserOutlined style={{ fontSize: '1.5rem' }} />}
           style={{ border: 'none' }}
         />
       </Dropdown>

@@ -1,14 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import {
-  colorWhite,
-} from '../helper-files/colors'
-
-import {
-  Card,
-  Typography,
-  Divider,
   Button,
 } from 'antd'
 
@@ -24,29 +16,24 @@ import {
 
 import { BsFillPeopleFill } from 'react-icons/bs'
 import { BiWorld } from 'react-icons/bi'
-import { IoDocumentText } from 'react-icons/io5'
+import { HiSpeakerphone } from 'react-icons/hi'
 
-import {
-  colorPrimaryOrange as iconColor,
-} from '../helper-files/colors'
 
-const { Title } = Typography
-const { Meta } = Card
-
-const cardStyle = {
+const btnStyle = {
   display: 'flex',
-  flexDirection: 'column',
-  textAlign: 'center',
+  justifyContent: 'space-evenly',
+  alignItems: 'center',
   margin: '10px',
+  padding: '30px 10px',
   width: '200px',
-  boxShadow: '4px 2px 10px 0px rgba(0, 0, 0, 0.05)',
+  boxShadow: '1px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+  border: 'none',
   borderRadius: '10px',
+  lineHeight: 0,
 }
 
 const iconStyle = {
-  marginTop: '24px',
-  fontSize: '2rem',
-  // color: iconColor,
+  fontSize: '1.3rem',
 }
 
 const lowerCaseWords = ['of', 'to']
@@ -73,7 +60,7 @@ const iconDictionary = {
   'our-team': <FaPeopleCarry style={iconStyle} />,
   'outreach': <FaHandsHelping style={iconStyle} />,
   'services': <FaChurch style={iconStyle} />,
-  'statement-of-faith': <IoDocumentText style={iconStyle} />,
+  'statement-of-faith': <HiSpeakerphone style={iconStyle} />,
 }
 
 const PageCard = (props) => {
@@ -82,23 +69,14 @@ const PageCard = (props) => {
   } = props
 
   return (
-    <Card
-      cover={iconDictionary[pageName]}
-      style={cardStyle}
-    >
-      <Title style={{ fontSize: '1.2rem', margin: '10px 0' }}>{convertPageName(pageName)}</Title>
-      <Divider style={{ margin: '20px 0' }} />
+    <Link replace to='/home'>
       <Button
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.85)',
-          color: colorWhite,
-          border: 'none',
-          borderRadius: '7px',
-        }}
+        style={btnStyle}
+        icon={iconDictionary[pageName]}
       >
-        <Link to='/home'>Edit</Link>
+        {convertPageName(pageName)}
       </Button>
-    </Card>
+    </Link>
   )
 }
 
