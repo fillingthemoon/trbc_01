@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {
   Button,
+  Card,
+  Divider,
 } from 'antd'
 
 import {
@@ -9,31 +11,26 @@ import {
   FaHistory,
   FaStarOfLife,
   FaPeopleCarry,
-  FaHome,
   FaHandsHelping,
-  FaChurch
+  FaChurch,
+  FaCalendar,
+  FaBible
 } from 'react-icons/fa'
 
 import { BsFillPeopleFill } from 'react-icons/bs'
 import { BiWorld } from 'react-icons/bi'
 import { HiSpeakerphone } from 'react-icons/hi'
+import { IoDocumentText } from 'react-icons/io5'
 
-
-const btnStyle = {
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  alignItems: 'center',
+const cardStyle = {
   margin: '10px',
-  padding: '30px 10px',
-  width: '200px',
+  width: '220px',
   boxShadow: '1px 1px 10px 0px rgba(0, 0, 0, 0.12)',
   border: 'none',
-  borderRadius: '10px',
-  lineHeight: 0,
 }
 
 const iconStyle = {
-  fontSize: '1.3rem',
+  fontSize: '1.5rem',
 }
 
 const lowerCaseWords = ['of', 'to']
@@ -51,32 +48,38 @@ const convertPageName = (pageName) => {
 }
 
 const iconDictionary = {
+  'announcements': <HiSpeakerphone style={iconStyle} />,
   'cec': <FaCampground style={iconStyle} />,
   'discipleship': <BsFillPeopleFill style={iconStyle} />,
-  'home': <FaHome style={iconStyle} />,
+  'events': <FaCalendar style={iconStyle} />,
   'im-new': <FaStarOfLife style={iconStyle} />,
   'missions': <BiWorld style={iconStyle} />,
   'our-history': <FaHistory style={iconStyle} />,
   'our-team': <FaPeopleCarry style={iconStyle} />,
   'outreach': <FaHandsHelping style={iconStyle} />,
   'services': <FaChurch style={iconStyle} />,
-  'statement-of-faith': <HiSpeakerphone style={iconStyle} />,
+  'statement-of-faith': <IoDocumentText style={iconStyle} />,
+  'upcoming-sermons': <FaBible style={iconStyle} />,
 }
 
 const PageCard = (props) => {
   const {
-    pageName
+    pageName,
+    sectionNames,
   } = props
 
   return (
-    <Link replace to='/home'>
-      <Button
-        style={btnStyle}
-        icon={iconDictionary[pageName]}
-      >
-        {convertPageName(pageName)}
-      </Button>
-    </Link>
+    <Card
+      style={cardStyle}
+      title={convertPageName(pageName)}
+    >
+      {sectionNames.map((sectionName, i) =>
+        <div key={i}>
+          <Link to='/home'>{sectionName}</Link>
+          {i !== sectionNames.length - 1 && <Divider />}
+        </div>
+      )}
+    </Card >
   )
 }
 

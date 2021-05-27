@@ -21,7 +21,7 @@ const TitleText = (props) => {
   return (
     <div>
       <div style={titleUnderlineStyle}>
-        <Title style={{ ...titleStyle }} className={titleClassName}>
+        <Title style={titleStyle} className={titleClassName}>
           {title}
           <hr style={underlineStyle} className={underlineAlign === 'center' ? 'title-underline-center' : 'title-underline-left'} />
         </Title>

@@ -20,7 +20,11 @@ const Section = ({ section, displayType }) => {
 
   return (
     <div>
-      <TitleText titleUnderlineStyle={titleUnderlineStyle} title={sectionName} underlineAlign='center' />
+      <TitleText
+        titleUnderlineStyle={titleUnderlineStyle}
+        title={sectionName}
+        titleStyle={{ textAlign: 'center' }}
+        underlineAlign='center' />
       <Row style={{ display: 'flex', justifyContent: 'center' }}>
         {items.map((item, i) =>
           <Col key={i} style={{ display: 'flex' }}>

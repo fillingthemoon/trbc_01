@@ -5,7 +5,7 @@ import {
   colorWhite,
 } from '../helper-files/colors'
 
-import { FaUser } from 'react-icons/fa'
+import { FaUserCircle } from 'react-icons/fa'
 import { HiViewGrid } from 'react-icons/hi'
 
 import { Layout, Button, Menu, Dropdown } from 'antd'
@@ -68,7 +68,7 @@ const AdminDashboardNavBar = (props) => {
         trigger={['click']}
       >
         <Button
-          icon={<FaUser style={{ fontSize: '1.2rem' }} />}
+          icon={<FaUserCircle style={{ fontSize: '1.5rem' }} />}
           style={{ border: 'none' }}
         />
       </Dropdown>
