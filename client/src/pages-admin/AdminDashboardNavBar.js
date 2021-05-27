@@ -5,7 +5,7 @@ import {
   colorWhite,
 } from '../helper-files/colors'
 
-import { UserOutlined } from '@ant-design/icons'
+import { FaUser } from 'react-icons/fa'
 import { HiViewGrid } from 'react-icons/hi'
 
 import { Layout, Button, Menu, Dropdown } from 'antd'
@@ -68,7 +68,7 @@ const AdminDashboardNavBar = (props) => {
         trigger={['click']}
       >
         <Button
-          icon={<UserOutlined style={{ fontSize: '1.5rem' }} />}
+          icon={<FaUser style={{ fontSize: '1.2rem' }} />}
           style={{ border: 'none' }}
         />
       </Dropdown>
