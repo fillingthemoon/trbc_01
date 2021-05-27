@@ -91,7 +91,7 @@ const NavBar = () => {
             backgroundColor: colorLOrange,
             color: colorPrimaryOrange,
             borderRadius: '10px',
-            borderStyle: 'none',
+            border: 'none',
             width: '100px',
             height: '40px',
             fontWeight: '600',

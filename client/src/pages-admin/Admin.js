@@ -18,14 +18,17 @@ const Admin = () => {
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Admin', image: exterior }]} />
-      <Notification notification={notification} />
-      <div className='admin'>
-        {!loggedInUser
-          ? <LoginForm />
-          : <AdminDashboard loggedInUser={loggedInUser} />
-        }
-      </div>
+      {!loggedInUser
+        ?
+        <div>
+          <Banner imageTitlePairs={[{ title: 'Admin', image: exterior }]} />
+          <Notification notification={notification} />
+          <div className='admin-login'>
+            <LoginForm />
+          </div>
+        </div>
+        : <AdminDashboard loggedInUser={loggedInUser} />
+      }
     </div>
   )
 }
