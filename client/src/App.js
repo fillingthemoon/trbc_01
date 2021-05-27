@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
+// Main Pages
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import MissionVision from './pages/MissionVision'
@@ -18,7 +19,7 @@ import ResourceLibrary from './pages/ResourceLibrary'
 import ContactFooter from './components/ContactFooter'
 
 // Admin Pages
-import Admin from './pages/admin/Admin'
+import Admin from './pages-admin/Admin'
 
 import { Layout } from 'antd'
 const { Content } = Layout

@@ -15,6 +15,10 @@ import servicesReducer from './reducers/servicesReducer'
 import statementOfFaithReducer from './reducers/statementOfFaithReducer'
 import upcomingSermonsReducer from './reducers/upcomingSermonsReducer'
 
+import loggedInUserReducer from './reducers/loggedInUserReducer'
+
+import notificationReducer from './reducers/notificationReducer'
+
 const reducer = combineReducers({
   announcements: announcementsReducer,
   cec: cecReducer,
@@ -28,6 +32,10 @@ const reducer = combineReducers({
   services: servicesReducer,
   statementOfFaith: statementOfFaithReducer,
   upcomingSermons: upcomingSermonsReducer,
+
+  loggedInUser: loggedInUserReducer,
+
+  notification: notificationReducer,
 })
 
 const store = createStore(

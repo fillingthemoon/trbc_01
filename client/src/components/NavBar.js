@@ -17,7 +17,7 @@ import {
 } from '../helper-files/colors'
 
 const NavBar = () => {
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1150px)' })
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1050px)' })
   const [current, setCurrent] = useState('home')
   const [language, setLanguage] = useState('ENGLISH')
 
@@ -29,7 +29,7 @@ const NavBar = () => {
       mode={orientation}
       onClick={({ key }) => { setCurrent(key) }}
       selectedKeys={pageUrl}
-      style={{ border: 'None', padding: '10px' }}
+      style={{ border: 'None' }}
       subMenuOpenDelay={0}
     >
       <Menu.Item key='home' title='Home'>
@@ -122,8 +122,7 @@ const NavBar = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'white',
-        padding: '55px',
-        maxHeight: '80px',
+        padding: '50px 30px',
       }}
     >
       <Link replace to='/home'>
