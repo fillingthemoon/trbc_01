@@ -14,13 +14,13 @@ import {
   colorWhite,
 } from '../helper-files/colors'
 
-import { Layout, Button, Menu, Dropdown } from 'antd'
+import { Layout, Button, Menu, Dropdown, Divider } from 'antd'
 const { Header, Content, Sider } = Layout
 const { SubMenu } = Menu
 
 import { UserOutlined } from '@ant-design/icons'
 
-const loggedInUserMenu = (handleLogout) => {
+const loggedInUserMenu = (handleLogout, loggedInUser) => {
 
   return (
     <Menu
@@ -29,13 +29,12 @@ const loggedInUserMenu = (handleLogout) => {
       style={{ border: 'None' }}
       subMenuOpenDelay={0}
     >
-      <Menu.Item>
-        <Button
-          onClick={handleLogout}
-          style={{ border: 'none', lineHeight: 0 }}
-        >
-          Log Out
-        </Button>
+      <Menu.Item disabled>
+        {loggedInUser.username}
+      </Menu.Item>
+      <Divider style={{ margin: '5px 0' }} />
+      <Menu.Item onClick={handleLogout}>
+        Log Out
       </Menu.Item>
     </Menu>
   )
@@ -73,7 +72,7 @@ const AdminDashboard = (props) => {
           <Link replace to='/admin'></Link>
         </Button>
         <Dropdown
-          overlay={() => loggedInUserMenu(handleLogout)}
+          overlay={() => loggedInUserMenu(handleLogout, loggedInUser)}
           trigger={['click']}
         >
           <Button

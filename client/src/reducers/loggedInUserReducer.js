@@ -23,7 +23,7 @@ export const logUserIn = (username, password) => {
       })
       window.localStorage.setItem('loggedInAdminUser', JSON.stringify(user))
       // upcomingSermonsService.setToken(user.token)
-      dispatch(setNotification('success', 'Log in successful!', 3))
+      dispatch(setNotification('success', 'Log in successful!', 1))
 
       dispatch({
         type: 'LOG_USER_IN',
