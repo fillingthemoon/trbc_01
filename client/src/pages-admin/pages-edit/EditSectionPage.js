@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { setNotification } from '../../reducers/notificationReducer'
 
-const EditPage = () => {
+const EditSectionPage = () => {
   const loggedInUser = useSelector(state => state.loggedInUser)
 
   const dispatch = useDispatch()
@@ -26,4 +26,4 @@ const EditPage = () => {
   )
 }
 
-export default EditPage
+export default EditSectionPage

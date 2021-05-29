@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+import { convertPageName, convertSectionName } from '../helper-files/helperFunctions'
+
 import {
   Card,
   Divider,
@@ -29,33 +32,6 @@ const cardStyle = {
 const iconStyle = {
   fontSize: '1.3rem',
   marginRight: '20px',
-}
-
-const lowerCaseWords = ['of', 'to']
-
-const convertPageName = (pageName) => {
-  const newPageName = pageName.split('-')
-    .map(pageNameWord => {
-      let firstLetter = pageNameWord[0]
-      if (!lowerCaseWords.includes(pageNameWord)) {
-        firstLetter = pageNameWord[0].toUpperCase()
-      }
-      return firstLetter.concat(pageNameWord.substring(1, pageNameWord.length))
-    })
-    .join(' ')
-
-  return newPageName
-}
-
-const convertSectionName = (sectionName) => {
-  const newSectionName = sectionName
-    .split(' ')
-    .join('-')
-    .toLowerCase()
-    .replace(/['())]/g, '')
-    .replace(/[/]/, '-')
-
-  return newSectionName
 }
 
 const iconDictionary = {

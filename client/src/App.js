@@ -1,5 +1,48 @@
-import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import {
+  Switch,
+  Route,
+  Redirect,
+  useRouteMatch,
+} from 'react-router-dom'
+
+/**
+ * "Pages":
+ *  CEC,
+ *  Discipleship,
+ *  Home,
+ *  I'm New,
+ *  Missions,
+ *  Our History,
+ *  Our team,
+ *  Outreach,
+ *  Services,
+ *  Statement of Faith
+ *
+ * "Items":
+ *  CEC,
+ *  Discipleship,
+ *  Announcements, Events, Upcoming Sermons,
+ *  I'm New,
+ *  Missions,
+ *  Our History,
+ *  Our Team,
+ *  Outreach,
+ *  Services,
+ *  Statement of Faith
+ *
+ * "Sections":
+ *  CEC,
+ *  Discipleship,
+ *  Announcements, Events, Upcoming Sermons,
+ *  I'm New,
+ *  Missions,
+ *  Our History,
+ *  Administrative, Ministry, Pastoral,
+ *  Children, Community, Interest Groups,
+ *  English Service, Sunset Service (English/Mandarin), Teo Chew/Chinese Service,
+ *  Statement of Faith
+ */
 
 // Main Pages
 import NavBar from './components/NavBar'
@@ -21,14 +64,38 @@ import ContactFooter from './components/ContactFooter'
 // Admin Pages
 import Admin from './pages-admin/Admin'
 
-import EditPage from './pages-admin/pages-edit/EditPage'
+import EditSectionPage from './pages-admin/pages-edit/EditSectionPage'
+
+import itemService from './services/itemService'
+import { convertSectionName } from './helper-files/helperFunctions'
+
+import './style.less'
 
 import { Layout } from 'antd'
 const { Content } = Layout
 
-import './style.less'
-
 const App = () => {
+  const [sections, setSections] = useState([])
+
+  const fetchSections = async () => {
+    const sections = await itemService.getSections()
+    const convertedSections = sections.map(sectionName => convertSectionName(sectionName))
+    setSections(convertedSections)
+  }
+
+  useEffect(() => {
+    fetchSections()
+  }, [])
+
+  if (!sections) {
+    return <div></div>
+  }
+
+  const matchEditSection = useRouteMatch('/admin/:sectionId')
+  const editSectionMatch = matchEditSection
+    ? sections.find(section => section === matchEditSection.params.sectionId)
+    : null
+
   return (
     <Layout>
       <NavBar />
@@ -80,7 +147,7 @@ const App = () => {
             <Admin />
           </Route >
           <Route path='/admin/:sectionId' exact>
-            <EditPage/>
+            <EditSectionPage editSection={editSectionMatch} />
           </Route >
         </Switch >
       </Content>

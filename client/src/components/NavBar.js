@@ -19,7 +19,7 @@ import {
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1050px)' })
   const [current, setCurrent] = useState('home')
-  const [language, setLanguage] = useState('ENGLISH')
+  const [language, setLanguage] = useState('中文')
 
   const href = window.location.href.split('/')
   const pageUrl = href[href.length - 1]

@@ -30,7 +30,36 @@ const formatParagraph = (paragraph) => {
   }
 }
 
+const convertPageName = (pageName) => {
+  const lowerCaseWords = ['of', 'to']
+
+  const newPageName = pageName.split('-')
+    .map(pageNameWord => {
+      let firstLetter = pageNameWord[0]
+      if (!lowerCaseWords.includes(pageNameWord)) {
+        firstLetter = pageNameWord[0].toUpperCase()
+      }
+      return firstLetter.concat(pageNameWord.substring(1, pageNameWord.length))
+    })
+    .join(' ')
+
+  return newPageName
+}
+
+const convertSectionName = (sectionName) => {
+  const newSectionName = sectionName
+    .split(' ')
+    .join('-')
+    .toLowerCase()
+    .replace(/['())]/g, '')
+    .replace(/[/]/, '-')
+
+  return newSectionName
+}
+
 export {
   splitLines,
   formatParagraph,
+  convertPageName,
+  convertSectionName,
 }
