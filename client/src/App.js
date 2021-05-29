@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import {
   Switch,
   Route,
   Redirect,
   useRouteMatch,
 } from 'react-router-dom'
+
+import { useSelector, useDispatch } from 'react-redux'
 
 /**
  * "Pages":
@@ -66,32 +68,27 @@ import Admin from './pages-admin/Admin'
 
 import EditSectionPage from './pages-admin/pages-edit/EditSectionPage'
 
-import itemService from './services/itemService'
-import { convertSectionName } from './helper-files/helperFunctions'
-
 import './style.less'
+
+import { getSections } from './reducers/itemsReducer'
 
 import { Layout } from 'antd'
 const { Content } = Layout
 
 const App = () => {
-  const [sections, setSections] = useState([])
+  const dispatch = useDispatch()
+  const sections = useSelector(state => state.items.sections)
 
-  const fetchSections = async () => {
-    const sections = await itemService.getSections()
-    const convertedSections = sections.map(sectionName => convertSectionName(sectionName))
-    setSections(convertedSections)
-  }
+  const matchEditSection = useRouteMatch('/admin/:sectionId')
 
   useEffect(() => {
-    fetchSections()
+    dispatch(getSections())
   }, [])
 
   if (!sections) {
-    return <div></div>
+    return null
   }
 
-  const matchEditSection = useRouteMatch('/admin/:sectionId')
   const editSectionMatch = matchEditSection
     ? sections.find(section => section === matchEditSection.params.sectionId)
     : null

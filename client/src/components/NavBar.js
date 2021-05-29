@@ -22,7 +22,7 @@ const NavBar = () => {
   const [language, setLanguage] = useState('中文')
 
   const href = window.location.href.split('/')
-  const pageUrl = href[href.length - 1]
+  const pageUrl = href[4]
 
   const menu = (orientation) => (
     <Menu

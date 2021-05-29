@@ -19,6 +19,8 @@ import loggedInUserReducer from './reducers/loggedInUserReducer'
 
 import notificationReducer from './reducers/notificationReducer'
 
+import itemsReducer from './reducers/itemsReducer'
+
 const reducer = combineReducers({
   announcements: announcementsReducer,
   cec: cecReducer,
@@ -36,6 +38,8 @@ const reducer = combineReducers({
   loggedInUser: loggedInUserReducer,
 
   notification: notificationReducer,
+
+  items: itemsReducer,
 })
 
 const store = createStore(

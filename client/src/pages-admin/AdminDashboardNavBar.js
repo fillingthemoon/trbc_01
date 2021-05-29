@@ -1,5 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+
+import { logUserOut } from '../reducers/loggedInUserReducer'
 
 import {
   colorWhite,
@@ -32,10 +35,19 @@ const loggedInUserMenu = (handleLogout, loggedInUser) => {
 }
 
 const AdminDashboardNavBar = (props) => {
+  const history = useHistory()
+
   const {
-    handleLogout,
     loggedInUser,
   } = props
+
+  const dispatch = useDispatch()
+
+  const handleLogout = () => {
+    history.push('/admin')
+    window.localStorage.removeItem('loggedInAdminUser')
+    dispatch(logUserOut())
+  }
 
   return (
     <Header

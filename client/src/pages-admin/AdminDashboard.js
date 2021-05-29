@@ -1,7 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 
-import { logUserOut } from '../reducers/loggedInUserReducer'
 import { useSelector } from 'react-redux'
 
 import Notification from '../components-reusable/Notification'
@@ -18,17 +16,10 @@ const AdminDashboard = (props) => {
 
   const notification = useSelector(state => state.notification)
 
-  const dispatch = useDispatch()
-
-  const handleLogout = () => {
-    window.localStorage.removeItem('loggedInAdminUser')
-    dispatch(logUserOut())
-  }
-
   return (
     <Layout className='admin-dashboard'>
       <Notification notification={notification} />
-      <AdminDashboardNavBar handleLogout={handleLogout} loggedInUser={loggedInUser} />
+      <AdminDashboardNavBar loggedInUser={loggedInUser} />
 
       <Content style={{ padding: '0 50px 50px 50px' }}>
         <AdminDashboardContent />

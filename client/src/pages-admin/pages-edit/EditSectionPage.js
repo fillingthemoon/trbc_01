@@ -1,27 +1,29 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
+import AdminLoginPage from '../AdminLoginPage'
+import Notification from '../../components-reusable/Notification'
+import AdminDashboardNavBar from '../AdminDashboardNavBar'
 
 import { setNotification } from '../../reducers/notificationReducer'
 
-const EditSectionPage = () => {
-  const loggedInUser = useSelector(state => state.loggedInUser)
+const EditSectionPage = (props) => {
+  const {
+    editSection
+  } = props
 
-  const dispatch = useDispatch()
+  const loggedInUser = useSelector(state => state.loggedInUser)
+  const notification = useSelector(state => state.notification)
+
+  if (!loggedInUser) {
+    return <AdminLoginPage />
+  }
 
   return (
     <div>
-      {!loggedInUser
-        ?
-        (() => {
-          dispatch(setNotification('error', 'Unauthorised Access', 3))
-          return <Redirect to='/admin' />
-        })()
-        :
-        <div>
-          Edit Page
-        </div>
-      }
+      <Notification notification={notification} />
+      <AdminDashboardNavBar loggedInUser={loggedInUser} />
+      {editSection}
     </div>
   )
 }

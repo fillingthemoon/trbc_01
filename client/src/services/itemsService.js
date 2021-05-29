@@ -17,9 +17,9 @@ const getSections = async () => {
   return sections
 }
 
-const itemService = {
+const itemsService = {
   getPages,
   getSections,
 }
 
-export default itemService
+export default itemsService

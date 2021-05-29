@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-
-import itemService from '../services/itemService'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import TitleText from '../components-reusable/TitleText'
 import PageCard from '../components-admin/PageCard'
@@ -8,6 +7,8 @@ import PageCard from '../components-admin/PageCard'
 import {
   colorWhite,
 } from '../helper-files/colors'
+
+import { getPages } from '../reducers/itemsReducer'
 
 import { Row } from 'antd'
 
@@ -17,16 +18,16 @@ const titleUnderlineStyle = {
 }
 
 const AdminDashboardContent = () => {
-  const [pages, setPages] = useState([])
-
-  const fetchPages = async () => {
-    const pages = await itemService.getPages()
-    setPages(pages)
-  }
+  const dispatch = useDispatch()
+  const pages = useSelector(state => state.items.pages)
 
   useEffect(() => {
-    fetchPages()
+    dispatch(getPages())
   }, [])
+
+  if (!pages) {
+    return null
+  }
 
   return (
     <>
