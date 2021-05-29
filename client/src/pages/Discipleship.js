@@ -19,7 +19,7 @@ const Discipleship = () => {
     dispatch(getDiscipleship())
   }, [])
 
-  if (!discipleshipData) { return null }
+  if (discipleshipData.length <= 0) { return null }
 
   return (
     <>

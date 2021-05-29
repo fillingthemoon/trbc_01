@@ -18,7 +18,7 @@ const Outreach = () => {
     dispatch(getOutreach())
   }, [])
 
-  if (!outreachData) { return null }
+  if (outreachData.length <= 0) { return null }
 
   return (
     <div>

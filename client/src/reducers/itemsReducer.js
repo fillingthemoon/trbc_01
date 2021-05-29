@@ -2,7 +2,7 @@ import itemsService from '../services/itemsService'
 
 import { convertSectionNameDashed } from '../helper-files/helperFunctions'
 
-const itemsReducer = (state = {}, action) => {
+const itemsReducer = (state = { pages: [], sections: [] }, action) => {
   switch (action.type) {
     case 'GET_PAGES': {
       return {

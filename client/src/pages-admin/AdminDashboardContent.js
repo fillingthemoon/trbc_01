@@ -25,7 +25,7 @@ const AdminDashboardContent = () => {
     dispatch(getPages())
   }, [])
 
-  if (!pages) {
+  if (pages.length <= 0) {
     return null
   }
 

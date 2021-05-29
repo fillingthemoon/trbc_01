@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import AdminLoginPage from '../AdminLoginPage'
 import Notification from '../../components-reusable/Notification'
 import AdminDashboardNavBar from '../AdminDashboardNavBar'
+import EditableTable from './EditableTable'
 
 import { setNotification } from '../../reducers/notificationReducer'
 
@@ -25,7 +26,7 @@ const EditSectionPage = (props) => {
     dispatch(valueObject.func())
   }, [])
 
-  if (!section) {
+  if (section.length <= 0) {
     return null
   }
 
@@ -33,12 +34,13 @@ const EditSectionPage = (props) => {
     return <AdminLoginPage />
   }
 
-  console.log(section)
+  // console.log(section)
 
   return (
     <div>
       <Notification notification={notification} />
       <AdminDashboardNavBar loggedInUser={loggedInUser} />
+      <EditableTable section={section} />
     </div>
   )
 }

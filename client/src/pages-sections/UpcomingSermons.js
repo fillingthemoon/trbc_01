@@ -66,7 +66,7 @@ const UpcomingSermons = () => {
     dispatch(getUpcomingSermons())
   }, [])
 
-  if (!upcomingSermonsData) { return null }
+  if (upcomingSermonsData.length <= 0) { return null }
 
   return (
     <div className='upcoming-sermons-container'>

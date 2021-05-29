@@ -23,7 +23,7 @@ const CEC = () => {
     dispatch(getCec())
   }, [])
 
-  if (!cecData) { return null }
+  if (cecData.length <= 0) { return null }
 
   return (
     <div>

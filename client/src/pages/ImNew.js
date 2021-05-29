@@ -19,7 +19,7 @@ const ImNew = () => {
     dispatch(getImNew())
   }, [])
 
-  if (!imNewData) { return null }
+  if (imNewData.length <= 0) { return null }
 
   return (
     <>

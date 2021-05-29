@@ -85,7 +85,7 @@ const App = () => {
     dispatch(getSections())
   }, [])
 
-  if (!sections) {
+  if (sections.length <= 0) {
     return null
   }
 

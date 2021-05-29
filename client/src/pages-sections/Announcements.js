@@ -60,7 +60,7 @@ const Announcements = () => {
     dispatch(getAnnouncements())
   }, [])
 
-  if (!announcementsData) { return null }
+  if (announcementsData.length <= 0) { return null }
 
   return (
     <div className='announcements-container'>

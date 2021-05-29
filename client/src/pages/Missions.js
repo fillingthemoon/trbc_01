@@ -18,7 +18,7 @@ const Outreach = () => {
     dispatch(getMissions())
   }, [])
 
-  if (!missionsData) { return null }
+  if (missionsData.length <= 0) { return null }
 
   return (
     <div>

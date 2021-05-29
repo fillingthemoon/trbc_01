@@ -80,7 +80,7 @@ const Events = () => {
     dispatch(getEvents())
   }, [])
 
-  if (!eventsData) { return null }
+  if (eventsData.length <= 0) { return null }
 
   return (
     <div className='events-container'>

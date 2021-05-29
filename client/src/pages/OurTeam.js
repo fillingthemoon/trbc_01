@@ -19,7 +19,7 @@ const OurTeam = () => {
     dispatch(getOurTeam())
   }, [])
 
-  if (!ourTeamData) { return null }
+  if (ourTeamData.length <= 0) { return null }
 
   return (
     <>

@@ -26,7 +26,7 @@ const StatementOfFaith = () => {
     dispatch(getStatementOfFaith())
   }, [])
 
-  if (!statementOfFaithData) { return null }
+  if (statementOfFaithData.length <= 0) { return null }
 
   return (
     <div>

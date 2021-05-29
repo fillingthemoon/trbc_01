@@ -28,7 +28,7 @@ const Services = () => {
     setCurrServiceData(newData)
   }, [servicesData, currService])
 
-  if (!servicesData) { return null }
+  if (servicesData.length <= 0) { return null }
 
   return (
     <>

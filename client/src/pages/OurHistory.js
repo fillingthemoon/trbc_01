@@ -19,7 +19,7 @@ const OurHistory = () => {
     dispatch(getOurHistory())
   }, [])
 
-  if (!ourHistoryData) { return null }
+  if (ourHistoryData.length <= 0) { return null }
 
   return (
     <>
