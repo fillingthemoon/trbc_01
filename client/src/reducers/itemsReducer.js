@@ -1,6 +1,6 @@
 import itemsService from '../services/itemsService'
 
-import { convertSectionName } from '../helper-files/helperFunctions'
+import { convertSectionNameDashed } from '../helper-files/helperFunctions'
 
 const itemsReducer = (state = {}, action) => {
   switch (action.type) {
@@ -45,7 +45,7 @@ export const getSections = () => {
 
     try {
       const sections = await itemsService.getSections()
-      const convertedSections = sections.map(sectionName => convertSectionName(sectionName))
+      const convertedSections = sections.map(sectionName => convertSectionNameDashed(sectionName))
 
       dispatch({
         type: 'GET_SECTIONS',

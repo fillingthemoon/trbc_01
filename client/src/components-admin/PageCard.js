@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { convertPageName, convertSectionName } from '../helper-files/helperFunctions'
+import { convertPageName, convertSectionNameDashed } from '../helper-files/helperFunctions'
 
 import {
   Card,
@@ -53,10 +53,6 @@ const PageCard = (props) => {
     sectionNames,
   } = props
 
-  sectionNames.forEach(sectionName =>
-    convertSectionName(sectionName)
-  )
-
   return (
     <Card
       style={cardStyle}
@@ -69,7 +65,7 @@ const PageCard = (props) => {
     >
       {sectionNames.map((sectionName, i) =>
         <div key={i}>
-          <Link to={`/admin/${convertSectionName(sectionName)}`}>
+          <Link to={`/admin/${convertSectionNameDashed(sectionName)}`}>
             {sectionName}
           </Link>
           {i !== sectionNames.length - 1 && <Divider />}

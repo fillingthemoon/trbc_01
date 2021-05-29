@@ -46,20 +46,37 @@ const convertPageName = (pageName) => {
   return newPageName
 }
 
-const convertSectionName = (sectionName) => {
-  const newSectionName = sectionName
+const convertSectionNameDashed = (sectionName) => {
+  const newSectionNameDashed = sectionName
     .split(' ')
     .join('-')
     .toLowerCase()
     .replace(/['())]/g, '')
     .replace(/[/]/, '-')
 
-  return newSectionName
+  return newSectionNameDashed
+}
+
+const convertSectionNameCamelCase = (sectionName) => {
+  const newSectionNameCamelCase = sectionName
+    .split('-')
+    .map((word, i) => {
+      if (i > 0) {
+        const camelCaseWord = `${word[0].toUpperCase()}${word.substring(1, word.length)}`
+        return camelCaseWord
+      } else {
+        return word
+      }
+    })
+    .join('')
+
+  return newSectionNameCamelCase
 }
 
 export {
   splitLines,
   formatParagraph,
   convertPageName,
-  convertSectionName,
+  convertSectionNameDashed,
+  convertSectionNameCamelCase,
 }

@@ -9,7 +9,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux'
 
 /**
- * "Pages":
+ * "Pages" (simply the routes in this website):
  *  CEC,
  *  Discipleship,
  *  Home,
@@ -21,7 +21,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Services,
  *  Statement of Faith
  *
- * "Items":
+ * "Items" (subcategories the Home page, for the purposes of UI/UX):
  *  CEC,
  *  Discipleship,
  *  Announcements, Events, Upcoming Sermons,
@@ -33,7 +33,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Services,
  *  Statement of Faith
  *
- * "Sections":
+ * "Sections" (similar to items, but also subcategorises Our Team, Outreach, and Services):
  *  CEC,
  *  Discipleship,
  *  Announcements, Events, Upcoming Sermons,
@@ -144,7 +144,7 @@ const App = () => {
             <Admin />
           </Route >
           <Route path='/admin/:sectionId' exact>
-            <EditSectionPage editSection={editSectionMatch} />
+            <EditSectionPage editSectionName={editSectionMatch} />
           </Route >
         </Switch >
       </Content>
