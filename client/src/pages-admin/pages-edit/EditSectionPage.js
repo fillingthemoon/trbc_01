@@ -55,8 +55,8 @@ const EditSectionPage = (props) => {
       <Content style={{ padding: '0 50px 50px 50px' }}>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          titleStyle={{ textAlign: 'center' }}
-          title={`Edit "${convertName('dashed', 'proper', editSectionName)}" Section`}
+          titleStyle={{ textAlign: 'center', fontSize: '2rem' }}
+          title={convertName('dashed', 'proper', editSectionName)}
           underlineAlign='center' />
         <EditableTable section={section} />
       </Content>
