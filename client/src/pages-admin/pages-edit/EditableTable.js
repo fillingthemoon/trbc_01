@@ -12,8 +12,6 @@ import {
 const EditableTable = ({ section }) => {
   const [form] = Form.useForm()
 
-  // const columns =
-
   const fields = section.map(sectionItem => {
     // Iterate through each field in the section item
     return Object.keys(sectionItem).map((field, i) =>
@@ -24,16 +22,35 @@ const EditableTable = ({ section }) => {
           subField
         )
     )
-  })[0]
+  })[0].flat()
+
+  const columns = fields.map(field => {
+    return {
+      title: field,
+      dataIndex: field,
+      editable: true,
+    }
+  })
 
   console.log(fields)
 
   return (
-    // <Form form={form}>
-    // </Form>
-    <div>
-      {/* Iterate through each section item */}
-    </div>
+    <Form form={form} component={false}>
+      <Table
+        // components={{
+        //   body: {
+        //     cell: EditableCell,
+        //   },
+        // }}
+        // bordered
+        // dataSource={data}
+        // columns={mergedColumns}
+        // rowClassName="editable-row"
+        // pagination={{
+        //   onChange: cancel,
+        // }}
+      />
+    </Form>
   )
 }
 
