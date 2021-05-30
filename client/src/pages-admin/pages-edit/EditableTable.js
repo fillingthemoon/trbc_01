@@ -31,24 +31,53 @@ const EditableTable = ({ section }) => {
       editable: true,
     }
   })
+    .concat([
+      {
+        title: 'operation',
+        dataIndex: 'operation',
+        render: (_, record) => {
+          const editable = isEditing(record);
+          return editable ? (
+            <span>
+              <a
+                href="javascript:;"
+                onClick={() => save(record.key)}
+                style={{
+                  marginRight: 8,
+                }}
+              >
+                Save
+              </a>
+              <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
+                <a>Cancel</a>
+              </Popconfirm>
+            </span>
+          ) : (
+            <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
+              Edit
+            </Typography.Link>
+          );
+        },
+      }
+    ])
 
-  // console.log(fields)
+  console.log(fields)
 
   return (
     <Form form={form} component={false}>
       <Table
-        // components={{
-        //   body: {
-        //     cell: EditableCell,
-        //   },
-        // }}
-        // bordered
-        // dataSource={data}
-        // columns={mergedColumns}
-        // rowClassName="editable-row"
-        // pagination={{
-        //   onChange: cancel,
-        // }}
+      // components={{
+      //   body: {
+      //     cell: EditableCell,
+      //   },
+      // }}
+      // bordered
+      // dataSource={data}
+      // columns={mergedColumns}
+      // rowClassName="editable-row"
+      // pagination={{
+      //   onChange: cancel,
+      // }}
       />
     </Form>
   )

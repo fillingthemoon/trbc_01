@@ -45,8 +45,6 @@ const EditSectionPage = (props) => {
     return <AdminLoginPage />
   }
 
-  console.log(section)
-
   return (
     <Layout>
       <Notification notification={notification} />
