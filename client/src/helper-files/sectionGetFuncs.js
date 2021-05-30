@@ -1,4 +1,4 @@
-import { convertSectionNameCamelCase } from '../helper-files/helperFunctions'
+import { convertName } from '../helper-files/helperFunctions'
 
 /* get functions for various items */
 import { getCec } from '../reducers/cecReducer'
@@ -18,35 +18,35 @@ const sectionGetFuncs = (sectionName) => {
   return {
     'cec': {
       func: getCec,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'discipleship': {
       func: getDiscipleship,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'announcements': {
       func: getAnnouncements,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'events': {
       func: getEvents,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'upcoming-sermons': {
       func: getUpcomingSermons,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'im-new': {
       func: getImNew,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'missions': {
       func: getMissions,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'our-history': {
       func: getOurHistory,
-      camelCase: convertSectionNameCamelCase(sectionName),
+      camelCase: convertName('dashed', 'camel', sectionName),
     },
     'administrative': {
       func: getOurTeam,

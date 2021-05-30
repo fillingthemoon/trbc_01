@@ -5,10 +5,21 @@ import AdminLoginPage from '../AdminLoginPage'
 import Notification from '../../components-reusable/Notification'
 import AdminDashboardNavBar from '../AdminDashboardNavBar'
 import EditableTable from './EditableTable'
+import TitleText from '../../components-reusable/TitleText'
 
 import { setNotification } from '../../reducers/notificationReducer'
 
 import { sectionGetFuncs } from '../../helper-files/sectionGetFuncs'
+
+import { convertName } from '../../helper-files/helperFunctions'
+
+import { Layout } from 'antd'
+const { Content } = Layout
+
+const titleUnderlineStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+}
 
 const EditSectionPage = (props) => {
   const {
@@ -34,14 +45,22 @@ const EditSectionPage = (props) => {
     return <AdminLoginPage />
   }
 
-  // console.log(section)
+  console.log(section)
 
   return (
-    <div>
+    <Layout>
       <Notification notification={notification} />
       <AdminDashboardNavBar loggedInUser={loggedInUser} />
-      <EditableTable section={section} />
-    </div>
+
+      <Content style={{ padding: '0 50px 50px 50px' }}>
+        <TitleText
+          titleUnderlineStyle={titleUnderlineStyle}
+          titleStyle={{ textAlign: 'center' }}
+          title={`Edit "${convertName('dashed', 'proper', editSectionName)}" Section`}
+          underlineAlign='center' />
+        <EditableTable section={section} />
+      </Content>
+    </Layout>
   )
 }
 

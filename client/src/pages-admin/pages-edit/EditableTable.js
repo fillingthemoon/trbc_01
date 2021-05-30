@@ -32,7 +32,7 @@ const EditableTable = ({ section }) => {
     }
   })
 
-  console.log(fields)
+  // console.log(fields)
 
   return (
     <Form form={form} component={false}>

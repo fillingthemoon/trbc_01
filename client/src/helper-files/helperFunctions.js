@@ -30,53 +30,96 @@ const formatParagraph = (paragraph) => {
   }
 }
 
-const convertPageName = (pageName) => {
+const convertName = (fromType, toType, name) => {
   const lowerCaseWords = ['of', 'to']
+  const apostropheWords = {
+    'im': 'i\'m',
+  }
 
-  const newPageName = pageName.split('-')
-    .map(pageNameWord => {
-      let firstLetter = pageNameWord[0]
-      if (!lowerCaseWords.includes(pageNameWord)) {
-        firstLetter = pageNameWord[0].toUpperCase()
+  switch (fromType) {
+    case ('proper'): {
+      switch (toType) {
+        case ('dashed'): {
+          const dashedName = name
+            .split(' ')
+            .join('-')
+            .toLowerCase()
+            .replace(/['())]/g, '')
+            .replace(/[/]/, '-')
+
+          return dashedName
+        }
+        case ('camel'): {
+          return null
+        }
       }
-      return firstLetter.concat(pageNameWord.substring(1, pageNameWord.length))
-    })
-    .join(' ')
+      break
+    }
+    case ('dashed'): {
+      switch (toType) {
+        case ('proper'): {
+          const properName = name.split('-')
 
-  return newPageName
-}
+            // check if each word contains apostrophe words
+            .map(nameWord => {
+              let newNameWord = nameWord
+              Object.keys(apostropheWords).forEach(apostropheWord => {
+                const myRegex = new RegExp(`\\b(${apostropheWord})\\b`, 'i')
+                if (nameWord.match(myRegex)) {
+                  newNameWord = apostropheWords[apostropheWord]
+                }
+              })
+              return newNameWord
+            })
 
-const convertSectionNameDashed = (sectionName) => {
-  const newSectionNameDashed = sectionName
-    .split(' ')
-    .join('-')
-    .toLowerCase()
-    .replace(/['())]/g, '')
-    .replace(/[/]/, '-')
+            // Capitalise first letter of each word
+            .map(nameWord => {
+              let firstLetter = nameWord[0]
+              if (!lowerCaseWords.includes(nameWord)) {
+                firstLetter = nameWord[0].toUpperCase()
+              }
+              return firstLetter.concat(nameWord.substring(1, nameWord.length))
+            })
+            .join(' ')
 
-  return newSectionNameDashed
-}
+          return properName
+        }
+        case ('camel'): {
+          const camelname = name
+            .split('-')
 
-const convertSectionNameCamelCase = (sectionName) => {
-  const newSectionNameCamelCase = sectionName
-    .split('-')
-    .map((word, i) => {
-      if (i > 0) {
-        const camelCaseWord = `${word[0].toUpperCase()}${word.substring(1, word.length)}`
-        return camelCaseWord
-      } else {
-        return word
+            // Except the first word, capitalise the first letter of each word
+            .map((word, i) => {
+              if (i > 0) {
+                const camelCaseWord = `${word[0].toUpperCase()}${word.substring(1, word.length)}`
+                return camelCaseWord
+              } else {
+                return word
+              }
+            })
+            .join('')
+
+          return camelname
+        }
       }
-    })
-    .join('')
-
-  return newSectionNameCamelCase
+      break
+    }
+    case ('camel'): {
+      switch (toType) {
+        case ('proper'): {
+          return null
+        }
+        case ('dashed'): {
+          return null
+        }
+      }
+      break
+    }
+  }
 }
 
 export {
   splitLines,
   formatParagraph,
-  convertPageName,
-  convertSectionNameDashed,
-  convertSectionNameCamelCase,
+  convertName,
 }
