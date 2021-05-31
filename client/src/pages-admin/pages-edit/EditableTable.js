@@ -57,13 +57,31 @@ const EditableTable = ({ section }) => {
 
   const cancel = () => { setEditingKey('') }
 
+  const checkForUneditableColumns = (row, index) => {
+    const uneditableColumns = ['itemId']
+
+    uneditableColumns.forEach(col => {
+      console.log(data[index][col], row[col])
+
+      if (typeof data[index][col] === 'number') {
+        row[col] = Number(row[col])
+      }
+      if (data[index][col] !== row[col]) {
+        throw `You are not authorised to edit the column ${col}`
+      }
+    })
+  }
+
   const save = async (key) => {
     try {
       const row = await form.validateFields()
       const newData = [...data]
+
       const index = newData.findIndex((item) => key === item.key)
 
-      if (index > -1) {
+      checkForUneditableColumns(row, index)
+
+      if (index >= 0) {
         const item = newData[index]
         newData.splice(index, 1, { ...item, ...row })
         setData(newData)
@@ -73,8 +91,8 @@ const EditableTable = ({ section }) => {
         setData(newData)
         setEditingKey('')
       }
-    } catch (errInfo) {
-      console.log('Validate Failed:', errInfo)
+    } catch (error) {
+      console.log('Validation Failed:', error)
     }
   }
 
@@ -97,10 +115,10 @@ const EditableTable = ({ section }) => {
           const editable = isEditing(record)
           return editable ? (
             <span>
-              <a onClick={() => save(record.key)} style={{ marginRight: 8, }}>
+              <a onClick={() => save(record.key)} style={{ marginRight: 8 }}>
                 Save
               </a>
-              <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
+              <Popconfirm title="Are you sure?" onConfirm={cancel}>
                 <a>Cancel</a>
               </Popconfirm>
             </span>
