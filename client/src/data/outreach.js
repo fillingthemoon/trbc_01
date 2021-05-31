@@ -11,7 +11,7 @@ const outreachData = [
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
-      person: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
+      person: 'Rev. Dr. Jerry Goh',
     },
     imgSrc: churchWide,
   },
@@ -24,7 +24,7 @@ const outreachData = [
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
-      person: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
+      person: 'Rev. Dr. Jerry Goh',
     },
     imgSrc: churchWide,
   },
@@ -37,7 +37,7 @@ const outreachData = [
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
-      person: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
+      person: 'Rev. Dr. Jerry Goh',
     },
     imgSrc: churchWide,
   },
@@ -50,7 +50,7 @@ const outreachData = [
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
-      person: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
+      person: 'Rev. Dr. Jerry Goh',
     },
     imgSrc: churchWide,
   },
@@ -63,7 +63,7 @@ const outreachData = [
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
-      person: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
+      person: 'Rev. Dr. Jerry Goh',
     },
     imgSrc: churchWide,
   },
@@ -76,7 +76,7 @@ const outreachData = [
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
-      person: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
+      person: 'Rev. Dr. Jerry Goh',
     },
     imgSrc: churchWide,
   },
@@ -89,7 +89,7 @@ const outreachData = [
     details: {
       time: '1-2pm',
       location: 'Level 2, Joy Room ',
-      person: 'Rev Dr Jerry Goh, Rev Dr Jerry Goh',
+      person: 'Rev. Dr. Jerry Goh',
     },
     imgSrc: churchWide,
   },

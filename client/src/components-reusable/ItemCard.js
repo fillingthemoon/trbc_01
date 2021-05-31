@@ -45,7 +45,7 @@ const iconStyle = {
 const ItemCard = ({ item }) => {
   const { title, text, imgSrc, details } = item
 
-  const { time, location, leader } = details ? details : { time: null, location: null, leader: null }
+  const { time, location, person } = details ? details : { time: null, location: null, person: null }
 
   return (
     <Card
@@ -79,12 +79,12 @@ const ItemCard = ({ item }) => {
                 <br />
               </>
             }
-            {leader &&
+            {person &&
               <>
                 <Meta
                   style={{ textAlign: 'left' }}
                   avatar={<UserOutlined style={iconStyle} />}
-                  description={leader}
+                  description={person}
                 />
                 <br />
               </>

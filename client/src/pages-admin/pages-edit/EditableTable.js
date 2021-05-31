@@ -9,7 +9,6 @@ import {
   Table,
   Input,
   InputNumber,
-  Popconfirm,
   Form,
   Typography,
   Image,
@@ -17,23 +16,31 @@ import {
 
 const { TextArea } = Input
 
+const cellImgStyle = {
+  maxWidth: '500px',
+  maxHeight: '150px',
+  objectFit: 'scale-down',
+}
+
 const EditableCell = ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) => {
-  const inputNode = inputType === 'number' ? <InputNumber /> : <TextArea />
-  console.log(editing, dataIndex)
+  const inputNode = () => {
+    if (title === 'imgSrc') {
+      return <Image src={record.imgSrc.props.src} style={cellImgStyle} />
+    } else if (inputType === 'number') {
+      return <InputNumber />
+    } else {
+      return <TextArea style={{ minWidth: '150px' }} />
+    }
+  }
 
   return (
     <td {...restProps}>
       {editing
         ? (<Form.Item
           name={dataIndex}
-          rules={[
-            {
-              required: true,
-              message: `Please Input ${title}!`,
-            },
-          ]}
+          rules={[{ required: true, message: `Please input "${title}"!` },]}
         >
-          {inputNode}
+          {inputNode()}
         </Form.Item>)
         : (children)
       }
@@ -51,10 +58,16 @@ const EditableTable = ({ section }) => {
   useEffect(() => {
     const sectionData = section.map((sectionItem, i) => {
 
-      return {
-        key: i,
-        ...flattenNestedObject(sectionItem),
-      }
+      return Object.keys(sectionItem).includes('imgSrc')
+        ? {
+          ...flattenNestedObject(sectionItem),
+          key: i,
+          imgSrc: <Image src={sectionItem.imgSrc} style={cellImgStyle} />,
+        }
+        : {
+          ...flattenNestedObject(sectionItem),
+          key: i,
+        }
     })
 
     setData(sectionData)
@@ -69,31 +82,12 @@ const EditableTable = ({ section }) => {
 
   const cancel = () => { setEditingKey('') }
 
-  const checkForUneditableColumns = (row, index) => {
-    const uneditableColumns = ['itemId']
-
-    uneditableColumns.forEach(col => {
-      // console.log(data[index][col], row[col])
-
-      if (typeof data[index][col] === 'number') {
-        row[col] = Number(row[col])
-      }
-      if (data[index][col] !== row[col]) {
-        const errorMsg = `You are not authorised to edit the column "${col}"`
-        dispatch(setNotification('error', errorMsg, 3))
-        throw errorMsg
-      }
-    })
-  }
-
   const save = async (key) => {
     try {
       const row = await form.validateFields()
       const newData = [...data]
 
       const index = newData.findIndex((item) => key === item.key)
-
-      checkForUneditableColumns(row, index)
 
       if (index >= 0) {
         const item = newData[index]
@@ -110,15 +104,16 @@ const EditableTable = ({ section }) => {
     }
   }
 
-  const fieldsToExclude = ['page', 'sectionName', 'id']
+  const fieldsToExclude = ['id']
   const fields = Object.keys(flattenNestedObject(section[0]))
     .filter(field => !fieldsToExclude.includes(field))
 
+  const uneditableColumns = ['itemId', 'page', 'sectionName']
   const columns = fields.map(field => {
     return {
       title: field,
       dataIndex: field,
-      editable: true,
+      editable: !uneditableColumns.includes(field),
     }
   })
     .concat([
@@ -132,9 +127,7 @@ const EditableTable = ({ section }) => {
               <a onClick={() => save(record.key)} style={{ marginRight: 8 }}>
                 Save
               </a>
-              <Popconfirm title="Are you sure?" onConfirm={cancel}>
-                <a>Cancel</a>
-              </Popconfirm>
+              <a onClick={cancel}>Cancel</a>
             </span>
           ) : (
             <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
@@ -157,7 +150,7 @@ const EditableTable = ({ section }) => {
         inputType: 'text',
         dataIndex: col.dataIndex,
         title: col.title,
-        editing: false,
+        editing: isEditing(record),
       }),
     }
   })
@@ -175,7 +168,7 @@ const EditableTable = ({ section }) => {
         columns={mergedColumns}
         rowClassName="editable-row"
         pagination={false}
-        scroll={{ x: 1700 }}
+        scroll={{ x: 2000 }}
       />
     </Form>
   )
