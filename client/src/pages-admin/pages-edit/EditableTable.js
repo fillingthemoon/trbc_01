@@ -38,18 +38,20 @@ const EditableTable = ({ section }) => {
     const sectionData = section.map((sectionItem, i) => {
       return {
         key: i,
-        item_id: sectionItem.item_id,
-        page: sectionItem.page,
-        sectionName: sectionItem.sectionName,
+        itemId: sectionItem.itemId,
+        // page: sectionItem.page,
+        // sectionName: sectionItem.sectionName,
         title: sectionItem.title,
         text: sectionItem.text,
         imgSrc: sectionItem.imgSrc,
-        id: sectionItem.id,
+        // id: sectionItem.id,
       }
     })
 
     setData(sectionData)
   }, [])
+
+  console.log(section)
 
   const isEditing = (record) => record.key === editingKey
 
@@ -88,17 +90,20 @@ const EditableTable = ({ section }) => {
     }
   }
 
-
   const fields = section.map(sectionItem => {
+    const fieldsToExclude = ['page, sectionName, id']
+
     // Iterate through each field in the section item
-    return Object.keys(sectionItem).map((field, i) =>
-      !(typeof sectionItem[field] === 'object' && sectionItem[field] !== null)
-        ? field
-        // Iterate through each subfield if the field is a JavaScript object
-        : Object.keys(sectionItem[field]).map((subField, j) =>
-          subField
-        )
-    )
+    return Object.keys(sectionItem)
+      .filter(field => field)
+      .map((field, i) =>
+        !(typeof sectionItem[field] === 'object' && sectionItem[field] !== null)
+          ? field
+          // Iterate through each subfield if the field is a JavaScript object
+          : Object.keys(sectionItem[field]).map((subField, j) =>
+            subField
+          )
+      )
   })[0].flat()
 
   const columns = fields.map(field => {
@@ -165,9 +170,7 @@ const EditableTable = ({ section }) => {
         dataSource={data}
         columns={mergedColumns}
         rowClassName="editable-row"
-        pagination={{
-          onChange: cancel,
-        }}
+        pagination={false}
         scroll={{ x: 2000 }}
       />
     </Form>

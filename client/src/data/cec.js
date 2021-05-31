@@ -1,8 +1,8 @@
 const cecData = [
   {
-    item_id: 1,
+    itemId: 1,
     page: 'cec',
-    sectionName: 'CEC',
+    sectionName: 'cec',
     title: 'About Children\'s Enrichment Camp (CEC)',
     text:
       `The Children’s Enrichment Camp (or CEC) is the annual Children’s Enrichment Camp, organised by the Singapore Thomson Road Baptist Church. Held every year-end, our attendance averages approximately 230 children each time we hold the camp! Using materials designed by Lifeway Christian Resources, each camp is a unique experience – for both the children, as well as for all the volunteers involved!
@@ -12,9 +12,9 @@ const cecData = [
       Find out more @ https://trbccec.wordpress.com.`,
   },
   {
-    item_id: 2,
+    itemId: 2,
     page: 'cec',
-    sectionName: 'CEC',
+    sectionName: 'cec',
     title: 'Run Your Own Camp!',
     text:
       `We are always nearly 200% oversubscribed to our camp each year, and we really need YOU and YOUR CHURCH to partner with God in this Kingdom ministry! Are you too scared to run a camp? Are you overwhelmed by the logistics and knowledge? Well, let us tell you about our 200+ volunteers every year:
@@ -26,9 +26,9 @@ const cecData = [
       If you want to host a Children’s Camp in your church, but don’t know where to start, we will be very happy to chat with you and share our experiences and know-how with you and your co-workers!  Just give us an email at cec@trbc.org.sg and we’ll be in touch!`,
   },
   {
-    item_id: 3,
+    itemId: 3,
     page: 'cec',
-    sectionName: 'CEC',
+    sectionName: 'cec',
     title: 'Contact Details',
     text:
       `Address: Singapore Thomson Road Baptist Church

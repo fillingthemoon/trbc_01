@@ -3,9 +3,9 @@ const { trbcSanc } = general
 
 const announcementsData = [
   {
-    item_id: 1,
+    itemId: 1,
     page: 'home',
-    sectionName: 'Announcements',
+    sectionName: 'announcements',
     title: 'Livestreaming Services',
     text:
       `From 23 May 2021, TRBC will livestream weekly worship services. In view of heightened safe management measures, there will not be any in-person worship services until further notice.

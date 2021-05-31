@@ -9,9 +9,13 @@ import { getUpcomingSermons } from '../reducers/upcomingSermonsReducer'
 import { getImNew } from '../reducers/imNewReducer'
 import { getMissions } from '../reducers/missionsReducer'
 import { getOurHistory } from '../reducers/ourHistoryReducer'
+
 import { getOurTeam } from '../reducers/ourTeamReducer'
+
 import { getOutreach } from '../reducers/outreachReducer'
+
 import { getServices } from '../reducers/servicesReducer'
+
 import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 const sectionGetFuncs = (sectionName) => {
@@ -21,71 +25,71 @@ const sectionGetFuncs = (sectionName) => {
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'discipleship': {
-      func: getDiscipleship,
+      func: getDiscipleship(),
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'announcements': {
-      func: getAnnouncements,
+      func: getAnnouncements(),
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'events': {
-      func: getEvents,
+      func: getEvents(),
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'upcoming-sermons': {
-      func: getUpcomingSermons,
+      func: getUpcomingSermons(),
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'im-new': {
-      func: getImNew,
+      func: getImNew(),
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'missions': {
-      func: getMissions,
+      func: getMissions(),
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'our-history': {
-      func: getOurHistory,
+      func: getOurHistory(),
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'administrative': {
-      func: getOurTeam,
+      func: getOurTeam(),
       camelCase: 'ourTeam',
     },
     'ministry': {
-      func: getOurTeam,
+      func: getOurTeam(),
       camelCase: 'ourTeam',
     },
     'pastoral': {
-      func: getOurTeam,
+      func: getOurTeam(),
       camelCase: 'ourTeam',
     },
     'children': {
-      func: getOutreach,
+      func: getOutreach(),
       camelCase: 'outreach',
     },
     'community': {
-      func: getOutreach,
+      func: getOutreach(),
       camelCase: 'outreach',
     },
     'interest-groups': {
-      func: getOutreach,
+      func: getOutreach(),
       camelCase: 'outreach',
     },
     'english-service': {
-      func: getServices,
+      func: getServices(),
       camelCase: 'services',
     },
     'sunset-service-english-mandarin': {
-      func: getServices,
+      func: getServices(),
       camelCase: 'services',
     },
     'teo-chew-chinese-service': {
-      func: getServices,
+      func: getServices(),
       camelCase: 'services',
     },
     'statement-of-faith': {
-      func: getStatementOfFaith,
+      func: getStatementOfFaith(),
       camelCase: 'statementOfFaith',
     },
   }

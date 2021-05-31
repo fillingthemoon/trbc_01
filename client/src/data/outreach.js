@@ -3,9 +3,9 @@ const { churchWide } = general
 
 const outreachData = [
   {
-    item_id: 1,
+    itemId: 1,
     page: 'outreach',
-    sectionName: 'Community',
+    sectionName: 'community',
     title: 'Chinese as a Second Language (CSL)',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
@@ -16,9 +16,9 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
-    item_id: 2,
+    itemId: 2,
     page: 'outreach',
-    sectionName: 'Community',
+    sectionName: 'community',
     title: 'English as a Second Language (ESL)',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
@@ -29,9 +29,9 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
-    item_id: 3,
+    itemId: 3,
     page: 'outreach',
-    sectionName: 'Interest Groups',
+    sectionName: 'interest-groups',
     title: 'Gardening Fellowship',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
@@ -42,9 +42,9 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
-    item_id: 4,
+    itemId: 4,
     page: 'outreach',
-    sectionName: 'Interest Groups',
+    sectionName: 'interest-groups',
     title: 'Ping Pong Fellowship',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
@@ -55,9 +55,9 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
-    item_id: 5,
+    itemId: 5,
     page: 'outreach',
-    sectionName: 'Interest Groups',
+    sectionName: 'interest-groups',
     title: 'HPB Sit Down Excercises',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
@@ -68,9 +68,9 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
-    item_id: 6,
+    itemId: 6,
     page: 'outreach',
-    sectionName: 'Children',
+    sectionName: 'children',
     title: 'Kindergarten',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {
@@ -81,9 +81,9 @@ const outreachData = [
     imgSrc: churchWide,
   },
   {
-    item_id: 7,
+    itemId: 7,
     page: 'outreach',
-    sectionName: 'Children',
+    sectionName: 'children',
     title: 'CEC',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     details: {

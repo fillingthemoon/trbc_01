@@ -13,6 +13,7 @@ import {
 import { CalendarOutlined } from '@ant-design/icons'
 
 import { getEvents } from '../reducers/eventsReducer'
+import { convertName } from '../helper-files/helperFunctions'
 
 import { Card, Typography, Row, Divider } from 'antd'
 const { Title, Paragraph } = Typography
@@ -87,7 +88,7 @@ const Events = () => {
       <div >
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title='Events'
+          title={convertName('dashed', 'proper', eventsData[0].sectionName)}
           underlineAlign='left'
           titleStyle={{ margin: '0 20px' }}
         />

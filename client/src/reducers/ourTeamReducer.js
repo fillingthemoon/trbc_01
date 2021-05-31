@@ -11,11 +11,15 @@ const ourTeamReducer = (state = [], action) => {
   }
 }
 
-export const getOurTeam = () => {
+export const getOurTeam = (type = null) => {
   return async dispatch => {
 
     try {
-      const ourTeam = await ourTeamService.getOurTeam()
+      let ourTeam = await ourTeamService.getOurTeam()
+
+      ourTeam = type
+        ? ourTeam.filter(ourTeamItem => ourTeamItem.sectionName === type)
+        : ourTeam
 
       dispatch({
         type: 'GET_OUR_TEAM',

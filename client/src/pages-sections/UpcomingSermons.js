@@ -13,6 +13,7 @@ const { Title, Paragraph } = Typography
 const { Meta } = Card
 
 import { getUpcomingSermons } from '../reducers/upcomingSermonsReducer'
+import { convertName } from '../helper-files/helperFunctions'
 
 const cardStyle = {
   display: 'flex',
@@ -73,7 +74,7 @@ const UpcomingSermons = () => {
       <div>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title='Upcoming Sermons'
+          title={convertName('dashed', 'proper', upcomingSermonsData[0].sectionName)}
           underlineAlign='left'
           titleStyle={{ margin: '0 20px' }}
         />

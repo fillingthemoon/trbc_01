@@ -34,7 +34,7 @@ const EditSectionPage = (props) => {
   const section = useSelector(state => state[valueObject.camelCase])
 
   useEffect(() => {
-    dispatch(valueObject.func())
+    dispatch(valueObject.func)
   }, [])
 
   if (section.length <= 0) {

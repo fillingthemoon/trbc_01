@@ -9,6 +9,7 @@ import { Row, Card, Typography } from 'antd'
 const { Title, Paragraph } = Typography
 
 import { getAnnouncements } from '../reducers/announcementsReducer'
+import { convertName } from '../helper-files/helperFunctions'
 
 const cardStyle = {
   display: 'flex',
@@ -65,7 +66,10 @@ const Announcements = () => {
   return (
     <div className='announcements-container'>
       <div>
-        <TitleText titleUnderlineStyle={titleUnderlineStyle} title='Announcements' underlineAlign='center' />
+        <TitleText
+          titleUnderlineStyle={titleUnderlineStyle}
+          title={convertName('dashed', 'proper', announcementsData[0].sectionName)}
+          underlineAlign='center' />
         <Row justify='center'>
           {announcementsData.map((announcement, i) => (
             <AnnouncementCard key={i} announcement={announcement} />

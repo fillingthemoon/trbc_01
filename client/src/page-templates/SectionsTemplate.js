@@ -8,6 +8,8 @@ import {
   Divider, Row, Col
 } from 'antd'
 
+import { convertName } from '../helper-files/helperFunctions'
+
 const titleUnderlineStyle = {
   display: 'flex',
   justifyContent: 'center',
@@ -22,7 +24,7 @@ const Section = ({ section, displayType }) => {
     <div>
       <TitleText
         titleUnderlineStyle={titleUnderlineStyle}
-        title={sectionName}
+        title={convertName('dashed', 'proper', sectionName)}
         titleStyle={{ textAlign: 'center' }}
         underlineAlign='center' />
       <Row style={{ display: 'flex', justifyContent: 'center' }}>

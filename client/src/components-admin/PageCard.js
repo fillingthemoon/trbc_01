@@ -66,7 +66,7 @@ const PageCard = (props) => {
       {sectionNames.map((sectionName, i) =>
         <div key={i}>
           <Link to={`/admin/${convertName('proper', 'dashed', sectionName)}`}>
-            {sectionName}
+            {convertName('dashed', 'proper', sectionName)}
           </Link>
           {i !== sectionNames.length - 1 && <Divider />}
         </div>
