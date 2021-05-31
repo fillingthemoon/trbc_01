@@ -60,20 +60,4 @@ const EditSectionPage = (props) => {
   )
 }
 
-// {/* Iterate through each section item */}
-// {section.map(sectionItem => {
-//   // Iterate through each field in the section item
-//   return Object.keys(sectionItem).map((field, i) =>
-//     !(typeof sectionItem[field] === 'object' && sectionItem[field] !== null)
-//       ? <p key={i}>{sectionItem[field]}</p>
-//       // Iterate through each subfield if the field is a JavaScript object
-//       : Object.keys(sectionItem[field]).map((subField, j) =>
-//         <p key={j}>
-//           {sectionItem[field][subField]}
-//         </p>
-//       )
-//   )
-// }
-// )}
-
 export default EditSectionPage

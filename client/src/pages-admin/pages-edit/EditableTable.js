@@ -12,19 +12,26 @@ import {
   Popconfirm,
   Form,
   Typography,
+  Image,
 } from 'antd'
 
+const { TextArea } = Input
+
 const EditableCell = ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) => {
-  const inputNode = inputType === 'number' ? <InputNumber /> : <Input />
+  const inputNode = inputType === 'number' ? <InputNumber /> : <TextArea />
+  console.log(editing, dataIndex)
+
   return (
     <td {...restProps}>
       {editing
-        ? (<Form.Item name={dataIndex} style={{ margin: 0 }} rules={[
-          {
-            required: true,
-            message: `Please Input ${title}!`,
-          },
-        ]}
+        ? (<Form.Item
+          name={dataIndex}
+          rules={[
+            {
+              required: true,
+              message: `Please Input ${title}!`,
+            },
+          ]}
         >
           {inputNode}
         </Form.Item>)
@@ -72,7 +79,7 @@ const EditableTable = ({ section }) => {
         row[col] = Number(row[col])
       }
       if (data[index][col] !== row[col]) {
-        const errorMsg = `You are not authorised to edit the column ${col}`
+        const errorMsg = `You are not authorised to edit the column "${col}"`
         dispatch(setNotification('error', errorMsg, 3))
         throw errorMsg
       }
@@ -150,7 +157,7 @@ const EditableTable = ({ section }) => {
         inputType: 'text',
         dataIndex: col.dataIndex,
         title: col.title,
-        editing: isEditing(record),
+        editing: false,
       }),
     }
   })
@@ -168,7 +175,7 @@ const EditableTable = ({ section }) => {
         columns={mergedColumns}
         rowClassName="editable-row"
         pagination={false}
-        scroll={{ x: 2000 }}
+        scroll={{ x: 1700 }}
       />
     </Form>
   )
