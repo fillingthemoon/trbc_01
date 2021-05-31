@@ -7,8 +7,6 @@ import AdminDashboardNavBar from '../AdminDashboardNavBar'
 import EditableTable from './EditableTable'
 import TitleText from '../../components-reusable/TitleText'
 
-import { setNotification } from '../../reducers/notificationReducer'
-
 import { sectionGetFuncs } from '../../helper-files/sectionGetFuncs'
 
 import { convertName } from '../../helper-files/helperFunctions'

@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { setNotification } from '../../reducers/notificationReducer'
 
 import { flattenNestedObject } from '../../helper-files/helperFunctions'
 
@@ -36,6 +39,8 @@ const EditableTable = ({ section }) => {
   const [data, setData] = useState([])
   const [editingKey, setEditingKey] = useState('')
 
+  const dispatch = useDispatch()
+
   useEffect(() => {
     const sectionData = section.map((sectionItem, i) => {
 
@@ -61,13 +66,15 @@ const EditableTable = ({ section }) => {
     const uneditableColumns = ['itemId']
 
     uneditableColumns.forEach(col => {
-      console.log(data[index][col], row[col])
+      // console.log(data[index][col], row[col])
 
       if (typeof data[index][col] === 'number') {
         row[col] = Number(row[col])
       }
       if (data[index][col] !== row[col]) {
-        throw `You are not authorised to edit the column ${col}`
+        const errorMsg = `You are not authorised to edit the column ${col}`
+        dispatch(setNotification('error', errorMsg, 3))
+        throw errorMsg
       }
     })
   }
