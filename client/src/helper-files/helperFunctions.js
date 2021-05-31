@@ -118,8 +118,25 @@ const convertName = (fromType, toType, name) => {
   }
 }
 
+const flattenNestedObject = (nestedObject) => {
+  const flattened = {}
+
+  Object.keys(nestedObject).forEach(key => {
+    if (typeof nestedObject[key] === 'object' && nestedObject[key] !== null) {
+      Object.keys(nestedObject[key]).map(nestedKey => {
+        flattened[nestedKey] = nestedObject[key][nestedKey]
+      })
+    } else {
+      flattened[key] = nestedObject[key]
+    }
+  })
+
+  return flattened
+}
+
 export {
   splitLines,
   formatParagraph,
   convertName,
+  flattenNestedObject,
 }

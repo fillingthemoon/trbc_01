@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import { flattenNestedObject } from '../../helper-files/helperFunctions'
+
 import {
   Table,
   Input,
@@ -36,15 +38,10 @@ const EditableTable = ({ section }) => {
 
   useEffect(() => {
     const sectionData = section.map((sectionItem, i) => {
+
       return {
         key: i,
-        itemId: sectionItem.itemId,
-        // page: sectionItem.page,
-        // sectionName: sectionItem.sectionName,
-        title: sectionItem.title,
-        text: sectionItem.text,
-        imgSrc: sectionItem.imgSrc,
-        // id: sectionItem.id,
+        ...flattenNestedObject(sectionItem),
       }
     })
 
@@ -54,18 +51,11 @@ const EditableTable = ({ section }) => {
   const isEditing = (record) => record.key === editingKey
 
   const edit = (record) => {
-    form.setFieldsValue({
-      name: '',
-      age: '',
-      address: '',
-      ...record,
-    })
+    form.setFieldsValue({ ...record })
     setEditingKey(record.key)
   }
 
-  const cancel = () => {
-    setEditingKey([])
-  }
+  const cancel = () => { setEditingKey('') }
 
   const save = async (key) => {
     try {
@@ -88,21 +78,9 @@ const EditableTable = ({ section }) => {
     }
   }
 
-  const fields = section.map(sectionItem => {
-    const fieldsToExclude = ['page', 'sectionName', 'id']
-
-    // Iterate through each field in the section item
-    return Object.keys(sectionItem)
-      .filter(field => !fieldsToExclude.includes(field))
-      .map((field, i) =>
-        !(typeof sectionItem[field] === 'object' && sectionItem[field] !== null)
-          ? field
-          // Iterate through each subfield if the field is a JavaScript object
-          : Object.keys(sectionItem[field]).map((subField, j) =>
-            subField
-          )
-      )
-  })[0].flat()
+  const fieldsToExclude = ['page', 'sectionName', 'id']
+  const fields = Object.keys(flattenNestedObject(section[0]))
+    .filter(field => !fieldsToExclude.includes(field))
 
   const columns = fields.map(field => {
     return {
@@ -119,11 +97,7 @@ const EditableTable = ({ section }) => {
           const editable = isEditing(record)
           return editable ? (
             <span>
-              <a
-                href="javascript:;"
-                onClick={() => save(record.key)}
-                style={{ marginRight: 8, }}
-              >
+              <a onClick={() => save(record.key)} style={{ marginRight: 8, }}>
                 Save
               </a>
               <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
