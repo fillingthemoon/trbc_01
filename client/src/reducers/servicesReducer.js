@@ -5,17 +5,28 @@ const servicesReducer = (state = [], action) => {
     case 'GET_SERVICES': {
       return action.data.services
     }
+    case 'RESET_SERVICES': {
+      return []
+    }
     default: {
       return state
     }
   }
 }
 
-export const getServices = () => {
+export const getServices = (type) => {
   return async dispatch => {
 
     try {
-      const services = await servicesService.getServices()
+      dispatch({
+        type: 'RESET_SERVICES',
+      })
+
+      let services = await servicesService.getServices()
+
+      services = type
+        ? services.filter(servicesItem => servicesItem.sectionName === type)
+        : services
 
       dispatch({
         type: 'GET_SERVICES',

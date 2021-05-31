@@ -51,8 +51,6 @@ const EditableTable = ({ section }) => {
     setData(sectionData)
   }, [])
 
-  console.log(section)
-
   const isEditing = (record) => record.key === editingKey
 
   const edit = (record) => {
@@ -91,11 +89,11 @@ const EditableTable = ({ section }) => {
   }
 
   const fields = section.map(sectionItem => {
-    const fieldsToExclude = ['page, sectionName, id']
+    const fieldsToExclude = ['page', 'sectionName', 'id']
 
     // Iterate through each field in the section item
     return Object.keys(sectionItem)
-      .filter(field => field)
+      .filter(field => !fieldsToExclude.includes(field))
       .map((field, i) =>
         !(typeof sectionItem[field] === 'object' && sectionItem[field] !== null)
           ? field

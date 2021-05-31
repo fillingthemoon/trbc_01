@@ -53,39 +53,39 @@ const sectionGetFuncs = (sectionName) => {
       camelCase: convertName('dashed', 'camel', sectionName),
     },
     'administrative': {
-      func: getOurTeam(),
+      func: getOurTeam('administrative'),
       camelCase: 'ourTeam',
     },
     'ministry': {
-      func: getOurTeam(),
+      func: getOurTeam('ministry'),
       camelCase: 'ourTeam',
     },
     'pastoral': {
-      func: getOurTeam(),
+      func: getOurTeam('pastoral'),
       camelCase: 'ourTeam',
     },
     'children': {
-      func: getOutreach(),
+      func: getOutreach('children'),
       camelCase: 'outreach',
     },
     'community': {
-      func: getOutreach(),
+      func: getOutreach('community'),
       camelCase: 'outreach',
     },
     'interest-groups': {
-      func: getOutreach(),
+      func: getOutreach('interest-groups'),
       camelCase: 'outreach',
     },
     'english-service': {
-      func: getServices(),
+      func: getServices('english-service'),
       camelCase: 'services',
     },
     'sunset-service-english-mandarin': {
-      func: getServices(),
+      func: getServices('sunset-service-english-mandarin'),
       camelCase: 'services',
     },
     'teo-chew-chinese-service': {
-      func: getServices(),
+      func: getServices('teo-chew-chinese-service'),
       camelCase: 'services',
     },
     'statement-of-faith': {

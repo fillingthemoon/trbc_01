@@ -5,7 +5,7 @@ const servicesData = [
     sectionName: 'teo-chew-chinese-service',
     service: 'Teo Chew/Chinese Service',
     serviceAcronym: 'tc',
-    title: 'Main (TC)',
+    title: 'Main',
     text:
       `崇拜理念: 神创造人的目的乃要叫人晓得以心灵和诚实的敬拜祂。
       【约翰福音4:24 崇拜分为三个领域
@@ -81,7 +81,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Main (English)',
+    title: 'Main',
     text: 'English Service',
     time: 'Sunday, 8:30am',
     location: 'Main Sanctuary, 2nd Floor',
@@ -92,7 +92,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Youth (English)',
+    title: 'Youth',
     text: 'Youths (ages 13 to 19) gather every Sunday at 11.00am in various classes for a time of bible study. 4 classes run concurrently at this time. We are now doing a survey of the Old Testament using Huang Sabin’s OT Made Simple as bible study resource.',
     time: 'Sunday, 11am',
     location: '3rd Floor ',
@@ -130,7 +130,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Prayer Meeting (English)',
+    title: 'Prayer Meeting',
     text:
       `Prayer is fundamental to our Church life and forms a very critical pillar of our Church. We believe that all our ministries must be build upon prayer. Apart from the weekly prayers in our CG fellowship we also gather on the first Friday of every month to pray together as a body.
       
@@ -144,7 +144,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Main (Sunset)',
+    title: 'Main',
     text: 'Our Sunset Worship Service is held on Sunday evenings. Service is conducted in both English and Mandarin. We hope that through our weekly service and various activities, you wil discover our Lord\'s promise of salvation and eternal life, gain confidence in eternity, grow together and live a christian life that exhibits both faith and deeds.',
     time: 'Sunday, 5.00pm',
     location: 'Main Sanctuary, 2nd Floor',
@@ -174,7 +174,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Children (Sunset)',
+    title: 'Children',
     text:
       `Vision: 'Train a child in the way he should go, and when he is old he will not turn from it.' Proverbs 22:6    
       
@@ -190,7 +190,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Cell Groups (Sunset)',
+    title: 'Cell Groups',
     text:
       `"I have given them the glory that you gave me, that they may be one as we are one— 23 I in them and you in me—so that they may be brought to complete unity. Then the world will know that you sent me and have loved them even as you have loved me." John 17:22-23
       
@@ -210,7 +210,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Prayer Meeting (Sunset)',
+    title: 'Prayer Meeting',
     text: 'A time of unity with fellow believers in the presence of the Lord',
     time: 'Thursday, 7.30pm-830pm',
     location: 'Choir Room, 3rd Floor',

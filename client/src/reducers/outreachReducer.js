@@ -5,17 +5,28 @@ const outreachReducer = (state = [], action) => {
     case 'GET_OUTREACH': {
       return action.data.outreach
     }
+    case 'RESET_SERVICES': {
+      return []
+    }
     default: {
       return state
     }
   }
 }
 
-export const getOutreach = () => {
+export const getOutreach = (type) => {
   return async dispatch => {
 
     try {
-      const outreach = await outreachService.getOutreach()
+      dispatch({
+        type: 'RESET_SERVICES',
+      })
+
+      let outreach = await outreachService.getOutreach()
+
+      outreach = type
+        ? outreach.filter(outreachItem => outreachItem.sectionName === type)
+        : outreach
 
       dispatch({
         type: 'GET_OUTREACH',

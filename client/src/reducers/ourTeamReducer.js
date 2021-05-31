@@ -5,6 +5,9 @@ const ourTeamReducer = (state = [], action) => {
     case 'GET_OUR_TEAM': {
       return action.data.ourTeam
     }
+    case 'RESET_SERVICES': {
+      return []
+    }
     default: {
       return state
     }
@@ -15,6 +18,10 @@ export const getOurTeam = (type = null) => {
   return async dispatch => {
 
     try {
+      dispatch({
+        type: 'RESET_SERVICES',
+      })
+
       let ourTeam = await ourTeamService.getOurTeam()
 
       ourTeam = type
