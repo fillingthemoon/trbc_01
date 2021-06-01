@@ -23,21 +23,28 @@ const cellImgStyle = {
   objectFit: 'scale-down',
 }
 
+// Component for Editable Cell
 const EditableCell = ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) => {
   const inputNode = () => {
-    if (inputType === 'number') {
+    if (title === 'imgDisplay') {
+      return <Image src={record.imgSrc} style={cellImgStyle} />
+    } else if (inputType === 'number') {
       return <InputNumber />
+    } else if (title === 'text') {
+      return <TextArea style={{ minWidth: '500px' }} />
     } else {
       return <TextArea style={{ minWidth: '150px' }} />
     }
   }
 
+  // Return either the Form inputs or cell content
   return (
-    <td {...restProps}>
-      {editing
-        ? (<Form.Item
+    <td {...restProps} style={title === 'imgSrc' ? { maxWidth: '300px' } : null}>
+      {editing // Variable for whether the current record is being edited
+        ?
+        (<Form.Item
           name={dataIndex}
-          rules={[{ required: true, message: `Please input "${title}"!` },]}
+          rules={[{ required: true, message: `Please input "${title}"!` }]}
         >
           {inputNode()}
         </Form.Item>)
@@ -50,30 +57,38 @@ const EditableCell = ({ editing, dataIndex, title, inputType, record, index, chi
 const EditableTable = ({ section }) => {
   const [form] = Form.useForm()
   const [data, setData] = useState([])
-  const [editingKey, setEditingKey] = useState('')
+  // Variable for the record currently being edited
+  const [editingId, setEditingId] = useState('')
 
   const dispatch = useDispatch()
 
+  // Sets the table's data
   useEffect(() => {
     const sectionData = section.map((sectionItem, i) => {
 
-      return {
-        ...flattenNestedObject(sectionItem),
-        key: i,
-      }
+      return Object.keys(sectionItem).includes('imgSrc')
+        ? {
+          ...flattenNestedObject(sectionItem),
+          key: i,
+          imgDisplay: <Image src={sectionItem.imgSrc} style={cellImgStyle}></Image>
+        }
+        : {
+          ...flattenNestedObject(sectionItem),
+          key: i,
+        }
     })
 
     setData(sectionData)
   }, [])
 
-  const isEditing = (record) => record.id === editingKey
+  const isEditing = (record) => record.id === editingId
 
   const edit = (record) => {
     form.setFieldsValue({ ...record })
-    setEditingKey(record.id)
+    setEditingId(record.id)
   }
 
-  const cancel = () => { setEditingKey('') }
+  const cancel = () => { setEditingId('') }
 
   const save = async (record) => {
     try {
@@ -86,11 +101,11 @@ const EditableTable = ({ section }) => {
         const item = newData[index]
         newData.splice(index, 1, { ...item, ...row })
         setData(newData)
-        setEditingKey('')
+        setEditingId('')
       } else {
         newData.push(row)
         setData(newData)
-        setEditingKey('')
+        setEditingId('')
       }
     } catch (error) {
       console.log('Validation Failed:', error)
@@ -106,7 +121,13 @@ const EditableTable = ({ section }) => {
   const fields = Object.keys(flattenNestedObject(section[0]))
     .filter(field => !hiddenFields.includes(field))
 
-  const uneditableColumns = ['itemId', 'page', 'sectionName', 'id']
+  // Add image display column if imgSrc exists
+  if (Object.keys(flattenNestedObject(section[0])).includes('imgSrc')) {
+    fields.push('imgDisplay')
+  }
+
+
+  const uneditableColumns = ['itemId', 'page', 'sectionName', 'id', 'imgDisplay']
   const columns = fields.map(field => {
     return {
       title: field,
@@ -114,32 +135,34 @@ const EditableTable = ({ section }) => {
       editable: !uneditableColumns.includes(field),
     }
   })
+    // Add the 'editing' column
     .concat([
       {
         title: 'editing',
         dataIndex: 'operation',
         render: (_, record) => {
           const editable = isEditing(record)
+          // Checks if the current record is being edited
           return editable ? (
-            <span>
+            <>
               <Typography.Link style={{ marginRight: 8 }}>
                 <Popconfirm title="Are you sure you want to save this record?" onConfirm={() => save(record)}>
                   Save
                 </Popconfirm>
               </Typography.Link>
               <a onClick={cancel}>Cancel</a>
-            </span>
+            </>
           ) : (
             <>
               <Typography.Link
-                disabled={editingKey !== ''}
+                disabled={editingId !== ''}
                 onClick={() => edit(record)}
                 style={{ display: 'block' }}
               >
                 Edit
               </Typography.Link>
               <Typography.Link
-                disabled={editingKey !== ''}
+                disabled={editingId !== ''}
                 style={{ display: 'block' }}>
                 <Popconfirm title="Are you sure you want to delete this record?" onConfirm={() => deleteRow(record)}>
                   Delete
@@ -159,11 +182,11 @@ const EditableTable = ({ section }) => {
     return {
       ...col,
       onCell: (record) => ({
-        record,
-        inputType: 'text',
+        editing: isEditing(record), // Checks if the current record is being edited
         dataIndex: col.dataIndex,
         title: col.title,
-        editing: isEditing(record),
+        inputType: 'text',
+        record,
       }),
     }
   })
@@ -171,11 +194,7 @@ const EditableTable = ({ section }) => {
   return (
     <Form form={form} component={false}>
       <Table
-        components={{
-          body: {
-            cell: EditableCell,
-          },
-        }}
+        components={{ body: { cell: EditableCell } }}
         bordered
         dataSource={data}
         columns={mergedColumns}
