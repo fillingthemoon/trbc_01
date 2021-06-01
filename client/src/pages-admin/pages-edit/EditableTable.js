@@ -73,21 +73,21 @@ const EditableTable = ({ section }) => {
     setData(sectionData)
   }, [])
 
-  const isEditing = (record) => record.key === editingKey
+  const isEditing = (record) => record.id === editingKey
 
   const edit = (record) => {
     form.setFieldsValue({ ...record })
-    setEditingKey(record.key)
+    setEditingKey(record.id)
   }
 
   const cancel = () => { setEditingKey('') }
 
-  const save = async (key) => {
+  const save = async (id) => {
     try {
       const row = await form.validateFields()
       const newData = [...data]
 
-      const index = newData.findIndex((item) => key === item.key)
+      const index = newData.findIndex((item) => id === item.id)
 
       if (index >= 0) {
         const item = newData[index]
@@ -104,11 +104,16 @@ const EditableTable = ({ section }) => {
     }
   }
 
-  const fieldsToExclude = ['id']
-  const fields = Object.keys(flattenNestedObject(section[0]))
-    .filter(field => !fieldsToExclude.includes(field))
+  const deleteRow = (record) => {
+    const newData = data.filter((item) => item.id !== record.id)
+    console.log(newData)
+  }
 
-  const uneditableColumns = ['itemId', 'page', 'sectionName']
+  const hiddenFields = ['id']
+  const fields = Object.keys(flattenNestedObject(section[0]))
+    .filter(field => !hiddenFields.includes(field))
+
+  const uneditableColumns = ['itemId', 'page', 'sectionName', 'id']
   const columns = fields.map(field => {
     return {
       title: field,
@@ -118,21 +123,33 @@ const EditableTable = ({ section }) => {
   })
     .concat([
       {
-        title: 'operation',
+        title: 'editing',
         dataIndex: 'operation',
         render: (_, record) => {
           const editable = isEditing(record)
           return editable ? (
             <span>
-              <a onClick={() => save(record.key)} style={{ marginRight: 8 }}>
+              <a onClick={() => save(record.id)} style={{ marginRight: 8 }}>
                 Save
               </a>
               <a onClick={cancel}>Cancel</a>
             </span>
           ) : (
-            <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
-              Edit
-            </Typography.Link>
+            <>
+              <Typography.Link
+                disabled={editingKey !== ''}
+                onClick={() => edit(record)}
+                style={{ display: 'block' }}
+              >
+                Edit
+              </Typography.Link>
+              <Typography.Link
+                disabled={editingKey !== ''}
+                onClick={() => deleteRow(record)}
+                style={{ display: 'block' }}>
+                Delete
+              </Typography.Link>
+            </>
           )
         },
       }
@@ -168,7 +185,7 @@ const EditableTable = ({ section }) => {
         columns={mergedColumns}
         rowClassName="editable-row"
         pagination={false}
-        scroll={{ x: 2000 }}
+        scroll={{ x: mergedColumns.length * 200 }}
       />
     </Form>
   )
