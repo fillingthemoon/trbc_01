@@ -13,6 +13,7 @@ import {
   Typography,
   Popconfirm,
   Image,
+  Button,
 } from 'antd'
 
 const { TextArea } = Input
@@ -120,12 +121,10 @@ const EditableTable = ({ section }) => {
   const hiddenFields = ['id']
   const fields = Object.keys(flattenNestedObject(section[0]))
     .filter(field => !hiddenFields.includes(field))
-
   // Add image display column if imgSrc exists
   if (Object.keys(flattenNestedObject(section[0])).includes('imgSrc')) {
     fields.push('imgDisplay')
   }
-
 
   const uneditableColumns = ['itemId', 'page', 'sectionName', 'id', 'imgDisplay']
   const columns = fields.map(field => {
@@ -193,6 +192,9 @@ const EditableTable = ({ section }) => {
 
   return (
     <Form form={form} component={false}>
+      <Button>
+        Add New Row
+      </Button>
       <Table
         components={{ body: { cell: EditableCell } }}
         bordered
