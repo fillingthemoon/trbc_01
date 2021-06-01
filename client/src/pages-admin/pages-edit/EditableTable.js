@@ -24,9 +24,7 @@ const cellImgStyle = {
 
 const EditableCell = ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) => {
   const inputNode = () => {
-    if (title === 'imgSrc') {
-      return <Image src={record.imgSrc.props.src} style={cellImgStyle} />
-    } else if (inputType === 'number') {
+    if (inputType === 'number') {
       return <InputNumber />
     } else {
       return <TextArea style={{ minWidth: '150px' }} />
@@ -58,16 +56,10 @@ const EditableTable = ({ section }) => {
   useEffect(() => {
     const sectionData = section.map((sectionItem, i) => {
 
-      return Object.keys(sectionItem).includes('imgSrc')
-        ? {
-          ...flattenNestedObject(sectionItem),
-          key: i,
-          imgSrc: <Image src={sectionItem.imgSrc} style={cellImgStyle} />,
-        }
-        : {
-          ...flattenNestedObject(sectionItem),
-          key: i,
-        }
+      return {
+        ...flattenNestedObject(sectionItem),
+        key: i,
+      }
     })
 
     setData(sectionData)
