@@ -11,6 +11,7 @@ import {
   InputNumber,
   Form,
   Typography,
+  Popconfirm,
   Image,
 } from 'antd'
 
@@ -74,12 +75,12 @@ const EditableTable = ({ section }) => {
 
   const cancel = () => { setEditingKey('') }
 
-  const save = async (id) => {
+  const save = async (record) => {
     try {
       const row = await form.validateFields()
       const newData = [...data]
 
-      const index = newData.findIndex((item) => id === item.id)
+      const index = newData.findIndex((item) => item.id === record.id)
 
       if (index >= 0) {
         const item = newData[index]
@@ -98,7 +99,7 @@ const EditableTable = ({ section }) => {
 
   const deleteRow = (record) => {
     const newData = data.filter((item) => item.id !== record.id)
-    console.log(newData)
+    setData(newData)
   }
 
   const hiddenFields = ['id']
@@ -121,9 +122,11 @@ const EditableTable = ({ section }) => {
           const editable = isEditing(record)
           return editable ? (
             <span>
-              <a onClick={() => save(record.id)} style={{ marginRight: 8 }}>
-                Save
-              </a>
+              <Typography.Link style={{ marginRight: 8 }}>
+                <Popconfirm title="Are you sure you want to save this record?" onConfirm={() => save(record)}>
+                  Save
+                </Popconfirm>
+              </Typography.Link>
               <a onClick={cancel}>Cancel</a>
             </span>
           ) : (
@@ -137,9 +140,10 @@ const EditableTable = ({ section }) => {
               </Typography.Link>
               <Typography.Link
                 disabled={editingKey !== ''}
-                onClick={() => deleteRow(record)}
                 style={{ display: 'block' }}>
-                Delete
+                <Popconfirm title="Are you sure you want to delete this record?" onConfirm={() => deleteRow(record)}>
+                  Delete
+                </Popconfirm>
               </Typography.Link>
             </>
           )
