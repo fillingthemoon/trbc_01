@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
+import EditableCell from './EditableCell'
+import AddNewRowBtn from './AddNewRowBtn'
+
 import { setNotification } from '../../reducers/notificationReducer'
 
 import { flattenNestedObject } from '../../helper-files/helperFunctions'
 
 import {
   Table,
-  Input,
-  InputNumber,
   Form,
   Typography,
   Popconfirm,
   Image,
-  Button,
 } from 'antd'
-
-const { TextArea } = Input
 
 const cellImgStyle = {
   maxWidth: '500px',
@@ -24,42 +22,10 @@ const cellImgStyle = {
   objectFit: 'scale-down',
 }
 
-// Component for Editable Cell
-const EditableCell = ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) => {
-  const inputNode = () => {
-    if (title === 'imgDisplay') {
-      return <Image src={record.imgSrc} style={cellImgStyle} />
-    } else if (inputType === 'number') {
-      return <InputNumber />
-    } else if (title === 'text') {
-      return <TextArea style={{ minWidth: '500px' }} />
-    } else {
-      return <TextArea style={{ minWidth: '150px' }} />
-    }
-  }
-
-  // Return either the Form inputs or cell content
-  return (
-    <td {...restProps} style={title === 'imgSrc' ? { maxWidth: '300px' } : null}>
-      {editing // Variable for whether the current record is being edited
-        ?
-        (<Form.Item
-          name={dataIndex}
-          rules={[{ required: true, message: `Please input "${title}"!` }]}
-        >
-          {inputNode()}
-        </Form.Item>)
-        : (children)
-      }
-    </td>
-  )
-}
-
 const EditableTable = ({ section }) => {
   const [form] = Form.useForm()
   const [data, setData] = useState([])
-  // Variable for the record currently being edited
-  const [editingId, setEditingId] = useState('')
+  const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
 
   const dispatch = useDispatch()
 
@@ -129,6 +95,7 @@ const EditableTable = ({ section }) => {
   const uneditableColumns = ['itemId', 'page', 'sectionName', 'id', 'imgDisplay']
   const columns = fields.map(field => {
     return {
+      // title and dataIndex are the same thing in this case
       title: field,
       dataIndex: field,
       editable: !uneditableColumns.includes(field),
@@ -191,20 +158,20 @@ const EditableTable = ({ section }) => {
   })
 
   return (
-    <Form form={form} component={false}>
-      <Button>
-        Add New Row
-      </Button>
-      <Table
-        components={{ body: { cell: EditableCell } }}
-        bordered
-        dataSource={data}
-        columns={mergedColumns}
-        rowClassName="editable-row"
-        pagination={false}
-        scroll={{ x: mergedColumns.length * 200 }}
-      />
-    </Form>
+    <>
+      <AddNewRowBtn section={section} />
+      <Form form={form} component={false}>
+        <Table
+          components={{ body: { cell: EditableCell } }}
+          bordered
+          dataSource={data}
+          columns={mergedColumns}
+          rowClassName="editable-row"
+          pagination={false}
+          scroll={{ x: mergedColumns.length * 200 }}
+        />
+      </Form>
+    </>
   )
 }
 
