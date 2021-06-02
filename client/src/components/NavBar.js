@@ -94,7 +94,8 @@ const NavBar = () => {
             border: 'none',
             width: '100px',
             height: '40px',
-            fontWeight: '600',
+            fontWeight: '800',
+            letterSpacing: '12x',
           }}
         >
           {language}
