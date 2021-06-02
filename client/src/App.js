@@ -83,7 +83,7 @@ const App = () => {
   const items = useSelector(state => state.items.items)
 
   const matchEditSection = useRouteMatch('/admin/:sectionId')
-  const matchIndivPageItem = useRouteMatch(['/outreach/:id', '/missions/:id'])
+  const matchIndivPageItem = useRouteMatch(['/outreach/:id', '/missions/:id', '/services/:id'])
 
   useEffect(() => {
     dispatch(getSections())
@@ -130,6 +130,9 @@ const App = () => {
           <Route path='/services' exact>
             <Services />
           </Route >
+          <Route path='/services/:id' exact>
+            <IndividualPage item={indivPageItemMatch} />
+          </Route>
           <Route path='/im-new' exact>
             <ImNew />
           </Route>
