@@ -5,10 +5,10 @@ import { useMediaQuery } from 'react-responsive'
 import { Menu } from 'antd'
 
 const menuItemStyle = {
+  flex: '1',
   fontSize: '1.3rem',
-  fontWeight: '300',
+  fontWeight: '400',
   textAlign: 'center',
-  border: 'none',
 }
 
 const ServicesNavBar = (props) => {
@@ -25,9 +25,6 @@ const ServicesNavBar = (props) => {
         display: 'flex',
         flexDirection: isBigScreen ? 'row' : 'column',
         width: '100%',
-        justifyContent: 'space-evenly',
-        border: 'none',
-        margin: '50px 0',
       }}
     >
       <Menu.Item key='tc' style={menuItemStyle}>

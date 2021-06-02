@@ -56,7 +56,7 @@ const detailItemStyle = {
   display: 'flex',
   alignItems: 'center',
   margin: '6px 0',
-  fontWeight: '500px',
+  fontWeight: '500',
 }
 
 const iconStyle = {
@@ -89,22 +89,22 @@ const IndividualPage = ({ item }) => {
           {details &&
             <Col style={detailsStyle}>
               {time &&
-                <div style={detailItemStyle}>
+                <Row style={detailItemStyle}>
                   <AiFillClockCircle style={iconStyle} />
                   <Text>{time}</Text>
-                </div>
+                </Row>
               }
               {location &&
-                <div style={detailItemStyle}>
+                <Row style={detailItemStyle}>
                   <FaMapMarkerAlt style={iconStyle} />
                   <Text>{location}</Text>
-                </div>
+                </Row>
               }
               {person &&
-                <div style={detailItemStyle}>
+                <Row style={detailItemStyle}>
                   <FaUser style={iconStyle} />
                   <Text>{person}</Text>
-                </div>
+                </Row>
               }
             </Col>
           }

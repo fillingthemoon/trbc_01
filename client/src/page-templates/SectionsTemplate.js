@@ -26,7 +26,8 @@ const Section = ({ section, displayType }) => {
         titleUnderlineStyle={titleUnderlineStyle}
         title={convertName('dashed', 'proper', sectionName)}
         titleStyle={{ textAlign: 'center' }}
-        underlineAlign='center' />
+        underlineAlign='center'
+      />
       <Row style={{ display: 'flex', justifyContent: 'center' }}>
         {items.map((item, i) =>
           <Col key={i} style={{ display: 'flex' }}>

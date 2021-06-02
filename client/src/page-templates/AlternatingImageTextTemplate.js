@@ -17,6 +17,7 @@ import {
 
 import {
   colorLGray,
+  colorLGray2,
   colorMGray,
   colorLOrange,
   colorWhite,
@@ -222,7 +223,7 @@ const AlternatingImageText = (props) => {
   } = props
 
   return (
-    <div style={divider && { padding: '20px 0' }}>
+    <div style={divider && { padding: '30px 0' }}>
       {data.map((item, i) =>
         <div key={i}>
           <div style={{ display: 'flex', ...getRowLayout(i, rowLayout) }}>
@@ -239,7 +240,8 @@ const AlternatingImageText = (props) => {
               })()}
             </Row>
           </div>
-          {divider && i !== data.length - 1 && <Divider style={{ width: '100px' }} />}
+          {divider && i !== data.length - 1
+            && <Divider style={{ width: '100px' }} />}
         </div>
       )}
     </div>
