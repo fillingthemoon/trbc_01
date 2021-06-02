@@ -1,8 +1,8 @@
 import axios from 'axios'
 const baseUrl = '/api/items/'
 
-const getItem = async (id) => {
-  const response = await axios.get(`${baseUrl}item/${id}`)
+const getItems = async () => {
+  const response = await axios.get(`${baseUrl}`)
   return response.data
 }
 
@@ -23,7 +23,7 @@ const getSections = async () => {
 }
 
 const itemsService = {
-  getItem,
+  getItems,
   getPages,
   getSections,
 }

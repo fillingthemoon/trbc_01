@@ -3,17 +3,17 @@ import itemsService from '../services/itemsService'
 import { convertName } from '../helper-files/helperFunctions'
 
 const initialState = {
-  item: null,
+  items: [],
   pages: [],
   sections: []
 }
 
 const itemsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'GET_ITEM': {
+    case 'GET_ITEMS': {
       return {
         ...state,
-        item: action.data.item,
+        items: action.data.items,
       }
     }
     case 'GET_PAGES': {
@@ -34,16 +34,16 @@ const itemsReducer = (state = initialState, action) => {
   }
 }
 
-export const getItem = (id) => {
+export const getItems = () => {
   return async dispatch => {
 
     try {
-      const item = await itemsService.getItem(id)
+      const items = await itemsService.getItems()
 
       dispatch({
-        type: 'GET_ITEM',
+        type: 'GET_ITEMS',
         data: {
-          item,
+          items,
         }
       })
     } catch (error) {

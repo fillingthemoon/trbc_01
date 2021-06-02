@@ -72,6 +72,7 @@ import IndividualPage from './components-reusable/IndividualPage'
 import './style.less'
 
 import { getSections } from './reducers/itemsReducer'
+import { getItems } from './reducers/itemsReducer'
 
 import { Layout } from 'antd'
 const { Content } = Layout
@@ -79,20 +80,28 @@ const { Content } = Layout
 const App = () => {
   const dispatch = useDispatch()
   const sections = useSelector(state => state.items.sections)
-  const item = useSelector(state => state.items.item)
+  const items = useSelector(state => state.items.items)
 
   const matchEditSection = useRouteMatch('/admin/:sectionId')
+  const matchIndivPageItem = useRouteMatch(['/outreach/:id', '/missions/:id'])
 
   useEffect(() => {
     dispatch(getSections())
+    dispatch(getItems())
   }, [])
 
-  if (sections.length <= 0) {
+  if (sections.length <= 0 || items.length <= 0) {
     return null
   }
 
   const editSectionMatch = matchEditSection
     ? sections.find(section => section === matchEditSection.params.sectionId)
+    : null
+
+  const indivPageItemMatch = matchIndivPageItem
+    ? items.find(item =>
+      item.id === matchIndivPageItem.params.id
+    )
     : null
 
   return (
@@ -128,10 +137,13 @@ const App = () => {
             <Outreach />
           </Route>
           <Route path='/outreach/:id' exact>
-            <IndividualPage item={item} />
+            <IndividualPage item={indivPageItemMatch} />
           </Route>
           <Route path='/missions' exact>
             <Missions />
+          </Route>
+          <Route path='/missions/:id' exact>
+            <IndividualPage item={indivPageItemMatch} />
           </Route>
           <Route path='/discipleship' exact>
             <Discipleship />
