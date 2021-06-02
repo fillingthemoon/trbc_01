@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { general } from '../helper-files/images'
+const { fallbackImg } = general
+
 import {
   Typography,
   Image,
@@ -25,7 +28,7 @@ const ItemDisplay = ({ item }) => {
 
   return (
     <Link to={`/${page}/${id}`} style={itemDisplayStyle}>
-      <Image alt="img" src={imgSrc} style={imgStyle} preview={false} />
+      <Image alt="img" src={imgSrc} style={imgStyle} preview={false} fallback={fallbackImg}/>
       <Title style={{ fontSize: '1.5rem', margin: '10px 0' }}>{title}</Title>
       <Paragraph style={{ fontSize: '0.9rem', fontWeight: '300', margin: '20px 0' }}>{text}</Paragraph>
     </Link>

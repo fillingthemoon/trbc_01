@@ -4,8 +4,9 @@ import { Layout } from 'antd'
 const { Footer } = Layout
 import { Row, Col, Image } from 'antd'
 
-import { IoMail, IoLocationSharp } from 'react-icons/io5'
+import { IoMail } from 'react-icons/io5'
 import { AiFillPhone } from 'react-icons/ai'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 
 import { general } from '../helper-files/images'
 const { trbcMap } = general
@@ -20,7 +21,7 @@ const ContactFooter = () => {
           <TitleText title='Contact Us'/>
           <Row className='footer-trbc'>Singapore Thomson Road Baptist Church</Row>
           <Row gutter={10} style={{ margin: '5px 0' }}>
-            <Col className='footer-icon'><IoLocationSharp /></Col>
+            <Col className='footer-icon'><FaMapMarkerAlt /></Col>
             <Col className='footer-contact-details'>45 Thomson Road Singapore 307584</Col>
           </Row>
           <Row gutter={10} style={{ margin: '5px 0' }}>
