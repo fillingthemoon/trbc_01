@@ -1,4 +1,8 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+
+import { getItem } from '../reducers/itemsReducer'
 
 import {
   Typography,
@@ -20,14 +24,19 @@ const itemDisplayStyle = {
 }
 
 const ItemDisplay = ({ item }) => {
-  const { title, text, imgSrc } = item
+  const { title, text, imgSrc, id } = item
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    dispatch(getItem(id))
+  }
 
   return (
-    <div style={itemDisplayStyle}>
-      <Image alt="img" src={imgSrc} style={imgStyle} />
+    <Link to={`/outreach/${id}`} onClick={handleClick} style={itemDisplayStyle}>
+      <Image alt="img" src={imgSrc} style={imgStyle} preview={false} />
       <Title style={{ fontSize: '1.5rem', margin: '10px 0' }}>{title}</Title>
       <Paragraph style={{ fontSize: '0.9rem', fontWeight: '300', margin: '20px 0' }}>{text}</Paragraph>
-    </div>
+    </Link>
   )
 }
 

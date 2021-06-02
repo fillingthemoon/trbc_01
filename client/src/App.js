@@ -67,6 +67,7 @@ import ContactFooter from './components/ContactFooter'
 import Admin from './pages-admin/Admin'
 
 import EditSectionPage from './pages-admin/pages-edit/EditSectionPage'
+import IndividualPage from './components-reusable/IndividualPage'
 
 import './style.less'
 
@@ -78,6 +79,7 @@ const { Content } = Layout
 const App = () => {
   const dispatch = useDispatch()
   const sections = useSelector(state => state.items.sections)
+  const item = useSelector(state => state.items.item)
 
   const matchEditSection = useRouteMatch('/admin/:sectionId')
 
@@ -124,6 +126,9 @@ const App = () => {
           </Route>
           <Route path='/outreach' exact>
             <Outreach />
+          </Route>
+          <Route path='/outreach/:id' exact>
+            <IndividualPage item={item} />
           </Route>
           <Route path='/missions' exact>
             <Missions />
