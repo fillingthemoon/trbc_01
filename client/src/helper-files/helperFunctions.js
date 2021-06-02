@@ -107,7 +107,17 @@ const convertName = (fromType, toType, name) => {
     case ('camel'): {
       switch (toType) {
         case ('proper'): {
-          return null
+          return name
+            .split(/([A-Z][a-z]+)/)
+            .filter(word => word !== '')
+            .map(nameWord => {
+              let firstLetter = nameWord[0]
+              if (!lowerCaseWords.includes(nameWord)) {
+                firstLetter = nameWord[0].toUpperCase()
+              }
+              return firstLetter.concat(nameWord.substring(1, nameWord.length))
+            })
+            .join(' ')
         }
         case ('dashed'): {
           return null

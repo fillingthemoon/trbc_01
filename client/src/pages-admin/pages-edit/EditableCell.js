@@ -2,7 +2,6 @@ import React from 'react'
 
 import {
   Input,
-  InputNumber,
   Form,
   Image,
 } from 'antd'
@@ -20,8 +19,6 @@ const EditableCell = ({ editing, dataIndex, title, inputType, record, index, chi
   const inputNode = () => {
     if (title === 'imgDisplay') {
       return <Image src={record.imgSrc} style={cellImgStyle} />
-    } else if (inputType === 'number') {
-      return <InputNumber />
     } else if (title === 'text') {
       return <TextArea style={{ minWidth: '500px' }} />
     } else {

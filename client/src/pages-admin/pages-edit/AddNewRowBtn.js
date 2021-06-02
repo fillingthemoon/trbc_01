@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
+import { flattenNestedObject, convertName } from '../../helper-files/helperFunctions'
+
 import {
   Input,
-  InputNumber,
   Form,
   Button,
   Modal,
@@ -10,19 +11,25 @@ import {
 
 const { TextArea } = Input
 
-const FormField = ({ title }) => {
+const layout = {
+  labelCol: {
+    span: 6,
+  },
+  wrapperCol: {
+    span: 17,
+  },
+}
+
+const FormField = ({ title, flattenedSection }) => {
   const inputNode = () => {
-    if (title === 'text') {
-      return <TextArea style={{ minWidth: '500px' }} />
-    } else {
-      return <TextArea style={{ minWidth: '150px' }} />
-    }
+    return <TextArea />
   }
 
   // Return either the Form inputs or cell content
   return (
     (<Form.Item
       name={title}
+      label={convertName('camel', 'proper', title)}
       rules={[{ required: true, message: `Please input "${title}"!` }]}
     >
       {inputNode()}
@@ -45,6 +52,11 @@ const AddNewRowBtn = ({ section }) => {
     setIsModalVisible(false)
   }
 
+  const hiddenFormFields = ['id', 'itemId', 'page', 'sectionName']
+  const flattenedSection = flattenNestedObject(section[0])
+  const formFields = Object.keys(flattenedSection)
+    .filter(formField => !hiddenFormFields.includes(formField))
+
   return (
     <>
       <Button type="primary" onClick={showModal}>
@@ -56,13 +68,15 @@ const AddNewRowBtn = ({ section }) => {
         onCancel={handleCancel}
         footer={[]}
       >
-        <Form>
-          {[1, 2, 3].map((x, i) =>
-            <FormField key={i} />
+        <Form {...layout}>
+          {formFields.map((formField, i) =>
+            <FormField key={i} title={formField} flattenedSection={flattenedSection} />
           )}
-          <Button key="submit" type="primary" onClick={handleOk}>
-            Submit
-          </Button>
+          <Form.Item wrapperCol={{ offset: 6 }} >
+            <Button key="submit" type="primary" onClick={handleOk}>
+              Submit
+            </Button>
+          </Form.Item>
         </Form>
       </Modal>
     </>
