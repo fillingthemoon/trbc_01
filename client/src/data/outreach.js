@@ -1,5 +1,5 @@
 import { general } from '../helper-files/images.js'
-const { tempImg } = general
+const { mountain } = general
 
 const outreachData = [
   {
@@ -13,7 +13,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: tempImg,
+    imgSrc: mountain,
   },
   {
     itemId: 2,
@@ -26,7 +26,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: tempImg,
+    imgSrc: mountain,
   },
   {
     itemId: 3,
@@ -39,7 +39,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: tempImg,
+    imgSrc: mountain,
   },
   {
     itemId: 4,
@@ -52,7 +52,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: tempImg,
+    imgSrc: mountain,
   },
   {
     itemId: 5,
@@ -65,7 +65,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: tempImg,
+    imgSrc: mountain,
   },
   {
     itemId: 6,
@@ -78,7 +78,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: tempImg,
+    imgSrc: mountain,
   },
   {
     itemId: 7,
@@ -91,7 +91,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: tempImg,
+    imgSrc: mountain,
   },
 ]
 

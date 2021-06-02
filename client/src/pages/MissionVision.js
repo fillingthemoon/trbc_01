@@ -5,7 +5,7 @@ import TitleText from '../components-reusable/TitleText'
 import { Row, Col, Image } from 'antd'
 
 import { general } from '../helper-files/images'
-const { exterior, tempImg } = general
+const { exterior, fallbackImg } = general
 
 const MissionVision = () => {
   return (
@@ -16,7 +16,7 @@ const MissionVision = () => {
           <Col className='mv-img'>
             <Image
               src=""
-              fallback={tempImg}
+              fallback={fallbackImg}
             />
           </Col>
           <Col className='mv-text'>
