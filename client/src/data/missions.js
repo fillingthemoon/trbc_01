@@ -1,5 +1,5 @@
 import { general } from '../helper-files/images.js'
-const { exterior } = general
+const { tempImg } = general
 
 const missionsData = [
   {
@@ -8,7 +8,7 @@ const missionsData = [
     sectionName: 'missions',
     title: 'Myanmar',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    imgSrc: exterior
+    imgSrc: tempImg
   },
   {
     itemId: 2,
@@ -16,7 +16,7 @@ const missionsData = [
     sectionName: 'missions',
     title: 'Bintan Island',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    imgSrc: exterior
+    imgSrc: tempImg
   },
   {
     itemId: 3,
@@ -24,7 +24,7 @@ const missionsData = [
     sectionName: 'missions',
     title: 'Nepal',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    imgSrc: exterior
+    imgSrc: tempImg
   },
   {
     itemId: 4,
@@ -32,7 +32,7 @@ const missionsData = [
     sectionName: 'missions',
     title: 'China',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    imgSrc: exterior
+    imgSrc: tempImg
   },
   {
     itemId: 5,
@@ -40,7 +40,7 @@ const missionsData = [
     sectionName: 'missions',
     title: 'India',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
-    imgSrc: exterior,
+    imgSrc: tempImg,
   },
 ]
 

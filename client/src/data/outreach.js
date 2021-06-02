@@ -1,5 +1,5 @@
 import { general } from '../helper-files/images.js'
-const { churchWide } = general
+const { tempImg } = general
 
 const outreachData = [
   {
@@ -13,7 +13,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: churchWide,
+    imgSrc: tempImg,
   },
   {
     itemId: 2,
@@ -26,7 +26,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: churchWide,
+    imgSrc: tempImg,
   },
   {
     itemId: 3,
@@ -39,7 +39,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: churchWide,
+    imgSrc: tempImg,
   },
   {
     itemId: 4,
@@ -52,7 +52,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: churchWide,
+    imgSrc: tempImg,
   },
   {
     itemId: 5,
@@ -65,7 +65,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: churchWide,
+    imgSrc: tempImg,
   },
   {
     itemId: 6,
@@ -78,7 +78,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: churchWide,
+    imgSrc: tempImg,
   },
   {
     itemId: 7,
@@ -91,7 +91,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: churchWide,
+    imgSrc: tempImg,
   },
 ]
 
