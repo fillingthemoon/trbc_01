@@ -26,6 +26,8 @@ import {
 } from '../helper-files/colors'
 
 const rowStyle = {
+  display: 'flex',
+  alignItems: 'center',
   margin: '20px',
 }
 
@@ -42,12 +44,12 @@ const imgStyle = {
 }
 
 const infoColStyle = {
-  maxWidth: '400px',
+  maxWidth: '550px',
   margin: '20px',
 }
 
 const detailsStyle = {
-  margin: '30px 0',
+  margin: '30px 0 0 0',
   padding: '10px 20px',
   backgroundColor: colorLGray,
 }
