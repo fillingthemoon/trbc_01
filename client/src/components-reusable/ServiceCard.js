@@ -19,7 +19,7 @@ import {
 const { Title, Text } = Typography
 
 const imgStyle = {
-  maxHeight: '200px',
+  maxHeight: '250px',
   objectFit: 'cover',
 }
 
