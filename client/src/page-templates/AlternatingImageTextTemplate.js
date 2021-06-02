@@ -9,6 +9,7 @@ import {
   Image,
   Row,
   Col,
+  Divider,
 } from 'antd'
 
 import {
@@ -133,6 +134,10 @@ const getRowLayout = (i, rowLayout) => {
       /* All right */
       return { margin: '60px 0', justifyContent: 'flex-end' }
     }
+    case (5): {
+      /* All right */
+      return { margin: '0', justifyContent: 'center' }
+    }
   }
 }
 
@@ -195,34 +200,46 @@ const getImgTextLayout = (i, item, imgTextLayout, bColor) => {
 }
 
 /**
- * rowType: 1-15
- * imgTextType: 1-4
- * colorScheme: 0-2
+ * primaryColor: 0-2
+ * colorLayout: 0-3
+ * rowLengthType: 0-2
+ * rowLayout: 0-4
+ * imgTextLayout: 0-3
+ * divider: true/false
  */
 const AlternatingImageText = (props) => {
   const {
-    data, rowLengthType, rowLayout, imgTextLayout, primaryColor, colorLayout
+    data,
+    rowLengthType,
+    rowLayout,
+    imgTextLayout,
+    primaryColor,
+    colorLayout,
+    divider,
   } = props
 
   return (
-    <>
+    <div style={divider && { padding: '80px' }}>
       {data.map((item, i) =>
-        <div key={i} style={{ display: 'flex', ...getRowLayout(i, rowLayout) }}>
-          <Row
-            className='aitt-row'
-            style={{
-              ...getColorLayout(i, primaryColor, colorLayout),
-              ...getRowLengths(i, rowLengthType)
-            }}>
-            {(() => {
-              const bColor = getColorLayout(i, primaryColor, colorLayout).backgroundColor
-              // console.log(bColor)
-              return getImgTextLayout(i, item, imgTextLayout, bColor)
-            })()}
-          </Row>
+        <div key={i}>
+          <div style={{ display: 'flex', ...getRowLayout(i, rowLayout) }}>
+            <Row
+              className='aitt-row'
+              style={{
+                ...getColorLayout(i, primaryColor, colorLayout),
+                ...getRowLengths(i, rowLengthType)
+              }}>
+              {(() => {
+                const bColor = getColorLayout(i, primaryColor, colorLayout).backgroundColor
+                // console.log(bColor)
+                return getImgTextLayout(i, item, imgTextLayout, bColor)
+              })()}
+            </Row>
+          </div>
+          {divider && i !== data.length - 1 && <Divider style={{ width: '100px' }} />}
         </div>
       )}
-    </>
+    </div>
   )
 }
 

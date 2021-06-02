@@ -26,11 +26,12 @@ const OurHistory = () => {
       <Banner imageTitlePairs={[{ title: 'Our History', image: exterior }]} />
       <AlternatingImageTextTemplate
         data={ourHistoryData}
-        primaryColor={0}
+        primaryColor={3}
         colorLayout={0}
         rowLengthType={0}
-        rowLayout={1}
+        rowLayout={5}
         imgTextLayout={0}
+        divider={true}
       />
     </>
   )
