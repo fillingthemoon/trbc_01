@@ -56,7 +56,6 @@
   "@comments": [
     "'type': 'module'"
   ],
-  "type": "module",
   "devDependencies": {
     "redux-devtools-extension": "^2.13.9"
   }
