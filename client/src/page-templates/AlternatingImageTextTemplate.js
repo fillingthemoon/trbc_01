@@ -13,12 +13,10 @@ import {
   Image,
   Row,
   Col,
-  Divider,
 } from 'antd'
 
 import {
   colorLGray,
-  colorLGray2,
   colorMGray,
   colorLOrange,
   colorWhite,
@@ -67,7 +65,7 @@ const linkStyle = (bColor) => {
 
 const getColClassName = (imgExists, lr) => {
   if (imgExists) {
-    return lr === 'imgText' ? 'aitt-content-col-img-text' : 'aitt-content-col-text-img'
+    return 'aitt-content-col'
   } else {
     return 'aitt-content-col-text-only'
   }
@@ -224,7 +222,7 @@ const AlternatingImageText = (props) => {
   } = props
 
   return (
-    <div style={divider && { padding: '30px' }}>
+    <div style={divider && { padding: '30px 3%' }}>
       {data.map((item, i) =>
         <div key={i}>
           <div style={{ display: 'flex', ...getRowLayout(i, rowLayout) }}>
