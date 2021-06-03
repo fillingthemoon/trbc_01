@@ -10,7 +10,7 @@ import {
   colorPrimaryOrange as iconColor,
 } from '../helper-files/colors'
 
-import { CalendarOutlined } from '@ant-design/icons'
+import { FaCalendar } from 'react-icons/fa'
 
 import { getEvents } from '../reducers/eventsReducer'
 import { convertName } from '../helper-files/helperFunctions'
@@ -60,7 +60,7 @@ const Event = ({ event }) => {
       <Divider />
       <Meta
         style={{ textAlign: 'left' }}
-        avatar={<CalendarOutlined style={iconStyle} />}
+        avatar={<FaCalendar style={iconStyle} />}
         description={date}
       />
     </Card >

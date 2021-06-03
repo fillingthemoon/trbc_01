@@ -1,15 +1,13 @@
 @import '~antd/dist/antd.less';
+
 @font-family: 'Heebo';
-
 @primary-color: #f37021;
-@primary-color-2: #4f4f4f;
-@primary-color-3: #333333;
-
-@background-white: #ffffff;
-@background-light-gray: #f4f4f4;
-@background-light-gray-2: #e0e0e0;
-
 @orange-light: #fff3e0;
+@white: #ffffff;
+@light-gray: #f4f4f4;
+@light-gray-2: #e0e0e0;
+@medium-gray: #4f4f4f;
+@dark-gray: #333333;
 
 /* General */
 .ant-layout-content {
@@ -87,13 +85,13 @@
 .events-container > div {
   width: 80%;
   padding: 50px 50px;
-  background-color: @background-white;
+  background-color: @white;
 }
 
 .announcements-container > div {
   margin: 60px 0;
   padding: 50px;
-  background-color: @background-light-gray;
+  background-color: @light-gray;
 }
 
 @media (max-width:800px) {
@@ -200,7 +198,7 @@
   flex-direction: column;
   text-align: left;
   margin: 20px;
-  max-width: 450px;
+  max-width: 460px;
   border: none;
 }
 
@@ -279,78 +277,43 @@
 
 /* Footer */
 .footer-row-container {
-  display: flex;
-  padding: 30px;
-  background-color: #4f4f4f;
-  color: #ffffff;
-  justify-content: center;
+  background-color: @medium-gray;
+  color: @white;
+  padding: 40px 5%;
 }
 
 .footer-info-container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 30px;
+  margin: 10px 20px;
 }
 
 .footer-row-container .ant-typography {
   color: #ffffff;
-  font-size: 2.5rem;
 }
 
-.footer-icon {
-  display: flex;
-  align-items: center;
+.footer-info-icon {
   color: @primary-color;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
-.footer-trbc {
-  font-size: 1.5em;
+.footer-info-trbc {
+  font-size: 1.3em;
   margin-bottom: 15px;
 }
 
 .footer-contact-details {
-  font-size: 1rem;
-  font-weight: 200;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 .footer-img-container {
   display: flex;
-  justify-items: center;
-  width: 700px;
-  padding: 0 30px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 10px 20px;
 }
 
 .footer-copyright {
   padding: 15px;
-  color: #f2f2f2;
-  background-color: #333333;
-}
-
-@media (max-width:700px) {
-  .footer-row-container {
-    justify-content: left;
-  }
-
-  .footer-info-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 20px 0;
-  }
-
-  .footer-row-container .ant-typography {
-    font-size: 1.5rem;
-  }
-
-  .footer-trbc {
-    font-size: 1.2em;
-  }
-
-  .footer-contact-details {
-    font-size: 0.8rem;
-  }
-
-  .footer-img-container {
-    padding: 0;
-  }
+  color: @white;
+  background-color: @dark-gray;
 }

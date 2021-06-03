@@ -11,7 +11,7 @@ const MissionVision = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{ title: 'Mission and Vision', image: exterior }]} />
-      <Row justify='center' id='mission-vision'>
+      <Row justify='center' align='middle' id='mission-vision'>
         <Col className='mv-img-col'>
           <Image
             className='mv-img'

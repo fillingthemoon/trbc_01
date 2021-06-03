@@ -7,8 +7,8 @@ import {
   colorPrimaryOrange as iconColor,
 } from '../helper-files/colors'
 
-import { UserOutlined, CalendarOutlined } from '@ant-design/icons'
 import { Card, Typography, Row, Divider } from 'antd'
+import { FaUser, FaCalendar } from 'react-icons/fa'
 const { Title, Paragraph } = Typography
 const { Meta } = Card
 
@@ -40,13 +40,13 @@ const UpcomingSermon = ({ upcomingSermon }) => {
       <Divider />
       <Meta
         style={{ textAlign: 'left' }}
-        avatar={<UserOutlined style={iconStyle} />}
+        avatar={<FaUser style={iconStyle} />}
         description={person}
       />
       <br />
       <Meta
         style={{ textAlign: 'left' }}
-        avatar={<CalendarOutlined style={iconStyle} />}
+        avatar={<FaCalendar style={iconStyle} />}
         description={`${date}, ${time}`}
       />
     </Card>
