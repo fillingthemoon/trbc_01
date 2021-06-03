@@ -3,9 +3,10 @@ import React from 'react'
 import TitleText from '../components-reusable/TitleText'
 import PersonProfile from '../components-reusable/PersonProfile'
 import ItemDisplay from '../components-reusable/ItemDisplay'
+import SectionDivider from '../components-reusable/SectionDivider'
 
 import {
-  Divider, Row, Col
+  Row, Col
 } from 'antd'
 
 import { convertName } from '../helper-files/helperFunctions'
@@ -25,7 +26,7 @@ const Section = ({ section, displayType }) => {
       <TitleText
         titleUnderlineStyle={titleUnderlineStyle}
         title={convertName('dashed', 'proper', sectionName)}
-        titleStyle={{ textAlign: 'center' }}
+        titleStyle={{ textAlign: 'center', margin: '20px 0' }}
         underlineAlign='center'
       />
       <Row style={{ display: 'flex', justifyContent: 'center' }}>
@@ -70,11 +71,12 @@ const SectionsTemplate = ({ data, displayType }) => {
   }
 
   return (
-    <div style={{ padding: '50px 0' }}>
+    <div style={{ padding: '50px 5%' }}>
       {reorganisedData.map((section, i) =>
         <div key={i}>
           <Section section={section} displayType={displayType} />
-          {i !== reorganisedData.length - 1 && <Divider style={{ margin: '50px 0' }} />}
+          {i !== reorganisedData.length - 1
+            && <SectionDivider />}
         </div>
       )}
     </div>

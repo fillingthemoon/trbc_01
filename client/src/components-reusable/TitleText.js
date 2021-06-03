@@ -7,6 +7,7 @@ const { Title, Paragraph } = Typography
 
 const TitleText = (props) => {
   const {
+    className,
     title,
     text,
     titleStyle,
@@ -19,11 +20,11 @@ const TitleText = (props) => {
   } = props
 
   return (
-    <div>
+    <div className={className}>
       <div style={titleUnderlineStyle}>
         <Title style={titleStyle} className={titleClassName}>
           {title}
-          <hr style={underlineStyle} className={underlineAlign === 'center' ? 'title-underline-center' : 'title-underline-left'} />
+          <hr style={{ ...underlineStyle, marginTop: '10px', marginBottom: '0' }} className={underlineAlign === 'center' ? 'title-underline-center' : 'title-underline-left'} />
         </Title>
       </div>
 

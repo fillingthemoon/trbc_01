@@ -28,7 +28,7 @@ import {
 const rowStyle = {
   display: 'flex',
   alignItems: 'center',
-  margin: '20px',
+  padding: '20px',
 }
 
 const infoImgStyle = {

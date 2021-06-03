@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
 
 import TitleText from '../components-reusable/TitleText'
+import SectionDivider from '../components-reusable/SectionDivider'
 
 import { general } from '../helper-files/images'
 const { fallbackImg } = general
@@ -223,7 +224,7 @@ const AlternatingImageText = (props) => {
   } = props
 
   return (
-    <div style={divider && { padding: '30px 0' }}>
+    <div style={divider && { padding: '30px' }}>
       {data.map((item, i) =>
         <div key={i}>
           <div style={{ display: 'flex', ...getRowLayout(i, rowLayout) }}>
@@ -241,7 +242,7 @@ const AlternatingImageText = (props) => {
             </Row>
           </div>
           {divider && i !== data.length - 1
-            && <Divider style={{ width: '100px' }} />}
+            && <SectionDivider />}
         </div>
       )}
     </div>

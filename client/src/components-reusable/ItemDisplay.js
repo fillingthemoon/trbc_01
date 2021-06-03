@@ -30,7 +30,7 @@ const ItemDisplay = ({ item }) => {
     <Link to={`/${page}/${id}`} style={itemDisplayStyle}>
       <Image alt="img" src={imgSrc} style={imgStyle} preview={false} fallback={fallbackImg}/>
       <Title style={{ fontSize: '1.5rem', margin: '10px 0' }}>{title}</Title>
-      <Paragraph style={{ fontSize: '0.9rem', fontWeight: '300', margin: '20px 0' }}>{text}</Paragraph>
+      <Paragraph style={{ fontSize: '0.9rem', fontWeight: '300', margin: '20px 0 0 0' }}>{text}</Paragraph>
     </Link>
   )
 }

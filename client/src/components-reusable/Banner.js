@@ -7,7 +7,7 @@ const { Title } = Typography
 
 const Banner = ({ imageTitlePairs }) => {
   return (
-    <Carousel autoplay autoplaySpeed={3000} adaptiveHeight={true} height='500px' accessibility>
+    <Carousel autoplay autoplaySpeed={3000} adaptiveHeight={true} accessibility>
       {imageTitlePairs.map(({ image, title }, i) =>
         <div className="banner-container" key={i}>
           <img className="banner-exterior" src={image} alt="" />
