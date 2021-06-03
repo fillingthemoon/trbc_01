@@ -10,8 +10,8 @@ const mainStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  padding: '0 40px',
-  width: '320px',
+  margin: '20px',
+  width: '250px',
   textAlign: 'center',
 }
 
