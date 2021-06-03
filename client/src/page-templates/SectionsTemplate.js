@@ -26,7 +26,7 @@ const Section = ({ section, displayType }) => {
       <TitleText
         titleUnderlineStyle={titleUnderlineStyle}
         title={convertName('dashed', 'proper', sectionName)}
-        titleStyle={{ textAlign: 'center', margin: '20px 0' }}
+        titleStyle={{ textAlign: 'center', margin: '30px 0 0 0' }}
         underlineAlign='center'
       />
       <Row style={{ display: 'flex', justifyContent: 'center' }}>

@@ -222,7 +222,7 @@ const AlternatingImageText = (props) => {
   } = props
 
   return (
-    <div style={divider && { padding: '30px 3%' }}>
+    <div style={divider && { padding: '3%' }}>
       {data.map((item, i) =>
         <div key={i}>
           <div style={{ display: 'flex', ...getRowLayout(i, rowLayout) }}>

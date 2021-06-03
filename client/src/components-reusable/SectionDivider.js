@@ -9,7 +9,7 @@ import {
 const SectionDivider = () => {
 
   return (
-    <Divider style={{ color: colorLGray2, margin: '50px 0', borderWidth: '3px' }} />
+    <Divider style={{ color: colorLGray2, margin: '30px 0', borderWidth: '3px' }} />
   )
 }
 
