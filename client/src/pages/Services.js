@@ -18,7 +18,6 @@ import { getServices } from '../reducers/servicesReducer'
 import {
   Row,
   Col,
-  Divider,
   Typography,
 } from 'antd'
 
