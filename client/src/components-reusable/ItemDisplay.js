@@ -5,6 +5,7 @@ import { general } from '../helper-files/images'
 const { fallbackImg } = general
 
 import {
+  Card,
   Typography,
   Image,
 } from 'antd'
@@ -15,12 +16,12 @@ const imgStyle = {
   maxWidth: '300px',
   maxHeight: '300px',
   objectFit: 'scale-down',
+  padding: '5%',
 }
 
 const itemDisplayStyle = {
-  maxWidth: '250px',
   textAlign: 'center',
-  margin: '20px 40px',
+  margin: '5%',
 }
 
 const ItemDisplay = ({ item }) => {
@@ -28,9 +29,14 @@ const ItemDisplay = ({ item }) => {
 
   return (
     <Link to={`/${page}/${id}`} style={itemDisplayStyle}>
-      <Image alt="img" src={imgSrc} style={imgStyle} preview={false} fallback={fallbackImg}/>
-      <Title style={{ fontSize: '1.5rem', margin: '10px 0' }}>{title}</Title>
-      <Paragraph style={{ fontSize: '0.9rem', fontWeight: '300', margin: '20px 0 0 0' }}>{text}</Paragraph>
+      <Card
+        cover={<img alt="img" src={imgSrc} style={imgStyle} fallback={fallbackImg} prewview={false} />}
+        className='item-display'
+        hoverable
+      >
+        <Title style={{ fontSize: '1.6rem', margin: '10px 0' }}>{title}</Title>
+        <Paragraph style={{ fontSize: '0.9rem', fontWeight: '300', margin: '20px 0 0 0' }}>{text}</Paragraph>
+      </Card>
     </Link>
   )
 }

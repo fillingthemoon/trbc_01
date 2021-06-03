@@ -71,7 +71,7 @@ const SectionsTemplate = ({ data, displayType }) => {
   }
 
   return (
-    <div style={{ padding: '50px 5%' }}>
+    <div style={{ padding: '50px 5vw' }}>
       {reorganisedData.map((section, i) =>
         <div key={i}>
           <Section section={section} displayType={displayType} />
