@@ -11,7 +11,7 @@ import {
 } from '../helper-files/colors'
 
 import { general } from '../helper-files/images'
-const { exterior } = general
+const { sanctuary01 } = general
 
 import { getServices } from '../reducers/servicesReducer'
 
@@ -64,7 +64,7 @@ const Services = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Services', image: exterior }]} />
+      <Banner imageTitlePairs={[{ title: 'Services', image: sanctuary01 }]} />
       <div className='services'>
         <Col align='center' className='attitude-of-worship'>
           <TitleText

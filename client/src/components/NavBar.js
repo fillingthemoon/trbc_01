@@ -65,9 +65,9 @@ const NavBar = () => {
         <Menu.Item key='discipleship'>
           <Link replace to='/discipleship'>Discipleship</Link>
         </Menu.Item>
-        <Menu.Item key='cec'>
+        {/* <Menu.Item key='cec'>
           <Link replace to='/cec'>{'Children\'s Enrichment Camp'}</Link>
-        </Menu.Item>
+        </Menu.Item> */}
       </SubMenu>
       <SubMenu key='resources' title='Resources'>
         <Menu.Item key='resource-library'>
@@ -80,9 +80,6 @@ const NavBar = () => {
       <Menu.Item key='admin'>
         <Link replace to='/admin'>Admin</Link>
       </Menu.Item>
-      {/* <Menu.Item key='admin-page'>
-            <Link replace to='/admin-page'>Admin</Link>
-          </Menu.Item> */}
 
       <Menu.Item key='language' disabled>
         <Button

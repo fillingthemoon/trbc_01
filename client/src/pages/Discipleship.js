@@ -27,9 +27,9 @@ const Discipleship = () => {
       <AlternatingImageTextTemplate
         data={discipleshipData}
         primaryColor={0}
-        colorLayout={3}
+        colorLayout={0}
         rowLengthType={0}
-        rowLayout={1}
+        rowLayout={2}
         imgTextLayout={0}
       />
     </>

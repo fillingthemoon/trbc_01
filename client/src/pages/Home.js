@@ -6,14 +6,14 @@ import UpcomingSermons from '../pages-sections/UpcomingSermons'
 import Events from '../pages-sections/Events'
 
 import { general } from '../helper-files/images'
-const { exterior, serviceTiming, paSystem } = general
+const { exterior, sanctuary01, paSystem } = general
 
 const Home = () => {
   return (
     <div>
       <Banner imageTitlePairs={[
         { title: 'Welcome', image: exterior },
-        { title: 'Welcome', image: serviceTiming },
+        { title: 'Welcome', image: sanctuary01 },
         { title: 'Welcome', image: paSystem },
       ]} />
       <div className='home'>

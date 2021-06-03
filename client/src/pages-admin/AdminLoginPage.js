@@ -8,14 +8,14 @@ import LoginForm from './LoginForm'
 import Notification from '../components-reusable/Notification'
 
 import { general } from '../helper-files/images'
-const { exterior } = general
+const { admin } = general
 
 const AdminLoginPage = () => {
   const notification = useSelector(state => state.notification)
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Admin', image: exterior }]} />
+      <Banner imageTitlePairs={[{ title: 'Admin', image: admin }]} />
       <Notification notification={notification} />
       <div className='admin-login'>
         <LoginForm />

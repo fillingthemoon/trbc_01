@@ -4,7 +4,7 @@ import InlineMenu from '../components/InlineMenu'
 import Banner from '../components-reusable/Banner'
 
 import { general } from '../helper-files/images'
-const { churchWide } = general
+const { resourceLibrary } = general
 
 const ResourceLibrary = () => {
   const { Search } = Input
@@ -28,7 +28,7 @@ const ResourceLibrary = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Resource Library', image: churchWide }]} />
+      <Banner imageTitlePairs={[{ title: 'Resource Library', image: resourceLibrary }]} />
 
       <div className="main-container">
         <br />

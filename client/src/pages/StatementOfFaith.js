@@ -5,7 +5,7 @@ import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
 import { general } from '../helper-files/images'
-const { exterior } = general
+const { statementOfFaith } = general
 
 import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
@@ -30,7 +30,7 @@ const StatementOfFaith = () => {
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: exterior }]} />
+      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: statementOfFaith }]} />
       <div className='all-statement-container'>
         {statementOfFaithData.map((statement, i) =>
           <div key={i} style={{ padding: '30px' }}>
