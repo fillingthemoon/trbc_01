@@ -20,15 +20,15 @@ const ContactFooter = () => {
         <Col className='footer-info-container'>
           <TitleText title='Contact Us' />
           <Row className='footer-info-trbc'>Singapore Thomson Road Baptist Church</Row>
-          <Row gutter={10} style={{ margin: '5px 0' }}>
+          <Row gutter={10} className='footer-info-icon-details'>
             <Col className='footer-info-icon'><FaMapMarkerAlt /></Col>
             <Col className='footer-contact-details'>45 Thomson Road Singapore 307584</Col>
           </Row>
-          <Row gutter={10} style={{ margin: '5px 0' }}>
+          <Row gutter={10} className='footer-info-icon-details'>
             <Col className='footer-info-icon'><IoMail /></Col>
             <Col className='footer-contact-details'> admin@trbc.org.sg</Col>
           </Row>
-          <Row gutter={10} style={{ margin: '5px 0' }}>
+          <Row gutter={10} className='footer-info-icon-details'>
             <Col className='footer-info-icon'><AiFillPhone /></Col>
             <Col className='footer-contact-details'> +65 6256 2277</Col>
           </Row>
