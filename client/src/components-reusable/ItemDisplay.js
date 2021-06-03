@@ -14,8 +14,7 @@ const { Title, Paragraph } = Typography
 
 const imgStyle = {
   maxWidth: '300px',
-  maxHeight: '300px',
-  objectFit: 'scale-down',
+  objectFit: 'cover',
   padding: '5%',
 }
 
