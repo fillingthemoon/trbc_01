@@ -1,5 +1,6 @@
-import { general } from '../helper-files/images.js'
+import { general, outreach } from '../helper-files/images.js'
 const { mountain } = general
+const { pingPongFellowship, gardeningFellowship } = outreach
 
 const outreachData = [
   {
@@ -39,7 +40,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: mountain,
+    imgSrc: gardeningFellowship,
   },
   {
     itemId: 4,
@@ -52,7 +53,7 @@ const outreachData = [
       location: 'Level 2, Joy Room ',
       person: 'Rev. Dr. Jerry Goh',
     },
-    imgSrc: mountain,
+    imgSrc: pingPongFellowship,
   },
   {
     itemId: 5,
