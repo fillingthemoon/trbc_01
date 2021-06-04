@@ -21,6 +21,8 @@ import notificationReducer from './reducers/notificationReducer'
 
 import itemsReducer from './reducers/itemsReducer'
 
+import languageReducer from './reducers/languageReducer'
+
 const reducer = combineReducers({
   announcements: announcementsReducer,
   cec: cecReducer,
@@ -38,6 +40,8 @@ const reducer = combineReducers({
   loggedInUser: loggedInUserReducer,
 
   notification: notificationReducer,
+
+  language: languageReducer,
 
   items: itemsReducer,
 })

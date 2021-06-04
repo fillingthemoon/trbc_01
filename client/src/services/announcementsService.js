@@ -1,8 +1,12 @@
 import axios from 'axios'
 const baseUrl = '/api/announcements/'
 
+import store from '../store'
+
 const getAnnouncements = async () => {
-  const response = await axios.get(baseUrl)
+  const language = store.getState().language
+
+  const response = await axios.get(`${baseUrl}/${language}`)
   return response.data
 }
 

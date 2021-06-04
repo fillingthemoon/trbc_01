@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { setLanguage } from '../reducers/languageReducer'
+
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 
-import { Menu, Dropdown, Button, Layout } from 'antd'
-import { MenuOutlined } from '@ant-design/icons'
-
-const { Header } = Layout
-const { SubMenu } = Menu
-
 import { general } from '../helper-files/images'
 const { trbcLogo } = general
+
+import { Menu, Dropdown, Button, Layout } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
+const { Header } = Layout
+const { SubMenu } = Menu
 
 import {
   colorPrimaryOrange,
@@ -19,7 +21,9 @@ import {
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1050px)' })
   const [current, setCurrent] = useState('home')
-  const [language, setLanguage] = useState('中文')
+
+  const language = useSelector(state => state.language)
+  const dispatch = useDispatch()
 
   const href = window.location.href.split('/')
   const pageUrl = href[4]
@@ -83,7 +87,10 @@ const NavBar = () => {
 
       <Menu.Item key='language' disabled>
         <Button
-          onClick={() => language === 'ENGLISH' ? setLanguage('中文') : setLanguage('ENGLISH')}
+          onClick={() => language === 'en'
+            ? dispatch(setLanguage('ch'))
+            : dispatch(setLanguage('en'))
+          }
           style={{
             backgroundColor: colorLOrange,
             color: colorPrimaryOrange,
@@ -95,7 +102,7 @@ const NavBar = () => {
             letterSpacing: '2px',
           }}
         >
-          {language}
+          {language === 'ch' ? '中文' : 'ENGLISH'}
         </Button>
       </Menu.Item>
     </Menu>
