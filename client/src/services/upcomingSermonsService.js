@@ -1,5 +1,11 @@
 import axios from 'axios'
 const baseUrl = '/api/upcoming-sermons/'
+import store from '../store'
+
+const getLanguage = () => {
+  const language = store.getState().language
+  return language
+}
 
 let token = null
 
@@ -8,7 +14,7 @@ const setToken = newToken => {
 }
 
 const getUpcomingSermons = async () => {
-  const response = await axios.get(baseUrl)
+  const response = await axios.get(`${baseUrl}/${getLanguage()}`)
   return response.data
 }
 
