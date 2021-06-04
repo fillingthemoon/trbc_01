@@ -102,7 +102,7 @@ const NavBar = () => {
             letterSpacing: '2px',
           }}
         >
-          {language === 'ch' ? '中文' : 'ENGLISH'}
+          {language === 'en' ? '中文' : 'ENGLISH'}
         </Button>
       </Menu.Item>
     </Menu>
