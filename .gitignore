@@ -6,8 +6,7 @@ archive
 /client/node_modules
 /client/.env
 /client/build
-/client/src/data-en
-/client/src/data-ch
+/client/src/data
 
 # server
 /server/
@@ -18,6 +17,5 @@ archive
 /server/serviceAccountKey.json
 /server/mongodb-import-cmds.txt
 /server/mongodb-import-data.sh
-/server/data-en-json
-/server/data-ch-json
+/server/data-json
 /server/requests
