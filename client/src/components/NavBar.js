@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setLanguage } from '../reducers/languageReducer'
 
+import { getWord } from '../helper-files/navBarPagesEnChWords'
+
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 
@@ -36,53 +38,53 @@ const NavBar = () => {
       style={{ border: 'None' }}
       subMenuOpenDelay={0}
     >
-      <Menu.Item key='home' title='Home'>
-        <Link replace to='/home'>Home</Link>
+      <Menu.Item key='home' title={getWord('Home', language)}>
+        <Link replace to='/home'>{getWord('Home', language)}</Link>
       </Menu.Item>
-      <SubMenu key='about-us' title='About Us'>
+      <SubMenu key='about-us' title={getWord('About Us', language)}>
         <Menu.Item key='mission-vision'>
-          <Link replace to='/mission-vision'>Mission & Vision</Link>
+          <Link replace to='/mission-vision'>{getWord('Mission & Vision', language)}</Link>
         </Menu.Item>
         <Menu.Item key='our-history'>
-          <Link replace to='/our-history'>Our History</Link>
+          <Link replace to='/our-history'>{getWord('Our History', language)}</Link>
         </Menu.Item>
         <Menu.Item key='our-team'>
-          <Link replace to='/our-team'>Our Team</Link>
+          <Link replace to='/our-team'>{getWord('Our Team', language)}</Link>
         </Menu.Item>
         <Menu.Item key='statement-of-faith'>
-          <Link replace to='/statement-of-faith'>Statement of Faith</Link>
+          <Link replace to='/statement-of-faith'>{getWord('Statement of Faith', language)}</Link>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key='services'>
-        <Link replace to='/services'>Services</Link>
+        <Link replace to='/services'>{getWord('Services', language)}</Link>
       </Menu.Item>
       <Menu.Item key='im-new'>
-        <Link replace to='/im-new'>{'I\'m New'}</Link>
+        <Link replace to='/im-new'>{getWord('I\'m New', language)}</Link>
       </Menu.Item>
-      <SubMenu key='ministries' title='Ministries'>
+      <SubMenu key='ministries' title={getWord('Ministries', language)}>
         <Menu.Item key='outreach'>
-          <Link replace to='/outreach'>Outreach</Link>
+          <Link replace to='/outreach'>{getWord('Outreach', language)}</Link>
         </Menu.Item>
         <Menu.Item key='missions'>
-          <Link replace to='/missions'>Missions</Link>
+          <Link replace to='/missions'>{getWord('Missions', language)}</Link>
         </Menu.Item>
         <Menu.Item key='discipleship'>
-          <Link replace to='/discipleship'>Discipleship</Link>
+          <Link replace to='/discipleship'>{getWord('Discipleship', language)}</Link>
         </Menu.Item>
         {/* <Menu.Item key='cec'>
           <Link replace to='/cec'>{'Children\'s Enrichment Camp'}</Link>
         </Menu.Item> */}
       </SubMenu>
-      <SubMenu key='resources' title='Resources'>
+      <SubMenu key='resources' title={getWord('Resources', language)}>
         <Menu.Item key='resource-library'>
-          <Link replace to='/resource-library'>Resource Library</Link>
+          <Link replace to='/resource-library'>{getWord('Resource Library', language)}</Link>
         </Menu.Item>
         <Menu.Item key='facility-booking'>
-          <Link replace to='/facility-booking'>Facility Booking</Link>
+          <Link replace to='/facility-booking'>{getWord('Facility Booking', language)}</Link>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key='admin'>
-        <Link replace to='/admin'>Admin</Link>
+        <Link replace to='/admin'>{getWord('Admin', language)}</Link>
       </Menu.Item>
 
       <Menu.Item key='language' disabled>
