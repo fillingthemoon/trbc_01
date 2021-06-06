@@ -4,7 +4,7 @@ import { List, Card, Row, Col, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
 import Banner from '../components-reusable/Banner'
 
-import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import { general } from '../helper-files/images'
 const { resourceLibrary } = general
@@ -34,7 +34,7 @@ const ResourceLibrary = () => {
   return (
     <>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Resource Library' : wordEnToCh['Resource Library'],
+        title: getWord('Resource Library', language),
         image: resourceLibrary
       }]} />
 

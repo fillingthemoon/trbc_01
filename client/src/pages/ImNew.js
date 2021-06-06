@@ -5,7 +5,7 @@ import AlternatingImageTextTemplate from '../page-templates/AlternatingImageText
 import Banner from '../components-reusable/Banner'
 import ConnectForm from '../components-reusable/ConnectForm'
 
-import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import { general } from '../helper-files/images'
 const { churchWide } = general
@@ -27,7 +27,7 @@ const ImNew = () => {
   return (
     <>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'I\'m New' : wordEnToCh['I\'m New'],
+        title: getWord('I\'m New', language),
         image: churchWide
       }]} />
       <AlternatingImageTextTemplate data={imNewData}

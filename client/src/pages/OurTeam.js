@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Banner from '../components-reusable/Banner'
 
-import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import SectionsTemplate from '../page-templates/SectionsTemplate'
 
@@ -27,7 +27,7 @@ const OurTeam = () => {
   return (
     <>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Our Team' : wordEnToCh['Our Team'],
+        title: getWord('Our Team', language),
         image: exterior
       }]} />
       <SectionsTemplate data={ourTeamData} displayType='personProfile' />

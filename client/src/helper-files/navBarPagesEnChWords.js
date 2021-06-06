@@ -1,4 +1,4 @@
-const wordEnToCh = {
+const dictionaryEnToCh = {
   'Home': '主页',
 
   'About Us': '认识教会',
@@ -22,6 +22,10 @@ const wordEnToCh = {
   'Admin': '行政人员',
 }
 
+const getWord = (word, language) => {
+  return language === 'en' ? word : dictionaryEnToCh[word]
+}
+
 export {
-  wordEnToCh
+  getWord
 }

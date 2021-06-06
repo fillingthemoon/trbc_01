@@ -6,7 +6,7 @@ import ServicesNavBar from '../components/ServicesNavBar'
 import TitleText from '../components-reusable/TitleText'
 import ServiceSectionsTemplate from '../page-templates/ServiceSectionsTemplate'
 
-import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import {
   colorPrimaryOrange
@@ -68,7 +68,7 @@ const Services = () => {
   return (
     <>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Services' : wordEnToCh['Services'],
+        title: getWord('Services', language),
         image: sanctuary01
       }]} />
       <div className='services'>

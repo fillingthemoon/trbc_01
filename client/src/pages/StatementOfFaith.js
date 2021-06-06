@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
-import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import { general } from '../helper-files/images'
 const { statementOfFaith } = general
@@ -34,7 +34,7 @@ const StatementOfFaith = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Statement of Faith' : wordEnToCh['Statement of Faith'],
+        title: getWord('Statement of Faith', language),
         image: statementOfFaith
       }]} />
       <div className='all-statement-container'>

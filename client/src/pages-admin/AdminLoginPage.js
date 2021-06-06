@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import LoginForm from './LoginForm'
 
-import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import Notification from '../components-reusable/Notification'
 
@@ -19,7 +19,7 @@ const AdminLoginPage = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Admin' : wordEnToCh['Admin'],
+        title: getWord('Admin', language),
         image: admin
       }]} />
       <Notification notification={notification} />
