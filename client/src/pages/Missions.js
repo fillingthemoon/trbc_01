@@ -13,10 +13,11 @@ const Outreach = () => {
   const dispatch = useDispatch()
 
   const missionsData = useSelector(state => state.missions)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getMissions())
-  }, [])
+  }, [language])
 
   if (missionsData.length <= 0) { return null }
 

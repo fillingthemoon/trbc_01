@@ -14,10 +14,11 @@ const ImNew = () => {
   const dispatch = useDispatch()
 
   const imNewData = useSelector(state => state.imNew)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getImNew())
-  }, [])
+  }, [language])
 
   if (imNewData.length <= 0) { return null }
 

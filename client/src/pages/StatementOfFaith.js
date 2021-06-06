@@ -21,10 +21,11 @@ const StatementOfFaith = () => {
   const dispatch = useDispatch()
 
   const statementOfFaithData = useSelector(state => state.statementOfFaith)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getStatementOfFaith())
-  }, [])
+  }, [language])
 
   if (statementOfFaithData.length <= 0) { return null }
 

@@ -18,10 +18,11 @@ const CEC = () => {
   const dispatch = useDispatch()
 
   const cecData = useSelector(state => state.cec)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getCec())
-  }, [])
+  }, [language])
 
   if (cecData.length <= 0) { return null }
 

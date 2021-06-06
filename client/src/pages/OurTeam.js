@@ -14,10 +14,11 @@ const OurTeam = () => {
   const dispatch = useDispatch()
 
   const ourTeamData = useSelector(state => state.ourTeam)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getOurTeam())
-  }, [])
+  }, [language])
 
   if (ourTeamData.length <= 0) { return null }
 

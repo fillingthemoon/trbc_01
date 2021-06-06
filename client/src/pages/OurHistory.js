@@ -14,10 +14,11 @@ const OurHistory = () => {
   const dispatch = useDispatch()
 
   const ourHistoryData = useSelector(state => state.ourHistory)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getOurHistory())
-  }, [])
+  }, [language])
 
   if (ourHistoryData.length <= 0) { return null }
 

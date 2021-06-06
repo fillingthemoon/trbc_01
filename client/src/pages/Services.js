@@ -50,10 +50,11 @@ const Services = () => {
   const dispatch = useDispatch()
 
   const servicesData = useSelector(state => state.services)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getServices())
-  }, [])
+  }, [language])
 
   useEffect(() => {
     const newData = servicesData.filter(serviceData => serviceData.serviceAcronym === currService)

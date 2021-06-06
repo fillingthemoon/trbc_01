@@ -62,10 +62,11 @@ const UpcomingSermons = () => {
   const dispatch = useDispatch()
 
   const upcomingSermonsData = useSelector(state => state.upcomingSermons)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getUpcomingSermons())
-  }, [])
+  }, [language])
 
   if (upcomingSermonsData.length <= 0) { return null }
 

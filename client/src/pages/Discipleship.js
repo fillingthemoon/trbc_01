@@ -14,10 +14,11 @@ const Discipleship = () => {
   const dispatch = useDispatch()
 
   const discipleshipData = useSelector(state => state.discipleship)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getDiscipleship())
-  }, [])
+  }, [language])
 
   if (discipleshipData.length <= 0) { return null }
 

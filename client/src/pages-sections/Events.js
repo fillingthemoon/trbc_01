@@ -76,10 +76,11 @@ const Events = () => {
   const dispatch = useDispatch()
 
   const eventsData = useSelector(state => state.events)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getEvents())
-  }, [])
+  }, [language])
 
   if (eventsData.length <= 0) { return null }
 
