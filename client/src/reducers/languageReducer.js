@@ -18,6 +18,7 @@ export const setLanguage = (language) => {
     const currentLanguage = {
       language
     }
+    // Keep using current language
     window.localStorage.setItem('currentLanguage', JSON.stringify(currentLanguage))
 
     try {

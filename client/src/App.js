@@ -91,6 +91,7 @@ const App = () => {
   const matchIndivPageItem = useRouteMatch(['/outreach/:id', '/missions/:id', '/services/:id'])
 
   useEffect(() => {
+    // Keep using current language
     const currentLanguageJSON = window.localStorage.getItem('currentLanguage')
     if (currentLanguageJSON) {
       const currentLanguage = JSON.parse(currentLanguageJSON)
