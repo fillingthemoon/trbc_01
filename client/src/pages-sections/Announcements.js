@@ -56,10 +56,11 @@ const Announcements = () => {
   const dispatch = useDispatch()
 
   const announcementsData = useSelector(state => state.announcements)
+  const language = useSelector(state => state.language)
 
   useEffect(() => {
     dispatch(getAnnouncements())
-  }, [])
+  }, [language])
 
   if (announcementsData.length <= 0) { return null }
 
