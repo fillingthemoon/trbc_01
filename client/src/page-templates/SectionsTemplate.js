@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import TitleText from '../components-reusable/TitleText'
 import PersonProfile from '../components-reusable/PersonProfile'
@@ -49,10 +50,11 @@ const Section = ({ section, displayType }) => {
 }
 
 const SectionsTemplate = ({ data, displayType }) => {
+  const language = useSelector(state => state.language)
 
   let sections = {}
   for (let i = 0; i < data.length; i++) {
-    const pageSection = data[i]['pageSection']
+    const pageSection = data[i][language === 'en' ? 'pageSectionEn' : 'pageSectionCh']
     if (!(Object.keys(sections).includes(pageSection))) {
       sections[pageSection] = [data[i]]
     } else {
