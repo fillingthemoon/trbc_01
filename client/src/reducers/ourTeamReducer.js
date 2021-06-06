@@ -25,7 +25,7 @@ export const getOurTeam = (type = null) => {
       let ourTeam = await ourTeamService.getOurTeam()
 
       ourTeam = type
-        ? ourTeam.filter(ourTeamItem => ourTeamItem.sectionName === type)
+        ? ourTeam.filter(ourTeamItem => ourTeamItem.pageSection === type)
         : ourTeam
 
       dispatch({

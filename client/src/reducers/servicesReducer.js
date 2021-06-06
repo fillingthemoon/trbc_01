@@ -25,7 +25,7 @@ export const getServices = (type) => {
       let services = await servicesService.getServices()
 
       services = type
-        ? services.filter(servicesItem => servicesItem.sectionName === type)
+        ? services.filter(servicesItem => servicesItem.pageSection === type)
         : services
 
       dispatch({

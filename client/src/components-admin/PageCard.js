@@ -50,7 +50,7 @@ const iconDictionary = {
 const PageCard = (props) => {
   const {
     pageName,
-    sectionNames,
+    pageSections,
   } = props
 
   return (
@@ -63,12 +63,12 @@ const PageCard = (props) => {
         </div>
       }
     >
-      {sectionNames.map((sectionName, i) =>
+      {pageSections.map((pageSection, i) =>
         <div key={i}>
-          <Link to={`/admin/${convertName('proper', 'dashed', sectionName)}`}>
-            {convertName('dashed', 'proper', sectionName)}
+          <Link to={`/admin/${convertName('proper', 'dashed', pageSection)}`}>
+            {convertName('dashed', 'proper', pageSection)}
           </Link>
-          {i !== sectionNames.length - 1 && <Divider />}
+          {i !== pageSections.length - 1 && <Divider />}
         </div>
       )}
     </Card >

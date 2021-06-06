@@ -75,7 +75,7 @@ export const getSections = () => {
 
     try {
       const sections = await itemsService.getSections()
-      const convertedSections = sections.map(sectionName => convertName('proper', 'dashed', sectionName))
+      const convertedSections = sections.map(pageSection => convertName('proper', 'dashed', pageSection))
 
       dispatch({
         type: 'GET_SECTIONS',

@@ -25,7 +25,7 @@ export const getOutreach = (type) => {
       let outreach = await outreachService.getOutreach()
 
       outreach = type
-        ? outreach.filter(outreachItem => outreachItem.sectionName === type)
+        ? outreach.filter(outreachItem => outreachItem.pageSection === type)
         : outreach
 
       dispatch({

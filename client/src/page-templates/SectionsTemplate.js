@@ -17,7 +17,7 @@ const titleUnderlineStyle = {
 }
 
 const Section = ({ section, displayType }) => {
-  const { sectionName, ...rest } = section
+  const { pageSection, ...rest } = section
 
   const items = section[Object.keys(rest)]
 
@@ -25,7 +25,7 @@ const Section = ({ section, displayType }) => {
     <div>
       <TitleText
         titleUnderlineStyle={titleUnderlineStyle}
-        title={convertName('dashed', 'proper', sectionName)}
+        title={convertName('dashed', 'proper', pageSection)}
         titleStyle={{ textAlign: 'center', margin: '30px 0 0 0' }}
         underlineAlign='center'
       />
@@ -52,20 +52,20 @@ const SectionsTemplate = ({ data, displayType }) => {
 
   let sections = {}
   for (let i = 0; i < data.length; i++) {
-    const sectionName = data[i]['sectionName']
-    if (!(Object.keys(sections).includes(sectionName))) {
-      sections[sectionName] = [data[i]]
+    const pageSection = data[i]['pageSection']
+    if (!(Object.keys(sections).includes(pageSection))) {
+      sections[pageSection] = [data[i]]
     } else {
-      sections[sectionName].push(data[i])
+      sections[pageSection].push(data[i])
     }
   }
 
   let reorganisedData = []
   for (let i = 0; i < Object.keys(sections).length; i++) {
-    const sectionName = Object.keys(sections)[i]
+    const pageSection = Object.keys(sections)[i]
     const newObj = {
-      sectionName: sectionName,
-      items: sections[sectionName],
+      pageSection: pageSection,
+      items: sections[pageSection],
     }
     reorganisedData.push(newObj)
   }

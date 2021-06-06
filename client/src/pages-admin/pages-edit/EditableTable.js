@@ -92,7 +92,7 @@ const EditableTable = ({ section }) => {
     fields.push('imgDisplay')
   }
 
-  const uneditableColumns = ['itemId', 'page', 'sectionName', 'id', 'imgDisplay']
+  const uneditableColumns = ['itemId', 'page', 'pageSection', 'id', 'imgDisplay']
   const columns = fields.map(field => {
     return {
       // title and dataIndex are the same thing in this case

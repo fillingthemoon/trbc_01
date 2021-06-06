@@ -70,7 +70,7 @@ const Announcements = () => {
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
           title={language === 'en'
-            ? convertName('dashed', 'proper', announcementsData[0].sectionName)
+            ? convertName('dashed', 'proper', announcementsData[0].pageSection)
             : '公告'
           }
           underlineAlign='center' />

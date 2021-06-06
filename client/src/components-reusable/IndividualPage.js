@@ -76,7 +76,7 @@ const IndividualPage = ({ item }) => {
   return (
     <>
       <Banner imageTitlePairs={[{
-        title: item.service ? item.service : convertName('dashed', 'proper', item.sectionName),
+        title: item.service ? item.service : convertName('dashed', 'proper', item.pageSection),
         image: exterior
       }]} />
       <Row justify='center' style={rowStyle}>

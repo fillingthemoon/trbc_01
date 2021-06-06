@@ -18,39 +18,39 @@ import { getServices } from '../reducers/servicesReducer'
 
 import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
-const sectionGetFuncs = (sectionName) => {
+const sectionGetFuncs = (pageSection) => {
   return {
     'cec': {
       func: getCec,
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'discipleship': {
       func: getDiscipleship(),
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'announcements': {
       func: getAnnouncements(),
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'events': {
       func: getEvents(),
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'upcoming-sermons': {
       func: getUpcomingSermons(),
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'im-new': {
       func: getImNew(),
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'missions': {
       func: getMissions(),
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'our-history': {
       func: getOurHistory(),
-      camelCase: convertName('dashed', 'camel', sectionName),
+      camelCase: convertName('dashed', 'camel', pageSection),
     },
     'administrative': {
       func: getOurTeam('administrative'),

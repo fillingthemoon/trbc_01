@@ -52,7 +52,7 @@ const AddNewRowBtn = ({ section }) => {
     setIsModalVisible(false)
   }
 
-  const hiddenFormFields = ['id', 'itemId', 'page', 'sectionName']
+  const hiddenFormFields = ['id', 'itemId', 'page', 'pageSection']
   const flattenedSection = flattenNestedObject(section[0])
   const formFields = Object.keys(flattenedSection)
     .filter(formField => !hiddenFormFields.includes(formField))

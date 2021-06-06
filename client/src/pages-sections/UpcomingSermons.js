@@ -76,7 +76,7 @@ const UpcomingSermons = () => {
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
           title={language === 'en'
-            ? convertName('dashed', 'proper', upcomingSermonsData[0].sectionName)
+            ? convertName('dashed', 'proper', upcomingSermonsData[0].pageSection)
             : '即将举行的布道'
           }
           underlineAlign='left'
