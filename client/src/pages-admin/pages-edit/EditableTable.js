@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import EditableCell from './EditableCell'
 import AddNewRowBtn from './AddNewRowBtn'
 
 import { setNotification } from '../../reducers/notificationReducer'
-import { setEditSection } from '../../reducers/editSectionReducer'
 
 import { flattenNestedObject } from '../../helper-files/helperFunctions'
 
@@ -28,8 +27,6 @@ const EditableTable = ({ editSection }) => {
   const [data, setData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
 
-  const language = useSelector(state => state.language)
-
   // Sets the table's data
   useEffect(() => {
     const sectionData = editSection.map((sectionItem, i) => {
@@ -45,9 +42,7 @@ const EditableTable = ({ editSection }) => {
         }
     })
     setData(sectionData)
-  }, [language])
-
-  console.log(editSection)
+  }, [])
 
   if (editSection.length <= 0) {
     return null

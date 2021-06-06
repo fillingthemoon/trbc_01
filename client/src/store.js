@@ -23,8 +23,6 @@ import itemsReducer from './reducers/itemsReducer'
 
 import languageReducer from './reducers/languageReducer'
 
-import editSectionReducer from './reducers/editSectionReducer'
-
 const reducer = combineReducers({
   announcements: announcementsReducer,
   cec: cecReducer,
@@ -46,8 +44,6 @@ const reducer = combineReducers({
   language: languageReducer,
 
   items: itemsReducer,
-
-  editSection: editSectionReducer,
 })
 
 const store = createStore(

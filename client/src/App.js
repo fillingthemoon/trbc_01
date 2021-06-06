@@ -69,12 +69,15 @@ import Admin from './pages-admin/Admin'
 import EditSectionPage from './pages-admin/pages-edit/EditSectionPage'
 import IndividualPage from './components-reusable/IndividualPage'
 
+// Style sheet
 import './style.less'
 
+// Reducers
 import { getSections } from './reducers/itemsReducer'
 import { getItems } from './reducers/itemsReducer'
-import { stayAtCurrentLanguage } from './reducers/languageReducer'
+import { setLanguage, stayAtCurrentLanguage } from './reducers/languageReducer'
 
+// Ant Design
 import { Layout } from 'antd'
 const { Content } = Layout
 
@@ -82,19 +85,20 @@ const App = () => {
   const dispatch = useDispatch()
   const sections = useSelector(state => state.items.sections)
   const items = useSelector(state => state.items.items)
+  const language = useSelector(state => state.language)
 
   const matchEditSection = useRouteMatch('/admin/:sectionId')
   const matchIndivPageItem = useRouteMatch(['/outreach/:id', '/missions/:id', '/services/:id'])
 
   useEffect(() => {
-    dispatch(getSections())
-    dispatch(getItems())
-
     const currentLanguageJSON = window.localStorage.getItem('currentLanguage')
     if (currentLanguageJSON) {
       const currentLanguage = JSON.parse(currentLanguageJSON)
       dispatch(stayAtCurrentLanguage(currentLanguage))
     }
+
+    dispatch(getSections())
+    dispatch(getItems())
   }, [])
 
   if (sections.length <= 0 || items.length <= 0) {
@@ -102,7 +106,9 @@ const App = () => {
   }
 
   const editSectionMatch = matchEditSection
-    ? items.filter(item => item.pageSection === matchEditSection.params.sectionId)
+    ? items.filter(item =>
+      item.pageSection === matchEditSection.params.sectionId
+    )
     : null
 
   const indivPageItemMatch = matchIndivPageItem
