@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
+import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+
 import { Row, Col, Image } from 'antd'
 
 import { general } from '../helper-files/images'
@@ -15,7 +17,7 @@ const MissionVision = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Mission and Vision' : '使命与异象',
+        title: language === 'en' ? 'Mission & Vision' : wordEnToCh['Mission & Vision'],
         image: exterior
       }]} />
       <Row justify='center' align='middle' id='mission-vision'>

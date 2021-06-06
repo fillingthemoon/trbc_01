@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Banner from '../components-reusable/Banner'
 
+import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+
 import AlternatingImageTextTemplate from '../page-templates/AlternatingImageTextTemplate'
 
 import { general } from '../helper-files/images'
@@ -25,7 +27,7 @@ const OurHistory = () => {
   return (
     <>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Our History' : '教会历史',
+        title: language === 'en' ? 'Our History' : wordEnToCh['Our History'],
         image: exterior
       }]} />
       <AlternatingImageTextTemplate

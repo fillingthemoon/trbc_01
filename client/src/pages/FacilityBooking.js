@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 
 import Banner from '../components-reusable/Banner'
 
+import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+
 import { general } from '../helper-files/images'
 const { exterior } = general
 
@@ -15,7 +17,7 @@ const FacilityBooking = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Facility Booking' : '设施预订',
+        title: language === 'en' ? 'Facility Booking' : wordEnToCh['Facility Booking'],
         image: exterior
       }]} />
       <div style={{ padding: '50px' }}>

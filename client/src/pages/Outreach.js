@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import SectionsTemplate from '../page-templates/SectionsTemplate'
 
+import { wordEnToCh } from '../helper-files/navBarPagesEnChWords'
+
 import { general } from '../helper-files/images'
 const { churchWide } = general
 
@@ -24,7 +26,7 @@ const Outreach = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Outreach' : '外展事工',
+        title: language === 'en' ? 'Outreach' : wordEnToCh['Outreach'],
         image: churchWide
       }]} />
       <SectionsTemplate data={outreachData} displayType='card' />
