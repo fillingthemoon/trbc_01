@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import { Layout } from 'antd'
 const { Footer } = Layout
@@ -14,12 +15,19 @@ const { trbcMap } = general
 import TitleText from '../components-reusable/TitleText'
 
 const ContactFooter = () => {
+  const language = useSelector(state => state.language)
+
   return (
     <Footer style={{ padding: 0 }}>
       <Row justify='center' align='middle' className='footer-row-container'>
         <Col className='footer-info-container'>
-          <TitleText title='Contact Us' />
-          <Row className='footer-info-trbc'>Singapore Thomson Road Baptist Church</Row>
+          <TitleText title={language === 'en' ? 'Contact Us' : '联系我们'} />
+          <Row className='footer-info-trbc'>
+            {language === 'en'
+              ? 'Singapore Thomson Road Baptist Church'
+              : '淡申律浸信教会'
+            }
+          </Row>
           <Row gutter={10} className='footer-info-icon-details'>
             <Col className='footer-info-icon'><FaMapMarkerAlt /></Col>
             <Col className='footer-contact-details'>45 Thomson Road Singapore 307584</Col>

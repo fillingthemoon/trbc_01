@@ -73,6 +73,7 @@ import './style.less'
 
 import { getSections } from './reducers/itemsReducer'
 import { getItems } from './reducers/itemsReducer'
+import { stayAtCurrentLanguage } from './reducers/languageReducer'
 
 import { Layout } from 'antd'
 const { Content } = Layout
@@ -88,6 +89,12 @@ const App = () => {
   useEffect(() => {
     dispatch(getSections())
     dispatch(getItems())
+
+    const currentLanguageJSON = window.localStorage.getItem('currentLanguage')
+    if (currentLanguageJSON) {
+      const currentLanguage = JSON.parse(currentLanguageJSON)
+      dispatch(stayAtCurrentLanguage(currentLanguage))
+    }
   }, [])
 
   if (sections.length <= 0 || items.length <= 0) {

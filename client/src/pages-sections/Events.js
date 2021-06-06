@@ -89,7 +89,10 @@ const Events = () => {
       <div >
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={convertName('dashed', 'proper', eventsData[0].sectionName)}
+          title={language === 'en'
+            ? convertName('dashed', 'proper', eventsData[0].sectionName)
+            : '事件'
+          }
           underlineAlign='left'
           titleStyle={{ margin: '0 20px' }}
         />

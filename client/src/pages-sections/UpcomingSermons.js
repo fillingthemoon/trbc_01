@@ -75,7 +75,10 @@ const UpcomingSermons = () => {
       <div>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={convertName('dashed', 'proper', upcomingSermonsData[0].sectionName)}
+          title={language === 'en'
+            ? convertName('dashed', 'proper', upcomingSermonsData[0].sectionName)
+            : '即将举行的布道'
+          }
           underlineAlign='left'
           titleStyle={{ margin: '0 20px' }}
         />

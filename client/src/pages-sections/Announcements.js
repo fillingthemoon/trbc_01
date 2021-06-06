@@ -69,7 +69,10 @@ const Announcements = () => {
       <div>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={convertName('dashed', 'proper', announcementsData[0].sectionName)}
+          title={language === 'en'
+            ? convertName('dashed', 'proper', announcementsData[0].sectionName)
+            : '公告'
+          }
           underlineAlign='center' />
         <Row justify='center'>
           {announcementsData.map((announcement, i) => (
