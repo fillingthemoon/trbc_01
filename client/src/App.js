@@ -102,7 +102,7 @@ const App = () => {
   }
 
   const editSectionMatch = matchEditSection
-    ? sections.find(section => section === matchEditSection.params.sectionId)
+    ? items.filter(item => item.pageSection === matchEditSection.params.sectionId)
     : null
 
   const indivPageItemMatch = matchIndivPageItem
@@ -171,7 +171,7 @@ const App = () => {
             <Admin />
           </Route >
           <Route path='/admin/:sectionId' exact>
-            <EditSectionPage editSectionName={editSectionMatch} />
+            <EditSectionPage editSection={editSectionMatch} />
           </Route >
         </Switch >
       </Content>

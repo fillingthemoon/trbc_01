@@ -9,19 +9,15 @@ import { getUpcomingSermons } from '../reducers/upcomingSermonsReducer'
 import { getImNew } from '../reducers/imNewReducer'
 import { getMissions } from '../reducers/missionsReducer'
 import { getOurHistory } from '../reducers/ourHistoryReducer'
-
 import { getOurTeam } from '../reducers/ourTeamReducer'
-
 import { getOutreach } from '../reducers/outreachReducer'
-
 import { getServices } from '../reducers/servicesReducer'
-
 import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 const sectionGetFuncs = (pageSection) => {
   return {
     'cec': {
-      func: getCec,
+      func: getCec(),
       camelCase: convertName('dashed', 'camel', pageSection),
     },
     'discipleship': {

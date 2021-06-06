@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import { convertName } from '../helper-files/helperFunctions'
+
+import { setEditSection } from '../reducers/editSectionReducer'
 
 import {
   Card,
@@ -53,6 +56,12 @@ const PageCard = (props) => {
     pageSections,
   } = props
 
+  const dispatch = useDispatch()
+
+  const handleClick = (pageSection) => {
+    dispatch(setEditSection(pageSection))
+  }
+
   return (
     <Card
       style={cardStyle}
@@ -65,7 +74,10 @@ const PageCard = (props) => {
     >
       {pageSections.map((pageSection, i) =>
         <div key={i}>
-          <Link to={`/admin/${convertName('proper', 'dashed', pageSection)}`}>
+          <Link
+            to={`/admin/${convertName('proper', 'dashed', pageSection)}`}
+            onClick={() => handleClick(pageSection)}
+          >
             {convertName('dashed', 'proper', pageSection)}
           </Link>
           {i !== pageSections.length - 1 && <Divider />}

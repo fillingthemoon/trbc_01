@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 import AdminLoginPage from '../AdminLoginPage'
 import Notification from '../../components-reusable/Notification'
 import AdminDashboardNavBar from '../AdminDashboardNavBar'
 import EditableTable from './EditableTable'
 import TitleText from '../../components-reusable/TitleText'
-
-import { sectionGetFuncs } from '../../helper-files/sectionGetFuncs'
 
 import { convertName } from '../../helper-files/helperFunctions'
 
@@ -19,28 +17,16 @@ const titleUnderlineStyle = {
   justifyContent: 'center',
 }
 
-const EditSectionPage = (props) => {
-  const {
-    editSectionName
-  } = props
-
-  const valueObject = sectionGetFuncs(editSectionName)[editSectionName]
-
-  const dispatch = useDispatch()
+const EditSectionPage = ({ editSection }) => {
   const loggedInUser = useSelector(state => state.loggedInUser)
   const notification = useSelector(state => state.notification)
-  const section = useSelector(state => state[valueObject.camelCase])
-
-  useEffect(() => {
-    dispatch(valueObject.func)
-  }, [])
-
-  if (section.length <= 0) {
-    return null
-  }
 
   if (!loggedInUser) {
     return <AdminLoginPage />
+  }
+
+  if (editSection === null || editSection.length <= 0) {
+    return null
   }
 
   return (
@@ -52,10 +38,10 @@ const EditSectionPage = (props) => {
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
           titleStyle={{ textAlign: 'center', fontSize: '2rem' }}
-          title={convertName('dashed', 'proper', editSectionName)}
+          title={convertName('dashed', 'proper', editSection[0].pageSection)}
           underlineAlign='center'
         />
-        <EditableTable section={section} />
+        <EditableTable editSection={editSection}/>
       </Content>
     </Layout>
   )

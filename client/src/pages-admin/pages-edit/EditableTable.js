@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import EditableCell from './EditableCell'
 import AddNewRowBtn from './AddNewRowBtn'
 
 import { setNotification } from '../../reducers/notificationReducer'
+import { setEditSection } from '../../reducers/editSectionReducer'
 
 import { flattenNestedObject } from '../../helper-files/helperFunctions'
 
@@ -22,17 +23,16 @@ const cellImgStyle = {
   objectFit: 'scale-down',
 }
 
-const EditableTable = ({ section }) => {
+const EditableTable = ({ editSection }) => {
   const [form] = Form.useForm()
   const [data, setData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
 
-  const dispatch = useDispatch()
+  const language = useSelector(state => state.language)
 
   // Sets the table's data
   useEffect(() => {
-    const sectionData = section.map((sectionItem, i) => {
-
+    const sectionData = editSection.map((sectionItem, i) => {
       return Object.keys(sectionItem).includes('imgSrc')
         ? {
           ...flattenNestedObject(sectionItem),
@@ -44,9 +44,14 @@ const EditableTable = ({ section }) => {
           key: i,
         }
     })
-
     setData(sectionData)
-  }, [])
+  }, [language])
+
+  console.log(editSection)
+
+  if (editSection.length <= 0) {
+    return null
+  }
 
   const isEditing = (record) => record.id === editingId
 
@@ -85,10 +90,10 @@ const EditableTable = ({ section }) => {
   }
 
   const hiddenFields = ['id']
-  const fields = Object.keys(flattenNestedObject(section[0]))
+  const fields = Object.keys(flattenNestedObject(editSection[0]))
     .filter(field => !hiddenFields.includes(field))
   // Add image display column if imgSrc exists
-  if (Object.keys(flattenNestedObject(section[0])).includes('imgSrc')) {
+  if (Object.keys(flattenNestedObject(editSection[0])).includes('imgSrc')) {
     fields.push('imgDisplay')
   }
 
@@ -159,7 +164,7 @@ const EditableTable = ({ section }) => {
 
   return (
     <>
-      <AddNewRowBtn section={section} />
+      <AddNewRowBtn section={editSection} />
       <Form form={form} component={false}>
         <Table
           components={{ body: { cell: EditableCell } }}
