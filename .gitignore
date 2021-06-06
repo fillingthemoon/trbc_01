@@ -5,7 +5,8 @@
 /client/node_modules
 /client/.env
 /client/build
-/client/data
+/client/data-en
+/client/data-ch
 
 # server
 /server/
@@ -16,5 +17,6 @@
 /server/serviceAccountKey.json
 /server/mongodb-import-cmds.txt
 /server/mongodb-import-data.sh
-/server/data-json
+/server/data-en-json
+/server/data-ch-json
 /server/requests
