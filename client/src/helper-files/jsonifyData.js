@@ -57,18 +57,18 @@ fs.writeFile('../server/data-en-json/upcoming-sermons.json', upcomingSermonsData
 
 // Chinese Data
 
-import announcementsDataChinese from '../data-en/announcements.js'
-import cecDataChinese from '../data-en/cec.js'
-import discipleshipDataChinese from '../data-en/discipleship.js'
-import eventsDataChinese from '../data-en/events.js'
-import imNewDataChinese from '../data-en/im-new.js'
-import missionsDataChinese from '../data-en/missions.js'
-import ourHistoryDataChinese from '../data-en/our-history.js'
-import ourTeamDataChinese from '../data-en/our-team.js'
-import outreachDataChinese from '../data-en/outreach.js'
-import servicesDataChinese from '../data-en/services.js'
-import statementOfFaithDataChinese from '../data-en/statement-of-faith.js'
-import upcomingSermonsDataChinese from '../data-en/upcoming-sermons.js'
+import announcementsDataChinese from '../data-ch/announcements.js'
+import cecDataChinese from '../data-ch/cec.js'
+import discipleshipDataChinese from '../data-ch/discipleship.js'
+import eventsDataChinese from '../data-ch/events.js'
+import imNewDataChinese from '../data-ch/im-new.js'
+import missionsDataChinese from '../data-ch/missions.js'
+import ourHistoryDataChinese from '../data-ch/our-history.js'
+import ourTeamDataChinese from '../data-ch/our-team.js'
+import outreachDataChinese from '../data-ch/outreach.js'
+import servicesDataChinese from '../data-ch/services.js'
+import statementOfFaithDataChinese from '../data-ch/statement-of-faith.js'
+import upcomingSermonsDataChinese from '../data-ch/upcoming-sermons.js'
 
 const announcementsDataChineseJSON = JSON.stringify(announcementsDataChinese, null, 2)
 const cecDataChineseJSON = JSON.stringify(cecDataChinese, null, 2)
