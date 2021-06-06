@@ -25,7 +25,7 @@ const OurTeam = () => {
   return (
     <>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Our Team' : '我们的队伍',
+        title: language === 'en' ? 'Our Team' : '教会同工',
         image: exterior
       }]} />
       <SectionsTemplate data={ourTeamData} displayType='personProfile' />

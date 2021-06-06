@@ -24,7 +24,7 @@ const Outreach = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Missions' : '任务',
+        title: language === 'en' ? 'Missions' : '宣教事工',
         image: exterior
       }]} />
       <SectionsTemplate data={missionsData} displayType='card' />

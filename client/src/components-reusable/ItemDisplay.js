@@ -7,7 +7,6 @@ const { fallbackImg } = general
 import {
   Card,
   Typography,
-  Image,
 } from 'antd'
 
 const { Title, Paragraph } = Typography

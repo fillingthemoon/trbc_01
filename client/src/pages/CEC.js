@@ -28,7 +28,10 @@ const CEC = () => {
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Children\'s Enrichment Camp (CEC)', image: exterior }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Children\'s Enrichment Camp (CEC)' : '儿童营会',
+        image: exterior
+      }]} />
       <div style={{ padding: '20px 10%' }}>
         {cecData.map((item, i) =>
           <div key={i}>

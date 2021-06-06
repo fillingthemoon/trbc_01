@@ -15,7 +15,7 @@ const MissionVision = () => {
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: language === 'en' ? 'Mission and Vision' : '使命与愿景',
+        title: language === 'en' ? 'Mission and Vision' : '使命与异象',
         image: exterior
       }]} />
       <Row justify='center' align='middle' id='mission-vision'>
@@ -39,7 +39,7 @@ const MissionVision = () => {
           />
           <TitleText
             className='mv-text-mission'
-            title='Vision 愿景'
+            title='Vision 异象'
             text={[
               'One Church Growing Inwardly and Outwardly.',
               '一个向内、向外成长的教会'

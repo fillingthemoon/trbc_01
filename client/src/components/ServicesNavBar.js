@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 
 import { Menu } from 'antd'
+import { useSelector } from 'react-redux'
 
 const menuItemStyle = {
   flex: '1',
@@ -13,6 +14,8 @@ const menuItemStyle = {
 
 const ServicesNavBar = (props) => {
   const { currService, setCurrService } = props
+
+  const language = useSelector(state => state.language)
 
   const isBigScreen = useMediaQuery({ query: '(min-width: 950px)' })
 
@@ -28,13 +31,28 @@ const ServicesNavBar = (props) => {
       }}
     >
       <Menu.Item key='tc' style={menuItemStyle}>
-        <Link replace to='/services/'>Teo Chew/Chinese Service</Link>
+        <Link replace to='/services/'>
+          {language === 'en'
+            ? 'Teo Chew/Chinese Service'
+            : '潮华华语崇拜'
+          }
+        </Link>
       </Menu.Item>
       <Menu.Item key='en' style={menuItemStyle}>
-        <Link replace to='/services/'>English Service</Link>
+        <Link replace to='/services/'>
+          {language === 'en'
+            ? 'English Service'
+            : '主日崇拜'
+          }
+        </Link>
       </Menu.Item>
       <Menu.Item key='ss' style={menuItemStyle}>
-        <Link replace to='/services/'>Sunset Service (English/Mandarin)</Link>
+        <Link replace to='/services/'>
+          {language === 'en'
+            ? 'Sunset Service (English/Mandarin)'
+            : '夕阳崇拜'
+          }
+        </Link>
       </Menu.Item>
     </Menu>
   )
