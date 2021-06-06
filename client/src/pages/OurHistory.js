@@ -24,7 +24,10 @@ const OurHistory = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Our History', image: exterior }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Our History' : '我们的历史',
+        image: exterior
+      }]} />
       <AlternatingImageTextTemplate
         data={ourHistoryData}
         primaryColor={3}

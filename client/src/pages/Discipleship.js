@@ -24,7 +24,10 @@ const Discipleship = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Discipleship', image: exterior }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Discipleship' : '门徒训练',
+        image: exterior
+      }]} />
       <AlternatingImageTextTemplate
         data={discipleshipData}
         primaryColor={0}

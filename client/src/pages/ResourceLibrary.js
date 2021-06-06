@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { List, Card, Row, Col, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
 import Banner from '../components-reusable/Banner'
@@ -26,9 +27,14 @@ const ResourceLibrary = () => {
   ]
   const onSearch = (value) => console.log(value)
 
+  const language = useSelector(state => state.language)
+
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Resource Library', image: resourceLibrary }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Resource Library' : '资源库',
+        image: resourceLibrary
+      }]} />
 
       <div className="main-container">
         <br />

@@ -65,7 +65,10 @@ const Services = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Services', image: sanctuary01 }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Services' : '崇拜聚会',
+        image: sanctuary01
+      }]} />
       <div className='services'>
         <Col align='center' className='attitude-of-worship'>
           <TitleText

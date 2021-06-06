@@ -25,7 +25,7 @@ const ContactFooter = () => {
           <Row className='footer-info-trbc'>
             {language === 'en'
               ? 'Singapore Thomson Road Baptist Church'
-              : '淡申律浸信教会'
+              : '新加坡淡申律浸信教会'
             }
           </Row>
           <Row gutter={10} className='footer-info-icon-details'>

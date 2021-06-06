@@ -31,7 +31,10 @@ const StatementOfFaith = () => {
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Statement of Faith', image: statementOfFaith }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Statement of Faith' : '信仰宣言',
+        image: statementOfFaith
+      }]} />
       <div className='all-statement-container'>
         {statementOfFaithData.map((statement, i) =>
           <div key={i} style={{ padding: '30px' }}>

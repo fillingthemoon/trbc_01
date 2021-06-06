@@ -24,7 +24,10 @@ const ImNew = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'I\'m New', image: churchWide }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'I\'m New' : '我是新来的',
+        image: churchWide
+      }]} />
       <AlternatingImageTextTemplate data={imNewData}
         primaryColor={2}
         colorLayout={3}

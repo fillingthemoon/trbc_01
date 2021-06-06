@@ -12,10 +12,14 @@ const { admin } = general
 
 const AdminLoginPage = () => {
   const notification = useSelector(state => state.notification)
+  const language = useSelector(state => state.language)
 
   return (
     <div>
-      <Banner imageTitlePairs={[{ title: 'Admin', image: admin }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Admin' : '行政人员',
+        image: admin
+      }]} />
       <Notification notification={notification} />
       <div className='admin-login'>
         <LoginForm />

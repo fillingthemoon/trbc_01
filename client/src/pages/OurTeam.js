@@ -24,7 +24,10 @@ const OurTeam = () => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{ title: 'Our Team', image: exterior }]} />
+      <Banner imageTitlePairs={[{
+        title: language === 'en' ? 'Our Team' : '我们的队伍',
+        image: exterior
+      }]} />
       <SectionsTemplate data={ourTeamData} displayType='personProfile' />
     </>
   )
