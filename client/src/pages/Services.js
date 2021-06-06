@@ -73,13 +73,20 @@ const Services = () => {
         <Col align='center' className='attitude-of-worship'>
           <TitleText
             titleUnderlineStyle={titleUnderlineStyle}
-            title='Attitude of Worship'
+            title={language === 'en' ? 'Attitude of Worship' : '敬拜的态度'}
             titleStyle={{ textAlign: 'center', fontSize: '2.5rem' }}
             underlineAlign='center'
-            text={'God is spirit, and his worshipers must worship in the Spirit and in truth. - John 4:24 (NIV)'}
+            text={language === 'en'
+              ? 'God is spirit, and his worshipers must worship in the Spirit and in truth. - John 4:24 (NIV)'
+              : '24 神 是 個 靈 （ 或 無 個 字 ） ， 所 以 拜 他 的 必 須 用 心 靈 和 誠 實 拜 他 。 」 - 約 翰 福 音 4:24'
+            }
             textStyle={{ textAlign: 'center', fontWeight: '300' }}
           />
-          <Title style={{ fontSize: '2rem', margin: '50px 0', overflowWrap: 'break-word' }}>3 Elements of Worship</Title>
+          <Title style={{ fontSize: '2rem', margin: '50px 0', overflowWrap: 'break-word' }}>
+            {language === 'en'
+              ? '3 Elements of Worship'
+              : '3 崇拜的要素'}
+          </Title>
           <Row style={{ display: 'flex' }} >
             {threeElementsData.map((element, i) =>
               <Col key={i} align='center' style={{ margin: '20px', flex: '1' }}>
