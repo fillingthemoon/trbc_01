@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
+archive
 
 # client
 /client/node_modules
