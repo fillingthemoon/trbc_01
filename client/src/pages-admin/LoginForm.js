@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import TileText from '../components-reusable/TitleText'
 
-import { useDispatch } from 'react-redux'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
+
+import { useDispatch, useSelector } from 'react-redux'
 
 import { logUserIn, stayLoggedIn } from '../reducers/loggedInUserReducer'
 
@@ -12,6 +14,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 const LoginForm = () => {
   const [form] = Form.useForm()
   const dispatch = useDispatch()
+  const language = useSelector(state => state.language)
 
   // Stay logged in
   useEffect(() => {
@@ -38,7 +41,7 @@ const LoginForm = () => {
       onFinish={handleLogin}
       className='login-form'
     >
-      <Form.Item><TileText title={'Admin Portal'} /></Form.Item>
+      <Form.Item><TileText title={getWord('Admin Portal', language)} /></Form.Item>
       <Form.Item
         name='username'
         rules={[{ required: true, message: 'Please input your Username!' }]}

@@ -19,7 +19,9 @@ const dictionaryEnToCh = {
   'Resources': '资源',
   'Resource Library': '资源库',
   'Facility Booking': '设施预订',
+
   'Admin': '行政人员',
+  'Admin Portal': '管理门户',
 }
 
 const getWord = (word, language) => {
