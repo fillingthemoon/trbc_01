@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRouteMatch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setLanguage } from '../reducers/languageReducer'
 
@@ -26,6 +27,9 @@ const NavBar = () => {
 
   const language = useSelector(state => state.language)
   const dispatch = useDispatch()
+
+  // Check if anything is currently being edited
+  const matchEditSection = useRouteMatch('/admin/:sectionId')
 
   const href = window.location.href.split('/')
   const pageUrl = href[4]
@@ -93,6 +97,9 @@ const NavBar = () => {
             ? dispatch(setLanguage('ch'))
             : dispatch(setLanguage('en'))
           }
+          // Language toggling disabled when editing
+          // sections as it might cause bugs
+          disabled={matchEditSection ? true : false}
           style={{
             backgroundColor: colorLOrange,
             color: colorPrimaryOrange,

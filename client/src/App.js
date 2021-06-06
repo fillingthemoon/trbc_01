@@ -99,7 +99,7 @@ const App = () => {
 
     dispatch(getSections())
     dispatch(getItems())
-  }, [])
+  }, [language])
 
   if (sections.length <= 0 || items.length <= 0) {
     return null
