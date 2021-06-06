@@ -13,7 +13,7 @@ const ourHistoryData = [
     itemId: 1,
     page: 'our-history',
     sectionName: 'our-history',
-    title: 'Pellentesque habitant morbi tristique.',
+    title: 'Pellentesque habitant morbi tristique. (ch)',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
       
@@ -24,7 +24,7 @@ const ourHistoryData = [
     itemId: 2,
     page: 'our-history',
     sectionName: 'our-history',
-    title: 'Pellentesque habitant morbi tristique.',
+    title: 'Pellentesque habitant morbi tristique. (ch)',
     text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
     imgSrc: aboutUs2,
   },
@@ -32,7 +32,7 @@ const ourHistoryData = [
     itemId: 3,
     page: 'our-history',
     sectionName: 'our-history',
-    title: 'Pellentesque habitant morbi tristique.',
+    title: 'Pellentesque habitant morbi tristique. (ch)',
     text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
     imgSrc: aboutUs3,
   },
@@ -40,7 +40,7 @@ const ourHistoryData = [
     itemId: 4,
     page: 'our-history',
     sectionName: 'our-history',
-    title: 'Pellentesque habitant morbi tristique.',
+    title: 'Pellentesque habitant morbi tristique. (ch)',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
       
@@ -51,7 +51,7 @@ const ourHistoryData = [
     itemId: 5,
     page: 'our-history',
     sectionName: 'our-history',
-    title: 'Pellentesque habitant morbi tristique.',
+    title: 'Pellentesque habitant morbi tristique. (ch)',
     text:
       `Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.
       
@@ -62,7 +62,7 @@ const ourHistoryData = [
     itemId: 6,
     page: 'our-history',
     sectionName: 'our-history',
-    title: 'Pellentesque habitant morbi tristique.',
+    title: 'Pellentesque habitant morbi tristique. (ch)',
     text: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Duis pretium facilisis tortor ullamcorper lacinia.Nunc elementum ante lacus, quis bibendum massa dignissim consequat.Etiam id lectus consectetur, commodo tortor id, laoreet ipsum.Fusce vestibulum dictum lacinia.Praesent ut urna vel erat ultrices viverra nec sit amet lacus.',
     imgSrc: aboutUs6,
   },

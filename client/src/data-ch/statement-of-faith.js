@@ -3,7 +3,7 @@ const statementOfFaithData = [
     itemId: 1,
     page:'statement-of-faith',
     sectionName: 'statement-of-faith',
-    title: 'We Believe',
+    title: 'We Believe (ch)',
     text:
       `We believe that the whole Bible, comprising both Old and New Testaments, was written under the inspiration of God. The Bible is the basis of our faith, and a guide for our lives.
       We believe that God is the everlasting Triune God, who is united in the Father, the Son and the Holy Spirit, who are equal in power and position.
@@ -22,7 +22,7 @@ const statementOfFaithData = [
     itemId: 2,
     page:'statement-of-faith',
     sectionName: 'statement-of-faith',
-    title: '信仰宣言',
+    title: '信仰宣言 (ch)',
     text:
       `我们相信，新旧约全部的圣经乃神所默示, 是我们信仰与生活的 无上准则。
       我们相信圣父、圣子、圣灵、乃三位一体，同位同权，独一的永生神。

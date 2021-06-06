@@ -6,7 +6,7 @@ const missionsData = [
     itemId: 1,
     page:'missions',
     sectionName: 'missions',
-    title: 'Myanmar',
+    title: 'Myanmar (ch)',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: mountain
   },
@@ -14,7 +14,7 @@ const missionsData = [
     itemId: 2,
     page:'missions',
     sectionName: 'missions',
-    title: 'Bintan Island',
+    title: 'Bintan Island (ch)',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: mountain
   },
@@ -22,7 +22,7 @@ const missionsData = [
     itemId: 3,
     page:'missions',
     sectionName: 'missions',
-    title: 'Nepal',
+    title: 'Nepal (ch)',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: mountain
   },
@@ -30,7 +30,7 @@ const missionsData = [
     itemId: 4,
     page:'missions',
     sectionName: 'missions',
-    title: 'China',
+    title: 'China (ch)',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: mountain
   },
@@ -38,7 +38,7 @@ const missionsData = [
     itemId: 5,
     page:'missions',
     sectionName: 'missions',
-    title: 'India',
+    title: 'India (ch)',
     text: 'The cell group of Chaohua worship began in October 2005, when Preacher Lin Xingcheng and Director Zheng Mei\'e each led a group.',
     imgSrc: mountain,
   },

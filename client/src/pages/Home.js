@@ -18,8 +18,8 @@ const Home = () => {
       ]} />
       <div className='home'>
         <UpcomingSermons />
-        <Events />
         <Announcements />
+        <Events />
       </div>
     </div>
   )

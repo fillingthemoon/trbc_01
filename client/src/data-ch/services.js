@@ -8,7 +8,7 @@ const servicesData = [
     sectionName: 'teo-chew-chinese-service',
     service: 'Teo Chew/Chinese Service',
     serviceAcronym: 'tc',
-    title: 'Main',
+    title: 'Main (ch)',
     text:
       `崇拜理念: 神创造人的目的乃要叫人晓得以心灵和诚实的敬拜祂。
       【约翰福音4:24 崇拜分为三个领域
@@ -34,7 +34,7 @@ const servicesData = [
     sectionName: 'teo-chew-chinese-service',
     service: 'Teo Chew/Chinese Service',
     serviceAcronym: 'tc',
-    title: '儿童崇拜与初级助道会',
+    title: '儿童崇拜与初级助道会 (ch)',
     text:
       `“你 要 尽 心 ， 尽 性 ， 尽 力 爱 耶 和 华 你 的 神 。”- 申命记6:5
       
@@ -53,7 +53,7 @@ const servicesData = [
     sectionName: 'teo-chew-chinese-service',
     service: 'Teo Chew/Chinese Service',
     serviceAcronym: 'tc',
-    title: '少助道会',
+    title: '少助道会 (ch)',
     text:
       `少年助道会是一个1318的团契； 换句话说，这个团契主要服事13至18岁的少年们。这个年龄层横跨了中学到高中的学生期。在这段成长的过程中，少年助道会盼望透过活动、讲座、营会，让这一群少年人能够在主的话语上扎根，在神的爱中与弟兄姐妹们建立关系，更重要的是装备他们面对现今社会的挑战。
       
@@ -70,7 +70,7 @@ const servicesData = [
     sectionName: 'teo-chew-chinese-service',
     service: 'Teo Chew/Chinese Service',
     serviceAcronym: 'tc',
-    title: 'Prayer Meeting',
+    title: 'Prayer Meeting (ch)',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in arcu lorem. Proin posuere enim in fringilla iaculis. Etiam eu arcu ligula. Quisque in enim et ligula suscipit tempor et scelerisque magna. Nunc leo ipsum, pellentesque porta metus id, efficitur fringilla sem.',
     imgSrc: mountain,
     details: {
@@ -84,7 +84,7 @@ const servicesData = [
     sectionName: 'teo-chew-chinese-service',
     service: 'Teo Chew/Chinese Service',
     serviceAcronym: 'tc',
-    title: '小组团契',
+    title: '小组团契 (ch)',
     text: '潮华崇拜的细胞小组开始于2005年10 月，当时由林兴成传道和郑美娥理事各带领一个小组。 细胞小组的目的：建立关系（破冰），同声敬拜（赞美）、装备生命（查考神的话），彼此关怀（分享和代祷）。 迄今我们共有七个小组，由林兴成传道，林碧倩传道，陈保华传道，林永得执事、陈宝华理事、吴奕鸾姐妹，林莲玉姐妹和许恂如弟兄来带领。',
     imgSrc: mountain,
     details: {
@@ -98,7 +98,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Main',
+    title: 'Main (ch)',
     text: 'English Service',
     imgSrc: mountain,
     details: {
@@ -112,7 +112,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Youth',
+    title: 'Youth (ch)',
     text: 'Youths (ages 13 to 19) gather every Sunday at 11.00am in various classes for a time of bible study. 4 classes run concurrently at this time. We are now doing a survey of the Old Testament using Huang Sabin’s OT Made Simple as bible study resource.',
     imgSrc: mountain,
     details: {
@@ -126,7 +126,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Children (Wonderkids)',
+    title: 'Children (Wonderkids) (ch)',
     text:
       `The Wonderkids Ministry comprises of simple people with a simple task: to introduce children from 4 to 12, to the wonders of the Bible and to our Lord Jesus Christ.
       
@@ -145,7 +145,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Cell Groups (English)',
+    title: 'Cell Groups (English) (ch)',
     text: 'The care group ministry forms an integral part of our body as it serves to equipped members in the word and also provides fellowship and support for one another. Apart from bible study and fellowship members of the groups are also encourage to be actively involve in the participation of the Church ministries. Currently we have four groups meeting in various locations. All are welcome to join.',
     imgSrc: mountain,
     details: {
@@ -159,7 +159,7 @@ const servicesData = [
     sectionName: 'english-service',
     service: 'English Service',
     serviceAcronym: 'en',
-    title: 'Prayer Meeting',
+    title: 'Prayer Meeting (ch)',
     text:
       `Prayer is fundamental to our Church life and forms a very critical pillar of our Church. We believe that all our ministries must be build upon prayer. Apart from the weekly prayers in our CG fellowship we also gather on the first Friday of every month to pray together as a body.
       
@@ -176,7 +176,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Main',
+    title: 'Main (ch)',
     text: 'Our Sunset Worship Service is held on Sunday evenings. Service is conducted in both English and Mandarin. We hope that through our weekly service and various activities, you wil discover our Lord\'s promise of salvation and eternal life, gain confidence in eternity, grow together and live a christian life that exhibits both faith and deeds.',
     imgSrc: mountain,
     details: {
@@ -190,7 +190,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Youth (SPUR)',
+    title: 'Youth (SPUR) (ch)',
     text:
       `(Seeking Perfect Understanding of Reconciliation 2 Cor 5:11-21)
       
@@ -212,7 +212,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Children',
+    title: 'Children (ch)',
     text:
       `Vision: 'Train a child in the way he should go, and when he is old he will not turn from it.' Proverbs 22:6    
       
@@ -231,7 +231,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Cell Groups',
+    title: 'Cell Groups (ch)',
     text:
       `"I have given them the glory that you gave me, that they may be one as we are one— 23 I in them and you in me—so that they may be brought to complete unity. Then the world will know that you sent me and have loved them even as you have loved me." John 17:22-23
       
@@ -254,7 +254,7 @@ const servicesData = [
     sectionName: 'sunset-service-english-mandarin',
     service: 'Sunset Service (English/Mandarin)',
     serviceAcronym: 'ss',
-    title: 'Prayer Meeting',
+    title: 'Prayer Meeting (ch)',
     text: 'A time of unity with fellow believers in the presence of the Lord',
     imgSrc: mountain,
     details: {

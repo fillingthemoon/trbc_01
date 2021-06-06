@@ -3,7 +3,7 @@ const upcomingSermonsData = [
     itemId: 1,
     page: 'home',
     sectionName: 'upcoming-sermons',
-    title: 'Pellentesque habitant morbi tristique senectus et',
+    title: 'Pellentesque habitant morbi tristique senectus et (ch)',
     text: 'Pellentesque habitant morbi tristique senectus et',
     details: {
       date: '23 May 2021',
@@ -16,7 +16,7 @@ const upcomingSermonsData = [
     itemId: 2,
     page: 'home',
     sectionName: 'upcoming-sermons',
-    title: 'Pellentesque habitant morbi tristique senectus et',
+    title: 'Pellentesque habitant morbi tristique senectus et (ch)',
     text: 'Pellentesque habitant morbi tristique senectus et',
     details: {
       date: '23 May 2021',
@@ -29,7 +29,7 @@ const upcomingSermonsData = [
     itemId: 3,
     page: 'home',
     sectionName: 'upcoming-sermons',
-    title: 'Pellentesque habitant morbi tristique senectus et',
+    title: 'Pellentesque habitant morbi tristique senectus et (ch)',
     text: 'Pellentesque habitant morbi tristique senectus et',
     details: {
       date: '23 May 2021',

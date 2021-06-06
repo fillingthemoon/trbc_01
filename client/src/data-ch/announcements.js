@@ -6,7 +6,7 @@ const announcementsData = [
     itemId: 1,
     page: 'home',
     sectionName: 'announcements',
-    title: 'Livestreaming Services',
+    title: 'Livestreaming Services (ch',
     text:
       `From 23 May 2021, TRBC will livestream weekly worship services. In view of heightened safe management measures, there will not be any in-person worship services until further notice.
       

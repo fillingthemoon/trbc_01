@@ -3,7 +3,7 @@ const eventsData = [
     itemId: 1,
     page: 'home',
     sectionName: 'events',
-    title: 'TRBC - TRBK Carnival',
+    title: 'TRBC - TRBK Carnival (ch)',
     text:
     `Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et. Ntesque habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et. Ntesque habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et.
     
@@ -14,7 +14,7 @@ const eventsData = [
     itemId: 2,
     page: 'home',
     sectionName: 'events',
-    title: 'Combined Church Camp',
+    title: 'Combined Church Camp (ch)',
     text:
     `Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi. habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et. Pellentesque habitant morbi tristique senectus et. Ntesque habitant morbi tristique sene. Pellentesque habitant morbi tristique senectus et.
     
