@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import TitleText from '../components-reusable/TitleText'
 
 import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import { Row, Card, Typography } from 'antd'
 const { Title, Paragraph } = Typography
@@ -69,10 +70,7 @@ const Announcements = () => {
       <div>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={language === 'en'
-            ? convertName('dashed', 'proper', announcementsData[0].pageSection)
-            : '公告'
-          }
+          title={getWord(convertName('dashed', 'proper', announcementsData[0].pageSection), language)}
           underlineAlign='center' />
         <Row justify='center'>
           {announcementsData.map((announcement, i) => (

@@ -14,6 +14,7 @@ const { Meta } = Card
 
 import { getUpcomingSermons } from '../reducers/upcomingSermonsReducer'
 import { convertName } from '../helper-files/helperFunctions'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 const cardStyle = {
   display: 'flex',
@@ -75,10 +76,7 @@ const UpcomingSermons = () => {
       <div>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={language === 'en'
-            ? convertName('dashed', 'proper', upcomingSermonsData[0].pageSection)
-            : '即将举行的布道'
-          }
+          title={getWord(convertName('dashed', 'proper', upcomingSermonsData[0].pageSection), language)}
           underlineAlign='left'
           titleStyle={{ margin: '0 20px' }}
         />

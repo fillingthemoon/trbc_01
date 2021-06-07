@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
+import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import TitleText from '../components-reusable/TitleText'
 
@@ -89,10 +90,7 @@ const Events = () => {
       <div >
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={language === 'en'
-            ? convertName('dashed', 'proper', eventsData[0].pageSection)
-            : '事件'
-          }
+          title={getWord(convertName('dashed', 'proper', eventsData[0].pageSection), language)}
           underlineAlign='left'
           titleStyle={{ margin: '0 20px' }}
         />

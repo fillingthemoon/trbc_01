@@ -8,6 +8,7 @@ const { Title, Paragraph } = Typography
 const TitleText = (props) => {
   const {
     className,
+    style,
     title,
     text,
     titleStyle,
@@ -20,7 +21,7 @@ const TitleText = (props) => {
   } = props
 
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       <div style={titleUnderlineStyle}>
         <Title style={titleStyle} className={titleClassName}>
           {title}

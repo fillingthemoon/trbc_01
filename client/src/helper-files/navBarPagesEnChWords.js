@@ -1,5 +1,8 @@
 const dictionaryEnToCh = {
   'Home': '主页',
+  'Announcements': '公告',
+  'Events': '事件',
+  'Upcoming Sermons': '即将举行的布道',
 
   'About Us': '认识教会',
   'Mission & Vision': '使命与异象',
@@ -18,6 +21,10 @@ const dictionaryEnToCh = {
   'God is spirit, and his worshipers must worship in the Spirit and in truth. - John 4:24 (NIV)':
   '24 神 是 個 靈 （ 或 無 個 字 ） ， 所 以 拜 他 的 必 須 用 心 靈 和 誠 實 拜 他 。 」 - 約 翰 福 音 4:24',
   'Service Details': '崇拜聚会细节',
+
+  'English Service': '主日崇拜',
+  'Teo Chew/Chinese Service': '潮华华语崇拜',
+  'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
   'I\'m New': '我是新来的',
 

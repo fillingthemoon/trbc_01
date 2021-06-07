@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+
+import TitleText from '../../components-reusable/TitleText'
 
 import { flattenNestedObject, convertName } from '../../helper-files/helperFunctions'
+import { getWord } from '../../helper-files/navBarPagesEnChWords'
 
 import {
   Input,
@@ -13,31 +17,49 @@ import {
 
 const { TextArea } = Input
 
-const FormField = ({ title, flattenedSection }) => {
+const FormField = ({ title, language }) => {
+  const fieldsWithDefaultValues = [
+    'pageEn', 'pageSectionEn',
+    'pageCh', 'pageSectionCh',
+  ]
+
   const inputNode = () => {
-    return <TextArea />
+    if (fieldsWithDefaultValues.includes(title)) {
+      return <Input disabled />
+    } else {
+      return <TextArea />
+    }
   }
 
   // Return either the Form inputs or cell content
   return (
-    (<Form.Item
-      name={title}
+    <Form.Item
+      name={`${title}-${language}`}
       label={convertName('camel', 'proper', title)}
-      rules={[{ required: true, message: `Please input "${title}"!` }]}
+      rules={[{ required: true }]}
     >
       {inputNode()}
-    </Form.Item>)
+    </Form.Item>
   )
 }
 
+const TitleTextLang = ({ title }) =>
+  <TitleText
+    title={title}
+    titleStyle={{ fontSize: '1.5rem' }}
+    style={{ margin: '20px 0' }}
+  />
+
 const AddNewRowBtn = ({ section }) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
+  const language = useSelector(state => state.language)
 
   const showModal = () => {
     setIsModalVisible(true)
   }
 
-  const handleOk = () => {
+  const handleSubmit = () => {
+    console.log('hello')
     setIsModalVisible(false)
   }
 
@@ -46,23 +68,38 @@ const AddNewRowBtn = ({ section }) => {
   }
 
   const hiddenFormFields = [
-    'id',
-    // 'itemId', 'page', 'pageSection',
+    'id', 'itemId',
+    'page', 'pageSection',
     // 'pageEn', 'pageSectionEn', 'pageCh', 'pageSectionCh'
   ]
   const flattenedSection = flattenNestedObject(section[0])
-  const formFields = Object.keys(flattenedSection)
+  // fields for current language
+  const formFieldsPrimary = Object.keys(flattenedSection)
     .filter(formField => !hiddenFormFields.includes(formField))
-
-  const formFieldsOtherLanguage = formFields.map(formField => {
-    if (formField.slice(-2) === 'En') {
-      return `${formField.substring(0, formField.length - 2)}Ch`
-    } else if (formField.slice(-2) === 'Ch') {
-      return `${formField.substring(0, formField.length - 2)}En`
+  // fields for other language
+  const formFieldsOther = formFieldsPrimary.map(formField => {
+    if (['En', 'Ch'].includes(formField.slice(-2))) {
+      return `${formField.substring(0, formField.length - 2)}${language === 'en' ? 'Ch' : 'En'}`
     } else {
       return formField
     }
   })
+
+  // Assigns primary/other to their respective languages
+  const formFieldsEn = language === 'en' ? formFieldsPrimary : formFieldsOther
+  const formFieldsCh = language === 'ch' ? formFieldsPrimary : formFieldsOther
+
+  // Initial Form values
+  const initialFormValues = {
+    'page': section[0].page,
+    'pageSection': section[0].pageSection,
+    'pageEn-en': section[0].page,
+    'pageSectionEn-en': section[0].pageSection,
+    'imgSrc-en': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+    'pageCh-ch': section[0].page,
+    'pageSectionCh-ch': getWord(convertName('dashed', 'proper', section[0].pageSection), 'ch'),
+    'imgSrc-ch': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+  }
 
   return (
     <>
@@ -74,24 +111,47 @@ const AddNewRowBtn = ({ section }) => {
         visible={isModalVisible}
         onCancel={handleCancel}
         footer={[]}
-        width='60%'
+        width='80%'
       >
-        <Form>
+        <Form initialValues={initialFormValues} onFinish={handleSubmit}>
           <Row gutter={30}>
+            {['page', 'pageSection'].map((title, i) =>
+              (<Col key={i}>
+                <Form.Item
+                  name={title}
+                  label={convertName('camel', 'proper', title)}
+                  rules={[{ required: true }]}
+                >
+                  <Input disabled />
+                </Form.Item>
+              </Col>)
+            )}
+          </Row>
+          <Row gutter={30}>
+            {/* Form fields for English */}
             <Col span={12}>
-              {formFields.map((formField, i) =>
-                <FormField key={i} title={formField} flattenedSection={flattenedSection} />
+              <TitleTextLang title='English Language Data' />
+              {formFieldsEn.map((formField, i) =>
+                <FormField
+                  key={i}
+                  language='en'
+                  title={formField} flattenedSection={flattenedSection} />
               )}
             </Col>
+            {/* Form fields for Chinese */}
             <Col span={12}>
-              {formFieldsOtherLanguage.map((formField, i) =>
-                <FormField key={i} title={formField} flattenedSection={flattenedSection} />
+              <TitleTextLang title='Chinese Language Data' />
+              {formFieldsCh.map((formField, i) =>
+                <FormField
+                  key={i}
+                  language='ch'
+                  title={formField} flattenedSection={flattenedSection} />
               )}
             </Col>
           </Row>
           <Row>
             <Col span={24} style={{ textAlign: 'right' }}>
-              <Button key="submit" type="primary" onClick={handleOk}>
+              <Button htmlType="submit" type="primary">
                 Submit
               </Button>
             </Col>
