@@ -36,7 +36,7 @@ const FormField = ({ title, language }) => {
     <Form.Item
       name={`${title}-${language}`}
       label={convertName('camel', 'proper', title)}
-      rules={[{ required: true }]}
+      rules={[{ required: true, message: 'This field is required.' }]}
     >
       {inputNode()}
     </Form.Item>
@@ -88,6 +88,10 @@ const AddNewRowBtn = ({ section }) => {
   // Assigns primary/other to their respective languages
   const formFieldsEn = language === 'en' ? formFieldsPrimary : formFieldsOther
   const formFieldsCh = language === 'ch' ? formFieldsPrimary : formFieldsOther
+  const formFields = {
+    'en': formFieldsEn,
+    'ch': formFieldsCh,
+  }
 
   // Initial Form values
   const initialFormValues = {
@@ -120,7 +124,7 @@ const AddNewRowBtn = ({ section }) => {
                 <Form.Item
                   name={title}
                   label={convertName('camel', 'proper', title)}
-                  rules={[{ required: true }]}
+                  rules={[{ required: true, message: 'This field is required.' }]}
                 >
                   <Input disabled />
                 </Form.Item>
@@ -128,26 +132,18 @@ const AddNewRowBtn = ({ section }) => {
             )}
           </Row>
           <Row gutter={30}>
-            {/* Form fields for English */}
-            <Col span={12}>
-              <TitleTextLang title='English Language Data' />
-              {formFieldsEn.map((formField, i) =>
-                <FormField
-                  key={i}
-                  language='en'
-                  title={formField} flattenedSection={flattenedSection} />
-              )}
-            </Col>
-            {/* Form fields for Chinese */}
-            <Col span={12}>
-              <TitleTextLang title='Chinese Language Data' />
-              {formFieldsCh.map((formField, i) =>
-                <FormField
-                  key={i}
-                  language='ch'
-                  title={formField} flattenedSection={flattenedSection} />
-              )}
-            </Col>
+            {/* Form fields for English and Chinese */}
+            {['en', 'ch'].map((lang, i) =>
+              (<Col key={i} span={12}>
+                <TitleTextLang title={`${lang === 'en' ? 'English' : 'Chinese'} Language Data`} />
+                {formFields[lang].map((formField, i) =>
+                  <FormField
+                    key={i}
+                    language={lang}
+                    title={formField} flattenedSection={flattenedSection} />
+                )}
+              </Col>)
+            )}
           </Row>
           <Row>
             <Col span={24} style={{ textAlign: 'right' }}>
