@@ -7,18 +7,11 @@ import {
   Form,
   Button,
   Modal,
+  Row,
+  Col,
 } from 'antd'
 
 const { TextArea } = Input
-
-const layout = {
-  labelCol: {
-    span: 6,
-  },
-  wrapperCol: {
-    span: 17,
-  },
-}
 
 const FormField = ({ title, flattenedSection }) => {
   const inputNode = () => {
@@ -52,10 +45,24 @@ const AddNewRowBtn = ({ section }) => {
     setIsModalVisible(false)
   }
 
-  const hiddenFormFields = ['id', 'itemId', 'page', 'pageSection']
+  const hiddenFormFields = [
+    'id',
+    // 'itemId', 'page', 'pageSection',
+    // 'pageEn', 'pageSectionEn', 'pageCh', 'pageSectionCh'
+  ]
   const flattenedSection = flattenNestedObject(section[0])
   const formFields = Object.keys(flattenedSection)
     .filter(formField => !hiddenFormFields.includes(formField))
+
+  const formFieldsOtherLanguage = formFields.map(formField => {
+    if (formField.slice(-2) === 'En') {
+      return `${formField.substring(0, formField.length - 2)}Ch`
+    } else if (formField.slice(-2) === 'Ch') {
+      return `${formField.substring(0, formField.length - 2)}En`
+    } else {
+      return formField
+    }
+  })
 
   return (
     <>
@@ -67,16 +74,28 @@ const AddNewRowBtn = ({ section }) => {
         visible={isModalVisible}
         onCancel={handleCancel}
         footer={[]}
+        width='60%'
       >
-        <Form {...layout}>
-          {formFields.map((formField, i) =>
-            <FormField key={i} title={formField} flattenedSection={flattenedSection} />
-          )}
-          <Form.Item wrapperCol={{ offset: 6 }} >
-            <Button key="submit" type="primary" onClick={handleOk}>
-              Submit
-            </Button>
-          </Form.Item>
+        <Form>
+          <Row gutter={30}>
+            <Col span={12}>
+              {formFields.map((formField, i) =>
+                <FormField key={i} title={formField} flattenedSection={flattenedSection} />
+              )}
+            </Col>
+            <Col span={12}>
+              {formFieldsOtherLanguage.map((formField, i) =>
+                <FormField key={i} title={formField} flattenedSection={flattenedSection} />
+              )}
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24} style={{ textAlign: 'right' }}>
+              <Button key="submit" type="primary" onClick={handleOk}>
+                Submit
+              </Button>
+            </Col>
+          </Row>
         </Form>
       </Modal>
     </>
