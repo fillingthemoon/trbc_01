@@ -58,7 +58,7 @@ const AddNewRowBtn = ({ section }) => {
     setIsModalVisible(true)
   }
 
-  const handleSubmit = () => {
+  const handleSubmitNewRow = () => {
     console.log('hello')
     setIsModalVisible(false)
   }
@@ -107,7 +107,7 @@ const AddNewRowBtn = ({ section }) => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button type="primary" onClick={showModal} style={{ marginBottom: '20px' }}>
         Add New Row
       </Button>
       <Modal
@@ -117,7 +117,7 @@ const AddNewRowBtn = ({ section }) => {
         footer={[]}
         width='80%'
       >
-        <Form initialValues={initialFormValues} onFinish={handleSubmit}>
+        <Form initialValues={initialFormValues} onFinish={handleSubmitNewRow}>
           <Row gutter={30}>
             {['page', 'pageSection'].map((title, i) =>
               (<Col key={i}>
