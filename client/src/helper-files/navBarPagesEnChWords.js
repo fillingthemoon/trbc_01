@@ -1,8 +1,11 @@
 const dictionaryEnToCh = {
   'Home': '主页',
+
   'Announcements': '公告',
   'Events': '事件',
   'Upcoming Sermons': '即将举行的布道',
+
+  'Cec': 'cec',
 
   'About Us': '认识教会',
   'Mission & Vision': '使命与异象',
@@ -19,7 +22,7 @@ const dictionaryEnToCh = {
   'Attitude of Worship': '敬拜的态度',
   '3 Elements of Worship': '3 崇拜的要素',
   'God is spirit, and his worshipers must worship in the Spirit and in truth. - John 4:24 (NIV)':
-  '24 神 是 個 靈 （ 或 無 個 字 ） ， 所 以 拜 他 的 必 須 用 心 靈 和 誠 實 拜 他 。 」 - 約 翰 福 音 4:24',
+    '24 神 是 個 靈 （ 或 無 個 字 ） ， 所 以 拜 他 的 必 須 用 心 靈 和 誠 實 拜 他 。 」 - 約 翰 福 音 4:24',
   'Service Details': '崇拜聚会细节',
 
   'English Service': '主日崇拜',

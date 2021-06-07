@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import EditableCell from './EditableCell'
-import AddNewRowBtn from './AddNewRowBtn'
+import AddNewRow from './AddNewRow'
 
 import { setNotification } from '../../reducers/notificationReducer'
 
@@ -162,7 +162,7 @@ const EditableTable = ({ editSection }) => {
 
   return (
     <>
-      <AddNewRowBtn section={editSection} />
+      <AddNewRow section={editSection} />
       <Form form={form} component={false}>
         <Table
           components={{ body: { cell: EditableCell } }}
