@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import TitleText from '../../components-reusable/TitleText'
 
 import { flattenNestedObject, convertName } from '../../helper-files/helperFunctions'
 import { getWord } from '../../helper-files/navBarPagesEnChWords'
+
+import { createUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
 
 import {
   Input,
@@ -54,13 +56,47 @@ const AddNewRow = ({ section }) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const language = useSelector(state => state.language)
 
+  const dispatch = useDispatch()
+
   const showModal = () => {
     setIsModalVisible(true)
   }
 
-  const handleSubmitNewRow = () => {
-    console.log('hello')
+  // Should be kept updated with itemModel.js's details object fields
+  const detailsFields = ['date', 'time', 'location', 'person', 'passage']
+
+  const handleSubmitNewRow = (values) => {
     setIsModalVisible(false)
+
+    const nestedFlattenedObject = { itemEn: {}, itemCh: {} }
+    Object.keys(values).forEach(field => {
+      // If the field contains a -en or -ch at the back
+      if (['en', 'ch'].includes(field.slice(-2))) {
+
+        // Get the field name with -en or -ch at the back
+        const fieldWithoutLang = field.substring(0, field.length - 3)
+
+        // Get the capitalised version of 'en' and 'ch'; 'En' and 'Ch'
+        const capitalisedLang = `${field.slice(-2)[0].toUpperCase()}${field.slice(-2)[1]}`
+
+        // If the field is a 'detail'
+        if (detailsFields.includes(fieldWithoutLang)) {
+
+          // If the 'details' key-value pair is not already in nestedFlattenedObject, then create it.
+          if (!Object.keys(nestedFlattenedObject[`item${capitalisedLang}`]).includes('details')) {
+            nestedFlattenedObject[`item${capitalisedLang}`]['details'] = { [fieldWithoutLang]: values[field] }
+          } else {
+            nestedFlattenedObject[`item${capitalisedLang}`]['details'][fieldWithoutLang] = values[field]
+          }
+        } else {
+          nestedFlattenedObject[`item${capitalisedLang}`][fieldWithoutLang] = values[field]
+        }
+      } else {
+        nestedFlattenedObject[field] = values[field]
+      }
+    })
+
+    dispatch(createUpcomingSermon(nestedFlattenedObject))
   }
 
   const handleCancel = () => {
@@ -93,8 +129,6 @@ const AddNewRow = ({ section }) => {
     'ch': formFieldsCh,
   }
 
-  console.log(section)
-
   // Initial Form values
   const initialFormValues = {
     'page': section[0].page,
@@ -105,6 +139,20 @@ const AddNewRow = ({ section }) => {
     'pageCh-ch': section[0].page,
     'pageSectionCh-ch': getWord(convertName('dashed', 'proper', section[0].pageSection), 'ch'),
     'imgSrc-ch': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+
+    // temporary
+    'title-en': 'Title test',
+    'text-en': 'Text test',
+    'date-en': 'Date test',
+    'time-en': 'Time test',
+    'person-en': 'Person test',
+    'passage-en': 'Passage test',
+    'title-ch': 'Title test (ch)',
+    'text-ch': 'Text test (ch)',
+    'date-ch': 'Date test (ch)',
+    'time-ch': 'Time test (ch)',
+    'person-ch': 'Person test (ch)',
+    'passage-ch': 'Passage test (ch)',
   }
 
   return (
@@ -154,7 +202,7 @@ const AddNewRow = ({ section }) => {
           <Row>
             <Col span={24} style={{ textAlign: 'right' }}>
               <Button htmlType="submit" type="primary">
-                  Submit
+                Submit
               </Button>
             </Col>
           </Row>

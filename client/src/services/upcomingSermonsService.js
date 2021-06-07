@@ -7,28 +7,24 @@ const getLanguage = () => {
   return language
 }
 
-let token = null
-
-const setToken = newToken => {
-  token = `bearer ${newToken}`
-}
-
 const getUpcomingSermons = async () => {
   const response = await axios.get(`${baseUrl}/${getLanguage()}`)
   return response.data
 }
 
 const createUpcomingSermon = async (newObject) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+
   const config = {
     headers: { Authorization: token },
   }
 
   const response = await axios.post(baseUrl, newObject, config)
+
   return response.data
 }
 
 const upcomingSermonsService = {
-  setToken,
   getUpcomingSermons,
   createUpcomingSermon,
 }
