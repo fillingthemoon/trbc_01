@@ -41,14 +41,14 @@ const NavBar = () => {
     if (matchEditSection) {
       dispatch(setLanguageSpinner(true))
     } else {
-      setTimeout(() => dispatch(setLanguageSpinner(false)), 1000)
+      setTimeout(() => dispatch(setLanguageSpinner(false)), 2000)
     }
   }, [matchEditSection])
 
   const handleToggleLanguage = () => {
     dispatch(setLanguage(language === 'en' ? 'ch' : 'en'))
     dispatch(setLanguageSpinner((true)))
-    setTimeout(() => dispatch(setLanguageSpinner((false))), 1000)
+    setTimeout(() => dispatch(setLanguageSpinner((false))), 2000)
   }
 
   const menu = (orientation) => (
