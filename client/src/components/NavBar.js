@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouteMatch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setLanguage } from '../reducers/languageReducer'
@@ -11,7 +11,7 @@ import { useMediaQuery } from 'react-responsive'
 import { general } from '../helper-files/images'
 const { trbcLogo } = general
 
-import { Menu, Dropdown, Button, Layout } from 'antd'
+import { Menu, Dropdown, Button, Layout, Tooltip } from 'antd'
 import { MenuOutlined } from '@ant-design/icons'
 const { Header } = Layout
 const { SubMenu } = Menu
@@ -24,6 +24,7 @@ import {
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1050px)' })
   const [current, setCurrent] = useState('home')
+  const [btnDisabled, setBtnDisabled] = useState(false)
 
   const language = useSelector(state => state.language)
   const dispatch = useDispatch()
@@ -33,6 +34,15 @@ const NavBar = () => {
 
   const href = window.location.href.split('/')
   const pageUrl = href[4]
+
+  useEffect(() => {
+    if (matchEditSection) {
+      setBtnDisabled(true)
+    } else {
+      setTimeout(() =>
+        setBtnDisabled(false), 1000)
+    }
+  }, [matchEditSection])
 
   const menu = (orientation) => (
     <Menu
@@ -92,27 +102,34 @@ const NavBar = () => {
       </Menu.Item>
 
       <Menu.Item key='language' disabled>
-        <Button
-          onClick={() => language === 'en'
-            ? dispatch(setLanguage('ch'))
-            : dispatch(setLanguage('en'))
+        <Tooltip title={(() => {
+          if (btnDisabled && matchEditSection) {
+            return 'Language toggling disabled while editing section'
+          } else if (btnDisabled && !matchEditSection) {
+            return 'Please wait...'
           }
-          // Language toggling disabled when editing
-          // sections as it might cause bugs
-          disabled={matchEditSection ? true : false}
-          style={{
-            backgroundColor: colorLOrange,
-            color: colorPrimaryOrange,
-            borderRadius: '10px',
-            border: 'none',
-            width: '100px',
-            height: '40px',
-            fontWeight: '600',
-            letterSpacing: '2px',
-          }}
-        >
-          {language === 'en' ? '中文' : 'ENGLISH'}
-        </Button>
+        })()}>
+          <Button
+            onClick={() => language === 'en'
+              ? dispatch(setLanguage('ch'))
+              : dispatch(setLanguage('en'))
+            }
+            // Language toggling disabled when editing sections as it might cause bugs
+            disabled={btnDisabled}
+            style={{
+              backgroundColor: colorLOrange,
+              color: colorPrimaryOrange,
+              borderRadius: '10px',
+              border: 'none',
+              width: '100px',
+              height: '40px',
+              fontWeight: '600',
+              letterSpacing: '2px',
+            }}
+          >
+            {language === 'en' ? '中文' : 'ENGLISH'}
+          </Button>
+        </Tooltip>
       </Menu.Item>
     </Menu>
   )

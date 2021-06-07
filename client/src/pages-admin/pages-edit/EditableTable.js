@@ -29,6 +29,7 @@ const EditableTable = ({ editSection }) => {
 
   // Sets the table's data
   useEffect(() => {
+    console.log('useEffect')
     const sectionData = editSection.map((sectionItem, i) => {
       return Object.keys(sectionItem).includes('imgSrc')
         ? {
