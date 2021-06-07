@@ -2,13 +2,15 @@ import upcomingSermonsService from '../services/upcomingSermonsService'
 
 import { setNotification } from '../reducers/notificationReducer'
 
+import { filterItemByLanguage } from '../helper-files/helperFunctions'
+
 const upcomingSermonsReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_UPCOMING_SERMONS': {
       return action.data.upcomingSermons
     }
     case 'CREATE_UPCOMING_SERMON': {
-      return state.concat(action.data.upcomingSermonResponse)
+      return state.concat(action.data.filteredUpcomingSermonResponse)
     }
     default: {
       return state
@@ -34,16 +36,19 @@ export const getUpcomingSermons = () => {
   }
 }
 
-export const createUpcomingSermon = (upcomingSermon) => {
+export const createUpcomingSermon = (upcomingSermon, currLanguage) => {
   return async dispatch => {
     try {
       const upcomingSermonResponse =
         await upcomingSermonsService.createUpcomingSermon(upcomingSermon)
 
+      const filteredUpcomingSermonResponse =
+        filterItemByLanguage(upcomingSermonResponse, currLanguage)
+
       dispatch({
         type: 'CREATE_UPCOMING_SERMON',
         data: {
-          upcomingSermonResponse,
+          filteredUpcomingSermonResponse,
         }
       })
       dispatch(setNotification('success', 'Success! Please refresh to view new row.', 4))

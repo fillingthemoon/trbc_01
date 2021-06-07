@@ -75,7 +75,7 @@ import './style.less'
 // Reducers
 import { getSections } from './reducers/itemsReducer'
 import { getItems } from './reducers/itemsReducer'
-import { setLanguage, stayAtCurrentLanguage } from './reducers/languageReducer'
+import { stayAtCurrentLanguage } from './reducers/languageReducer'
 
 // Ant Design
 import { Layout } from 'antd'

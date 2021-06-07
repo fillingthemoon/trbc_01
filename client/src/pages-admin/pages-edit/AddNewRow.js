@@ -96,7 +96,7 @@ const AddNewRow = ({ section }) => {
       }
     })
 
-    dispatch(createUpcomingSermon(nestedFlattenedObject))
+    dispatch(createUpcomingSermon(nestedFlattenedObject, language))
   }
 
   const handleCancel = () => {

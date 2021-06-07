@@ -144,9 +144,20 @@ const flattenNestedObject = (nestedObject) => {
   return flattened
 }
 
+const filterItemByLanguage = (item, language) => {
+  const { id, itemId, page, pageSection, ...rest } = item
+  const langItem = language === 'en'
+    ? item.itemEn
+    : item.itemCh
+  const filtereditem = { id, itemId, page, pageSection, ...langItem }
+
+  return filtereditem
+}
+
 export {
   splitLines,
   formatParagraph,
   convertName,
   flattenNestedObject,
+  filterItemByLanguage,
 }
