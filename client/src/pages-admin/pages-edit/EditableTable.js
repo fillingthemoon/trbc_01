@@ -26,7 +26,6 @@ const EditableTable = ({ editSection }) => {
   const [form] = Form.useForm()
   const [data, setData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
-  const language = useSelector(state => state.language)
 
   // Sets the table's data
   useEffect(() => {
@@ -43,11 +42,13 @@ const EditableTable = ({ editSection }) => {
         }
     })
     setData(sectionData)
-  }, [language])
+  }, [])
 
   if (editSection.length <= 0) {
     return null
   }
+
+  console.log(editSection)
 
   const isEditing = (record) => record.id === editingId
 
