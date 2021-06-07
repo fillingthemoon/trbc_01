@@ -4,7 +4,12 @@ const dictionaryEnToCh = {
   'About Us': '认识教会',
   'Mission & Vision': '使命与异象',
   'Our History': '教会历史',
+
   'Our Team': '教会同工',
+  'Pastoral': '教牧',
+  'Ministry': '事工人员',
+  'Administrative': '行政人员',
+
   'Statement of Faith': '信仰宣言',
 
   'Services': '崇拜聚会',
@@ -18,6 +23,10 @@ const dictionaryEnToCh = {
 
   'Ministries': '教会性事工',
   'Outreach': '外展事工',
+  'Children': '孩子们',
+  'Interest Groups': '利益集团',
+  'Community': '社区',
+
   'Missions': '宣教事工',
   'Discipleship': '门徒训练',
 

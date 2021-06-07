@@ -83,7 +83,7 @@ const EditableTable = ({ editSection }) => {
     setData(newData)
   }
 
-  const hiddenFields = ['id']
+  const hiddenFields = ['id',]
   const fields = Object.keys(flattenNestedObject(editSection[0]))
     .filter(field => !hiddenFields.includes(field))
   // Add image display column if imgSrc exists
@@ -91,7 +91,11 @@ const EditableTable = ({ editSection }) => {
     fields.push('imgDisplay')
   }
 
-  const uneditableColumns = ['itemId', 'page', 'pageSection', 'id', 'imgDisplay']
+  const uneditableColumns = [
+    'id', 'itemId', 'page', 'pageSection',
+    'pageEn', 'pageSectionEn', 'pageCh', 'pageSectionCh',
+    'imgDisplay'
+  ]
   const columns = fields.map(field => {
     return {
       // title and dataIndex are the same thing in this case
