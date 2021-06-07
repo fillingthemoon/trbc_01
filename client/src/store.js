@@ -22,6 +22,7 @@ import notificationReducer from './reducers/notificationReducer'
 import itemsReducer from './reducers/itemsReducer'
 
 import languageReducer from './reducers/languageReducer'
+import languageSpinnerReducer from './reducers/languageSpinnerReducer'
 
 const reducer = combineReducers({
   announcements: announcementsReducer,
@@ -41,9 +42,10 @@ const reducer = combineReducers({
 
   notification: notificationReducer,
 
-  language: languageReducer,
-
   items: itemsReducer,
+
+  language: languageReducer,
+  languageSpinner: languageSpinnerReducer,
 })
 
 const store = createStore(

@@ -6,7 +6,7 @@ import Notification from '../components-reusable/Notification'
 import AdminDashboardNavBar from '../pages-admin/AdminDashboardNavBar'
 import AdminDashboardContent from '../pages-admin/AdminDashboardContent'
 
-import { Layout } from 'antd'
+import { Layout, Spin } from 'antd'
 const { Content } = Layout
 
 const AdminDashboard = (props) => {
@@ -15,15 +15,18 @@ const AdminDashboard = (props) => {
   } = props
 
   const notification = useSelector(state => state.notification)
+  const languageSpinner = useSelector(state => state.languageSpinner)
 
   return (
     <Layout className='admin-dashboard'>
-      <Notification notification={notification} />
-      <AdminDashboardNavBar loggedInUser={loggedInUser} />
+      <Spin tip='Loading, please wait...' spinning={languageSpinner}>
+        <Notification notification={notification} />
+        <AdminDashboardNavBar loggedInUser={loggedInUser} />
 
-      <Content style={{ padding: '0 50px 50px 50px' }}>
-        <AdminDashboardContent />
-      </Content>
+        <Content style={{ padding: '0 50px 50px 50px' }}>
+          <AdminDashboardContent />
+        </Content>
+      </Spin>
     </Layout>
   )
 }

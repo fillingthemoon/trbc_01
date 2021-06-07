@@ -28,6 +28,7 @@ const EditableTable = ({ editSection }) => {
 
   // Sets the table's data
   useEffect(() => {
+    console.log('useEffect')
     const sectionData = editSection.map((sectionItem, i) => {
       return Object.keys(sectionItem).includes('imgSrc')
         ? {
@@ -46,6 +47,8 @@ const EditableTable = ({ editSection }) => {
   if (editSection.length <= 0) {
     return null
   }
+
+  console.log(editSection)
 
   const isEditing = (record) => record.id === editingId
 

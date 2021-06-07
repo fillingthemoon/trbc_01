@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useRouteMatch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
 import { setLanguage } from '../reducers/languageReducer'
+import { setLanguageSpinner } from '../reducers/languageSpinnerReducer'
 
 import { getWord } from '../helper-files/navBarPagesEnChWords'
 
@@ -24,10 +26,10 @@ import {
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1050px)' })
   const [current, setCurrent] = useState('home')
-  const [spinning, setSpinning] = useState(false)
 
-  const language = useSelector(state => state.language)
   const dispatch = useDispatch()
+  const language = useSelector(state => state.language)
+  const languageSpinner = useSelector(state => state.languageSpinner)
 
   // Check if anything is currently being edited
   const matchEditSection = useRouteMatch('/admin/:sectionId')
@@ -37,16 +39,16 @@ const NavBar = () => {
 
   useEffect(() => {
     if (matchEditSection) {
-      setSpinning(true)
+      dispatch(setLanguageSpinner(true))
     } else {
-      setTimeout(() => setSpinning(false), 1000)
+      setTimeout(() => dispatch(setLanguageSpinner(false)), 1000)
     }
   }, [matchEditSection])
 
   const handleToggleLanguage = () => {
     dispatch(setLanguage(language === 'en' ? 'ch' : 'en'))
-    setSpinning(true)
-    setTimeout(() => setSpinning(false), 1000)
+    dispatch(setLanguageSpinner((true)))
+    setTimeout(() => dispatch(setLanguageSpinner((false))), 1000)
   }
 
   const menu = (orientation) => (
@@ -108,7 +110,7 @@ const NavBar = () => {
 
       <Menu.Item key='language' disabled>
         {/* Language toggling disabled when editing sections as it might cause bugs */}
-        <Spin tip={matchEditSection ? 'Toggling disabled' : 'Please wait...'} spinning={spinning}>
+        <Spin tip={matchEditSection && 'Disabled'} spinning={languageSpinner}>
           <Button
             onClick={handleToggleLanguage}
             style={{
