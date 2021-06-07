@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
 
 import EditableCell from './EditableCell'
 import AddNewRowBtn from './AddNewRowBtn'
@@ -29,7 +28,6 @@ const EditableTable = ({ editSection }) => {
 
   // Sets the table's data
   useEffect(() => {
-    console.log('useEffect')
     const sectionData = editSection.map((sectionItem, i) => {
       return Object.keys(sectionItem).includes('imgSrc')
         ? {
@@ -48,8 +46,6 @@ const EditableTable = ({ editSection }) => {
   if (editSection.length <= 0) {
     return null
   }
-
-  console.log(editSection)
 
   const isEditing = (record) => record.id === editingId
 

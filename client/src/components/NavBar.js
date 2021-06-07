@@ -11,7 +11,7 @@ import { useMediaQuery } from 'react-responsive'
 import { general } from '../helper-files/images'
 const { trbcLogo } = general
 
-import { Menu, Dropdown, Button, Layout, Tooltip } from 'antd'
+import { Menu, Dropdown, Button, Layout, Spin } from 'antd'
 import { MenuOutlined } from '@ant-design/icons'
 const { Header } = Layout
 const { SubMenu } = Menu
@@ -24,7 +24,7 @@ import {
 const NavBar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 1050px)' })
   const [current, setCurrent] = useState('home')
-  const [btnDisabled, setBtnDisabled] = useState(false)
+  const [spinning, setSpinning] = useState(false)
 
   const language = useSelector(state => state.language)
   const dispatch = useDispatch()
@@ -37,12 +37,17 @@ const NavBar = () => {
 
   useEffect(() => {
     if (matchEditSection) {
-      setBtnDisabled(true)
+      setSpinning(true)
     } else {
-      setTimeout(() =>
-        setBtnDisabled(false), 1000)
+      setTimeout(() => setSpinning(false), 1000)
     }
   }, [matchEditSection])
+
+  const handleToggleLanguage = () => {
+    dispatch(setLanguage(language === 'en' ? 'ch' : 'en'))
+    setSpinning(true)
+    setTimeout(() => setSpinning(false), 1000)
+  }
 
   const menu = (orientation) => (
     <Menu
@@ -102,20 +107,10 @@ const NavBar = () => {
       </Menu.Item>
 
       <Menu.Item key='language' disabled>
-        <Tooltip title={(() => {
-          if (btnDisabled && matchEditSection) {
-            return 'Language toggling disabled while editing section'
-          } else if (btnDisabled && !matchEditSection) {
-            return 'Please wait...'
-          }
-        })()}>
+        {/* Language toggling disabled when editing sections as it might cause bugs */}
+        <Spin tip={matchEditSection ? 'Toggling disabled' : 'Please wait...'} spinning={spinning}>
           <Button
-            onClick={() => language === 'en'
-              ? dispatch(setLanguage('ch'))
-              : dispatch(setLanguage('en'))
-            }
-            // Language toggling disabled when editing sections as it might cause bugs
-            disabled={btnDisabled}
+            onClick={handleToggleLanguage}
             style={{
               backgroundColor: colorLOrange,
               color: colorPrimaryOrange,
@@ -129,7 +124,7 @@ const NavBar = () => {
           >
             {language === 'en' ? '中文' : 'ENGLISH'}
           </Button>
-        </Tooltip>
+        </Spin>
       </Menu.Item>
     </Menu>
   )
