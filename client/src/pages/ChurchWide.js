@@ -9,19 +9,19 @@ import { getWord } from '../helper-files/navBarPagesEnChWords'
 import { general } from '../helper-files/images'
 const { gathering } = general
 
-// import { getChurchWide } from '../reducers/churchWideReducer'
+import { getChurchWide } from '../reducers/churchWideReducer'
 
 const ChurchWide = () => {
   const dispatch = useDispatch()
 
-  // const churchWideData = useSelector(state => state.churchWide)
+  const churchWideData = useSelector(state => state.churchWide)
   const language = useSelector(state => state.language)
 
-  // useEffect(() => {
-  //   dispatch(getChurchWide())
-  // }, [language])
+  useEffect(() => {
+    dispatch(getChurchWide())
+  }, [language])
 
-  // if (churchWideData.length <= 0) { return null }
+  if (churchWideData.length <= 0) { return null }
 
   return (
     <div>
@@ -29,7 +29,7 @@ const ChurchWide = () => {
         title: getWord('Church Wide', language),
         image: gathering
       }]} />
-      {/* <SectionsTemplate data={churchWideData} displayType='card' /> */}
+      <SectionsTemplate data={churchWideData} displayType='card' />
     </div>
   )
 }

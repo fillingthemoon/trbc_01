@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'
 
 import announcementsReducer from './reducers/announcementsReducer'
 import cecReducer from './reducers/cecReducer'
+import churchWideReducer from './reducers/churchWideReducer'
 import discipleshipReducer from './reducers/discipleshipReducer'
 import eventsReducer from './reducers/eventsReducer'
 import imNewReducer from './reducers/imNewReducer'
@@ -27,6 +28,7 @@ import languageSpinnerReducer from './reducers/languageSpinnerReducer'
 const reducer = combineReducers({
   announcements: announcementsReducer,
   cec: cecReducer,
+  churchWide: churchWideReducer,
   discipleship: discipleshipReducer,
   events: eventsReducer,
   imNew: imNewReducer,

@@ -8,6 +8,7 @@ const callbackFunc = (err, result) => {
 
 import announcementsData from '../data/announcements.js'
 import cecData from '../data/cec.js'
+import churchWideData from '../data/churchWide.js'
 import discipleshipData from '../data/discipleship.js'
 import eventsData from '../data/events.js'
 import imNewData from '../data/im-new.js'
@@ -21,6 +22,7 @@ import upcomingSermonsData from '../data/upcoming-sermons.js'
 
 const announcementsDataJSON = JSON.stringify(announcementsData, null, 2)
 const cecDataJSON = JSON.stringify(cecData, null, 2)
+const churchWideDataJSON = JSON.stringify(churchWideData, null, 2)
 const discipleshipDataJSON = JSON.stringify(discipleshipData, null, 2)
 const eventsDataJSON = JSON.stringify(eventsData, null, 2)
 const imNewDataJSON = JSON.stringify(imNewData, null, 2)
@@ -41,6 +43,7 @@ const upcomingSermonsDataJSON = JSON.stringify(upcomingSermonsData, null, 2)
 
 fs.writeFile('../server/data-json/announcements.json', announcementsDataJSON, callbackFunc)
 fs.writeFile('../server/data-json/cec.json', cecDataJSON, callbackFunc)
+fs.writeFile('../server/data-json/churchWide.json', churchWideDataJSON, callbackFunc)
 fs.writeFile('../server/data-json/discipleship.json', discipleshipDataJSON, callbackFunc)
 fs.writeFile('../server/data-json/events.json', eventsDataJSON, callbackFunc)
 fs.writeFile('../server/data-json/im-new.json', imNewDataJSON, callbackFunc)
