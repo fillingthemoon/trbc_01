@@ -24,9 +24,28 @@ const createUpcomingSermon = async (newObject) => {
   return response.data
 }
 
+// const update = async (id, newObject) => {
+//   const response = await axios.put(`${baseUrl}/${id}`, newObject)
+
+//   return response.data
+// }
+
+const deleteUpcomingSermon = async (id) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+
+  return response.data
+}
+
 const upcomingSermonsService = {
   getUpcomingSermons,
   createUpcomingSermon,
+  deleteUpcomingSermon,
 }
 
 export default upcomingSermonsService

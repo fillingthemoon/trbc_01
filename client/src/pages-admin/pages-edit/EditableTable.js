@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import EditableCell from './EditableCell'
 import AddNewRow from './AddNewRow'
 
 import { setNotification } from '../../reducers/notificationReducer'
+import { deleteUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
 
 import { flattenNestedObject } from '../../helper-files/helperFunctions'
 
@@ -25,6 +27,8 @@ const EditableTable = ({ editSection }) => {
   const [form] = Form.useForm()
   const [data, setData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
+
+  const dispatch = useDispatch()
 
   // Sets the table's data
   useEffect(() => {
@@ -81,6 +85,8 @@ const EditableTable = ({ editSection }) => {
   const deleteRow = (record) => {
     const newData = data.filter((item) => item.id !== record.id)
     setData(newData)
+
+    dispatch(deleteUpcomingSermon(record.id))
   }
 
   const hiddenFields = ['id',]

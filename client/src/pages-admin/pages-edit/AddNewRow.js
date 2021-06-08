@@ -66,6 +66,10 @@ const AddNewRow = ({ section }) => {
   const detailsFields = ['date', 'time', 'location', 'person', 'passage']
 
   const handleSubmitNewRow = (values) => {
+    if (!window.confirm('Are you sure?')) {
+      return
+    }
+
     setIsModalVisible(false)
 
     const nestedFlattenedObject = { itemEn: {}, itemCh: {} }
