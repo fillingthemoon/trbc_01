@@ -30,7 +30,7 @@ const dictionaryEnToCh = {
   'Teo Chew/Chinese Service': '潮华华语崇拜',
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
-  'Join Us': 'Join Us (ch)',
+  'Join Us': '加入我们',
   'Church Wide': '全教会',
 
   'I\'m New': '我是新来的',

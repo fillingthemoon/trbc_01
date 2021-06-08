@@ -89,7 +89,8 @@ const App = () => {
   const language = useSelector(state => state.language)
 
   const matchEditSection = useRouteMatch('/admin/:sectionId')
-  const matchIndivPageItem = useRouteMatch(['/outreach/:id', '/missions/:id', '/services/:id'])
+  const urlsWithIdParams = ['/outreach/:id', '/missions/:id', '/services/:id', '/church-wide/:id']
+  const matchIndivPageItem = useRouteMatch(urlsWithIdParams)
 
   useEffect(() => {
     // Keep using current language
@@ -124,6 +125,10 @@ const App = () => {
       <NavBar />
       <Content>
         <Switch>
+          <Route path={urlsWithIdParams} exact>
+            <IndividualPage item={indivPageItemMatch} />
+          </Route>
+
           <Route exact path='/'>
             <Redirect to='/home' />
           </Route>
@@ -145,9 +150,6 @@ const App = () => {
           <Route path='/services' exact>
             <Services />
           </Route >
-          <Route path='/services/:id' exact>
-            <IndividualPage item={indivPageItemMatch} />
-          </Route>
           <Route path='/church-wide' exact>
             <ChurchWide />
           </Route >
@@ -157,14 +159,8 @@ const App = () => {
           <Route path='/outreach' exact>
             <Outreach />
           </Route>
-          <Route path='/outreach/:id' exact>
-            <IndividualPage item={indivPageItemMatch} />
-          </Route>
           <Route path='/missions' exact>
             <Missions />
-          </Route>
-          <Route path='/missions/:id' exact>
-            <IndividualPage item={indivPageItemMatch} />
           </Route>
           <Route path='/discipleship' exact>
             <Discipleship />

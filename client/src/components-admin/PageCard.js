@@ -17,6 +17,7 @@ import {
   FaHandsHelping,
   FaChurch,
   FaHome,
+  FaRegSmile,
 } from 'react-icons/fa'
 
 import { BsFillPeopleFill } from 'react-icons/bs'
@@ -37,6 +38,7 @@ const iconStyle = {
 
 const iconDictionary = {
   'cec': <FaCampground style={iconStyle} />,
+  'church-wide': <FaRegSmile style={iconStyle} />,
   'discipleship': <BsFillPeopleFill style={iconStyle} />,
   'home': <FaHome style={iconStyle} />,
   'im-new': <FaStar style={iconStyle} />,
