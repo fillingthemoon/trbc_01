@@ -96,6 +96,7 @@ const AddNewRow = ({ section }) => {
       }
     })
 
+    // Need to change to other sections as well
     dispatch(createUpcomingSermon(nestedFlattenedObject, language))
   }
 

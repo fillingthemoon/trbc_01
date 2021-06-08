@@ -9,29 +9,29 @@ import { getWord } from '../helper-files/navBarPagesEnChWords'
 import { general } from '../helper-files/images'
 const { gathering } = general
 
-import { getOutreach } from '../reducers/outreachReducer'
+// import { getChurchWide } from '../reducers/churchWideReducer'
 
-const Outreach = () => {
+const ChurchWide = () => {
   const dispatch = useDispatch()
 
-  const outreachData = useSelector(state => state.outreach)
+  // const churchWideData = useSelector(state => state.churchWide)
   const language = useSelector(state => state.language)
 
-  useEffect(() => {
-    dispatch(getOutreach())
-  }, [language])
+  // useEffect(() => {
+  //   dispatch(getChurchWide())
+  // }, [language])
 
-  if (outreachData.length <= 0) { return null }
+  // if (churchWideData.length <= 0) { return null }
 
   return (
     <div>
       <Banner imageTitlePairs={[{
-        title: getWord('Outreach', language),
+        title: getWord('Church Wide', language),
         image: gathering
       }]} />
-      <SectionsTemplate data={outreachData} displayType='card' />
+      {/* <SectionsTemplate data={churchWideData} displayType='card' /> */}
     </div>
   )
 }
 
-export default Outreach
+export default ChurchWide

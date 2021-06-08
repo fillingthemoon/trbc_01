@@ -54,6 +54,7 @@ import OurHistory from './pages/OurHistory'
 import OurTeam from './pages/OurTeam'
 import StatementOfFaith from './pages/StatementOfFaith'
 import Services from './pages/Services'
+import ChurchWide from './pages/ChurchWide'
 import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
 import Missions from './pages/Missions'
@@ -147,6 +148,9 @@ const App = () => {
           <Route path='/services/:id' exact>
             <IndividualPage item={indivPageItemMatch} />
           </Route>
+          <Route path='/church-wide' exact>
+            <ChurchWide />
+          </Route >
           <Route path='/im-new' exact>
             <ImNew />
           </Route>

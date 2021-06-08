@@ -1,7 +1,7 @@
 const baseUrl = 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/'
 
 // general
-const churchWide = `${baseUrl}general/church-wide.jpg`
+const gathering = `${baseUrl}general/church-wide.jpg`
 const exterior = `${baseUrl}general/exterior.jpg`
 const trbcLogo = `${baseUrl}general/logo.png`
 const sanctuary01 = `${baseUrl}general/sanctuary-01.jpg`
@@ -37,12 +37,12 @@ const revJerryGoh = `${baseUrl}our-team/rev-jerry-goh.jpg`
 const vincentLai = `${baseUrl}our-team/vincent-lai.jpg`
 const yeoChongNim = `${baseUrl}our-team/yeo-chong-nim.jpg`
 
-// outreach
-const pingPongFellowship = `${baseUrl}outreach/ping-pong-fellowship.jpg`
-const gardeningFellowship = `${baseUrl}outreach/gardening-fellowship.jpg`
+// church-wide
+const pingPongFellowship = `${baseUrl}church-wide/ping-pong-fellowship.jpg`
+const gardeningFellowship = `${baseUrl}church-wide/gardening-fellowship.jpg`
 
 const general = {
-  churchWide,
+  gathering,
   exterior,
   trbcLogo,
   sanctuary01,
@@ -81,7 +81,7 @@ const ourTeam = {
   yeoChongNim,
 }
 
-const outreach = {
+const churchWide = {
   pingPongFellowship,
   gardeningFellowship,
 }
@@ -90,5 +90,5 @@ export {
   general,
   aboutUs,
   ourTeam,
-  outreach,
+  churchWide,
 }

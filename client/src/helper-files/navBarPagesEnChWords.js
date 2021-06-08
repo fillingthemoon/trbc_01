@@ -6,6 +6,7 @@ const dictionaryEnToCh = {
   'Upcoming Sermons': '即将举行的布道',
 
   'Cec': 'cec',
+  'Children\'s Enrichment Camp': '儿童营会',
 
   'About Us': '认识教会',
   'Mission & Vision': '使命与异象',
@@ -28,6 +29,8 @@ const dictionaryEnToCh = {
   'English Service': '主日崇拜',
   'Teo Chew/Chinese Service': '潮华华语崇拜',
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
+
+  'Join Us': 'Join Us (ch)',
 
   'I\'m New': '我是新来的',
 

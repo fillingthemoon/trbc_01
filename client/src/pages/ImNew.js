@@ -8,7 +8,7 @@ import ConnectForm from '../components-reusable/ConnectForm'
 import { getWord } from '../helper-files/navBarPagesEnChWords'
 
 import { general } from '../helper-files/images'
-const { churchWide } = general
+const { gathering } = general
 
 import { getImNew } from '../reducers/imNewReducer'
 
@@ -28,7 +28,7 @@ const ImNew = () => {
     <>
       <Banner imageTitlePairs={[{
         title: getWord('I\'m New', language),
-        image: churchWide
+        image: gathering
       }]} />
       <AlternatingImageTextTemplate data={imNewData}
         primaryColor={2}
