@@ -7,6 +7,8 @@ import AddNewRow from './AddNewRow'
 import { updateUpcomingSermon, deleteUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
 
 import { convertName, flattenNestedObject, nestFlattenedObjectUpdate } from '../../helper-files/helperFunctions'
+import { getFunction } from '../../helper-files/getFunctions'
+import { sectionToItem } from '../../helper-files/sectionToItem'
 
 import {
   Table,
@@ -22,15 +24,21 @@ const cellImgStyle = {
   objectFit: 'scale-down',
 }
 
-const EditableTable = ({ editSection }) => {
+const EditableTable = ({ editSectionName }) => {
   const [form] = Form.useForm()
   const [tableData, setTableData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
+  const editSection = useSelector(state => state[sectionToItem[editSectionName]])
+  const upcomingSermons = useSelector(state => state.upcomingSermons)
 
   const dispatch = useDispatch()
   const language = useSelector(state => state.language)
 
   // Sets the table's data
+  useEffect(() => {
+    dispatch(getFunction[editSectionName])
+  }, [])
+
   useEffect(() => {
     const sectionData = editSection.map((sectionItem, i) => {
       return Object.keys(sectionItem).includes('imgSrc')
@@ -45,9 +53,9 @@ const EditableTable = ({ editSection }) => {
         }
     })
     setTableData(sectionData)
-  }, [])
+  }, [editSection])
 
-  if (editSection.length <= 0) {
+  if (tableData.length <= 0) {
     return null
   }
 

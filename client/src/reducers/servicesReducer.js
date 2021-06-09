@@ -14,7 +14,7 @@ const servicesReducer = (state = [], action) => {
   }
 }
 
-export const getServices = (type) => {
+export const getServices = (sectionName=null) => {
   return async dispatch => {
 
     try {
@@ -24,8 +24,8 @@ export const getServices = (type) => {
 
       let services = await servicesService.getServices()
 
-      services = type
-        ? services.filter(servicesItem => servicesItem.pageSection === type)
+      services = sectionName
+        ? services.filter(servicesItem => servicesItem.pageSection === sectionName)
         : services
 
       dispatch({

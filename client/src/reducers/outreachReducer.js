@@ -14,7 +14,7 @@ const outreachReducer = (state = [], action) => {
   }
 }
 
-export const getOutreach = (type) => {
+export const getOutreach = (sectionName=null) => {
   return async dispatch => {
 
     try {
@@ -24,8 +24,8 @@ export const getOutreach = (type) => {
 
       let outreach = await outreachService.getOutreach()
 
-      outreach = type
-        ? outreach.filter(outreachItem => outreachItem.pageSection === type)
+      outreach = sectionName
+        ? outreach.filter(outreachItem => outreachItem.pageSection === sectionName)
         : outreach
 
       dispatch({

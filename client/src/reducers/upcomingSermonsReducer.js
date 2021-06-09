@@ -10,11 +10,7 @@ const upcomingSermonsReducer = (state = [], action) => {
       return action.data.upcomingSermons
     }
     case 'CREATE_UPCOMING_SERMON': {
-      const filteredNewItemResponse = filterItemByLanguage(
-        action.data.newItemResponse,
-        action.data.currLanguage
-      )
-      return state.concat(filteredNewItemResponse)
+      return state.concat(action.data.newItemResponse)
     }
     case 'DELETE_UPCOMING_SERMON': {
       return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
@@ -33,7 +29,6 @@ const upcomingSermonsReducer = (state = [], action) => {
 
 export const getUpcomingSermons = () => {
   return async dispatch => {
-
     try {
       const upcomingSermons = await upcomingSermonsService.getUpcomingSermons()
 
@@ -49,7 +44,7 @@ export const getUpcomingSermons = () => {
   }
 }
 
-export const createUpcomingSermon = (newItem, currLanguage) => {
+export const createUpcomingSermon = (newItem) => {
   return async dispatch => {
     try {
       const newItemResponse =
@@ -59,7 +54,6 @@ export const createUpcomingSermon = (newItem, currLanguage) => {
         type: 'CREATE_UPCOMING_SERMON',
         data: {
           newItemResponse,
-          currLanguage,
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))

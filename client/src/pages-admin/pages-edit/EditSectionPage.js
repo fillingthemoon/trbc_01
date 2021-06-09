@@ -17,7 +17,7 @@ const titleUnderlineStyle = {
   justifyContent: 'center',
 }
 
-const EditSectionPage = ({ editSection }) => {
+const EditSectionPage = ({ editSectionName }) => {
   const loggedInUser = useSelector(state => state.loggedInUser)
   const notification = useSelector(state => state.notification)
 
@@ -25,7 +25,7 @@ const EditSectionPage = ({ editSection }) => {
     return <AdminLoginPage />
   }
 
-  if (editSection === null || editSection.length <= 0) {
+  if (!editSectionName) {
     return null
   }
 
@@ -38,10 +38,10 @@ const EditSectionPage = ({ editSection }) => {
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
           titleStyle={{ textAlign: 'center', fontSize: '2rem' }}
-          title={convertName('dashed', 'proper', editSection[0].pageSection)}
+          title={convertName('dashed', 'proper', editSectionName)}
           underlineAlign='center'
         />
-        <EditableTable editSection={editSection}/>
+        <EditableTable editSectionName={editSectionName} />
       </Content>
     </Layout>
   )

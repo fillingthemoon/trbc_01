@@ -14,7 +14,7 @@ const churchWideReducer = (state = [], action) => {
   }
 }
 
-export const getChurchWide = (type) => {
+export const getChurchWide = (sectionName=null) => {
   return async dispatch => {
 
     try {
@@ -24,8 +24,8 @@ export const getChurchWide = (type) => {
 
       let churchWide = await churchWideService.getChurchWide()
 
-      churchWide = type
-        ? churchWide.filter(churchWideItem => churchWideItem.pageSection === type)
+      churchWide = sectionName
+        ? churchWide.filter(churchWideItem => churchWideItem.pageSection === sectionName)
         : churchWide
 
       dispatch({
