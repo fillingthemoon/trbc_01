@@ -1,5 +1,5 @@
 const sectionToItem = {
-  'second-langage-classes': 'churchWide',
+  'second-language-classes': 'churchWide',
   'interest-groups': 'churchWide',
   'discipleship': 'discipleship',
   'announcements': 'announcements',

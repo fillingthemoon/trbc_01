@@ -13,7 +13,7 @@ import { getServices } from '../reducers/servicesReducer'
 import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 const getFunction = {
-  'second-langage-classes': getChurchWide('second-langage-classes'),
+  'second-language-classes': getChurchWide('second-language-classes'),
   'interest-groups': getChurchWide('interest-groups'),
   'discipleship': getDiscipleship(),
   'announcements': getAnnouncements(),
