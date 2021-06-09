@@ -122,7 +122,7 @@ const App = () => {
   return (
     <Layout>
       <NavBar />
-      <Content>
+      <Content className='content-main'>
         <Switch>
           <Route path={urlsWithIdParams} exact>
             <IndividualPage item={indivPageItemMatch} />
