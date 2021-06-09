@@ -147,6 +147,7 @@ const NavBar = () => {
 
   return (
     <Header
+      // Has a fixed height of 100px
       style={{
         display: 'flex',
         justifyContent: 'space-between',
