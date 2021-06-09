@@ -3,7 +3,6 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
 import announcementsReducer from './reducers/announcementsReducer'
-import cecReducer from './reducers/cecReducer'
 import churchWideReducer from './reducers/churchWideReducer'
 import discipleshipReducer from './reducers/discipleshipReducer'
 import eventsReducer from './reducers/eventsReducer'
@@ -27,7 +26,6 @@ import languageSpinnerReducer from './reducers/languageSpinnerReducer'
 
 const reducer = combineReducers({
   announcements: announcementsReducer,
-  cec: cecReducer,
   churchWide: churchWideReducer,
   discipleship: discipleshipReducer,
   events: eventsReducer,

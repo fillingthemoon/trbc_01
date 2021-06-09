@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 /**
  * "Pages" (simply the routes in this website):
- *  CEC,
+ *  Chuwch Wide,
  *  Discipleship,
  *  Home,
  *  I'm New,
@@ -22,7 +22,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Statement of Faith
  *
  * "Items" (subcategories the Home page, for the purposes of UI/UX):
- *  CEC,
+ *  Church Wide
  *  Discipleship,
  *  Announcements, Events, Upcoming Sermons,
  *  I'm New,
@@ -34,7 +34,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Statement of Faith
  *
  * "Sections" (similar to items, but also subcategorises Our Team, Outreach, and Services):
- *  CEC,
+ *  Church Wide
  *  Discipleship,
  *  Announcements, Events, Upcoming Sermons,
  *  I'm New,
@@ -59,7 +59,6 @@ import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
 import Missions from './pages/Missions'
 import Discipleship from './pages/Discipleship'
-import CEC from './pages/CEC'
 import FacilityBooking from './pages/FacilityBooking'
 import ResourceLibrary from './pages/ResourceLibrary'
 import ContactFooter from './components/ContactFooter'
@@ -164,9 +163,6 @@ const App = () => {
           </Route>
           <Route path='/discipleship' exact>
             <Discipleship />
-          </Route >
-          <Route path='/cec' exact>
-            <CEC />
           </Route >
           <Route path='/facility-booking' exact>
             <FacilityBooking />

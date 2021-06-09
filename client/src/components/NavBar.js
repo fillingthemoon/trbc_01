@@ -97,9 +97,6 @@ const NavBar = () => {
         <Menu.Item key='discipleship'>
           <Link replace to='/discipleship'>{getWord('Discipleship', language)}</Link>
         </Menu.Item>
-        {/* <Menu.Item key='cec'>
-          <Link replace to='/cec'>{'Children\'s Enrichment Camp'}</Link>
-        </Menu.Item> */}
       </SubMenu>
       <SubMenu key='resources' title={getWord('Resources', language)}>
         <Menu.Item key='resource-library'>

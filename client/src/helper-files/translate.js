@@ -5,7 +5,6 @@ const dictionaryEnToCh = {
   'Events': '事件',
   'Upcoming Sermons': '即将举行的布道',
 
-  'Cec': 'cec',
   'Children\'s Enrichment Camp': '儿童营会',
 
   'About Us': '认识教会',
