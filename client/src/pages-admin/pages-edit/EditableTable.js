@@ -55,7 +55,7 @@ const EditableTable = ({ editSectionName }) => {
     )
   }, [editSection])
 
-  if (tableData.length <= 0) {
+  if (editSection.length <= 0 || tableData.length <= 0) {
     return null
   }
 
