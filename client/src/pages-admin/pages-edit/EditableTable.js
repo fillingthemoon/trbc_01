@@ -24,7 +24,7 @@ const cellImgStyle = {
 
 const EditableTable = ({ editSection }) => {
   const [form] = Form.useForm()
-  const [data, setData] = useState([])
+  const [tableData, setTableData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
 
   const dispatch = useDispatch()
@@ -44,7 +44,7 @@ const EditableTable = ({ editSection }) => {
           key: i,
         }
     })
-    setData(sectionData)
+    setTableData(sectionData)
   }, [])
 
   if (editSection.length <= 0) {
@@ -63,18 +63,18 @@ const EditableTable = ({ editSection }) => {
   const save = async (record) => {
     try {
       const row = await form.validateFields()
-      const newData = [...data]
+      const newData = [...tableData]
 
       const index = newData.findIndex((item) => item.id === record.id)
 
       if (index >= 0) {
         const item = newData[index]
         newData.splice(index, 1, { ...item, ...row })
-        setData(newData)
+        setTableData(newData)
         setEditingId('')
       } else {
         newData.push(row)
-        setData(newData)
+        setTableData(newData)
         setEditingId('')
       }
 
@@ -92,8 +92,8 @@ const EditableTable = ({ editSection }) => {
   }
 
   const deleteRow = (record) => {
-    const newData = data.filter((item) => item.id !== record.id)
-    setData(newData)
+    const newData = tableData.filter((item) => item.id !== record.id)
+    setTableData(newData)
 
     dispatch(deleteUpcomingSermon(record.id))
   }
@@ -101,6 +101,7 @@ const EditableTable = ({ editSection }) => {
   const hiddenFields = ['id',]
   const fields = Object.keys(flattenNestedObject(editSection[0]))
     .filter(field => !hiddenFields.includes(field))
+
   // Add image display column if imgSrc exists
   if (Object.keys(flattenNestedObject(editSection[0])).includes('imgSrc')) {
     fields.push('imgDisplay')
@@ -182,7 +183,7 @@ const EditableTable = ({ editSection }) => {
         <Table
           components={{ body: { cell: EditableCell } }}
           bordered
-          dataSource={data}
+          dataSource={tableData}
           columns={mergedColumns}
           rowClassName="editable-row"
           pagination={false}

@@ -21,7 +21,7 @@ const upcomingSermonsReducer = (state = [], action) => {
     }
     case 'UPDATE_UPCOMING_SERMON': {
       return state.map(item => item.id === action.data.id
-        ? action.data.updatedItem
+        ? action.data.updatedItemResponse
         : item
       )
     }
