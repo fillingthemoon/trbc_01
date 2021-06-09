@@ -25,7 +25,7 @@ const dictionaryEnToCh = {
     '24 神 是 個 靈 （ 或 無 個 字 ） ， 所 以 拜 他 的 必 須 用 心 靈 和 誠 實 拜 他 。 」 - 約 翰 福 音 4:24',
   'Service Details': '崇拜聚会细节',
 
-  'English Service': '主日崇拜',
+  'English Service': '英文崇拜',
   'Teo Chew/Chinese Service': '潮华华语崇拜',
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
