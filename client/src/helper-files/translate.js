@@ -30,8 +30,8 @@ const dictionaryEnToCh = {
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
   'Church Wide': '全教会',
+  'Second Language Classes': '第二语言班',
   'Interest Groups': '利益集团',
-  'Community': '社区',
 
   'I\'m New': '我是新来的',
 
