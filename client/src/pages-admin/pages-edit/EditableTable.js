@@ -29,7 +29,6 @@ const EditableTable = ({ editSectionName }) => {
   const [tableData, setTableData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
   const editSection = useSelector(state => state[sectionToItem[editSectionName]])
-  const upcomingSermons = useSelector(state => state.upcomingSermons)
 
   const dispatch = useDispatch()
   const language = useSelector(state => state.language)
@@ -40,19 +39,20 @@ const EditableTable = ({ editSectionName }) => {
   }, [])
 
   useEffect(() => {
-    const sectionData = editSection.map((sectionItem, i) => {
-      return Object.keys(sectionItem).includes('imgSrc')
-        ? {
-          ...flattenNestedObject(sectionItem),
-          key: i,
-          imgDisplay: <Image src={sectionItem.imgSrc} style={cellImgStyle}></Image>
-        }
-        : {
-          ...flattenNestedObject(sectionItem),
-          key: i,
-        }
-    })
-    setTableData(sectionData)
+    setTableData(
+      editSection.map((sectionItem, i) => {
+        return Object.keys(sectionItem).includes('imgSrc')
+          ? {
+            ...flattenNestedObject(sectionItem),
+            key: i,
+            imgDisplay: <Image src={sectionItem.imgSrc} style={cellImgStyle}></Image>
+          }
+          : {
+            ...flattenNestedObject(sectionItem),
+            key: i,
+          }
+      })
+    )
   }, [editSection])
 
   if (tableData.length <= 0) {

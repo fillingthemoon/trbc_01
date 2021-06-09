@@ -17,7 +17,7 @@ import {
   FaHandsHelping,
   FaChurch,
   FaHome,
-  FaRegSmile,
+  FaCalendar,
 } from 'react-icons/fa'
 
 import { BsFillPeopleFill } from 'react-icons/bs'
@@ -38,7 +38,7 @@ const iconStyle = {
 
 const iconDictionary = {
   'cec': <FaCampground style={iconStyle} />,
-  'church-wide': <FaRegSmile style={iconStyle} />,
+  'church-wide': <FaChurch style={iconStyle} />,
   'discipleship': <BsFillPeopleFill style={iconStyle} />,
   'home': <FaHome style={iconStyle} />,
   'im-new': <FaStar style={iconStyle} />,
@@ -46,7 +46,7 @@ const iconDictionary = {
   'our-history': <FaHistory style={iconStyle} />,
   'our-team': <FaPeopleCarry style={iconStyle} />,
   'outreach': <FaHandsHelping style={iconStyle} />,
-  'services': <FaChurch style={iconStyle} />,
+  'services': <FaCalendar style={iconStyle} />,
   'statement-of-faith': <HiSpeakerphone style={iconStyle} />,
 }
 
