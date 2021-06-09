@@ -144,6 +144,65 @@ const flattenNestedObject = (nestedObject) => {
   return flattened
 }
 
+const nestFlattenedObjectCreate = (flattenedObject) => {
+  // Should be kept updated with itemModel.js's details object fields
+  const detailsFields = ['date', 'time', 'location', 'person', 'passage']
+
+  const nestedFlattenedObject = { itemEn: {}, itemCh: {} }
+  Object.keys(flattenedObject).forEach(field => {
+    // If the field contains a -en or -ch at the back
+    if (['en', 'ch'].includes(field.slice(-2))) {
+
+      // Get the field name with -en or -ch at the back
+      const fieldWithoutLang = field.substring(0, field.length - 3)
+
+      // Get the capitalised version of 'en' and 'ch'; 'En' and 'Ch'
+      const capitalisedLang = `${field.slice(-2)[0].toUpperCase()}${field.slice(-2)[1]}`
+
+      // If the field is a 'detail'
+      if (detailsFields.includes(fieldWithoutLang)) {
+
+        // If the 'details' key-value pair is not already in nestedFlattenedObject, then create it.
+        if (!Object.keys(nestedFlattenedObject[`item${capitalisedLang}`]).includes('details')) {
+          nestedFlattenedObject[`item${capitalisedLang}`]['details'] = { [fieldWithoutLang]: flattenedObject[field] }
+        } else {
+          nestedFlattenedObject[`item${capitalisedLang}`]['details'][fieldWithoutLang] = flattenedObject[field]
+        }
+      } else {
+        nestedFlattenedObject[`item${capitalisedLang}`][fieldWithoutLang] = flattenedObject[field]
+      }
+    } else {
+      nestedFlattenedObject[field] = flattenedObject[field]
+    }
+  })
+
+  nestedFlattenedObject
+
+  return nestedFlattenedObject
+}
+
+const nestFlattenedObjectUpdate = (flattenedObject, language) => {
+  // Should be kept updated with itemModel.js's details object fields
+  const detailsFields = ['date', 'time', 'location', 'person', 'passage']
+
+  const currLanguage = language === 'en' ? 'itemEn' : 'itemCh'
+
+  const newObject = {}
+  Object.keys(flattenedObject).forEach(field => {
+    if (detailsFields.includes(field)) {
+      if (!Object.keys(newObject).includes('details')) {
+        newObject['details'] = { [field]: flattenedObject[field] }
+      } else {
+        newObject['details'][field] = flattenedObject[field]
+      }
+    } else {
+      newObject[field] = flattenedObject[field]
+    }
+  })
+
+  return { [currLanguage]: newObject }
+}
+
 const filterItemByLanguage = (item, language) => {
   const { id, itemId, page, pageSection, ...rest } = item
   const langItem = language === 'en'
@@ -159,5 +218,7 @@ export {
   formatParagraph,
   convertName,
   flattenNestedObject,
+  nestFlattenedObjectCreate,
+  nestFlattenedObjectUpdate,
   filterItemByLanguage,
 }

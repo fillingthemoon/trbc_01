@@ -5,7 +5,7 @@ import AlternatingImageTextTemplate from '../page-templates/AlternatingImageText
 import Banner from '../components-reusable/Banner'
 import ConnectForm from '../components-reusable/ConnectForm'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'
 const { gathering } = general

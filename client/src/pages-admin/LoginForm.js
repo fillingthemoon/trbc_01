@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import TileText from '../components-reusable/TitleText'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { useDispatch, useSelector } from 'react-redux'
 

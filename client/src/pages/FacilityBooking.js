@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import Banner from '../components-reusable/Banner'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'
 const { exterior } = general

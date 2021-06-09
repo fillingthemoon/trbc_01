@@ -8,31 +8,34 @@ const getLanguage = () => {
 }
 
 const getUpcomingSermons = async () => {
-  const response = await axios.get(`${baseUrl}/${getLanguage()}`)
+  const response = await axios.get(`${baseUrl}${getLanguage()}`)
   return response.data
 }
 
-const createUpcomingSermon = async (newObject) => {
+const createUpcomingSermon = async (newItem) => {
   const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
-
   const config = {
     headers: { Authorization: token },
   }
 
-  const response = await axios.post(baseUrl, newObject, config)
+  const response = await axios.post(`${baseUrl}${getLanguage()}`, newItem, config)
 
   return response.data
 }
 
-// const update = async (id, newObject) => {
-//   const response = await axios.put(`${baseUrl}/${id}`, newObject)
+const updateUpcomingSermon = async (id, updatedItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
 
-//   return response.data
-// }
+  const response = await axios.put(`${baseUrl}${id}/${getLanguage()}`, updatedItem, config)
+
+  return response.data
+}
 
 const deleteUpcomingSermon = async (id) => {
   const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
-
   const config = {
     headers: { Authorization: token }
   }
@@ -45,6 +48,7 @@ const deleteUpcomingSermon = async (id) => {
 const upcomingSermonsService = {
   getUpcomingSermons,
   createUpcomingSermon,
+  updateUpcomingSermon,
   deleteUpcomingSermon,
 }
 

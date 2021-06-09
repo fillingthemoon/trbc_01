@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { Row, Col, Image } from 'antd'
 

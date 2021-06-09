@@ -4,7 +4,7 @@ import { List, Card, Row, Col, Input, Collapse } from 'antd'
 import InlineMenu from '../components/InlineMenu'
 import Banner from '../components-reusable/Banner'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'
 const { resourceLibrary } = general

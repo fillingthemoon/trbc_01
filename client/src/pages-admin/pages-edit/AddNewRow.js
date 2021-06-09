@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import TitleText from '../../components-reusable/TitleText'
 
-import { flattenNestedObject, convertName } from '../../helper-files/helperFunctions'
-import { getWord } from '../../helper-files/navBarPagesEnChWords'
+import { flattenNestedObject, nestFlattenedObjectCreate, convertName } from '../../helper-files/helperFunctions'
+import { getWord } from '../../helper-files/translate'
 
 import { createUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
 
@@ -62,9 +62,6 @@ const AddNewRow = ({ section }) => {
     setIsModalVisible(true)
   }
 
-  // Should be kept updated with itemModel.js's details object fields
-  const detailsFields = ['date', 'time', 'location', 'person', 'passage']
-
   const handleSubmitNewRow = (values) => {
     if (!window.confirm('Are you sure?')) {
       return
@@ -72,33 +69,7 @@ const AddNewRow = ({ section }) => {
 
     setIsModalVisible(false)
 
-    const nestedFlattenedObject = { itemEn: {}, itemCh: {} }
-    Object.keys(values).forEach(field => {
-      // If the field contains a -en or -ch at the back
-      if (['en', 'ch'].includes(field.slice(-2))) {
-
-        // Get the field name with -en or -ch at the back
-        const fieldWithoutLang = field.substring(0, field.length - 3)
-
-        // Get the capitalised version of 'en' and 'ch'; 'En' and 'Ch'
-        const capitalisedLang = `${field.slice(-2)[0].toUpperCase()}${field.slice(-2)[1]}`
-
-        // If the field is a 'detail'
-        if (detailsFields.includes(fieldWithoutLang)) {
-
-          // If the 'details' key-value pair is not already in nestedFlattenedObject, then create it.
-          if (!Object.keys(nestedFlattenedObject[`item${capitalisedLang}`]).includes('details')) {
-            nestedFlattenedObject[`item${capitalisedLang}`]['details'] = { [fieldWithoutLang]: values[field] }
-          } else {
-            nestedFlattenedObject[`item${capitalisedLang}`]['details'][fieldWithoutLang] = values[field]
-          }
-        } else {
-          nestedFlattenedObject[`item${capitalisedLang}`][fieldWithoutLang] = values[field]
-        }
-      } else {
-        nestedFlattenedObject[field] = values[field]
-      }
-    })
+    const nestedFlattenedObject = nestFlattenedObjectCreate(values)
 
     // Need to change to other sections as well
     dispatch(createUpcomingSermon(nestedFlattenedObject, language))

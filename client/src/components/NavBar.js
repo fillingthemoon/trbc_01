@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setLanguage } from '../reducers/languageReducer'
 import { setLanguageSpinner } from '../reducers/languageSpinnerReducer'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'

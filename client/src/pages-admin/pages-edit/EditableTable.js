@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import EditableCell from './EditableCell'
 import AddNewRow from './AddNewRow'
 
-import { setNotification } from '../../reducers/notificationReducer'
-import { deleteUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
+import { updateUpcomingSermon, deleteUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
 
-import { flattenNestedObject } from '../../helper-files/helperFunctions'
+import { convertName, flattenNestedObject, nestFlattenedObjectUpdate } from '../../helper-files/helperFunctions'
 
 import {
   Table,
@@ -29,6 +28,7 @@ const EditableTable = ({ editSection }) => {
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
 
   const dispatch = useDispatch()
+  const language = useSelector(state => state.language)
 
   // Sets the table's data
   useEffect(() => {
@@ -77,6 +77,15 @@ const EditableTable = ({ editSection }) => {
         setData(newData)
         setEditingId('')
       }
+
+      // Get page and pageSection in row object before calling nestFlattenedObjectUpdate
+      const pageLang = `page${convertName('dashed', 'proper', language)}`
+      const pageSectionLang = `pageSection${convertName('dashed', 'proper', language)}`
+      row[pageLang] = record[pageLang]
+      row[pageSectionLang] = record[pageSectionLang]
+
+      const nestedRow = nestFlattenedObjectUpdate(row, language)
+      dispatch(updateUpcomingSermon(record.id, nestedRow))
     } catch (error) {
       console.log('Validation Failed:', error)
     }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import TitleText from '../components-reusable/TitleText'
 

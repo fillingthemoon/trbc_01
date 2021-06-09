@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import TitleText from '../components-reusable/TitleText'
 
 import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { Row, Card, Typography } from 'antd'
 const { Title, Paragraph } = Typography

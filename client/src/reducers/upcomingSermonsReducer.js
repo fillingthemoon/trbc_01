@@ -10,10 +10,20 @@ const upcomingSermonsReducer = (state = [], action) => {
       return action.data.upcomingSermons
     }
     case 'CREATE_UPCOMING_SERMON': {
-      return state.concat(action.data.filteredUpcomingSermonResponse)
+      const filteredNewItemResponse = filterItemByLanguage(
+        action.data.newItemResponse,
+        action.data.currLanguage
+      )
+      return state.concat(filteredNewItemResponse)
     }
     case 'DELETE_UPCOMING_SERMON': {
       return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
+    case 'UPDATE_UPCOMING_SERMON': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItem
+        : item
+      )
     }
     default: {
       return state
@@ -39,22 +49,40 @@ export const getUpcomingSermons = () => {
   }
 }
 
-export const createUpcomingSermon = (upcomingSermon, currLanguage) => {
+export const createUpcomingSermon = (newItem, currLanguage) => {
   return async dispatch => {
     try {
-      const upcomingSermonResponse =
-        await upcomingSermonsService.createUpcomingSermon(upcomingSermon)
-
-      const filteredUpcomingSermonResponse =
-        filterItemByLanguage(upcomingSermonResponse, currLanguage)
+      const newItemResponse =
+        await upcomingSermonsService.createUpcomingSermon(newItem)
 
       dispatch({
         type: 'CREATE_UPCOMING_SERMON',
         data: {
-          filteredUpcomingSermonResponse,
+          newItemResponse,
+          currLanguage,
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateUpcomingSermon = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await upcomingSermonsService.updateUpcomingSermon(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_UPCOMING_SERMON',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

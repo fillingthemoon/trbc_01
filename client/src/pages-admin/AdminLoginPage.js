@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import LoginForm from './LoginForm'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import Notification from '../components-reusable/Notification'
 

@@ -14,7 +14,7 @@ const { Meta } = Card
 
 import { getUpcomingSermons } from '../reducers/upcomingSermonsReducer'
 import { convertName } from '../helper-files/helperFunctions'
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 const cardStyle = {
   display: 'flex',

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import SectionsTemplate from '../page-templates/SectionsTemplate'
 
-import { getWord } from '../helper-files/navBarPagesEnChWords'
+import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'
 const { exterior } = general
