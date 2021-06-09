@@ -153,6 +153,11 @@ const NavBar = () => {
         alignItems: 'center',
         backgroundColor: 'white',
         padding: '50px 30px',
+
+        // Makes navbar fixed
+        position: 'fixed',
+        zIndex: '1',
+        width: '100%',
       }}
     >
       <Link replace to='/home'>
