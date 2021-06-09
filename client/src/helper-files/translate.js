@@ -5,8 +5,6 @@ const dictionaryEnToCh = {
   'Events': '事件',
   'Upcoming Sermons': '即将举行的布道',
 
-  'Children\'s Enrichment Camp': '儿童营会',
-
   'About Us': '认识教会',
   'Mission & Vision': '使命与异象',
   'Our History': '教会历史',
@@ -17,6 +15,8 @@ const dictionaryEnToCh = {
   'Administrative': '行政人员',
 
   'Statement of Faith': '信仰宣言',
+
+  'Join Us': '加入我们',
 
   'Services': '崇拜聚会',
   'Attitude of Worship': '敬拜的态度',
@@ -29,16 +29,16 @@ const dictionaryEnToCh = {
   'Teo Chew/Chinese Service': '潮华华语崇拜',
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
-  'Join Us': '加入我们',
   'Church Wide': '全教会',
+  'Interest Groups': '利益集团',
+  'Community': '社区',
 
   'I\'m New': '我是新来的',
 
   'Ministries': '教会性事工',
   'Outreach': '外展事工',
   'Children': '孩子们',
-  'Interest Groups': '利益集团',
-  'Community': '社区',
+  'Children\'s Enrichment Camp': '儿童营会',
 
   'Missions': '宣教事工',
   'Discipleship': '门徒训练',
