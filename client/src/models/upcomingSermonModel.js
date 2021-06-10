@@ -9,39 +9,40 @@ const link = {
 const details = {
   date: 'date',
   time: 'time',
-  location: 'location',
+  // location: 'location',
   person: 'person',
   passage: 'passage',
 }
 
 const langItems = {
-  service: 'service',
-  serviceAcronym: 'serviceAcronym',
+  // service: 'service',
+  // serviceAcronym: 'serviceAcronym',
   title: 'title',
   text: 'text',
   details: details,
-  imgSrc: 'imgSrc',
-  link: link,
+  // imgSrc: 'imgSrc',
+  // link: link,
 }
 
 const itemEn = {
-  pageEn: 'pageEn',
-  pageSectionEn: 'pageSectionEn',
+  pageEn: 'home',
+  pageSectionEn: 'upcoming-sermons',
   ...langItems,
 }
 
 const itemCh = {
-  pageCh: 'pageCh',
-  pageSectionCh: 'pageSectionCh',
+  pageCh: 'home',
+  pageSectionCh: 'upcoming-sermons',
   ...langItems,
 }
 
-const itemSchema = {
+const upcomingSermonSchema = {
+  id: 'id',
   itemId: 'itemId',
-  page: 'page',
-  pageSection: 'pageSection',
+  page: 'home',
+  pageSection: 'upcoming-sermons',
   itemEn: itemEn,
   itemCh: itemCh,
 }
 
-export default itemSchema
+export default upcomingSermonSchema

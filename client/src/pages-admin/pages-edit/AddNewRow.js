@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import TitleText from '../../components-reusable/TitleText'
 
-import { flattenNestedObject, nestFlattenedObjectCreate, convertName } from '../../helper-files/helperFunctions'
+import { nestFlattenedObjectCreate, convertName } from '../../helper-files/helperFunctions'
 import { getWord } from '../../helper-files/translate'
 
 import { createUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
@@ -52,7 +52,7 @@ const TitleTextLang = ({ title }) =>
     style={{ margin: '20px 0' }}
   />
 
-const AddNewRow = ({ section }) => {
+const AddNewRow = ({ modelFields }) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const language = useSelector(state => state.language)
 
@@ -84,9 +84,9 @@ const AddNewRow = ({ section }) => {
     'page', 'pageSection',
     // 'pageEn', 'pageSectionEn', 'pageCh', 'pageSectionCh'
   ]
-  const flattenedSection = flattenNestedObject(section[0])
+
   // fields for current language
-  const formFieldsPrimary = Object.keys(flattenedSection)
+  const formFieldsPrimary = Object.keys(modelFields)
     .filter(formField => !hiddenFormFields.includes(formField))
   // fields for other language
   const formFieldsOther = formFieldsPrimary.map(formField => {
@@ -107,13 +107,13 @@ const AddNewRow = ({ section }) => {
 
   // Initial Form values
   const initialFormValues = {
-    'page': section[0].page,
-    'pageSection': section[0].pageSection,
-    'pageEn-en': section[0].page,
-    'pageSectionEn-en': section[0].pageSection,
+    'page': modelFields.page,
+    'pageSection': modelFields.pageSection,
+    'pageEn-en': modelFields.page,
+    'pageSectionEn-en': modelFields.pageSection,
     'imgSrc-en': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
-    'pageCh-ch': section[0].page,
-    'pageSectionCh-ch': getWord(convertName('dashed', 'proper', section[0].pageSection), 'ch'),
+    'pageCh-ch': modelFields.page,
+    'pageSectionCh-ch': getWord(convertName('dashed', 'proper', modelFields.pageSection), 'ch'),
     'imgSrc-ch': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
 
     // temporary
@@ -169,7 +169,8 @@ const AddNewRow = ({ section }) => {
                     <FormField
                       key={i}
                       language={lang}
-                      title={formField} flattenedSection={flattenedSection} />
+                      title={formField}
+                    />
                   )}
                 </Col>
               )

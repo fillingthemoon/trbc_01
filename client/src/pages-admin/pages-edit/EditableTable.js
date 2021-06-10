@@ -10,6 +10,8 @@ import { convertName, flattenNestedObject, nestFlattenedObjectUpdate } from '../
 import { getFunction } from '../../helper-files/getFunctions'
 import { sectionToItem } from '../../helper-files/sectionToItem'
 
+import { getModelFields } from '../../helper-files/modelFields'
+
 import {
   Table,
   Form,
@@ -33,14 +35,17 @@ const EditableTable = ({ editSectionName }) => {
   const dispatch = useDispatch()
   const language = useSelector(state => state.language)
 
+  const modelFields = getModelFields('upcoming-sermons', language)
+
   // Sets the table's data
   useEffect(() => {
     dispatch(getFunction[editSectionName])
   }, [])
 
   useEffect(() => {
-    setTableData(
-      editSection.map((sectionItem, i) => {
+    setTableData(editSection.length <= 0
+      ? [] // Return [] if no data available
+      : editSection.map((sectionItem, i) => {
         return Object.keys(sectionItem).includes('imgSrc')
           ? {
             ...flattenNestedObject(sectionItem),
@@ -54,10 +59,6 @@ const EditableTable = ({ editSectionName }) => {
       })
     )
   }, [editSection])
-
-  if (editSection.length <= 0 || tableData.length <= 0) {
-    return null
-  }
 
   const isEditing = (record) => record.id === editingId
 
@@ -107,11 +108,11 @@ const EditableTable = ({ editSectionName }) => {
   }
 
   const hiddenFields = ['id',]
-  const fields = Object.keys(flattenNestedObject(editSection[0]))
+  const fields = Object.keys(modelFields)
     .filter(field => !hiddenFields.includes(field))
 
   // Add image display column if imgSrc exists
-  if (Object.keys(flattenNestedObject(editSection[0])).includes('imgSrc')) {
+  if (Object.keys(modelFields).includes('imgSrc')) {
     fields.push('imgDisplay')
   }
 
@@ -186,7 +187,7 @@ const EditableTable = ({ editSectionName }) => {
 
   return (
     <>
-      <AddNewRow section={editSection} />
+      <AddNewRow modelFields={modelFields} />
       <Form form={form} component={false}>
         <Table
           components={{ body: { cell: EditableCell } }}

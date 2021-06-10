@@ -34,7 +34,9 @@ const AdminDashboardContent = () => {
       <TitleText titleUnderlineStyle={titleUnderlineStyle} titleStyle={{ textAlign: 'center' }} title={'Admin Dashboard'} underlineAlign='center' />
       <Row style={{ display: 'flex', justifyContent: 'center', backgroundColor: colorWhite }}>
         {pages.map((page, i) => {
-          return <PageCard key={i} pageName={page._id} pageSections={page.items.map(item => item._id)} />
+          return <PageCard key={i}
+            pageName={page._id}
+            pageSections={page.pageSections.map(pageSection => pageSection._id)} />
         })}
       </Row>
     </>

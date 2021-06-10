@@ -21,7 +21,7 @@ const getSections = async () => {
   const response = await axios.get(`${baseUrl}pages/${getLanguage()}`)
 
   const sections = response.data
-    .map(pages => pages.items)
+    .map(pages => pages.pageSections)
     .flat()
     .map(section => section._id)
 
