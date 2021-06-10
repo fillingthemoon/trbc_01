@@ -41,7 +41,8 @@ const iconStyle = {
 }
 
 const Event = ({ event }) => {
-  const { title, text, date, imgSrc } = event
+  const { title, text, details, imgSrc } = event
+  const { date, location } = details
 
   return (
     <Card
