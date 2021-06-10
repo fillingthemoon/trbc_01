@@ -8,9 +8,9 @@ import { updateUpcomingSermon, deleteUpcomingSermon } from '../../reducers/upcom
 
 import { convertName, flattenNestedObject, nestFlattenedObjectUpdate } from '../../helper-files/helperFunctions'
 import { getFunction } from '../../helper-files/getFunctions'
-import { sectionToItem } from '../../helper-files/sectionToItem'
+import { pageSectionToItem, pageSectionToPage } from '../../helper-files/pageSectionItemPageConversion'
 
-import { getModelFields } from '../../helper-files/modelFields'
+import getItemSchema from '../../models/itemModel'
 
 import {
   Table,
@@ -30,13 +30,14 @@ const EditableTable = ({ editSectionName }) => {
   const [form] = Form.useForm()
   const [tableData, setTableData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
-  const editSection = useSelector(state => state[sectionToItem[editSectionName]])
+  const editSection = useSelector(state => state[pageSectionToItem[editSectionName]])
 
   const dispatch = useDispatch()
   const language = useSelector(state => state.language)
 
   // Gets the relevant fields for this section
-  const modelFields = getModelFields(editSectionName, language)
+  const unflattenedModelFields = getItemSchema(pageSectionToPage[editSectionName], editSectionName, language)
+  const modelFields = flattenNestedObject(flattenNestedObject(unflattenedModelFields))
 
   // Sets the table's data
   useEffect(() => {
