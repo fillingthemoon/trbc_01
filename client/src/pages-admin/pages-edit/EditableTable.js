@@ -26,22 +26,22 @@ const cellImgStyle = {
   objectFit: 'scale-down',
 }
 
-const EditableTable = ({ editSectionName }) => {
+const EditableTable = ({ editPageSectionName }) => {
   const [form] = Form.useForm()
   const [tableData, setTableData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
-  const editSection = useSelector(state => state[pageSectionToItem[editSectionName]])
+  const editSection = useSelector(state => state[pageSectionToItem[editPageSectionName]])
 
   const dispatch = useDispatch()
   const language = useSelector(state => state.language)
 
   // Gets the relevant fields for this section
-  const unflattenedModelFields = getItemSchema(pageSectionToPage[editSectionName], editSectionName, language)
+  const unflattenedModelFields = getItemSchema(pageSectionToPage[editPageSectionName], editPageSectionName, language)
   const modelFields = flattenNestedObject(flattenNestedObject(unflattenedModelFields))
 
   // Sets the table's data
   useEffect(() => {
-    dispatch(getFunction[editSectionName])
+    dispatch(getFunction[editPageSectionName])
   }, [])
 
   useEffect(() => {

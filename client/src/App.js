@@ -168,7 +168,9 @@ const App = () => {
             <Admin />
           </Route >
           <Route path='/admin/:sectionId' exact>
-            <EditSectionPage editSectionName={matchEditSection && matchEditSection.params.sectionId} />
+            <EditSectionPage editPageSectionName={
+              matchEditSection && matchEditSection.params.sectionId
+            } />
           </Route >
         </Switch >
       </Content>
