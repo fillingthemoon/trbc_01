@@ -35,7 +35,8 @@ const EditableTable = ({ editSectionName }) => {
   const dispatch = useDispatch()
   const language = useSelector(state => state.language)
 
-  const modelFields = getModelFields('upcoming-sermons', language)
+  // Gets the relevant fields for this section
+  const modelFields = getModelFields(editSectionName, language)
 
   // Sets the table's data
   useEffect(() => {
