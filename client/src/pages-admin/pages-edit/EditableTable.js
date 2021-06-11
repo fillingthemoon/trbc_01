@@ -95,6 +95,12 @@ const EditableTable = ({ editPageSectionName }) => {
       row[pageLang] = record[pageLang]
       row[pageSectionLang] = record[pageSectionLang]
 
+      // If record contains the keys service and serviceAcronym, save them
+      const serviceFields = ['service', 'serviceAcronym']
+      serviceFields
+        .filter(field => Object.keys(record).includes(field))
+        .forEach(field => { row[field] = record[field] })
+
       const nestedRow = nestFlattenedObjectUpdate(row, language)
       dispatch(updateUpcomingSermon(record.id, nestedRow))
     } catch (error) {
@@ -121,7 +127,8 @@ const EditableTable = ({ editPageSectionName }) => {
   const uneditableColumns = [
     'id', 'itemId', 'page', 'pageSection',
     'pageEn', 'pageSectionEn', 'pageCh', 'pageSectionCh',
-    'imgDisplay'
+    'imgDisplay',
+    'service', 'serviceAcronym'
   ]
   const columns = fields.map(field => {
     return {
