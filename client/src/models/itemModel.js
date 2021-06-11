@@ -255,6 +255,7 @@ const getItemSchema = (pageArg, pageSectionArg, language) => {
   relevantItems.itemCh.pageCh = pageArg
   relevantItems.itemCh.pageSectionCh = pageSectionArg
 
+  // Only keep the relevant language fields
   if (language === 'en') {
     delete relevantItems.itemCh
   } else {

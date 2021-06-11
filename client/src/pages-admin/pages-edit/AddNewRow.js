@@ -23,11 +23,12 @@ const FormField = ({ title, language }) => {
   const fieldsWithDefaultValues = [
     'pageEn', 'pageSectionEn',
     'pageCh', 'pageSectionCh',
+    'service', 'serviceAcronym',
   ]
 
   const inputNode = () => {
     if (fieldsWithDefaultValues.includes(title)) {
-      return <Input disabled />
+      return <Input disabled/>
     } else {
       return <TextArea />
     }
@@ -115,6 +116,12 @@ const AddNewRow = ({ modelFields }) => {
     'pageCh-ch': modelFields.page,
     'pageSectionCh-ch': getWord(convertName('dashed', 'proper', modelFields.pageSection), 'ch'),
     'imgSrc-ch': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+
+    // Conditionally add the 'service-en/ch' and 'serviceAcronym-en/ch' fields
+    ...(modelFields.service && { 'service-en': modelFields.service }),
+    ...(modelFields.serviceAcronym && { 'serviceAcronym-en': modelFields.serviceAcronym }),
+    ...(modelFields.service && { 'service-ch': modelFields.service }),
+    ...(modelFields.serviceAcronym && { 'serviceAcronym-ch': modelFields.serviceAcronym }),
 
     // temporary
     'title-en': 'Title test',
