@@ -30,6 +30,36 @@ const formatParagraph = (paragraph) => {
   }
 }
 
+// Unique for services
+const pageSectionTranslate = (pageSection, toType) => {
+  switch (pageSection) {
+    case ('english-service'): {
+      switch (toType) {
+        case ('proper'):
+        case ('service'): return 'English Service'
+        case ('serviceAcronym'): return 'en'
+      }
+      break
+    }
+    case ('sunset-service-english-mandarin'): {
+      switch (toType) {
+        case ('proper'):
+        case ('service'): return 'Sunset Service (English/Mandarin)'
+        case ('serviceAcronym'): return 'ss'
+      }
+      break
+    }
+    case ('teo-chew-chinese-service'): {
+      switch (toType) {
+        case ('proper'):
+        case ('service'): return 'Teo Chew/Chinese Service'
+        case ('serviceAcronym'): return 'tc'
+      }
+      break
+    }
+  }
+}
+
 const convertName = (fromType, toType, name) => {
   const lowerCaseWords = ['of', 'to']
   const apostropheWords = {
@@ -58,6 +88,13 @@ const convertName = (fromType, toType, name) => {
     case ('dashed'): {
       switch (toType) {
         case ('proper'): {
+
+          if (['english-service',
+            'sunset-service-english-mandarin',
+            'teo-chew-chinese-service'].includes(name)) {
+            return pageSectionTranslate(name, toType)
+          }
+
           const properName = name.split('-')
 
             // check if each word contains apostrophe words
@@ -216,6 +253,7 @@ const filterItemByLanguage = (item, language) => {
 export {
   splitLines,
   formatParagraph,
+  pageSectionTranslate,
   convertName,
   flattenNestedObject,
   nestFlattenedObjectCreate,
