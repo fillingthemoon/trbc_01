@@ -156,7 +156,8 @@ const NavBar = () => {
         padding: '50px 30px',
 
         // Makes navbar fixed
-        position: 'fixed',
+        position: 'sticky',
+        top: '0',
         zIndex: '1',
         width: '100%',
       }}
