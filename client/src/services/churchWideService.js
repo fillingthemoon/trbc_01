@@ -12,8 +12,20 @@ const getChurchWide = async () => {
   return response.data
 }
 
+const createChurchWide = async (newItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const response = await axios.post(`${baseUrl}${getLanguage()}`, newItem, config)
+
+  return response.data
+}
+
 const churchWideService = {
   getChurchWide,
+  createChurchWide,
 }
 
 export default churchWideService

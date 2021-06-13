@@ -2,8 +2,6 @@ import upcomingSermonsService from '../services/upcomingSermonsService'
 
 import { setNotification } from '../reducers/notificationReducer'
 
-import { filterItemByLanguage } from '../helper-files/helperFunctions'
-
 const upcomingSermonsReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_UPCOMING_SERMONS': {

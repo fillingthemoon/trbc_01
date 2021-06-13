@@ -6,7 +6,7 @@ import TitleText from '../../components-reusable/TitleText'
 import { nestFlattenedObjectCreate, convertName } from '../../helper-files/helperFunctions'
 import { getWord } from '../../helper-files/translate'
 
-import { createUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
+import { createFunction } from '../../helper-files/crudFunctions'
 
 import {
   Input,
@@ -72,8 +72,7 @@ const AddNewRow = ({ modelFields }) => {
 
     const nestedFlattenedObject = nestFlattenedObjectCreate(values)
 
-    // Need to change to other sections as well
-    dispatch(createUpcomingSermon(nestedFlattenedObject, language))
+    dispatch(createFunction[modelFields.pageSection](nestedFlattenedObject, language))
   }
 
   const handleCancel = () => {

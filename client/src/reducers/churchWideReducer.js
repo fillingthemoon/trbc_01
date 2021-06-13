@@ -1,9 +1,14 @@
 import churchWideService from '../services/churchWideService'
 
+import { setNotification } from '../reducers/notificationReducer'
+
 const churchWideReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_CHURCH_WIDE': {
       return action.data.churchWide
+    }
+    case 'CREATE_CHURCH_WIDE': {
+      return state.concat(action.data.newItemResponse)
     }
     case 'RESET_CHURCH_WIDE': {
       return []
@@ -36,6 +41,25 @@ export const getChurchWide = (sectionName=null) => {
       })
     } catch (error) {
       console.log(error)
+    }
+  }
+}
+
+export const createChurchWide = (newItem) => {
+  return async dispatch => {
+    try {
+      const newItemResponse =
+        await churchWideService.createChurchWide(newItem)
+
+      dispatch({
+        type: 'CREATE_CHURCH_WIDE',
+        data: {
+          newItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
     }
   }
 }

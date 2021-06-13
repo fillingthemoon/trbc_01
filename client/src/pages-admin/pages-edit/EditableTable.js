@@ -7,7 +7,7 @@ import AddNewRow from './AddNewRow'
 import { updateUpcomingSermon, deleteUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
 
 import { convertName, flattenNestedObject, nestFlattenedObjectUpdate } from '../../helper-files/helperFunctions'
-import { getFunction } from '../../helper-files/getFunctions'
+import { getFunction } from '../../helper-files/crudFunctions'
 import { pageSectionToItem, pageSectionToPage } from '../../helper-files/pageSectionItemPageConversion'
 
 import getItemSchema from '../../models/itemModel'
