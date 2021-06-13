@@ -12,8 +12,20 @@ const getEvents = async () => {
   return response.data
 }
 
+const createEvent = async (newItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const response = await axios.post(`${baseUrl}${getLanguage()}`, newItem, config)
+
+  return response.data
+}
+
 const eventsService = {
   getEvents,
+  createEvent,
 }
 
 export default eventsService

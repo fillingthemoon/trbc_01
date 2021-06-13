@@ -1,9 +1,14 @@
 import ourTeamService from '../services/ourTeamService'
 
+import { setNotification } from '../reducers/notificationReducer'
+
 const ourTeamReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_OUR_TEAM': {
       return action.data.ourTeam
+    }
+    case 'CREATE_OUR_TEAM': {
+      return state.concat(action.data.newItemResponse)
     }
     case 'RESET_SERVICES': {
       return []
@@ -36,6 +41,25 @@ export const getOurTeam = (sectionName=null) => {
       })
     } catch (error) {
       console.log(error)
+    }
+  }
+}
+
+export const createOurTeam = (newItem) => {
+  return async dispatch => {
+    try {
+      const newItemResponse =
+        await ourTeamService.createOurTeam(newItem)
+
+      dispatch({
+        type: 'CREATE_OUR_TEAM',
+        data: {
+          newItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
     }
   }
 }

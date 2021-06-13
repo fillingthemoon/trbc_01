@@ -12,8 +12,20 @@ const getMissions = async () => {
   return response.data
 }
 
+const createMission = async (newItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const response = await axios.post(`${baseUrl}${getLanguage()}`, newItem, config)
+
+  return response.data
+}
+
 const missionsService = {
   getMissions,
+  createMission,
 }
 
 export default missionsService

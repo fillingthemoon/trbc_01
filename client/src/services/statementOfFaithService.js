@@ -12,8 +12,20 @@ const getStatementOfFaith = async () => {
   return response.data
 }
 
+const createStatementOfFaith = async (newItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const response = await axios.post(`${baseUrl}${getLanguage()}`, newItem, config)
+
+  return response.data
+}
+
 const statementOfFaithService = {
   getStatementOfFaith,
+  createStatementOfFaith,
 }
 
 export default statementOfFaithService

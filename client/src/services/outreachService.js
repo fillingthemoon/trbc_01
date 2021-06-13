@@ -12,8 +12,20 @@ const getOutreach = async () => {
   return response.data
 }
 
+const createOutreach = async (newItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const response = await axios.post(`${baseUrl}${getLanguage()}`, newItem, config)
+
+  return response.data
+}
+
 const outreachService = {
   getOutreach,
+  createOutreach,
 }
 
 export default outreachService

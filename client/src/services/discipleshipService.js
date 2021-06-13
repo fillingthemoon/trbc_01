@@ -12,8 +12,20 @@ const getDiscipleship = async () => {
   return response.data
 }
 
+const createDiscipleship = async (newItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const response = await axios.post(`${baseUrl}${getLanguage()}`, newItem, config)
+
+  return response.data
+}
+
 const discipleshipService = {
   getDiscipleship,
+  createDiscipleship,
 }
 
 export default discipleshipService

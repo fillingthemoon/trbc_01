@@ -1,16 +1,16 @@
 /* get functions for various sections */
 import { getChurchWide, createChurchWide } from '../reducers/churchWideReducer'
-import { getDiscipleship } from '../reducers/discipleshipReducer'
-import { getAnnouncements } from '../reducers/announcementsReducer'
-import { getEvents } from '../reducers/eventsReducer'
+import { getDiscipleship, createDiscipleship } from '../reducers/discipleshipReducer'
+import { getAnnouncements, createAnnouncement } from '../reducers/announcementsReducer'
+import { getEvents, createEvent } from '../reducers/eventsReducer'
 import { getUpcomingSermons, createUpcomingSermon } from '../reducers/upcomingSermonsReducer'
-import { getImNew } from '../reducers/imNewReducer'
-import { getMissions } from '../reducers/missionsReducer'
-import { getOurHistory } from '../reducers/ourHistoryReducer'
-import { getOurTeam } from '../reducers/ourTeamReducer'
-import { getOutreach } from '../reducers/outreachReducer'
-import { getServices } from '../reducers/servicesReducer'
-import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
+import { getImNew, createImNew } from '../reducers/imNewReducer'
+import { getMissions, createMission } from '../reducers/missionsReducer'
+import { getOurHistory, createOurHistory } from '../reducers/ourHistoryReducer'
+import { getOurTeam, createOurTeam } from '../reducers/ourTeamReducer'
+import { getOutreach, createOutreach } from '../reducers/outreachReducer'
+import { getServices, createService } from '../reducers/servicesReducer'
+import { getStatementOfFaith, createStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 // Read
 const getFunction = {
@@ -37,21 +37,21 @@ const getFunction = {
 const createFunction = {
   'second-language-classes': createChurchWide,
   'interest-groups': createChurchWide,
-  // 'discipleship': createDiscipleship,
-  // 'announcements': createAnnouncement,
-  // 'events': createEvent,
+  'discipleship': createDiscipleship,
+  'announcements': createAnnouncement,
+  'events': createEvent,
   'upcoming-sermons': createUpcomingSermon,
-  // 'im-new': createImNew,
-  // 'missions': createMission,
-  // 'our-history': createOurHistory,
-  // 'administrative': createOurTeam,
-  // 'ministry': createOurTeam,
-  // 'pastoral': createOurTeam,
-  // 'outreach': createOutreach,
-  // 'english-service': createService,
-  // 'sunset-service-english-mandarin': createService,
-  // 'teo-chew-chinese-service': createService,
-  // 'statement-of-faith': createStatementOfFaith,
+  'im-new': createImNew,
+  'missions': createMission,
+  'our-history': createOurHistory,
+  'administrative': createOurTeam,
+  'ministry': createOurTeam,
+  'pastoral': createOurTeam,
+  'outreach': createOutreach,
+  'english-service': createService,
+  'sunset-service-english-mandarin': createService,
+  'teo-chew-chinese-service': createService,
+  'statement-of-faith': createStatementOfFaith,
 }
 
 export {

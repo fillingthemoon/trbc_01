@@ -1,9 +1,14 @@
 import servicesService from '../services/servicesService'
 
+import { setNotification } from '../reducers/notificationReducer'
+
 const servicesReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_SERVICES': {
       return action.data.services
+    }
+    case 'CREATE_SERVICE': {
+      return state.concat(action.data.newItemResponse)
     }
     case 'RESET_SERVICES': {
       return []
@@ -36,6 +41,25 @@ export const getServices = (sectionName=null) => {
       })
     } catch (error) {
       console.log(error)
+    }
+  }
+}
+
+export const createService = (newItem) => {
+  return async dispatch => {
+    try {
+      const newItemResponse =
+        await servicesService.createService(newItem)
+
+      dispatch({
+        type: 'CREATE_SERVICE',
+        data: {
+          newItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
     }
   }
 }

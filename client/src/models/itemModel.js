@@ -66,11 +66,11 @@ const {
 /* Keep updated with server/models/itemModel.js */
 
 const link = {
-  path: {
+  linkPath: {
     value: 'path',
     tags: [imNew],
   },
-  text: {
+  linkText: {
     value: 'text',
     tags: [imNew],
   },

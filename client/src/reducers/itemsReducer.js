@@ -2,6 +2,8 @@ import itemsService from '../services/itemsService'
 
 import { convertName } from '../helper-files/helperFunctions'
 
+import { setNotification } from '../reducers/notificationReducer'
+
 const initialState = {
   items: [],
   pages: [],

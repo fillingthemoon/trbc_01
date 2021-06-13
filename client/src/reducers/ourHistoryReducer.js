@@ -1,9 +1,14 @@
 import ourHistoryService from '../services/ourHistoryService'
 
+import { setNotification } from '../reducers/notificationReducer'
+
 const ourHistoryReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_OUR_HISTORY': {
       return action.data.ourHistory
+    }
+    case 'CREATE_OUR_HISTORY': {
+      return state.concat(action.data.newItemResponse)
     }
     default: {
       return state
@@ -25,6 +30,25 @@ export const getOurHistory = () => {
       })
     } catch (error) {
       console.log(error)
+    }
+  }
+}
+
+export const createOurHistory = (newItem) => {
+  return async dispatch => {
+    try {
+      const newItemResponse =
+        await ourHistoryService.createOurHistory(newItem)
+
+      dispatch({
+        type: 'CREATE_OUR_HISTORY',
+        data: {
+          newItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
     }
   }
 }
