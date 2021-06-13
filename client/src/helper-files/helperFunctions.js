@@ -31,7 +31,7 @@ const formatParagraph = (paragraph) => {
 }
 
 // Unique for services
-const pageSectionTranslate = (pageSection, toType) => {
+const pageSectionConvert = (pageSection, toType) => {
   switch (pageSection) {
     case ('english-service'): {
       switch (toType) {
@@ -92,7 +92,7 @@ const convertName = (fromType, toType, name) => {
           if (['english-service',
             'sunset-service-english-mandarin',
             'teo-chew-chinese-service'].includes(name)) {
-            return pageSectionTranslate(name, toType)
+            return pageSectionConvert(name, toType)
           }
 
           const properName = name.split('-')
@@ -253,7 +253,7 @@ const filterItemByLanguage = (item, language) => {
 export {
   splitLines,
   formatParagraph,
-  pageSectionTranslate,
+  pageSectionConvert,
   convertName,
   flattenNestedObject,
   nestFlattenedObjectCreate,

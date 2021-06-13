@@ -1,4 +1,4 @@
-import { pageSectionTranslate, convertName } from '../helper-files/helperFunctions'
+import { pageSectionConvert, convertName } from '../helper-files/helperFunctions'
 
 const pageSections = {
   // announcements
@@ -270,7 +270,7 @@ const getItemSchema = (pageArg, pageSectionArg, language) => {
   serviceFields
     .filter(field => Object.keys(relevantItems[itemLang]).includes(field))
     .forEach(field => {
-      relevantItems[itemLang][field] = pageSectionTranslate(pageSectionArg, field)
+      relevantItems[itemLang][field] = pageSectionConvert(pageSectionArg, field)
     })
 
   return relevantItems

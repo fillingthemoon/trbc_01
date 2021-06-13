@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import TitleText from '../../components-reusable/TitleText'
 
-import { nestFlattenedObjectCreate, pageSectionTranslate, convertName } from '../../helper-files/helperFunctions'
+import { nestFlattenedObjectCreate, convertName } from '../../helper-files/helperFunctions'
 import { getWord } from '../../helper-files/translate'
 
 import { createUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
@@ -114,7 +114,7 @@ const AddNewRow = ({ modelFields }) => {
     'pageSectionEn-en': modelFields.pageSection,
     'imgSrc-en': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
     'pageCh-ch': modelFields.page,
-    'pageSectionCh-ch': getWord(pageSectionTranslate(modelFields.pageSection, 'service'), 'ch'),
+    'pageSectionCh-ch': getWord(convertName('dashed', 'proper', modelFields.pageSection), 'ch'),
     'imgSrc-ch': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
 
     // Conditionally add the 'service-en/ch' and 'serviceAcronym-en/ch' fields
