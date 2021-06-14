@@ -23,6 +23,17 @@ const createImNew = async (newItem) => {
   return response.data
 }
 
+const updateImNew = async (id, updatedItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.put(`${baseUrl}${id}/${getLanguage()}`, updatedItem, config)
+
+  return response.data
+}
+
 const imNewService = {
   getImNew,
   createImNew,

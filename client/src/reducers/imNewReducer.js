@@ -10,6 +10,12 @@ const imNewReducer = (state = [], action) => {
     case 'CREATE_IM_NEW': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_IM_NEW': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     default: {
       return state
     }
@@ -47,6 +53,26 @@ export const createImNew = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateImNew = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await imNewService.updateImNew(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_IM_NEW',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

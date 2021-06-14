@@ -10,6 +10,12 @@ const ourHistoryReducer = (state = [], action) => {
     case 'CREATE_OUR_HISTORY': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_OUR_HISTORY': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     default: {
       return state
     }
@@ -47,6 +53,26 @@ export const createOurHistory = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateOurHistory = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await ourHistoryService.updateOurHistory(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_OUR_HISTORY',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

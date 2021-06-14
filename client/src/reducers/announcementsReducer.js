@@ -10,6 +10,12 @@ const episodeLinesReducer = (state = [], action) => {
     case 'CREATE_ANNOUNCEMENT': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_ANNOUNCEMENT': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     default: {
       return state
     }
@@ -47,6 +53,26 @@ export const createAnnouncement = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateAnnouncement = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await announcementsService.updateAnnouncement(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_ANNOUNCEMENT',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

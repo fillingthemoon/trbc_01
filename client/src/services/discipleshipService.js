@@ -23,6 +23,17 @@ const createDiscipleship = async (newItem) => {
   return response.data
 }
 
+const updateDiscipleship = async (id, updatedItem) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.put(`${baseUrl}${id}/${getLanguage()}`, updatedItem, config)
+
+  return response.data
+}
+
 const discipleshipService = {
   getDiscipleship,
   createDiscipleship,

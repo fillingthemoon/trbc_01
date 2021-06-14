@@ -10,6 +10,12 @@ const churchWideReducer = (state = [], action) => {
     case 'CREATE_CHURCH_WIDE': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_CHURCH_WIDE': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     case 'RESET_CHURCH_WIDE': {
       return []
     }
@@ -58,6 +64,26 @@ export const createChurchWide = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateChurchWide = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await churchWideService.updateChurchWide(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_CHURCH_WIDE',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

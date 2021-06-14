@@ -10,6 +10,12 @@ const outreachReducer = (state = [], action) => {
     case 'CREATE_OUTREACH': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_OUTREACH': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     case 'RESET_SERVICES': {
       return []
     }
@@ -58,6 +64,26 @@ export const createOutreach = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateOutreach = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await outreachService.updateOutreach(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_OUTREACH',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

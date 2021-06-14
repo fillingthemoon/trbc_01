@@ -10,14 +10,14 @@ const upcomingSermonsReducer = (state = [], action) => {
     case 'CREATE_UPCOMING_SERMON': {
       return state.concat(action.data.newItemResponse)
     }
-    case 'DELETE_UPCOMING_SERMON': {
-      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
-    }
     case 'UPDATE_UPCOMING_SERMON': {
       return state.map(item => item.id === action.data.id
         ? action.data.updatedItemResponse
         : item
       )
+    }
+    case 'DELETE_UPCOMING_SERMON': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
     }
     default: {
       return state

@@ -90,4 +90,8 @@ const updateFunction = {
   // 'statement-of-faith': updateStatementOfFaith,
 }
 
-export { getFunction, createFunction }
+export {
+  getFunction,
+  createFunction,
+  updateFunction,
+}

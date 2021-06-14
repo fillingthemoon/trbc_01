@@ -10,6 +10,12 @@ const missionsReducer = (state = [], action) => {
     case 'CREATE_MISSION': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_MISSION': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     default: {
       return state
     }
@@ -47,6 +53,26 @@ export const createMission = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateMission = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await missionsService.updateMission(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_MISSION',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

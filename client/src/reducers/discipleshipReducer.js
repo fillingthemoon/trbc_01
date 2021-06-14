@@ -10,6 +10,12 @@ const discipleshipReducer = (state = [], action) => {
     case 'CREATE_DISCIPLESHIP': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_DISCIPLESHIP': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     default: {
       return state
     }
@@ -47,6 +53,26 @@ export const createDiscipleship = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateDiscipleship = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await discipleshipService.updateDiscipleship(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_DISCIPLESHIP',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

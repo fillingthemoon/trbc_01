@@ -5,7 +5,6 @@ import EditableCell from './EditableCell'
 import AddNewRow from './AddNewRow'
 
 import {
-  updateUpcomingSermon,
   deleteUpcomingSermon,
 } from '../../reducers/upcomingSermonsReducer'
 
@@ -19,6 +18,8 @@ import {
   pageSectionToItem,
   pageSectionToPage,
 } from '../../helper-files/pageSectionItemPageConversion'
+
+import { updateFunction } from '../../helper-files/crudFunctions'
 
 import getItemSchema from '../../models/itemModel'
 
@@ -128,7 +129,7 @@ const EditableTable = ({ editPageSectionName }) => {
         })
 
       const nestedRow = nestFlattenedObjectUpdate(row, language)
-      dispatch(updateUpcomingSermon(record.id, nestedRow))
+      dispatch(updateFunction[record.pageSection](record.id, nestedRow))
     } catch (error) {
       console.log('Validation Failed:', error)
     }

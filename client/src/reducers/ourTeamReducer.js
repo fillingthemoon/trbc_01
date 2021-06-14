@@ -10,6 +10,12 @@ const ourTeamReducer = (state = [], action) => {
     case 'CREATE_OUR_TEAM': {
       return state.concat(action.data.newItemResponse)
     }
+    case 'UPDATE_OUR_TEAM': {
+      return state.map(item => item.id === action.data.id
+        ? action.data.updatedItemResponse
+        : item
+      )
+    }
     case 'RESET_SERVICES': {
       return []
     }
@@ -58,6 +64,26 @@ export const createOurTeam = (newItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully added! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const updateOurTeam = (id, updatedItem) => {
+  return async dispatch => {
+    try {
+      const updatedItemResponse =
+        await ourTeamService.updateOurTeam(id, updatedItem)
+
+      dispatch({
+        type: 'UPDATE_OUR_TEAM',
+        data: {
+          id,
+          updatedItemResponse,
+        }
+      })
+      dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }
