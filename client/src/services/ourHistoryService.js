@@ -37,6 +37,7 @@ const updateOurHistory = async (id, updatedItem) => {
 const ourHistoryService = {
   getOurHistory,
   createOurHistory,
+  updateOurHistory,
 }
 
 export default ourHistoryService

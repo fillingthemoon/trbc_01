@@ -37,6 +37,7 @@ const updateImNew = async (id, updatedItem) => {
 const imNewService = {
   getImNew,
   createImNew,
+  updateImNew,
 }
 
 export default imNewService

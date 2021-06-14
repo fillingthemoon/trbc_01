@@ -37,6 +37,7 @@ const updateMission = async (id, updatedItem) => {
 const missionsService = {
   getMissions,
   createMission,
+  updateMission,
 }
 
 export default missionsService

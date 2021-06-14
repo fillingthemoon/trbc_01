@@ -37,6 +37,7 @@ const updateDiscipleship = async (id, updatedItem) => {
 const discipleshipService = {
   getDiscipleship,
   createDiscipleship,
+  updateDiscipleship,
 }
 
 export default discipleshipService

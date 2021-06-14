@@ -104,7 +104,6 @@ const details = {
   person: {
     value: 'person',
     tags: [
-      announcements,
       secondLanguageClasses, interestGroups,
       outreach,
       upcomingSermons,

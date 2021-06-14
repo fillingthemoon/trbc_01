@@ -37,6 +37,7 @@ const updateChurchWide = async (id, updatedItem) => {
 const churchWideService = {
   getChurchWide,
   createChurchWide,
+  updateChurchWide,
 }
 
 export default churchWideService

@@ -37,6 +37,7 @@ const updateStatementOfFaith = async (id, updatedItem) => {
 const statementOfFaithService = {
   getStatementOfFaith,
   createStatementOfFaith,
+  updateStatementOfFaith,
 }
 
 export default statementOfFaithService

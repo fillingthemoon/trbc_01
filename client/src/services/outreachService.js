@@ -37,6 +37,7 @@ const updateOutreach = async (id, updatedItem) => {
 const outreachService = {
   getOutreach,
   createOutreach,
+  updateOutreach,
 }
 
 export default outreachService

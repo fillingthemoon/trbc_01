@@ -37,6 +37,7 @@ const updateOurTeam = async (id, updatedItem) => {
 const ourTeamService = {
   getOurTeam,
   createOurTeam,
+  updateOurTeam,
 }
 
 export default ourTeamService

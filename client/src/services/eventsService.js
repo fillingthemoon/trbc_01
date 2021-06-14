@@ -37,6 +37,7 @@ const updateEvent = async (id, updatedItem) => {
 const eventsService = {
   getEvents,
   createEvent,
+  updateEvent,
 }
 
 export default eventsService

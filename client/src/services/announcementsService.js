@@ -37,6 +37,7 @@ const updateAnnouncement = async (id, updatedItem) => {
 const announcementsService = {
   getAnnouncements,
   createAnnouncement,
+  updateAnnouncement,
 }
 
 export default announcementsService
