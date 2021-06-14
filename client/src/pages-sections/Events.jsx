@@ -49,15 +49,25 @@ const Event = ({ event }) => {
       cover={imgSrc && <img src={imgSrc} style={imgStyle} />}
       style={cardStyle}
     >
-      <Title style={{ fontSize: '1.8rem', fontWeight: '700', display: 'block', marginBottom: '30px' }}>
+      <Title
+        style={{
+          fontSize: '1.8rem',
+          fontWeight: '700',
+          display: 'block',
+          marginBottom: '30px',
+        }}
+      >
         {title}
       </Title>
       <div>
-        {splitLines(text).map((paragraph, i) =>
-          <Paragraph key={i} style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}>
+        {splitLines(text).map((paragraph, i) => (
+          <Paragraph
+            key={i}
+            style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}
+          >
             {formatParagraph(paragraph)}
           </Paragraph>
-        )}
+        ))}
       </div>
       <Divider />
       <Meta
@@ -65,7 +75,7 @@ const Event = ({ event }) => {
         avatar={<FaCalendar style={iconStyle} />}
         description={date}
       />
-    </Card >
+    </Card>
   )
 }
 
@@ -77,31 +87,36 @@ const titleUnderlineStyle = {
 const Events = () => {
   const dispatch = useDispatch()
 
-  const eventsData = useSelector(state => state.events)
-  const language = useSelector(state => state.language)
+  const eventsData = useSelector((state) => state.events)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getEvents())
   }, [language])
 
-  if (eventsData.length <= 0) { return null }
+  if (eventsData.length <= 0) {
+    return null
+  }
 
   return (
-    <div className='events-container'>
-      <div >
+    <div className="events-container">
+      <div>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={getWord(convertName('dashed', 'proper', eventsData[0].pageSection), language)}
-          underlineAlign='left'
+          title={getWord(
+            convertName('dashed', 'proper', eventsData[0].pageSection),
+            language
+          )}
+          underlineAlign="left"
           titleStyle={{ margin: '0 20px' }}
         />
-        <Row justify='left'>
-          {eventsData.map((event, i) =>
+        <Row justify="left">
+          {eventsData.map((event, i) => (
             <Event key={i} event={event} />
-          )}
+          ))}
         </Row>
       </div>
-    </div >
+    </div>
   )
 }
 

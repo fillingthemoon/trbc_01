@@ -29,14 +29,18 @@ const ResourceLibrary = () => {
   ]
   const onSearch = (value) => console.log(value)
 
-  const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language)
 
   return (
     <>
-      <Banner imageTitlePairs={[{
-        title: getWord('Resource Library', language),
-        image: resourceLibrary
-      }]} />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Resource Library', language),
+            image: resourceLibrary,
+          },
+        ]}
+      />
 
       <div className="main-container">
         <br />
@@ -48,12 +52,10 @@ const ResourceLibrary = () => {
             enterButton
             size={'large'}
           />
-          <Collapse  >
+          <Collapse>
             <Panel header="Filters" key="1">
-
               <InlineMenu />
             </Panel>
-
           </Collapse>
         </div>
         <br />
@@ -64,7 +66,6 @@ const ResourceLibrary = () => {
             gutter={24}
             style={{ display: 'flex', justifyContent: 'center' }}
           >
-
             <Col>
               <List
                 mode="inline"

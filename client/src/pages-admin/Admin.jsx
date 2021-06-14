@@ -6,14 +6,15 @@ import AdminLoginPage from './AdminLoginPage'
 import AdminDashboard from './AdminDashboard'
 
 const Admin = () => {
-  const loggedInUser = useSelector(state => state.loggedInUser)
+  const loggedInUser = useSelector((state) => state.loggedInUser)
 
   return (
     <div>
-      {!loggedInUser
-        ? <AdminLoginPage />
-        : <AdminDashboard loggedInUser={loggedInUser} />
-      }
+      {!loggedInUser ? (
+        <AdminLoginPage />
+      ) : (
+        <AdminDashboard loggedInUser={loggedInUser} />
+      )}
     </div>
   )
 }

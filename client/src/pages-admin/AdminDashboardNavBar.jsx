@@ -4,9 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { logUserOut } from '../reducers/loggedInUserReducer'
 
-import {
-  colorWhite,
-} from '../helper-files/colors'
+import { colorWhite } from '../helper-files/colors'
 
 import { FaUserCircle } from 'react-icons/fa'
 import { HiViewGrid } from 'react-icons/hi'
@@ -15,21 +13,16 @@ import { Layout, Button, Menu, Dropdown } from 'antd'
 const { Header } = Layout
 
 const loggedInUserMenu = (handleLogout, loggedInUser) => {
-
   return (
     <Menu
-      className='logged-in-user-menu'
-      orientation='vertical'
+      className="logged-in-user-menu"
+      orientation="vertical"
       style={{ border: 'None' }}
       subMenuOpenDelay={0}
     >
-      <Menu.Item disabled>
-        {loggedInUser.username}
-      </Menu.Item>
+      <Menu.Item disabled>{loggedInUser.username}</Menu.Item>
       <Menu.Divider />
-      <Menu.Item onClick={handleLogout}>
-        Log Out
-      </Menu.Item>
+      <Menu.Item onClick={handleLogout}>Log Out</Menu.Item>
     </Menu>
   )
 }
@@ -37,9 +30,7 @@ const loggedInUserMenu = (handleLogout, loggedInUser) => {
 const AdminDashboardNavBar = (props) => {
   const history = useHistory()
 
-  const {
-    loggedInUser,
-  } = props
+  const { loggedInUser } = props
 
   const dispatch = useDispatch()
 
@@ -59,7 +50,7 @@ const AdminDashboardNavBar = (props) => {
         backgroundColor: colorWhite,
       }}
     >
-      <Link replace to='/admin'>
+      <Link replace to="/admin">
         <Button
           style={{
             display: 'flex',

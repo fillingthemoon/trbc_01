@@ -13,17 +13,21 @@ import { general } from '../helper-files/images'
 const { admin } = general
 
 const AdminLoginPage = () => {
-  const notification = useSelector(state => state.notification)
-  const language = useSelector(state => state.language)
+  const notification = useSelector((state) => state.notification)
+  const language = useSelector((state) => state.language)
 
   return (
     <div>
-      <Banner imageTitlePairs={[{
-        title: getWord('Admin', language),
-        image: admin
-      }]} />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Admin', language),
+            image: admin,
+          },
+        ]}
+      />
       <Notification notification={notification} />
-      <div className='admin-login'>
+      <div className="admin-login">
         <LoginForm />
       </div>
     </div>

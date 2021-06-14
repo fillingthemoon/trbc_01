@@ -15,21 +15,27 @@ import { getDiscipleship } from '../reducers/discipleshipReducer'
 const Discipleship = () => {
   const dispatch = useDispatch()
 
-  const discipleshipData = useSelector(state => state.discipleship)
-  const language = useSelector(state => state.language)
+  const discipleshipData = useSelector((state) => state.discipleship)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getDiscipleship())
   }, [language])
 
-  if (discipleshipData.length <= 0) { return null }
+  if (discipleshipData.length <= 0) {
+    return null
+  }
 
   return (
     <>
-      <Banner imageTitlePairs={[{
-        title: getWord('Discipleship', language),
-        image: exterior
-      }]} />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Discipleship', language),
+            image: exterior,
+          },
+        ]}
+      />
       <AlternatingImageTextTemplate
         data={discipleshipData}
         primaryColor={0}

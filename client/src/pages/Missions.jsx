@@ -14,22 +14,28 @@ import { getMissions } from '../reducers/missionsReducer'
 const Outreach = () => {
   const dispatch = useDispatch()
 
-  const missionsData = useSelector(state => state.missions)
-  const language = useSelector(state => state.language)
+  const missionsData = useSelector((state) => state.missions)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getMissions())
   }, [language])
 
-  if (missionsData.length <= 0) { return null }
+  if (missionsData.length <= 0) {
+    return null
+  }
 
   return (
     <div>
-      <Banner imageTitlePairs={[{
-        title: getWord('Missions', language),
-        image: exterior
-      }]} />
-      <SectionsTemplate data={missionsData} displayType='card' />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Missions', language),
+            image: exterior,
+          },
+        ]}
+      />
+      <SectionsTemplate data={missionsData} displayType="card" />
     </div>
   )
 }

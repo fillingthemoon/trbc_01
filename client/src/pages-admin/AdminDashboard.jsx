@@ -10,16 +10,14 @@ import { Layout, Spin } from 'antd'
 const { Content } = Layout
 
 const AdminDashboard = (props) => {
-  const {
-    loggedInUser
-  } = props
+  const { loggedInUser } = props
 
-  const notification = useSelector(state => state.notification)
-  const languageSpinner = useSelector(state => state.languageSpinner)
+  const notification = useSelector((state) => state.notification)
+  const languageSpinner = useSelector((state) => state.languageSpinner)
 
   return (
-    <Layout className='admin-dashboard'>
-      <Spin tip='Loading, please wait...' spinning={languageSpinner}>
+    <Layout className="admin-dashboard">
+      <Spin tip="Loading, please wait..." spinning={languageSpinner}>
         <Notification notification={notification} />
         <AdminDashboardNavBar loggedInUser={loggedInUser} />
 

@@ -1,16 +1,11 @@
 import React from 'react'
 
-import {
-  Button, Card, Form, Input, Select
-} from 'antd'
+import { Button, Card, Form, Input, Select } from 'antd'
 const { Option } = Select
 
-import {
-  colorLOrange,
-} from '../helper-files/colors'
+import { colorLOrange } from '../helper-files/colors'
 
 const ConnectForm = () => {
-
   return (
     <div
       style={{
@@ -83,7 +78,10 @@ const ConnectForm = () => {
               <Option value="other">other</Option>
             </Select>
           </Form.Item>
-          <Form.Item name={['user', 'Your message']} label="How can we help you?">
+          <Form.Item
+            name={['user', 'Your message']}
+            label="How can we help you?"
+          >
             <Input.TextArea />
           </Form.Item>
 

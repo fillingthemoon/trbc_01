@@ -26,23 +26,25 @@ const imgStyle = {
 }
 
 const AnnouncementCard = ({ announcement }) => {
-  const {
-    title,
-    text,
-    imgSrc,
-  } = announcement
+  const { title, text, imgSrc } = announcement
 
   return (
-    <Card cover={<img alt="img" src={imgSrc} style={imgStyle} />}
+    <Card
+      cover={<img alt="img" src={imgSrc} style={imgStyle} />}
       style={cardStyle}
     >
-      <Title style={{ fontSize: '1.2rem', marginBottom: '20px' }}>{title}</Title>
+      <Title style={{ fontSize: '1.2rem', marginBottom: '20px' }}>
+        {title}
+      </Title>
       <div>
-        {splitLines(text).map((paragraph, i) =>
-          <Paragraph key={i} style={{ fontSize: '0.95rem', fontWeight: '300', margin: '0' }}>
+        {splitLines(text).map((paragraph, i) => (
+          <Paragraph
+            key={i}
+            style={{ fontSize: '0.95rem', fontWeight: '300', margin: '0' }}
+          >
             {formatParagraph(paragraph)}
           </Paragraph>
-        )}
+        ))}
       </div>
     </Card>
   )
@@ -56,23 +58,29 @@ const titleUnderlineStyle = {
 const Announcements = () => {
   const dispatch = useDispatch()
 
-  const announcementsData = useSelector(state => state.announcements)
-  const language = useSelector(state => state.language)
+  const announcementsData = useSelector((state) => state.announcements)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getAnnouncements())
   }, [language])
 
-  if (announcementsData.length <= 0) { return null }
+  if (announcementsData.length <= 0) {
+    return null
+  }
 
   return (
-    <div className='announcements-container'>
+    <div className="announcements-container">
       <div>
         <TitleText
           titleUnderlineStyle={titleUnderlineStyle}
-          title={getWord(convertName('dashed', 'proper', announcementsData[0].pageSection), language)}
-          underlineAlign='center' />
-        <Row justify='center'>
+          title={getWord(
+            convertName('dashed', 'proper', announcementsData[0].pageSection),
+            language
+          )}
+          underlineAlign="center"
+        />
+        <Row justify="center">
           {announcementsData.map((announcement, i) => (
             <AnnouncementCard key={i} announcement={announcement} />
           ))}

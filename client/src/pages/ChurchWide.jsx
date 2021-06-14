@@ -14,22 +14,28 @@ import { getChurchWide } from '../reducers/churchWideReducer'
 const ChurchWide = () => {
   const dispatch = useDispatch()
 
-  const churchWideData = useSelector(state => state.churchWide)
-  const language = useSelector(state => state.language)
+  const churchWideData = useSelector((state) => state.churchWide)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getChurchWide())
   }, [language])
 
-  if (churchWideData.length <= 0) { return null }
+  if (churchWideData.length <= 0) {
+    return null
+  }
 
   return (
     <div>
-      <Banner imageTitlePairs={[{
-        title: getWord('Church Wide', language),
-        image: gathering
-      }]} />
-      <SectionsTemplate data={churchWideData} displayType='card' />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Church Wide', language),
+            image: gathering,
+          },
+        ]}
+      />
+      <SectionsTemplate data={churchWideData} displayType="card" />
     </div>
   )
 }

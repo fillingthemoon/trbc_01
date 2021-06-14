@@ -8,12 +8,7 @@ const { exterior } = general
 
 import { convertName } from '../helper-files/helperFunctions'
 
-import {
-  Row,
-  Col,
-  Typography,
-  Image,
-} from 'antd'
+import { Row, Col, Typography, Image } from 'antd'
 
 const { Paragraph, Text } = Typography
 
@@ -75,41 +70,47 @@ const IndividualPage = ({ item }) => {
 
   return (
     <>
-      <Banner imageTitlePairs={[{
-        title: item.service ? item.service : convertName('dashed', 'proper', item.pageSection),
-        image: exterior
-      }]} />
-      <Row justify='center' style={rowStyle}>
+      <Banner
+        imageTitlePairs={[
+          {
+            title: item.service
+              ? item.service
+              : convertName('dashed', 'proper', item.pageSection),
+            image: exterior,
+          },
+        ]}
+      />
+      <Row justify="center" style={rowStyle}>
         <Col style={infoImgStyle}>
           <Image alt="img" src={imgSrc} style={imgStyle} preview={false} />
         </Col>
         <Col style={infoColStyle}>
-          <TitleText
-            title={title}
-            underlineAlign='left' />
-          <Paragraph style={{ fontSize: '0.9rem', fontWeight: '400' }}>{text}</Paragraph>
-          {details &&
+          <TitleText title={title} underlineAlign="left" />
+          <Paragraph style={{ fontSize: '0.9rem', fontWeight: '400' }}>
+            {text}
+          </Paragraph>
+          {details && (
             <Col style={detailsStyle}>
-              {time &&
+              {time && (
                 <Row style={detailItemStyle}>
                   <AiFillClockCircle style={iconStyle} />
                   <Text>{time}</Text>
                 </Row>
-              }
-              {location &&
+              )}
+              {location && (
                 <Row style={detailItemStyle}>
                   <FaMapMarkerAlt style={iconStyle} />
                   <Text>{location}</Text>
                 </Row>
-              }
-              {person &&
+              )}
+              {person && (
                 <Row style={detailItemStyle}>
                   <FaUser style={iconStyle} />
                   <Text>{person}</Text>
                 </Row>
-              }
+              )}
             </Col>
-          }
+          )}
         </Col>
       </Row>
     </>

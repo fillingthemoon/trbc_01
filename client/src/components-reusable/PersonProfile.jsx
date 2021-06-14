@@ -1,9 +1,6 @@
 import React from 'react'
 
-import {
-  Typography,
-  Avatar,
-} from 'antd'
+import { Typography, Avatar } from 'antd'
 const { Title, Text } = Typography
 
 const mainStyle = {
@@ -21,17 +18,13 @@ const roleStyle = {
 }
 
 const PersonProfile = (props) => {
-  const {
-    title, text, imgSrc
-  } = props
+  const { title, text, imgSrc } = props
 
   return (
     <div style={mainStyle}>
       <Avatar size={150} src={imgSrc} style={{ marginBottom: '40px' }} />
 
-      <Title style={{ fontSize: '1.3rem' }}>
-        {title}
-      </Title>
+      <Title style={{ fontSize: '1.3rem' }}>{title}</Title>
       <Text style={roleStyle}>{text}</Text>
     </div>
   )

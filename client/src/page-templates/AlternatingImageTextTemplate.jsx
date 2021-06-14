@@ -9,11 +9,7 @@ import SectionDivider from '../components-reusable/SectionDivider'
 import { general } from '../helper-files/images'
 const { fallbackImg } = general
 
-import {
-  Image,
-  Row,
-  Col,
-} from 'antd'
+import { Image, Row, Col } from 'antd'
 
 import {
   colorLGray,
@@ -23,12 +19,8 @@ import {
 } from '../helper-files/colors'
 
 const ImageColumn = ({ item, lr }) => (
-  <Col className='aitt-img-col'>
-    <Image
-      className='aitt-img'
-      src={item.imgSrc}
-      fallback={fallbackImg}
-    />
+  <Col className="aitt-img-col">
+    <Image className="aitt-img" src={item.imgSrc} fallback={fallbackImg} />
   </Col>
 )
 
@@ -36,7 +28,7 @@ const titleStyle = (bColor) => {
   return {
     textAlign: 'left',
     fontSize: '1.6rem',
-    color: [colorMGray].includes(bColor) && '#ffffff'
+    color: [colorMGray].includes(bColor) && '#ffffff',
   }
 }
 
@@ -47,19 +39,19 @@ const textStyle = (bColor) => {
     fontSize: '1rem',
     fontWeight: '300',
     margin: 0,
-    color: [colorMGray].includes(bColor) && colorWhite
+    color: [colorMGray].includes(bColor) && colorWhite,
   }
 }
 
 const underlineStyle = (bColor) => {
   return {
-    backgroundColor: [].includes(bColor) && colorLGray
+    backgroundColor: [].includes(bColor) && colorLGray,
   }
 }
 
 const linkStyle = (bColor) => {
   return {
-    color: [].includes(bColor) && colorLGray
+    color: [].includes(bColor) && colorLGray,
   }
 }
 
@@ -76,38 +68,36 @@ const ContentColumn = ({ item, lr, bColor }) => (
     <TitleText
       title={item.title}
       titleStyle={titleStyle(bColor)}
-      text={
-        splitLines(item.text).map((paragraph, j) =>
-          <span key={j}>
-            {formatParagraph(paragraph)}
-          </span>
-        )
-      }
+      text={splitLines(item.text).map((paragraph, j) => (
+        <span key={j}>{formatParagraph(paragraph)}</span>
+      ))}
       textStyle={textStyle(bColor)}
       underlineStyle={underlineStyle(bColor)}
     />
-    {(item.link) &&
-      <Link className='aitt-link' style={linkStyle(bColor)} to={item.link.linkPath}>{item.link.linkText}</Link>
-    }
+    {item.link && (
+      <Link
+        className="aitt-link"
+        style={linkStyle(bColor)}
+        to={item.link.linkPath}
+      >
+        {item.link.linkText}
+      </Link>
+    )}
   </Col>
 )
 
-const colors = [
-  colorLGray,
-  colorMGray,
-  colorLOrange,
-]
+const colors = [colorLGray, colorMGray, colorLOrange]
 
 const getRowLengths = (i, rowLengthType) => {
   switch (rowLengthType) {
     /* All rows are the same length (long) */
-    case (0):
+    case 0:
       return { width: '90%' }
     /* Rows alternate between long and short */
-    case (1):
+    case 1:
       return i % 2 === 0 ? { width: '90%' } : { width: '70%' }
     /* Rows alternate between short and long */
-    case (2):
+    case 2:
       return i % 2 === 0 ? { width: '70%' } : { width: '90%' }
   }
 }
@@ -115,29 +105,29 @@ const getRowLengths = (i, rowLengthType) => {
 const getRowLayout = (i, rowLayout) => {
   switch (rowLayout) {
     /* Standard layout: no margins */
-    case (0):
+    case 0:
       break
     /* Alternate between left and right */
-    case (1): {
+    case 1: {
       return i % 2 === 0
         ? { margin: '60px 0', justifyContent: 'flex-start' }
         : { margin: '60px 0', justifyContent: 'flex-end' }
     }
     /* Alternate between right and left */
-    case (2): {
+    case 2: {
       return i % 2 === 0
         ? { margin: '60px 0', justifyContent: 'flex-end' }
         : { margin: '60px 0', justifyContent: 'flex-start' }
     }
-    case (3): {
+    case 3: {
       /* All left */
       return { margin: '60px 0', justifyContent: 'flex-start' }
     }
-    case (4): {
+    case 4: {
       /* All right */
       return { margin: '60px 0', justifyContent: 'flex-end' }
     }
-    case (5): {
+    case 5: {
       /* All right */
       return { margin: '0', justifyContent: 'center' }
     }
@@ -147,16 +137,20 @@ const getRowLayout = (i, rowLayout) => {
 const getColorLayout = (i, primaryColor, colorLayout) => {
   switch (colorLayout) {
     /* All rows are the same color */
-    case (0):
+    case 0:
       return { backgroundColor: colors[primaryColor] }
     /* Rows alternate between white and primaryColor */
-    case (1):
-      return { backgroundColor: i % 2 === 0 ? colorWhite : colors[primaryColor] }
+    case 1:
+      return {
+        backgroundColor: i % 2 === 0 ? colorWhite : colors[primaryColor],
+      }
     /* Rows alternate between primaryColor and white */
-    case (2):
-      return { backgroundColor: i % 2 === 0 ? colors[primaryColor] : colorWhite }
+    case 2:
+      return {
+        backgroundColor: i % 2 === 0 ? colors[primaryColor] : colorWhite,
+      }
     /* Rows alternate between all colors */
-    case (3): {
+    case 3: {
       const rotatedPrimaryColor = (primaryColor + i) % colors.length
       return { backgroundColor: colors[rotatedPrimaryColor] }
     }
@@ -165,40 +159,52 @@ const getColorLayout = (i, primaryColor, colorLayout) => {
 
 const getImgTextLayout = (i, item, imgTextLayout, bColor) => {
   switch (imgTextLayout) {
-    case (0):
+    case 0:
       if (i % 2 === 0) {
-        return (<>
-          <ImageColumn item={item} lr='imgText' />
-          <ContentColumn item={item} lr='imgText' bColor={bColor} />
-        </>)
+        return (
+          <>
+            <ImageColumn item={item} lr="imgText" />
+            <ContentColumn item={item} lr="imgText" bColor={bColor} />
+          </>
+        )
       } else {
-        return (<>
-          <ContentColumn item={item} lr='textImg' bColor={bColor} />
-          <ImageColumn item={item} lr='textImg' />
-        </>)
+        return (
+          <>
+            <ContentColumn item={item} lr="textImg" bColor={bColor} />
+            <ImageColumn item={item} lr="textImg" />
+          </>
+        )
       }
-    case (1):
+    case 1:
       if (i % 2 === 0) {
-        return (<>
-          <ContentColumn item={item} lr='textImg' />
-          <ImageColumn item={item} lr='textImg' />
-        </>)
+        return (
+          <>
+            <ContentColumn item={item} lr="textImg" />
+            <ImageColumn item={item} lr="textImg" />
+          </>
+        )
       } else {
-        return (<>
-          <ImageColumn item={item} lr='imgText' />
-          <ContentColumn item={item} lr='imgText' />
-        </>)
+        return (
+          <>
+            <ImageColumn item={item} lr="imgText" />
+            <ContentColumn item={item} lr="imgText" />
+          </>
+        )
       }
-    case (2):
-      return (<>
-        <ImageColumn item={item} lr='imgText' />
-        <ContentColumn item={item} lr='imgText' />
-      </>)
-    case (3):
-      return (<>
-        <ContentColumn item={item} lr='textImg' />
-        <ImageColumn item={item} lr='textImg' />
-      </>)
+    case 2:
+      return (
+        <>
+          <ImageColumn item={item} lr="imgText" />
+          <ContentColumn item={item} lr="imgText" />
+        </>
+      )
+    case 3:
+      return (
+        <>
+          <ContentColumn item={item} lr="textImg" />
+          <ImageColumn item={item} lr="textImg" />
+        </>
+      )
   }
 }
 
@@ -223,26 +229,30 @@ const AlternatingImageText = (props) => {
 
   return (
     <div style={divider && { padding: '3%' }}>
-      {data.map((item, i) =>
+      {data.map((item, i) => (
         <div key={i}>
           <div style={{ display: 'flex', ...getRowLayout(i, rowLayout) }}>
             <Row
-              className='aitt-row'
+              className="aitt-row"
               style={{
                 ...getColorLayout(i, primaryColor, colorLayout),
-                ...getRowLengths(i, rowLengthType)
-              }}>
+                ...getRowLengths(i, rowLengthType),
+              }}
+            >
               {(() => {
-                const bColor = getColorLayout(i, primaryColor, colorLayout).backgroundColor
+                const bColor = getColorLayout(
+                  i,
+                  primaryColor,
+                  colorLayout
+                ).backgroundColor
                 // console.log(bColor)
                 return getImgTextLayout(i, item, imgTextLayout, bColor)
               })()}
             </Row>
           </div>
-          {divider && i !== data.length - 1
-            && <SectionDivider />}
+          {divider && i !== data.length - 1 && <SectionDivider />}
         </div>
-      )}
+      ))}
     </div>
   )
 }

@@ -15,21 +15,27 @@ import { getOurHistory } from '../reducers/ourHistoryReducer'
 const OurHistory = () => {
   const dispatch = useDispatch()
 
-  const ourHistoryData = useSelector(state => state.ourHistory)
-  const language = useSelector(state => state.language)
+  const ourHistoryData = useSelector((state) => state.ourHistory)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getOurHistory())
   }, [language])
 
-  if (ourHistoryData.length <= 0) { return null }
+  if (ourHistoryData.length <= 0) {
+    return null
+  }
 
   return (
     <>
-      <Banner imageTitlePairs={[{
-        title: getWord('Our History', language),
-        image: exterior
-      }]} />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Our History', language),
+            image: exterior,
+          },
+        ]}
+      />
       <AlternatingImageTextTemplate
         data={ourHistoryData}
         primaryColor={3}

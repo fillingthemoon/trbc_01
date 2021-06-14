@@ -11,26 +11,27 @@ import { general } from '../helper-files/images'
 const { exterior, sanctuary01, paSystem } = general
 
 const Home = () => {
-
-  const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language)
 
   return (
     <div>
-      <Banner imageTitlePairs={[
-        {
-          title: language === 'en' ? 'Welcome' : '欢迎',
-          image: exterior
-        },
-        {
-          title: language === 'en' ? 'Welcome' : '欢迎',
-          image: sanctuary01
-        },
-        {
-          title: language === 'en' ? 'Welcome' : '欢迎',
-          image: paSystem
-        },
-      ]} />
-      <div className='home'>
+      <Banner
+        imageTitlePairs={[
+          {
+            title: language === 'en' ? 'Welcome' : '欢迎',
+            image: exterior,
+          },
+          {
+            title: language === 'en' ? 'Welcome' : '欢迎',
+            image: sanctuary01,
+          },
+          {
+            title: language === 'en' ? 'Welcome' : '欢迎',
+            image: paSystem,
+          },
+        ]}
+      />
+      <div className="home">
         <UpcomingSermons />
         <Announcements />
         <Events />

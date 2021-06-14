@@ -15,22 +15,28 @@ import { getOurTeam } from '../reducers/ourTeamReducer'
 const OurTeam = () => {
   const dispatch = useDispatch()
 
-  const ourTeamData = useSelector(state => state.ourTeam)
-  const language = useSelector(state => state.language)
+  const ourTeamData = useSelector((state) => state.ourTeam)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getOurTeam())
   }, [language])
 
-  if (ourTeamData.length <= 0) { return null }
+  if (ourTeamData.length <= 0) {
+    return null
+  }
 
   return (
     <>
-      <Banner imageTitlePairs={[{
-        title: getWord('Our Team', language),
-        image: exterior
-      }]} />
-      <SectionsTemplate data={ourTeamData} displayType='personProfile' />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Our Team', language),
+            image: exterior,
+          },
+        ]}
+      />
+      <SectionsTemplate data={ourTeamData} displayType="personProfile" />
     </>
   )
 }

@@ -1,12 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import {
-  Card,
-  Typography,
-  Col,
-  Row,
-} from 'antd'
+import { Card, Typography, Col, Row } from 'antd'
 
 import { AiFillClockCircle } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
@@ -57,25 +52,25 @@ const ServiceCard = ({ serviceItem }) => {
       <Card
         cover={<img alt="img" src={imgSrc} style={imgStyle} />}
         hoverable
-        className='service-card'
+        className="service-card"
       >
         <Title style={titleStyle}>{title}</Title>
-        {details &&
+        {details && (
           <Col style={detailsStyle}>
-            {time &&
+            {time && (
               <Row style={detailItemStyle}>
                 <AiFillClockCircle style={iconStyle} />
                 <Text>{time}</Text>
               </Row>
-            }
-            {location &&
+            )}
+            {location && (
               <Row style={detailItemStyle}>
                 <FaMapMarkerAlt style={iconStyle} />
                 <Text>{location}</Text>
               </Row>
-            }
+            )}
           </Col>
-        }
+        )}
       </Card>
     </Link>
   )

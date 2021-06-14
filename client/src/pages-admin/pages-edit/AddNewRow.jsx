@@ -3,32 +3,31 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import TitleText from '../../components-reusable/TitleText'
 
-import { nestFlattenedObjectCreate, convertName } from '../../helper-files/helperFunctions'
+import {
+  nestFlattenedObjectCreate,
+  convertName,
+} from '../../helper-files/helperFunctions'
 import { getWord } from '../../helper-files/translate'
 
 import { createFunction } from '../../helper-files/crudFunctions'
 
-import {
-  Input,
-  Form,
-  Button,
-  Modal,
-  Row,
-  Col,
-} from 'antd'
+import { Input, Form, Button, Modal, Row, Col } from 'antd'
 
 const { TextArea } = Input
 
 const FormField = ({ title, language }) => {
   const fieldsWithDefaultValues = [
-    'pageEn', 'pageSectionEn',
-    'pageCh', 'pageSectionCh',
-    'service', 'serviceAcronym',
+    'pageEn',
+    'pageSectionEn',
+    'pageCh',
+    'pageSectionCh',
+    'service',
+    'serviceAcronym',
   ]
 
   const inputNode = () => {
     if (fieldsWithDefaultValues.includes(title)) {
-      return <Input disabled/>
+      return <Input disabled />
     } else {
       return <TextArea />
     }
@@ -46,16 +45,17 @@ const FormField = ({ title, language }) => {
   )
 }
 
-const TitleTextLang = ({ title }) =>
+const TitleTextLang = ({ title }) => (
   <TitleText
     title={title}
     titleStyle={{ fontSize: '1.5rem' }}
     style={{ margin: '20px 0' }}
   />
+)
 
 const AddNewRow = ({ modelFields }) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
-  const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language)
 
   const dispatch = useDispatch()
 
@@ -72,7 +72,9 @@ const AddNewRow = ({ modelFields }) => {
 
     const nestedFlattenedObject = nestFlattenedObjectCreate(values)
 
-    dispatch(createFunction[modelFields.pageSection](nestedFlattenedObject, language))
+    dispatch(
+      createFunction[modelFields.pageSection](nestedFlattenedObject, language)
+    )
   }
 
   const handleCancel = () => {
@@ -80,18 +82,23 @@ const AddNewRow = ({ modelFields }) => {
   }
 
   const hiddenFormFields = [
-    'id', 'itemId',
-    'page', 'pageSection',
+    'id',
+    'itemId',
+    'page',
+    'pageSection',
     // 'pageEn', 'pageSectionEn', 'pageCh', 'pageSectionCh'
   ]
 
   // fields for current language
-  const formFieldsPrimary = Object.keys(modelFields)
-    .filter(formField => !hiddenFormFields.includes(formField))
+  const formFieldsPrimary = Object.keys(modelFields).filter(
+    (formField) => !hiddenFormFields.includes(formField)
+  )
   // fields for other language
-  const formFieldsOther = formFieldsPrimary.map(formField => {
+  const formFieldsOther = formFieldsPrimary.map((formField) => {
     if (['En', 'Ch'].includes(formField.slice(-2))) {
-      return `${formField.substring(0, formField.length - 2)}${language === 'en' ? 'Ch' : 'En'}`
+      return `${formField.substring(0, formField.length - 2)}${
+        language === 'en' ? 'Ch' : 'En'
+      }`
     } else {
       return formField
     }
@@ -101,26 +108,35 @@ const AddNewRow = ({ modelFields }) => {
   const formFieldsEn = language === 'en' ? formFieldsPrimary : formFieldsOther
   const formFieldsCh = language === 'ch' ? formFieldsPrimary : formFieldsOther
   const formFields = {
-    'en': formFieldsEn,
-    'ch': formFieldsCh,
+    en: formFieldsEn,
+    ch: formFieldsCh,
   }
 
   // Initial Form values
   const initialFormValues = {
-    'page': modelFields.page,
-    'pageSection': modelFields.pageSection,
+    page: modelFields.page,
+    pageSection: modelFields.pageSection,
     'pageEn-en': modelFields.page,
     'pageSectionEn-en': modelFields.pageSection,
-    'imgSrc-en': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+    'imgSrc-en':
+      'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
     'pageCh-ch': modelFields.page,
-    'pageSectionCh-ch': getWord(convertName('dashed', 'proper', modelFields.pageSection), 'ch'),
-    'imgSrc-ch': 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+    'pageSectionCh-ch': getWord(
+      convertName('dashed', 'proper', modelFields.pageSection),
+      'ch'
+    ),
+    'imgSrc-ch':
+      'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
 
     // Conditionally add the 'service-en/ch' and 'serviceAcronym-en/ch' fields
     ...(modelFields.service && { 'service-en': modelFields.service }),
-    ...(modelFields.serviceAcronym && { 'serviceAcronym-en': modelFields.serviceAcronym }),
+    ...(modelFields.serviceAcronym && {
+      'serviceAcronym-en': modelFields.serviceAcronym,
+    }),
     ...(modelFields.service && { 'service-ch': modelFields.service }),
-    ...(modelFields.serviceAcronym && { 'serviceAcronym-ch': modelFields.serviceAcronym }),
+    ...(modelFields.serviceAcronym && {
+      'serviceAcronym-ch': modelFields.serviceAcronym,
+    }),
 
     // temporary
     'title-en': 'Title test',
@@ -139,7 +155,11 @@ const AddNewRow = ({ modelFields }) => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal} style={{ marginBottom: '20px' }}>
+      <Button
+        type="primary"
+        onClick={showModal}
+        style={{ marginBottom: '20px' }}
+      >
         Add New Row
       </Button>
       <Modal
@@ -147,7 +167,7 @@ const AddNewRow = ({ modelFields }) => {
         visible={isModalVisible}
         onCancel={handleCancel}
         footer={[]}
-        width='80%'
+        width="80%"
       >
         <Form initialValues={initialFormValues} onFinish={handleSubmitNewRow}>
           <Row gutter={30}>
@@ -157,7 +177,9 @@ const AddNewRow = ({ modelFields }) => {
                   <Form.Item
                     name={title}
                     label={convertName('camel', 'proper', title)}
-                    rules={[{ required: true, message: 'This field is required.' }]}
+                    rules={[
+                      { required: true, message: 'This field is required.' },
+                    ]}
                   >
                     <Input disabled />
                   </Form.Item>
@@ -170,14 +192,14 @@ const AddNewRow = ({ modelFields }) => {
             {['en', 'ch'].map((lang, i) => {
               return (
                 <Col key={i} span={12}>
-                  <TitleTextLang title={`${lang === 'en' ? 'English' : 'Chinese'} Language Data`} />
-                  {formFields[lang].map((formField, i) =>
-                    <FormField
-                      key={i}
-                      language={lang}
-                      title={formField}
-                    />
-                  )}
+                  <TitleTextLang
+                    title={`${
+                      lang === 'en' ? 'English' : 'Chinese'
+                    } Language Data`}
+                  />
+                  {formFields[lang].map((formField, i) => (
+                    <FormField key={i} language={lang} title={formField} />
+                  ))}
                 </Col>
               )
             })}

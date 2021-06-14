@@ -14,7 +14,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 const LoginForm = () => {
   const [form] = Form.useForm()
   const dispatch = useDispatch()
-  const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language)
 
   // Stay logged in
   useEffect(() => {
@@ -36,23 +36,18 @@ const LoginForm = () => {
   }
 
   return (
-    <Form
-      form={form}
-      onFinish={handleLogin}
-      className='login-form'
-    >
-      <Form.Item><TileText title={getWord('Admin Portal', language)} /></Form.Item>
-      <Form.Item
-        name='username'
-        rules={[{ required: true, message: 'Please input your Username!' }]}
-      >
-        <Input
-          prefix={<UserOutlined />}
-          placeholder="Username"
-        />
+    <Form form={form} onFinish={handleLogin} className="login-form">
+      <Form.Item>
+        <TileText title={getWord('Admin Portal', language)} />
       </Form.Item>
       <Form.Item
-        name='password'
+        name="username"
+        rules={[{ required: true, message: 'Please input your Username!' }]}
+      >
+        <Input prefix={<UserOutlined />} placeholder="Username" />
+      </Form.Item>
+      <Form.Item
+        name="password"
         rules={[{ required: true, message: 'Please input your Password!' }]}
       >
         <Input
@@ -62,7 +57,7 @@ const LoginForm = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Button style={{ width: '100%' }} type="primary" htmlType='submit'>
+        <Button style={{ width: '100%' }} type="primary" htmlType="submit">
           Log In
         </Button>
       </Form.Item>

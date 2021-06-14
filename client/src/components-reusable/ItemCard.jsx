@@ -1,16 +1,14 @@
 import React from 'react'
 
-import {
-  Card,
-  Typography,
-  Divider,
-} from 'antd'
-
-import { FieldTimeOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons'
+import { Card, Typography, Divider } from 'antd'
 
 import {
-  colorPrimaryOrange as iconColor,
-} from '../helper-files/colors'
+  FieldTimeOutlined,
+  HomeOutlined,
+  UserOutlined,
+} from '@ant-design/icons'
+
+import { colorPrimaryOrange as iconColor } from '../helper-files/colors'
 
 const { Title, Paragraph } = Typography
 const { Meta } = Card
@@ -34,7 +32,7 @@ const detailsStyle = {
   display: 'flex',
   flexDirection: 'column',
   height: '80px',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
 }
 
 const iconStyle = {
@@ -45,21 +43,27 @@ const iconStyle = {
 const ItemCard = ({ item }) => {
   const { title, text, imgSrc, details } = item
 
-  const { time, location, person } = details ? details : { time: null, location: null, person: null }
+  const { time, location, person } = details
+    ? details
+    : { time: null, location: null, person: null }
 
   return (
     <Card
       cover={<img alt="img" src={imgSrc} style={imgStyle} />}
       style={cardStyle}
-    // hoverable
+      // hoverable
     >
       <Title style={{ fontSize: '1.2rem', margin: '10px 0' }}>{title}</Title>
-      <Paragraph style={{ fontSize: '1rem', fontWeight: '300', margin: '20px 0' }}>{text}</Paragraph>
-      { details &&
+      <Paragraph
+        style={{ fontSize: '1rem', fontWeight: '300', margin: '20px 0' }}
+      >
+        {text}
+      </Paragraph>
+      {details && (
         <>
           <Divider style={{ margin: '20px 0' }} />
           <div style={detailsStyle}>
-            {time &&
+            {time && (
               <>
                 <Meta
                   style={{ textAlign: 'left' }}
@@ -68,8 +72,8 @@ const ItemCard = ({ item }) => {
                 />
                 <br />
               </>
-            }
-            {location &&
+            )}
+            {location && (
               <>
                 <Meta
                   style={{ textAlign: 'left' }}
@@ -78,8 +82,8 @@ const ItemCard = ({ item }) => {
                 />
                 <br />
               </>
-            }
-            {person &&
+            )}
+            {person && (
               <>
                 <Meta
                   style={{ textAlign: 'left' }}
@@ -88,10 +92,10 @@ const ItemCard = ({ item }) => {
                 />
                 <br />
               </>
-            }
+            )}
           </div>
         </>
-      }
+      )}
     </Card>
   )
 }

@@ -14,22 +14,28 @@ import { getOutreach } from '../reducers/outreachReducer'
 const Outreach = () => {
   const dispatch = useDispatch()
 
-  const outreachData = useSelector(state => state.outreach)
-  const language = useSelector(state => state.language)
+  const outreachData = useSelector((state) => state.outreach)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getOutreach())
   }, [language])
 
-  if (outreachData.length <= 0) { return null }
+  if (outreachData.length <= 0) {
+    return null
+  }
 
   return (
     <div>
-      <Banner imageTitlePairs={[{
-        title: getWord('Outreach', language),
-        image: gathering
-      }]} />
-      <SectionsTemplate data={outreachData} displayType='card' />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Outreach', language),
+            image: gathering,
+          },
+        ]}
+      />
+      <SectionsTemplate data={outreachData} displayType="card" />
     </div>
   )
 }

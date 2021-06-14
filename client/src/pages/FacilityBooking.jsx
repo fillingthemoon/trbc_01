@@ -12,17 +12,21 @@ import { Typography } from 'antd'
 const { Link: AntdLink } = Typography
 
 const FacilityBooking = () => {
-  const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language)
 
   return (
     <div>
-      <Banner imageTitlePairs={[{
-        title: getWord('Facility Booking', language),
-        image: exterior
-      }]} />
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Facility Booking', language),
+            image: exterior,
+          },
+        ]}
+      />
       <div style={{ padding: '50px' }}>
         Room booking system:
-        <AntdLink href='https://www.trbc.org.sg/mrbs2/day.php?year=2021&month=05&day=26&area=8&room=23'>
+        <AntdLink href="https://www.trbc.org.sg/mrbs2/day.php?year=2021&month=05&day=26&area=8&room=23">
           https://www.trbc.org.sg/mrbs2/day.php?year=2021&month=05&day=26&area=8&room=23
         </AntdLink>
       </div>

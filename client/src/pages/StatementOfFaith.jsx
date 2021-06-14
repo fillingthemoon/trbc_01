@@ -22,33 +22,42 @@ const statementStyle = {
 const StatementOfFaith = () => {
   const dispatch = useDispatch()
 
-  const statementOfFaithData = useSelector(state => state.statementOfFaith)
-  const language = useSelector(state => state.language)
+  const statementOfFaithData = useSelector((state) => state.statementOfFaith)
+  const language = useSelector((state) => state.language)
 
   useEffect(() => {
     dispatch(getStatementOfFaith())
   }, [language])
 
-  if (statementOfFaithData.length <= 0) { return null }
+  if (statementOfFaithData.length <= 0) {
+    return null
+  }
 
   return (
     <div>
-      <Banner imageTitlePairs={[{
-        title: getWord('Statement of Faith', language),
-        image: statementOfFaith
-      }]} />
-      <div className='all-statement-container'>
-        {statementOfFaithData.map((statement, i) =>
+      <Banner
+        imageTitlePairs={[
+          {
+            title: getWord('Statement of Faith', language),
+            image: statementOfFaith,
+          },
+        ]}
+      />
+      <div className="all-statement-container">
+        {statementOfFaithData.map((statement, i) => (
           <div key={i} style={{ padding: '30px' }}>
             <TitleText
               title={statement.title}
-              underlineAlign='center'
+              underlineAlign="center"
               text={statement.text}
               textStyle={statementStyle}
-              titleUnderlineStyle={{ display: 'flex', justifyContent: 'center' }}
+              titleUnderlineStyle={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
             ></TitleText>
           </div>
-        )}
+        ))}
       </div>
     </div>
   )
