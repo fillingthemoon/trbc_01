@@ -16,6 +16,9 @@ const ourHistoryReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_OUR_HISTORY': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     default: {
       return state
     }
@@ -73,6 +76,24 @@ export const updateOurHistory = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteOurHistory = (id) => {
+  return async dispatch => {
+    try {
+      await ourHistoryService.deleteOurHistory(id)
+
+      dispatch({
+        type: 'DELETE_OUR_HISTORY',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

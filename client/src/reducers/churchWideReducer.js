@@ -16,6 +16,9 @@ const churchWideReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_CHURCH_WIDE': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     case 'RESET_CHURCH_WIDE': {
       return []
     }
@@ -84,6 +87,24 @@ export const updateChurchWide = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteChurchWide = (id) => {
+  return async dispatch => {
+    try {
+      await churchWideService.deleteChurchWide(id)
+
+      dispatch({
+        type: 'DELETE_CHURCH_WIDE',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

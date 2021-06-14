@@ -34,10 +34,22 @@ const updateAnnouncement = async (id, updatedItem) => {
   return response.data
 }
 
+const deleteAnnouncement = async (id) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+
+  return response.data
+}
+
 const announcementsService = {
   getAnnouncements,
   createAnnouncement,
   updateAnnouncement,
+  deleteAnnouncement,
 }
 
 export default announcementsService

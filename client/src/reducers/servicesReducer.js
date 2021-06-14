@@ -16,6 +16,9 @@ const servicesReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_SERVICE': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     case 'RESET_SERVICES': {
       return []
     }
@@ -84,6 +87,24 @@ export const updateService = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteService = (id) => {
+  return async dispatch => {
+    try {
+      await servicesService.deleteService(id)
+
+      dispatch({
+        type: 'DELETE_SERVICE',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

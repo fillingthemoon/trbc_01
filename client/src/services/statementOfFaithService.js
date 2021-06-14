@@ -34,10 +34,22 @@ const updateStatementOfFaith = async (id, updatedItem) => {
   return response.data
 }
 
+const deleteStatementOfFaith = async (id) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+
+  return response.data
+}
+
 const statementOfFaithService = {
   getStatementOfFaith,
   createStatementOfFaith,
   updateStatementOfFaith,
+  deleteStatementOfFaith,
 }
 
 export default statementOfFaithService

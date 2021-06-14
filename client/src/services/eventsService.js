@@ -34,10 +34,22 @@ const updateEvent = async (id, updatedItem) => {
   return response.data
 }
 
+const deleteEvent = async (id) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+
+  return response.data
+}
+
 const eventsService = {
   getEvents,
   createEvent,
   updateEvent,
+  deleteEvent,
 }
 
 export default eventsService

@@ -34,10 +34,22 @@ const updateDiscipleship = async (id, updatedItem) => {
   return response.data
 }
 
+const deleteDiscipleship = async (id) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+
+  return response.data
+}
+
 const discipleshipService = {
   getDiscipleship,
   createDiscipleship,
   updateDiscipleship,
+  deleteDiscipleship,
 }
 
 export default discipleshipService

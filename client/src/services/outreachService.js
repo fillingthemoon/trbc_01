@@ -34,10 +34,22 @@ const updateOutreach = async (id, updatedItem) => {
   return response.data
 }
 
+const deleteOutreach = async (id) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+
+  return response.data
+}
+
 const outreachService = {
   getOutreach,
   createOutreach,
   updateOutreach,
+  deleteOutreach,
 }
 
 export default outreachService

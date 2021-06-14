@@ -5,10 +5,6 @@ import EditableCell from './EditableCell'
 import AddNewRow from './AddNewRow'
 
 import {
-  deleteUpcomingSermon,
-} from '../../reducers/upcomingSermonsReducer'
-
-import {
   convertName,
   flattenNestedObject,
   nestFlattenedObjectUpdate,
@@ -19,7 +15,10 @@ import {
   pageSectionToPage,
 } from '../../helper-files/pageSectionItemPageConversion'
 
-import { updateFunction } from '../../helper-files/crudFunctions'
+import {
+  updateFunction,
+  deleteFunction,
+} from '../../helper-files/crudFunctions'
 
 import getItemSchema from '../../models/itemModel'
 
@@ -139,7 +138,7 @@ const EditableTable = ({ editPageSectionName }) => {
     const newData = tableData.filter((item) => item.id !== record.id)
     setTableData(newData)
 
-    dispatch(deleteUpcomingSermon(record.id))
+    dispatch(deleteFunction[record.pageSection](record.id))
   }
 
   const hiddenFields = ['id']

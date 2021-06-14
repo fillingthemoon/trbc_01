@@ -16,6 +16,9 @@ const outreachReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_OUTREACH': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     case 'RESET_SERVICES': {
       return []
     }
@@ -84,6 +87,24 @@ export const updateOutreach = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteOutreach = (id) => {
+  return async dispatch => {
+    try {
+      await outreachService.deleteOutreach(id)
+
+      dispatch({
+        type: 'DELETE_OUTREACH',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

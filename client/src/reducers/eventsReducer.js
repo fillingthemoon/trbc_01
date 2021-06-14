@@ -16,6 +16,9 @@ const eventsReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_EVENT': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     default: {
       return state
     }
@@ -73,6 +76,24 @@ export const updateEvent = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteEvent = (id) => {
+  return async dispatch => {
+    try {
+      await eventsService.deleteEvent(id)
+
+      dispatch({
+        type: 'DELETE_EVENT',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

@@ -16,6 +16,9 @@ const missionsReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_MISSION': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     default: {
       return state
     }
@@ -73,6 +76,24 @@ export const updateMission = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteMission = (id) => {
+  return async dispatch => {
+    try {
+      await missionsService.deleteMission(id)
+
+      dispatch({
+        type: 'DELETE_MISSION',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

@@ -16,6 +16,9 @@ const statementOfFaithReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_STATEMENT_OF_FAITH': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     default: {
       return state
     }
@@ -73,6 +76,24 @@ export const updateStatementOfFaith = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteStatementOfFaith = (id) => {
+  return async dispatch => {
+    try {
+      await statementOfFaithService.deleteStatementOfFaith(id)
+
+      dispatch({
+        type: 'DELETE_STATEMENT_OF_FAITH',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

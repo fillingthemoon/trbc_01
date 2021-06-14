@@ -34,10 +34,22 @@ const updateMission = async (id, updatedItem) => {
   return response.data
 }
 
+const deleteMission = async (id) => {
+  const token = `bearer ${JSON.parse(localStorage.loggedInAdminUser).token}`
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.delete(`${baseUrl}/${id}`, config)
+
+  return response.data
+}
+
 const missionsService = {
   getMissions,
   createMission,
   updateMission,
+  deleteMission,
 }
 
 export default missionsService

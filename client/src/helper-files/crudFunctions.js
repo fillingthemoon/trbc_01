@@ -3,7 +3,7 @@ import { getChurchWide, createChurchWide, updateChurchWide } from '../reducers/c
 import { getDiscipleship, createDiscipleship, updateDiscipleship } from '../reducers/discipleshipReducer'
 import { getAnnouncements, createAnnouncement, updateAnnouncement } from '../reducers/announcementsReducer'
 import { getEvents, createEvent, updateEvent } from '../reducers/eventsReducer'
-import { getUpcomingSermons, createUpcomingSermon, updateUpcomingSermon } from '../reducers/upcomingSermonsReducer'
+import { getUpcomingSermons, createUpcomingSermon, updateUpcomingSermon, deleteUpcomingSermon } from '../reducers/upcomingSermonsReducer'
 import { getImNew, createImNew, updateImNew } from '../reducers/imNewReducer'
 import { getMissions, createMission, updateMission } from '../reducers/missionsReducer'
 import { getOurHistory, createOurHistory, updateOurHistory } from '../reducers/ourHistoryReducer'
@@ -56,7 +56,7 @@ const createFunction = {
   'statement-of-faith': createStatementOfFaith,
 }
 
-// Create
+// Update
 const updateFunction = {
   'second-language-classes': updateChurchWide,
   'interest-groups': updateChurchWide,
@@ -77,8 +77,30 @@ const updateFunction = {
   'statement-of-faith': updateStatementOfFaith,
 }
 
+// Delete
+const deleteFunction = {
+  // 'second-language-classes': deleteChurchWide,
+  // 'interest-groups': deleteChurchWide,
+  // 'discipleship': deleteDiscipleship,
+  // 'announcements': deleteAnnouncement,
+  // 'events': deleteEvent,
+  'upcoming-sermons': deleteUpcomingSermon,
+  // 'im-new': deleteImNew,
+  // 'missions': deleteMission,
+  // 'our-history': deleteOurHistory,
+  // 'administrative': deleteOurTeam,
+  // 'ministry': deleteOurTeam,
+  // 'pastoral': deleteOurTeam,
+  // 'outreach': deleteOutreach,
+  // 'english-service': deleteService,
+  // 'sunset-service-english-mandarin': deleteService,
+  // 'teo-chew-chinese-service': deleteService,
+  // 'statement-of-faith': deleteStatementOfFaith,
+}
+
 export {
   getFunction,
   createFunction,
   updateFunction,
+  deleteFunction,
 }

@@ -16,6 +16,9 @@ const imNewReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_IM_NEW': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     default: {
       return state
     }
@@ -73,6 +76,24 @@ export const updateImNew = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteImNew = (id) => {
+  return async dispatch => {
+    try {
+      await imNewService.deleteImNew(id)
+
+      dispatch({
+        type: 'DELETE_IM_NEW',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }

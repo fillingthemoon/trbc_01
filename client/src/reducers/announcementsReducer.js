@@ -16,6 +16,9 @@ const episodeLinesReducer = (state = [], action) => {
         : item
       )
     }
+    case 'DELETE_ANNOUNCEMENT': {
+      return state.filter(upcomingSermon => upcomingSermon.id !== action.data.id)
+    }
     default: {
       return state
     }
@@ -73,6 +76,24 @@ export const updateAnnouncement = (id, updatedItem) => {
         }
       })
       dispatch(setNotification('success', 'Successfully updated! Please refresh to view.', 4))
+    } catch (error) {
+      dispatch(setNotification('error', error.response.data.error, 4))
+    }
+  }
+}
+
+export const deleteAnnouncement = (id) => {
+  return async dispatch => {
+    try {
+      await announcementsService.deleteAnnouncement(id)
+
+      dispatch({
+        type: 'DELETE_ANNOUNCEMENT',
+        data: {
+          id
+        }
+      })
+      dispatch(setNotification('success', 'Successfully deleted! Please refresh to view.', 4))
     } catch (error) {
       dispatch(setNotification('error', error.response.data.error, 4))
     }
