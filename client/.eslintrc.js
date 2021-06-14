@@ -29,6 +29,7 @@ module.exports = {
       { code: 80 },
       { ignoreUrls: true },
       { ignoreStrings: true },
+      { ignoreComments: true },
     ],
   },
   settings: {
