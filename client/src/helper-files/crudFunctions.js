@@ -1,16 +1,16 @@
 /* get functions for various sections */
-import { getChurchWide, createChurchWide, updateChurchWide } from '../reducers/churchWideReducer'
-import { getDiscipleship, createDiscipleship, updateDiscipleship } from '../reducers/discipleshipReducer'
-import { getAnnouncements, createAnnouncement, updateAnnouncement } from '../reducers/announcementsReducer'
-import { getEvents, createEvent, updateEvent } from '../reducers/eventsReducer'
+import { getChurchWide, createChurchWide, updateChurchWide, deleteChurchWide } from '../reducers/churchWideReducer'
+import { getDiscipleship, createDiscipleship, updateDiscipleship, deleteDiscipleship } from '../reducers/discipleshipReducer'
+import { getAnnouncements, createAnnouncement, updateAnnouncement, deleteAnnouncement } from '../reducers/announcementsReducer'
+import { getEvents, createEvent, updateEvent, deleteEvent } from '../reducers/eventsReducer'
 import { getUpcomingSermons, createUpcomingSermon, updateUpcomingSermon, deleteUpcomingSermon } from '../reducers/upcomingSermonsReducer'
-import { getImNew, createImNew, updateImNew } from '../reducers/imNewReducer'
-import { getMissions, createMission, updateMission } from '../reducers/missionsReducer'
-import { getOurHistory, createOurHistory, updateOurHistory } from '../reducers/ourHistoryReducer'
-import { getOurTeam, createOurTeam, updateOurTeam } from '../reducers/ourTeamReducer'
-import { getOutreach, createOutreach, updateOutreach } from '../reducers/outreachReducer'
-import { getServices, createService, updateService } from '../reducers/servicesReducer'
-import { getStatementOfFaith, createStatementOfFaith, updateStatementOfFaith } from '../reducers/statementOfFaithReducer'
+import { getImNew, createImNew, updateImNew, deleteImNew } from '../reducers/imNewReducer'
+import { getMissions, createMission, updateMission, deleteMission } from '../reducers/missionsReducer'
+import { getOurHistory, createOurHistory, updateOurHistory, deleteOurHistory } from '../reducers/ourHistoryReducer'
+import { getOurTeam, createOurTeam, updateOurTeam, deleteOurTeam } from '../reducers/ourTeamReducer'
+import { getOutreach, createOutreach, updateOutreach, deleteOutreach } from '../reducers/outreachReducer'
+import { getServices, createService, updateService, deleteService } from '../reducers/servicesReducer'
+import { getStatementOfFaith, createStatementOfFaith, updateStatementOfFaith, deleteStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 // Read
 const getFunction = {
@@ -79,23 +79,23 @@ const updateFunction = {
 
 // Delete
 const deleteFunction = {
-  // 'second-language-classes': deleteChurchWide,
-  // 'interest-groups': deleteChurchWide,
-  // 'discipleship': deleteDiscipleship,
-  // 'announcements': deleteAnnouncement,
-  // 'events': deleteEvent,
+  'second-language-classes': deleteChurchWide,
+  'interest-groups': deleteChurchWide,
+  'discipleship': deleteDiscipleship,
+  'announcements': deleteAnnouncement,
+  'events': deleteEvent,
   'upcoming-sermons': deleteUpcomingSermon,
-  // 'im-new': deleteImNew,
-  // 'missions': deleteMission,
-  // 'our-history': deleteOurHistory,
-  // 'administrative': deleteOurTeam,
-  // 'ministry': deleteOurTeam,
-  // 'pastoral': deleteOurTeam,
-  // 'outreach': deleteOutreach,
-  // 'english-service': deleteService,
-  // 'sunset-service-english-mandarin': deleteService,
-  // 'teo-chew-chinese-service': deleteService,
-  // 'statement-of-faith': deleteStatementOfFaith,
+  'im-new': deleteImNew,
+  'missions': deleteMission,
+  'our-history': deleteOurHistory,
+  'administrative': deleteOurTeam,
+  'ministry': deleteOurTeam,
+  'pastoral': deleteOurTeam,
+  'outreach': deleteOutreach,
+  'english-service': deleteService,
+  'sunset-service-english-mandarin': deleteService,
+  'teo-chew-chinese-service': deleteService,
+  'statement-of-faith': deleteStatementOfFaith,
 }
 
 export {
