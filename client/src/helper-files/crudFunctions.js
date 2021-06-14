@@ -1,29 +1,16 @@
 /* get functions for various sections */
-import { getChurchWide, createChurchWide } from '../reducers/churchWideReducer'
-import {
-  getDiscipleship,
-  createDiscipleship,
-} from '../reducers/discipleshipReducer'
-import {
-  getAnnouncements,
-  createAnnouncement,
-} from '../reducers/announcementsReducer'
-import { getEvents, createEvent } from '../reducers/eventsReducer'
-import {
-  getUpcomingSermons,
-  createUpcomingSermon,
-  updateUpcomingSermon,
-} from '../reducers/upcomingSermonsReducer'
-import { getImNew, createImNew } from '../reducers/imNewReducer'
-import { getMissions, createMission } from '../reducers/missionsReducer'
-import { getOurHistory, createOurHistory } from '../reducers/ourHistoryReducer'
-import { getOurTeam, createOurTeam } from '../reducers/ourTeamReducer'
-import { getOutreach, createOutreach } from '../reducers/outreachReducer'
-import { getServices, createService } from '../reducers/servicesReducer'
-import {
-  getStatementOfFaith,
-  createStatementOfFaith,
-} from '../reducers/statementOfFaithReducer'
+import { getChurchWide, createChurchWide, updateChurchWide } from '../reducers/churchWideReducer'
+import { getDiscipleship, createDiscipleship, updateDiscipleship } from '../reducers/discipleshipReducer'
+import { getAnnouncements, createAnnouncement, updateAnnouncement } from '../reducers/announcementsReducer'
+import { getEvents, createEvent, updateEvent } from '../reducers/eventsReducer'
+import { getUpcomingSermons, createUpcomingSermon, updateUpcomingSermon } from '../reducers/upcomingSermonsReducer'
+import { getImNew, createImNew, updateImNew } from '../reducers/imNewReducer'
+import { getMissions, createMission, updateMission } from '../reducers/missionsReducer'
+import { getOurHistory, createOurHistory, updateOurHistory } from '../reducers/ourHistoryReducer'
+import { getOurTeam, createOurTeam, updateOurTeam } from '../reducers/ourTeamReducer'
+import { getOutreach, createOutreach, updateOutreach } from '../reducers/outreachReducer'
+import { getServices, createService, updateService } from '../reducers/servicesReducer'
+import { getStatementOfFaith, createStatementOfFaith, updateStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 // Read
 const getFunction = {
@@ -71,23 +58,23 @@ const createFunction = {
 
 // Create
 const updateFunction = {
-  // 'second-language-classes': updateChurchWide,
-  // 'interest-groups': updateChurchWide,
-  // 'discipleship': updateDiscipleship,
-  // 'announcements': updateAnnouncement,
-  // 'events': updateEvent,
+  'second-language-classes': updateChurchWide,
+  'interest-groups': updateChurchWide,
+  'discipleship': updateDiscipleship,
+  'announcements': updateAnnouncement,
+  'events': updateEvent,
   'upcoming-sermons': updateUpcomingSermon,
-  // 'im-new': updateImNew,
-  // 'missions': updateMission,
-  // 'our-history': updateOurHistory,
-  // 'administrative': updateOurTeam,
-  // 'ministry': updateOurTeam,
-  // 'pastoral': updateOurTeam,
-  // 'outreach': updateOutreach,
-  // 'english-service': updateService,
-  // 'sunset-service-english-mandarin': updateService,
-  // 'teo-chew-chinese-service': updateService,
-  // 'statement-of-faith': updateStatementOfFaith,
+  'im-new': updateImNew,
+  'missions': updateMission,
+  'our-history': updateOurHistory,
+  'administrative': updateOurTeam,
+  'ministry': updateOurTeam,
+  'pastoral': updateOurTeam,
+  'outreach': updateOutreach,
+  'english-service': updateService,
+  'sunset-service-english-mandarin': updateService,
+  'teo-chew-chinese-service': updateService,
+  'statement-of-faith': updateStatementOfFaith,
 }
 
 export {
