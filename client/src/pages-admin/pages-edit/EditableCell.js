@@ -1,10 +1,6 @@
 import React from 'react'
 
-import {
-  Input,
-  Form,
-  Image,
-} from 'antd'
+import { Input, Form, Image } from 'antd'
 
 const { TextArea } = Input
 
@@ -15,7 +11,16 @@ const cellImgStyle = {
 }
 
 // Component for Editable Cell
-const EditableCell = ({ editing, dataIndex, title, inputType, record, index, children, ...restProps }) => {
+const EditableCell = ({
+  editing,
+  dataIndex,
+  title,
+  inputType,
+  record,
+  index,
+  children,
+  ...restProps
+}) => {
   const inputNode = () => {
     if (title === 'imgDisplay') {
       return <Image src={record.imgSrc} style={cellImgStyle} />
@@ -28,17 +33,20 @@ const EditableCell = ({ editing, dataIndex, title, inputType, record, index, chi
 
   // Return either the Form inputs or cell content
   return (
-    <td {...restProps} style={title === 'imgSrc' ? { maxWidth: '300px' } : null}>
-      {editing // Variable for whether the current record is being edited
-        ?
-        (<Form.Item
+    <td
+      {...restProps}
+      style={title === 'imgSrc' ? { maxWidth: '300px' } : null}
+    >
+      {editing ? ( // Variable for whether the current record is being edited
+        <Form.Item
           name={dataIndex}
           rules={[{ required: true, message: `Please input "${title}"!` }]}
         >
           {inputNode()}
-        </Form.Item>)
-        : (children)
-      }
+        </Form.Item>
+      ) : (
+        children
+      )}
     </td>
   )
 }

@@ -4,21 +4,25 @@ import { useDispatch, useSelector } from 'react-redux'
 import EditableCell from './EditableCell'
 import AddNewRow from './AddNewRow'
 
-import { updateUpcomingSermon, deleteUpcomingSermon } from '../../reducers/upcomingSermonsReducer'
+import {
+  updateUpcomingSermon,
+  deleteUpcomingSermon,
+} from '../../reducers/upcomingSermonsReducer'
 
-import { convertName, flattenNestedObject, nestFlattenedObjectUpdate } from '../../helper-files/helperFunctions'
+import {
+  convertName,
+  flattenNestedObject,
+  nestFlattenedObjectUpdate,
+} from '../../helper-files/helperFunctions'
 import { getFunction } from '../../helper-files/crudFunctions'
-import { pageSectionToItem, pageSectionToPage } from '../../helper-files/pageSectionItemPageConversion'
+import {
+  pageSectionToItem,
+  pageSectionToPage,
+} from '../../helper-files/pageSectionItemPageConversion'
 
 import getItemSchema from '../../models/itemModel'
 
-import {
-  Table,
-  Form,
-  Typography,
-  Popconfirm,
-  Image,
-} from 'antd'
+import { Table, Form, Typography, Popconfirm, Image } from 'antd'
 
 const cellImgStyle = {
   maxWidth: '500px',
@@ -30,14 +34,22 @@ const EditableTable = ({ editPageSectionName }) => {
   const [form] = Form.useForm()
   const [tableData, setTableData] = useState([])
   const [editingId, setEditingId] = useState('') // Variable for the record currently being edited
-  const editSection = useSelector(state => state[pageSectionToItem[editPageSectionName]])
+  const editSection = useSelector(
+    (state) => state[pageSectionToItem[editPageSectionName]]
+  )
 
   const dispatch = useDispatch()
-  const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language)
 
   // Gets the relevant fields for this section
-  const unflattenedModelFields = getItemSchema(pageSectionToPage[editPageSectionName], editPageSectionName, language)
-  const modelFields = flattenNestedObject(flattenNestedObject(unflattenedModelFields))
+  const unflattenedModelFields = getItemSchema(
+    pageSectionToPage[editPageSectionName],
+    editPageSectionName,
+    language
+  )
+  const modelFields = flattenNestedObject(
+    flattenNestedObject(unflattenedModelFields)
+  )
 
   // Sets the table's data
   useEffect(() => {
@@ -45,20 +57,26 @@ const EditableTable = ({ editPageSectionName }) => {
   }, [])
 
   useEffect(() => {
-    setTableData(editSection.length <= 0
-      ? [] // Return [] if no data available
-      : editSection.map((sectionItem, i) => {
-        return Object.keys(sectionItem).includes('imgSrc')
-          ? {
-            ...flattenNestedObject(sectionItem),
-            key: i,
-            imgDisplay: <Image src={sectionItem.imgSrc} style={cellImgStyle}></Image>
-          }
-          : {
-            ...flattenNestedObject(sectionItem),
-            key: i,
-          }
-      })
+    setTableData(
+      editSection.length <= 0
+        ? [] // Return [] if no data available
+        : editSection.map((sectionItem, i) => {
+          return Object.keys(sectionItem).includes('imgSrc')
+            ? {
+              ...flattenNestedObject(sectionItem),
+              key: i,
+              imgDisplay: (
+                <Image
+                  src={sectionItem.imgSrc}
+                  style={cellImgStyle}
+                ></Image>
+              ),
+            }
+            : {
+              ...flattenNestedObject(sectionItem),
+              key: i,
+            }
+        })
     )
   }, [editSection])
 
@@ -69,7 +87,9 @@ const EditableTable = ({ editPageSectionName }) => {
     setEditingId(record.id)
   }
 
-  const cancel = () => { setEditingId('') }
+  const cancel = () => {
+    setEditingId('')
+  }
 
   const save = async (record) => {
     try {
@@ -91,15 +111,21 @@ const EditableTable = ({ editPageSectionName }) => {
 
       // Get page and pageSection in row object before calling nestFlattenedObjectUpdate
       const pageLang = `page${convertName('dashed', 'proper', language)}`
-      const pageSectionLang = `pageSection${convertName('dashed', 'proper', language)}`
+      const pageSectionLang = `pageSection${convertName(
+        'dashed',
+        'proper',
+        language
+      )}`
       row[pageLang] = record[pageLang]
       row[pageSectionLang] = record[pageSectionLang]
 
       // If record contains the keys service and serviceAcronym, save them
       const serviceFields = ['service', 'serviceAcronym']
       serviceFields
-        .filter(field => Object.keys(record).includes(field))
-        .forEach(field => { row[field] = record[field] })
+        .filter((field) => Object.keys(record).includes(field))
+        .forEach((field) => {
+          row[field] = record[field]
+        })
 
       const nestedRow = nestFlattenedObjectUpdate(row, language)
       dispatch(updateUpcomingSermon(record.id, nestedRow))
@@ -115,9 +141,10 @@ const EditableTable = ({ editPageSectionName }) => {
     dispatch(deleteUpcomingSermon(record.id))
   }
 
-  const hiddenFields = ['id',]
-  const fields = Object.keys(modelFields)
-    .filter(field => !hiddenFields.includes(field))
+  const hiddenFields = ['id']
+  const fields = Object.keys(modelFields).filter(
+    (field) => !hiddenFields.includes(field)
+  )
 
   // Add image display column if imgSrc exists
   if (Object.keys(modelFields).includes('imgSrc')) {
@@ -125,19 +152,27 @@ const EditableTable = ({ editPageSectionName }) => {
   }
 
   const uneditableColumns = [
-    'id', 'itemId', 'page', 'pageSection',
-    'pageEn', 'pageSectionEn', 'pageCh', 'pageSectionCh',
+    'id',
+    'itemId',
+    'page',
+    'pageSection',
+    'pageEn',
+    'pageSectionEn',
+    'pageCh',
+    'pageSectionCh',
     'imgDisplay',
-    'service', 'serviceAcronym'
+    'service',
+    'serviceAcronym',
   ]
-  const columns = fields.map(field => {
-    return {
-      // title and dataIndex are the same thing in this case
-      title: field,
-      dataIndex: field,
-      editable: !uneditableColumns.includes(field),
-    }
-  })
+  const columns = fields
+    .map((field) => {
+      return {
+        // title and dataIndex are the same thing in this case
+        title: field,
+        dataIndex: field,
+        editable: !uneditableColumns.includes(field),
+      }
+    })
     // Add the 'editing' column
     .concat([
       {
@@ -149,7 +184,10 @@ const EditableTable = ({ editPageSectionName }) => {
           return editable ? (
             <>
               <Typography.Link style={{ marginRight: 8 }}>
-                <Popconfirm title="Are you sure you want to save this record?" onConfirm={() => save(record)}>
+                <Popconfirm
+                  title="Are you sure you want to save this record?"
+                  onConfirm={() => save(record)}
+                >
                   Save
                 </Popconfirm>
               </Typography.Link>
@@ -166,15 +204,19 @@ const EditableTable = ({ editPageSectionName }) => {
               </Typography.Link>
               <Typography.Link
                 disabled={editingId !== ''}
-                style={{ display: 'block' }}>
-                <Popconfirm title="Are you sure you want to delete this record?" onConfirm={() => deleteRow(record)}>
+                style={{ display: 'block' }}
+              >
+                <Popconfirm
+                  title="Are you sure you want to delete this record?"
+                  onConfirm={() => deleteRow(record)}
+                >
                   Delete
                 </Popconfirm>
               </Typography.Link>
             </>
           )
         },
-      }
+      },
     ])
 
   const mergedColumns = columns.map((col) => {
