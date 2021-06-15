@@ -88,7 +88,12 @@ const App = () => {
   const language = useSelector(state => state.language)
 
   const matchEditSection = useRouteMatch('/admin/:sectionId')
-  const urlsWithIdParams = ['/outreach/:id', '/missions/:id', '/services/:id', '/church-wide/:id']
+  const urlsWithIdParams = [
+    '/outreach/:id',
+    '/missions/:id',
+    '/services/:id',
+    '/church-wide/:id'
+  ]
   const matchIndivPageItem = useRouteMatch(urlsWithIdParams)
 
   useEffect(() => {

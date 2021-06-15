@@ -24,13 +24,6 @@ module.exports = {
     'react/prop-types': 0,
     'no-unused-vars': 0,
     'react/display-name': 'off',
-    'max-len': [
-      'error',
-      { code: 80 },
-      { ignoreUrls: true },
-      { ignoreStrings: true },
-      { ignoreComments: true },
-    ],
   },
   settings: {
     react: {
