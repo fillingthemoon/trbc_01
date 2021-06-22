@@ -69,11 +69,11 @@ const NavBar = () => {
             {getWord('Mission & Vision', language)}
           </Link>
         </Menu.Item>
-        <Menu.Item key="our-history">
+        {/* <Menu.Item key="our-history">
           <Link replace to="/our-history">
             {getWord('Our History', language)}
           </Link>
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item key="our-team">
           <Link replace to="/our-team">
             {getWord('Our Team', language)}
