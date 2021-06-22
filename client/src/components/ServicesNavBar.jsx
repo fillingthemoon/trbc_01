@@ -32,17 +32,17 @@ const ServicesNavBar = (props) => {
       }}
     >
       <Menu.Item key="tc" style={menuItemStyle}>
-        <Link replace to="/services/">
+        <Link replace to="/im-new/">
           {getWord('Teo Chew/Chinese Service', language)}
         </Link>
       </Menu.Item>
       <Menu.Item key="en" style={menuItemStyle}>
-        <Link replace to="/services/">
+        <Link replace to="/im-new/">
           {getWord('English Service', language)}
         </Link>
       </Menu.Item>
       <Menu.Item key="ss" style={menuItemStyle}>
-        <Link replace to="/services/">
+        <Link replace to="/im-new/">
           {getWord('Sunset Service (English/Mandarin)', language)}
         </Link>
       </Menu.Item>

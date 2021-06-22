@@ -48,6 +48,7 @@ const ServiceCard = ({ serviceItem }) => {
   const { location } = details ? details : { location: null }
 
   return (
+    // Technically, Services is on the I'm New page not the Services page, but this is an exception
     <Link to={`/${page}/${id}`}>
       <Card
         cover={<img alt="img" src={imgSrc} style={imgStyle} />}
