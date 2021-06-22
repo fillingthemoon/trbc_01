@@ -140,7 +140,7 @@ const App = () => {
           <Route path='/statement-of-faith' exact>
             <StatementOfFaith />
           </Route >
-          <Route path='/services' exact>
+          <Route path='/im-new' exact>
             <Services />
           </Route >
           <Route path='/outreach' exact>

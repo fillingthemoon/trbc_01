@@ -85,13 +85,11 @@ const NavBar = () => {
           </Link>
         </Menu.Item>
       </SubMenu>
-      <SubMenu key="join-us" title={getWord('Join Us', language)}>
-        <Menu.Item key="services">
-          <Link replace to="/services">
-            {getWord('Services', language)}
-          </Link>
-        </Menu.Item>
-      </SubMenu>
+      <Menu.Item key="im-new">
+        <Link replace to="/im-new">
+          {getWord('I\'m New', language)}
+        </Link>
+      </Menu.Item>
       <SubMenu key="ministries" title={getWord('Ministries', language)}>
         <Menu.Item key="outreach">
           <Link replace to="/outreach">
