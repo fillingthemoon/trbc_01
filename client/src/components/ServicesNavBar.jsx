@@ -20,6 +20,9 @@ const ServicesNavBar = (props) => {
 
   const isBigScreen = useMediaQuery({ query: '(min-width: 950px)' })
 
+  const href = window.location.href.split('/')
+  const pageUrl = href[4]
+
   return (
     <Menu
       mode={isBigScreen ? 'horizontal' : 'vertical'}
@@ -32,17 +35,17 @@ const ServicesNavBar = (props) => {
       }}
     >
       <Menu.Item key="tc" style={menuItemStyle}>
-        <Link replace to="/im-new/">
+        <Link replace to={pageUrl}>
           {getWord('Teo Chew/Chinese Service', language)}
         </Link>
       </Menu.Item>
       <Menu.Item key="en" style={menuItemStyle}>
-        <Link replace to="/im-new/">
+        <Link replace to={pageUrl}>
           {getWord('English Service', language)}
         </Link>
       </Menu.Item>
       <Menu.Item key="ss" style={menuItemStyle}>
-        <Link replace to="/im-new/">
+        <Link replace to={pageUrl}>
           {getWord('Sunset Service (English/Mandarin)', language)}
         </Link>
       </Menu.Item>
