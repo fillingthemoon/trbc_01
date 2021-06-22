@@ -52,7 +52,6 @@ import OurHistory from './pages/OurHistory'
 import OurTeam from './pages/OurTeam'
 import StatementOfFaith from './pages/StatementOfFaith'
 import Services from './pages/Services'
-import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
 import Missions from './pages/Missions'
 import Discipleship from './pages/Discipleship'
@@ -144,9 +143,6 @@ const App = () => {
           <Route path='/services' exact>
             <Services />
           </Route >
-          <Route path='/im-new' exact>
-            <ImNew />
-          </Route>
           <Route path='/outreach' exact>
             <Outreach />
           </Route>

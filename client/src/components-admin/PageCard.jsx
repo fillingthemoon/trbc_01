@@ -36,7 +36,6 @@ const iconDictionary = {
   cec: <FaCampground style={iconStyle} />,
   discipleship: <BsFillPeopleFill style={iconStyle} />,
   home: <FaHome style={iconStyle} />,
-  'im-new': <FaStar style={iconStyle} />,
   missions: <BiWorld style={iconStyle} />,
   'our-history': <FaHistory style={iconStyle} />,
   'our-team': <FaPeopleCarry style={iconStyle} />,

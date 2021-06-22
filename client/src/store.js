@@ -5,7 +5,6 @@ import thunk from 'redux-thunk'
 import announcementsReducer from './reducers/announcementsReducer'
 import discipleshipReducer from './reducers/discipleshipReducer'
 import eventsReducer from './reducers/eventsReducer'
-import imNewReducer from './reducers/imNewReducer'
 import missionsReducer from './reducers/missionsReducer'
 import ourHistoryReducer from './reducers/ourHistoryReducer'
 import ourTeamReducer from './reducers/ourTeamReducer'
@@ -27,7 +26,6 @@ const reducer = combineReducers({
   announcements: announcementsReducer,
   discipleship: discipleshipReducer,
   events: eventsReducer,
-  imNew: imNewReducer,
   missions: missionsReducer,
   ourHistory: ourHistoryReducer,
   ourTeam: ourTeamReducer,

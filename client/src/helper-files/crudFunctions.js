@@ -3,7 +3,6 @@ import { getDiscipleship, createDiscipleship, updateDiscipleship, deleteDisciple
 import { getAnnouncements, createAnnouncement, updateAnnouncement, deleteAnnouncement } from '../reducers/announcementsReducer'
 import { getEvents, createEvent, updateEvent, deleteEvent } from '../reducers/eventsReducer'
 import { getUpcomingSermons, createUpcomingSermon, updateUpcomingSermon, deleteUpcomingSermon } from '../reducers/upcomingSermonsReducer'
-import { getImNew, createImNew, updateImNew, deleteImNew } from '../reducers/imNewReducer'
 import { getMissions, createMission, updateMission, deleteMission } from '../reducers/missionsReducer'
 import { getOurHistory, createOurHistory, updateOurHistory, deleteOurHistory } from '../reducers/ourHistoryReducer'
 import { getOurTeam, createOurTeam, updateOurTeam, deleteOurTeam } from '../reducers/ourTeamReducer'
@@ -17,7 +16,6 @@ const getFunction = {
   announcements: getAnnouncements(),
   events: getEvents(),
   'upcoming-sermons': getUpcomingSermons(),
-  'im-new': getImNew(),
   missions: getMissions(),
   'our-history': getOurHistory(),
   administrative: getOurTeam('administrative'),
@@ -38,7 +36,6 @@ const createFunction = {
   announcements: createAnnouncement,
   events: createEvent,
   'upcoming-sermons': createUpcomingSermon,
-  'im-new': createImNew,
   missions: createMission,
   'our-history': createOurHistory,
   administrative: createOurTeam,
@@ -57,7 +54,6 @@ const updateFunction = {
   'announcements': updateAnnouncement,
   'events': updateEvent,
   'upcoming-sermons': updateUpcomingSermon,
-  'im-new': updateImNew,
   'missions': updateMission,
   'our-history': updateOurHistory,
   'administrative': updateOurTeam,
@@ -76,7 +72,6 @@ const deleteFunction = {
   'announcements': deleteAnnouncement,
   'events': deleteEvent,
   'upcoming-sermons': deleteUpcomingSermon,
-  'im-new': deleteImNew,
   'missions': deleteMission,
   'our-history': deleteOurHistory,
   'administrative': deleteOurTeam,

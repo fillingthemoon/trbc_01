@@ -10,9 +10,6 @@ const pageSections = {
   // events
   events: 'events',
 
-  // im-new
-  imNew: 'im-new',
-
   // missions
   missions: 'missions',
 
@@ -43,7 +40,6 @@ const {
   announcements,
   discipleship,
   events,
-  imNew,
   missions,
   ourHistory,
   administrative,
@@ -62,11 +58,11 @@ const {
 const link = {
   linkPath: {
     value: 'path',
-    tags: [imNew],
+    tags: [],
   },
   linkText: {
     value: 'text',
-    tags: [imNew],
+    tags: [],
   },
 }
 
@@ -138,7 +134,6 @@ const langItems = {
     tags: [
       announcements,
       discipleship,
-      imNew,
       missions,
       ourHistory,
       administrative,
@@ -150,7 +145,7 @@ const langItems = {
   },
   link: {
     value: link,
-    tags: [imNew],
+    tags: [],
   },
 }
 
