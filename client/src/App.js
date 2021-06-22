@@ -10,21 +10,18 @@ import { useSelector, useDispatch } from 'react-redux'
 
 /**
  * "Pages" (simply the routes in this website):
- *  Chuwch Wide,
  *  Discipleship,
  *  Home,
  *  I'm New,
  *  Missions,
  *  Our History,
- *  Our team,
+ *  Our Team,
  *  Outreach,
- *  Services,
  *  Statement of Faith
  *
  * "Items" (subcategories the Home page, for the purposes of UI/UX):
  *  Discipleship,
  *  Announcements, Events, Upcoming Sermons,
- *  I'm New,
  *  Missions,
  *  Our History,
  *  Our Team,
@@ -51,7 +48,7 @@ import MissionVision from './pages/MissionVision'
 import OurHistory from './pages/OurHistory'
 import OurTeam from './pages/OurTeam'
 import StatementOfFaith from './pages/StatementOfFaith'
-import Services from './pages/Services'
+import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
 import Missions from './pages/Missions'
 import Discipleship from './pages/Discipleship'
@@ -141,7 +138,7 @@ const App = () => {
             <StatementOfFaith />
           </Route >
           <Route path='/im-new' exact>
-            <Services />
+            <ImNew />
           </Route >
           <Route path='/outreach' exact>
             <Outreach />

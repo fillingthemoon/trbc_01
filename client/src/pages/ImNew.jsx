@@ -35,7 +35,7 @@ const threeElementsData = [
   },
 ]
 
-const Services = () => {
+const ImNew = () => {
   const [currService, setCurrService] = useState('tc')
   const [currServiceData, setCurrServiceData] = useState([])
 
@@ -88,4 +88,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default ImNew
