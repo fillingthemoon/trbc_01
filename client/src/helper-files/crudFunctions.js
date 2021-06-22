@@ -1,5 +1,4 @@
 /* get functions for various sections */
-import { getChurchWide, createChurchWide, updateChurchWide, deleteChurchWide } from '../reducers/churchWideReducer'
 import { getDiscipleship, createDiscipleship, updateDiscipleship, deleteDiscipleship } from '../reducers/discipleshipReducer'
 import { getAnnouncements, createAnnouncement, updateAnnouncement, deleteAnnouncement } from '../reducers/announcementsReducer'
 import { getEvents, createEvent, updateEvent, deleteEvent } from '../reducers/eventsReducer'
@@ -14,8 +13,6 @@ import { getStatementOfFaith, createStatementOfFaith, updateStatementOfFaith, de
 
 // Read
 const getFunction = {
-  'second-language-classes': getChurchWide('second-language-classes'),
-  'interest-groups': getChurchWide('interest-groups'),
   discipleship: getDiscipleship(),
   announcements: getAnnouncements(),
   events: getEvents(),
@@ -37,8 +34,6 @@ const getFunction = {
 
 // Create
 const createFunction = {
-  'second-language-classes': createChurchWide,
-  'interest-groups': createChurchWide,
   discipleship: createDiscipleship,
   announcements: createAnnouncement,
   events: createEvent,
@@ -58,8 +53,6 @@ const createFunction = {
 
 // Update
 const updateFunction = {
-  'second-language-classes': updateChurchWide,
-  'interest-groups': updateChurchWide,
   'discipleship': updateDiscipleship,
   'announcements': updateAnnouncement,
   'events': updateEvent,
@@ -79,8 +72,6 @@ const updateFunction = {
 
 // Delete
 const deleteFunction = {
-  'second-language-classes': deleteChurchWide,
-  'interest-groups': deleteChurchWide,
   'discipleship': deleteDiscipleship,
   'announcements': deleteAnnouncement,
   'events': deleteEvent,

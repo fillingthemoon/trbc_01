@@ -4,10 +4,6 @@ const pageSections = {
   // announcements
   announcements: 'announcements',
 
-  // church-wide
-  interestGroups: 'interest-groups',
-  secondLanguageClasses: 'second-language-classes',
-
   // discipleship
   discipleship: 'discipleship',
 
@@ -45,8 +41,6 @@ const pageSections = {
 
 const {
   announcements,
-  interestGroups,
-  secondLanguageClasses,
   discipleship,
   events,
   imNew,
@@ -85,7 +79,6 @@ const details = {
   time: {
     value: 'time',
     tags: [
-      secondLanguageClasses, interestGroups,
       events,
       outreach,
       englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
@@ -95,7 +88,6 @@ const details = {
   location: {
     value: 'location',
     tags: [
-      secondLanguageClasses, interestGroups,
       events,
       outreach,
       englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
@@ -104,7 +96,6 @@ const details = {
   person: {
     value: 'person',
     tags: [
-      secondLanguageClasses, interestGroups,
       outreach,
       upcomingSermons,
     ],
@@ -136,7 +127,6 @@ const langItems = {
     value: details,
     tags: [
       announcements,
-      secondLanguageClasses, interestGroups,
       events,
       outreach,
       englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
@@ -147,7 +137,6 @@ const langItems = {
     value: 'imgSrc',
     tags: [
       announcements,
-      secondLanguageClasses, interestGroups,
       discipleship,
       imNew,
       missions,

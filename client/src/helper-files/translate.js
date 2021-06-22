@@ -29,10 +29,6 @@ const dictionaryEnToCh = {
   'Teo Chew/Chinese Service': '潮华华语崇拜',
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
-  'Church Wide': '全教会',
-  'Second Language Classes': '第二语言班',
-  'Interest Groups': '利益集团',
-
   'I\'m New': '我是新来的',
 
   'Ministries': '教会性事工',

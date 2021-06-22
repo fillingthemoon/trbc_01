@@ -1,6 +1,4 @@
 const pageSectionToItem = {
-  'second-language-classes': 'churchWide',
-  'interest-groups': 'churchWide',
   'discipleship': 'discipleship',
   'announcements': 'announcements',
   'events': 'events',
@@ -19,8 +17,6 @@ const pageSectionToItem = {
 }
 
 const pageSectionToPage = {
-  'second-language-classes': 'church-wide',
-  'interest-groups': 'church-wide',
   'discipleship': 'discipleship',
   'announcements': 'home',
   'events': 'home',
@@ -39,7 +35,6 @@ const pageSectionToPage = {
 }
 
 const itemToPage = {
-  'churchWide': 'church-wide',
   'discipleship': 'discipleship',
   'announcements': 'home',
   'events': 'home',

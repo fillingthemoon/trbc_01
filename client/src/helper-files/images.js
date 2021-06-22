@@ -37,9 +37,9 @@ const revJerryGoh = `${baseUrl}our-team/rev-jerry-goh.jpg`
 const vincentLai = `${baseUrl}our-team/vincent-lai.jpg`
 const yeoChongNim = `${baseUrl}our-team/yeo-chong-nim.jpg`
 
-// church-wide
-const pingPongFellowship = `${baseUrl}church-wide/ping-pong-fellowship.jpg`
-const gardeningFellowship = `${baseUrl}church-wide/gardening-fellowship.jpg`
+// outreach
+const pingPongFellowship = `${baseUrl}outreach/ping-pong-fellowship.jpg`
+const gardeningFellowship = `${baseUrl}outreach/gardening-fellowship.jpg`
 
 const general = {
   gathering,
@@ -81,7 +81,7 @@ const ourTeam = {
   yeoChongNim,
 }
 
-const churchWide = {
+const outreach = {
   pingPongFellowship,
   gardeningFellowship,
 }
@@ -90,5 +90,5 @@ export {
   general,
   aboutUs,
   ourTeam,
-  churchWide,
+  outreach,
 }

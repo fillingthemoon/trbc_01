@@ -91,11 +91,6 @@ const NavBar = () => {
             {getWord('Services', language)}
           </Link>
         </Menu.Item>
-        <Menu.Item key="church-wide">
-          <Link replace to="/church-wide">
-            {getWord('Church Wide', language)}
-          </Link>
-        </Menu.Item>
       </SubMenu>
       <Menu.Item key="im-new">
         <Link replace to="/im-new">

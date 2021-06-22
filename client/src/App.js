@@ -22,7 +22,6 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Statement of Faith
  *
  * "Items" (subcategories the Home page, for the purposes of UI/UX):
- *  Church Wide
  *  Discipleship,
  *  Announcements, Events, Upcoming Sermons,
  *  I'm New,
@@ -34,7 +33,6 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Statement of Faith
  *
  * "Sections" (similar to items, but also subcategorises Our Team, Outreach, and Services):
- *  Church Wide
  *  Discipleship,
  *  Announcements, Events, Upcoming Sermons,
  *  I'm New,
@@ -54,7 +52,6 @@ import OurHistory from './pages/OurHistory'
 import OurTeam from './pages/OurTeam'
 import StatementOfFaith from './pages/StatementOfFaith'
 import Services from './pages/Services'
-import ChurchWide from './pages/ChurchWide'
 import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
 import Missions from './pages/Missions'
@@ -92,7 +89,6 @@ const App = () => {
     '/outreach/:id',
     '/missions/:id',
     '/services/:id',
-    '/church-wide/:id'
   ]
   const matchIndivPageItem = useRouteMatch(urlsWithIdParams)
 
@@ -147,9 +143,6 @@ const App = () => {
           </Route >
           <Route path='/services' exact>
             <Services />
-          </Route >
-          <Route path='/church-wide' exact>
-            <ChurchWide />
           </Route >
           <Route path='/im-new' exact>
             <ImNew />
