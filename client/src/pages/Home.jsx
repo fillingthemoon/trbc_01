@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Banner from '../components-reusable/Banner'
+import Services from '../pages-sections/Services'
 import Announcements from '../pages-sections/Announcements'
 import UpcomingSermons from '../pages-sections/UpcomingSermons'
 import Events from '../pages-sections/Events'
@@ -32,6 +33,7 @@ const Home = () => {
         ]}
       />
       <div className="home">
+        <Services />
         <UpcomingSermons />
         <Announcements />
         <Events />
