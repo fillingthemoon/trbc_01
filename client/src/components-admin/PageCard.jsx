@@ -34,7 +34,6 @@ const iconStyle = {
 
 const iconDictionary = {
   cec: <FaCampground style={iconStyle} />,
-  'church-wide': <FaChurch style={iconStyle} />,
   discipleship: <BsFillPeopleFill style={iconStyle} />,
   home: <FaHome style={iconStyle} />,
   'im-new': <FaStar style={iconStyle} />,

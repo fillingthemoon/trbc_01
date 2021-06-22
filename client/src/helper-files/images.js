@@ -1,7 +1,7 @@
 const baseUrl = 'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/'
 
 // general
-const gathering = `${baseUrl}general/church-wide.jpg`
+const gathering = `${baseUrl}general/gathering.jpg`
 const exterior = `${baseUrl}general/exterior.jpg`
 const trbcLogo = `${baseUrl}general/logo.png`
 const sanctuary01 = `${baseUrl}general/sanctuary-01.jpg`
