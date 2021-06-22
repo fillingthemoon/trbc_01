@@ -74,7 +74,7 @@ const Services = () => {
         ]}
       />
       <div className="services">
-        <Col align="center" className="attitude-of-worship">
+        {/* <Col align="center" className="attitude-of-worship">
           <TitleText
             titleUnderlineStyle={titleUnderlineStyle}
             title={getWord('Attitude of Worship', language)}
@@ -107,7 +107,7 @@ const Services = () => {
               </Col>
             ))}
           </Row>
-        </Col>
+        </Col> */}
 
         <Col className="service-details">
           <TitleText
