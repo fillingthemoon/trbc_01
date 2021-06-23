@@ -2,28 +2,30 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Banner from '../components-reusable/Banner'
-import TitleText from '../components-reusable/TitleText'
+import SectionsTemplate from '../page-templates/SectionsTemplate'
 
 import { getWord } from '../helper-files/translate'
 
-import { general } from '../helper-files/images'
-const { desk } = general
+import { ministryJobOpenings } from '../helper-files/images'
+const { desk } = ministryJobOpenings
 
-import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
+import { getMinistryJobOpenings } from '../reducers/ministryJobOpeningsReducer'
 
-const StatementOfFaith = () => {
+const MinistryJobOpenings = () => {
   const dispatch = useDispatch()
 
-  // const statementOfFaithData = useSelector((state) => state.statementOfFaith)
+  const ministryJobOpeningsData = useSelector(
+    (state) => state.ministryJobOpenings
+  )
   const language = useSelector((state) => state.language)
 
-  // useEffect(() => {
-  //   dispatch(getStatementOfFaith())
-  // }, [language])
+  useEffect(() => {
+    dispatch(getMinistryJobOpenings())
+  }, [language])
 
-  // if (statementOfFaithData.length <= 0) {
-  //   return null
-  // }
+  if (ministryJobOpeningsData.length <= 0) {
+    return null
+  }
 
   return (
     <div>
@@ -36,23 +38,10 @@ const StatementOfFaith = () => {
         ]}
       />
       <div className="">
-        {/* {statementOfFaithData.map((statement, i) => (
-          <div key={i} style={{ padding: '30px' }}>
-            <TitleText
-              title={statement.title}
-              underlineAlign="center"
-              text={statement.text}
-              textStyle={statementStyle}
-              titleUnderlineStyle={{
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-            ></TitleText>
-          </div>
-        ))} */}
+        <SectionsTemplate data={ministryJobOpeningsData} displayType="card" />
       </div>
     </div>
   )
 }
 
-export default StatementOfFaith
+export default MinistryJobOpenings
