@@ -18,5 +18,7 @@ TODO.txt
 /server/serviceAccountKey.json
 /server/mongodb-import-cmds.txt
 /server/mongodb-import-data.sh
+/server/mongodb-export-data.sh
 /server/data-json
+/server/data-backup
 /server/requests
