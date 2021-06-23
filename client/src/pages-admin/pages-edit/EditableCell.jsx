@@ -24,7 +24,8 @@ const EditableCell = ({
   const inputNode = () => {
     if (title === 'imgDisplay') {
       return <Image src={record.imgSrc} style={cellImgStyle} />
-    } else if (title === 'text') {
+    } else if (['text', 'keyResponsibilities', 'requirements'].includes(title)) {
+      // Allow for additional width space for these fields
       return <TextArea style={{ minWidth: '500px' }} />
     } else {
       return <TextArea style={{ minWidth: '150px' }} />
