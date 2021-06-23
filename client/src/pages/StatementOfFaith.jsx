@@ -4,12 +4,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
+import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
 import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'
 const { statementOfFaith } = general
 
 import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
+
+import { Typography } from 'antd'
+const { Paragraph } = Typography
 
 const statementStyle = {
   maxWidth: '800px',
@@ -49,13 +53,16 @@ const StatementOfFaith = () => {
             <TitleText
               title={statement.title}
               underlineAlign="center"
-              text={statement.text}
-              textStyle={statementStyle}
               titleUnderlineStyle={{
                 display: 'flex',
                 justifyContent: 'center',
               }}
             ></TitleText>
+            {splitLines(statement.text).map((paragraph, i) => (
+              <Paragraph key={i} style={statementStyle}>
+                {formatParagraph(paragraph)}
+              </Paragraph>
+            ))}
           </div>
         ))}
       </div>
