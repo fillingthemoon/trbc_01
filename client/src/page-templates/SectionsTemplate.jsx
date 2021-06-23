@@ -15,19 +15,21 @@ const titleUnderlineStyle = {
   justifyContent: 'center',
 }
 
-const Section = ({ section, displayType }) => {
+const Section = ({ section, displayType, displayPageSectionTitle }) => {
   const { pageSection, ...rest } = section
 
   const items = section[Object.keys(rest)]
 
   return (
     <div>
-      <TitleText
-        titleUnderlineStyle={titleUnderlineStyle}
-        title={convertName('dashed', 'proper', pageSection)}
-        titleStyle={{ textAlign: 'center', margin: '30px 0 0 0' }}
-        underlineAlign="center"
-      />
+      {displayPageSectionTitle && (
+        <TitleText
+          titleUnderlineStyle={titleUnderlineStyle}
+          title={convertName('dashed', 'proper', pageSection)}
+          titleStyle={{ textAlign: 'center', margin: '30px 0 0 0' }}
+          underlineAlign="center"
+        />
+      )}
       <Row style={{ display: 'flex', justifyContent: 'center' }}>
         {items.map((item, i) => (
           <Col key={i} style={{ display: 'flex' }}>
@@ -75,7 +77,7 @@ const SectionsTemplate = ({ data, displayType }) => {
     <div style={{ padding: '50px 5vw' }}>
       {reorganisedData.map((section, i) => (
         <div key={i}>
-          <Section section={section} displayType={displayType} />
+          <Section section={section} displayType={displayType} displayPageSectionTitle={reorganisedData.length > 1}/>
           {i !== reorganisedData.length - 1 && <SectionDivider />}
         </div>
       ))}
