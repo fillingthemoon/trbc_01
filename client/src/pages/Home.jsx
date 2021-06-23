@@ -34,9 +34,9 @@ const Home = () => {
       />
       <div className="home">
         <ServiceTimings />
-        <UpcomingSermons />
+        {/* <UpcomingSermons /> */}
         <Announcements />
-        <Events />
+        {/* <Events /> */}
       </div>
     </div>
   )
