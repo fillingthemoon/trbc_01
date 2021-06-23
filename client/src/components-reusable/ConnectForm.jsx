@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import TitleText from '../components-reusable/TitleText'
 
 import { Button, Form, Input } from 'antd'
+import { useMediaQuery } from 'react-responsive'
 
 import { getWord } from '../helper-files/translate'
 import { colorLOrange } from '../helper-files/colors'
@@ -26,15 +27,9 @@ const layout = {
   },
 }
 
-const tailLayout = {
-  wrapperCol: {
-    offset: 9,
-    span: 7,
-  },
-}
-
 const ConnectForm = () => {
   const language = useSelector((state) => state.language)
+  const isSmallScreen = useMediaQuery({ query: '(min-width: 576px)' })
 
   return (
     <div style={styles.connectForm}>
@@ -43,7 +38,6 @@ const ConnectForm = () => {
         title={getWord('Connect With Us', language)}
         underlineAlign="center"
       />
-      ˇ
       <Form {...layout} name="basic" initialValues={{ remember: true }}>
         <Form.Item
           label="Name"
@@ -69,7 +63,13 @@ const ConnectForm = () => {
         >
           <Input.TextArea style={{ height: '200px' }} />
         </Form.Item>
-        <Form.Item {...tailLayout} style={{ margin: '0' }}>
+        <Form.Item
+          wrapperCol={{
+            offset: isSmallScreen ? 9 : 0,
+            span: 7,
+          }}
+          style={{ margin: '0' }}
+        >
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
