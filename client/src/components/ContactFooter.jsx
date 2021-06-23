@@ -20,7 +20,6 @@ const iframe = `<iframe
       height="100%"
       style="
         border: 4px solid #f37021;
-        border-radius: 1rem;
       " 
       allowfullscreen="" 
       loading="lazy"
