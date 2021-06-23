@@ -33,6 +33,8 @@ const formatParagraph = (paragraph) => {
 // Unique for services
 const pageSectionConvert = (pageSection, toType) => {
   switch (pageSection) {
+
+    // Services
     case ('english-service'): {
       switch (toType) {
         case ('proper'):
@@ -54,6 +56,14 @@ const pageSectionConvert = (pageSection, toType) => {
         case ('proper'):
         case ('service'): return 'Teo Chew/Chinese Service'
         case ('serviceAcronym'): return 'tc'
+      }
+      break
+    }
+
+    // Ministry/Job Openings
+    case ('ministry-job-openings'): {
+      switch (toType) {
+        case ('proper'): return 'Minsitry/Job Openings'
       }
       break
     }
@@ -89,9 +99,11 @@ const convertName = (fromType, toType, name) => {
       switch (toType) {
         case ('proper'): {
 
+          // Requires special handling
           if (['english-service',
             'sunset-service-english-mandarin',
-            'teo-chew-chinese-service'].includes(name)) {
+            'teo-chew-chinese-service',
+            'ministry-job-openings'].includes(name)) {
             return pageSectionConvert(name, toType)
           }
 

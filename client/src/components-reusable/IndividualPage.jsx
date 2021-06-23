@@ -7,6 +7,7 @@ import { general } from '../helper-files/images'
 const { exterior } = general
 
 import { convertName } from '../helper-files/helperFunctions'
+import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
 
 import { Row, Col, Typography, Image } from 'antd'
 
@@ -37,7 +38,7 @@ const styles = {
     objectFit: 'scale-down',
   },
   infoCol: {
-    maxWidth: '550px',
+    maxWidth: '600px',
     margin: '20px',
   },
   details: {
@@ -55,6 +56,15 @@ const styles = {
     fontSize: '1rem',
     marginRight: '10px',
     color: iconColor,
+  },
+  label: {
+    fontWeight: '700',
+  },
+  mjoRow: {
+    marginBottom: '1rem',
+  },
+  mjoListItem: {
+    margin: '0',
   },
 }
 
@@ -96,6 +106,7 @@ const IndividualPage = ({ item }) => {
           </Paragraph>
           {details && (
             <Col style={styles.details}>
+              {/* Services, Outreach, Missions fields */}
               {time && (
                 <Row style={styles.detailItem}>
                   <AiFillClockCircle style={styles.icon} />
@@ -114,19 +125,36 @@ const IndividualPage = ({ item }) => {
                   <Text>{person}</Text>
                 </Row>
               )}
+
+              {/* Ministry/Job Openings fields */}
               {type && (
-                <Row style={styles.detailItem}>
-                  <Text>Type: {type}</Text>
+                <Row style={styles.mjoRow}>
+                  <Text style={styles.label}>Type:&nbsp;</Text>
+                  <Text>{type}</Text>
                 </Row>
               )}
               {keyResponsibilities && (
-                <Row style={styles.detailItem}>
-                  <Paragraph>{keyResponsibilities}</Paragraph>
+                <Row style={styles.mjoRow}>
+                  <Text style={styles.label}>Key Responsibilities:</Text>
+                  <ul>
+                    {splitLines(keyResponsibilities).map((paragraph, i) => (
+                      <li key={i} style={styles.mjoListItem}>
+                        {formatParagraph(paragraph)}
+                      </li>
+                    ))}
+                  </ul>
                 </Row>
               )}
               {requirements && (
-                <Row style={styles.detailItem}>
-                  <Paragraph>{requirements}</Paragraph>
+                <Row style={styles.mjoRow}>
+                  <Text style={styles.label}>Requirements:</Text>
+                  <ul>
+                    {splitLines(requirements).map((paragraph, i) => (
+                      <li key={i} style={styles.mjoListItem}>
+                        {formatParagraph(paragraph)}
+                      </li>
+                    ))}
+                  </ul>
                 </Row>
               )}
             </Col>
