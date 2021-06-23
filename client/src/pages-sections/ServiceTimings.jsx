@@ -84,7 +84,7 @@ const ServiceTimings = () => {
           className="table-container"
         />
         <Button style={styles.button}>
-          <Link to="/im-new">Find out more here!</Link>
+          <Link to="/im-new">Find out more</Link>
         </Button>
       </div>
     </div>
