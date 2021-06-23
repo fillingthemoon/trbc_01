@@ -1,6 +1,7 @@
 const dictionaryEnToCh = {
   'Home': '主页',
 
+  'Service Timings': '崇拜定时',
   'Announcements': '公告',
   'Events': '事件',
   'Upcoming Sermons': '即将举行的布道',
