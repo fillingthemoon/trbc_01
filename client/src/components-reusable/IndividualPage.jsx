@@ -134,7 +134,7 @@ const IndividualPage = ({ item }) => {
                 </Row>
               )}
               {keyResponsibilities && (
-                <Row style={styles.mjoRow}>
+                <Row style={{ ...styles.mjoRow, display: 'block' }}>
                   <Text style={styles.label}>Key Responsibilities:</Text>
                   <ul>
                     {splitLines(keyResponsibilities).map((paragraph, i) => (
@@ -146,7 +146,7 @@ const IndividualPage = ({ item }) => {
                 </Row>
               )}
               {requirements && (
-                <Row style={styles.mjoRow}>
+                <Row style={{ ...styles.mjoRow, display: 'block' }}>
                   <Text style={styles.label}>Requirements:</Text>
                   <ul>
                     {splitLines(requirements).map((paragraph, i) => (
