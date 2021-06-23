@@ -1,14 +1,70 @@
 /* get functions for various sections */
-import { getDiscipleship, createDiscipleship, updateDiscipleship, deleteDiscipleship } from '../reducers/discipleshipReducer'
-import { getAnnouncements, createAnnouncement, updateAnnouncement, deleteAnnouncement } from '../reducers/announcementsReducer'
-import { getEvents, createEvent, updateEvent, deleteEvent } from '../reducers/eventsReducer'
-import { getUpcomingSermons, createUpcomingSermon, updateUpcomingSermon, deleteUpcomingSermon } from '../reducers/upcomingSermonsReducer'
-import { getMissions, createMission, updateMission, deleteMission } from '../reducers/missionsReducer'
-import { getOurHistory, createOurHistory, updateOurHistory, deleteOurHistory } from '../reducers/ourHistoryReducer'
-import { getOurTeam, createOurTeam, updateOurTeam, deleteOurTeam } from '../reducers/ourTeamReducer'
-import { getOutreach, createOutreach, updateOutreach, deleteOutreach } from '../reducers/outreachReducer'
-import { getServices, createService, updateService, deleteService } from '../reducers/servicesReducer'
-import { getStatementOfFaith, createStatementOfFaith, updateStatementOfFaith, deleteStatementOfFaith } from '../reducers/statementOfFaithReducer'
+import {
+  getDiscipleship,
+  createDiscipleship,
+  updateDiscipleship,
+  deleteDiscipleship,
+} from '../reducers/discipleshipReducer'
+import {
+  getAnnouncements,
+  createAnnouncement,
+  updateAnnouncement,
+  deleteAnnouncement,
+} from '../reducers/announcementsReducer'
+import {
+  getEvents,
+  createEvent,
+  updateEvent,
+  deleteEvent,
+} from '../reducers/eventsReducer'
+import {
+  getUpcomingSermons,
+  createUpcomingSermon,
+  updateUpcomingSermon,
+  deleteUpcomingSermon,
+} from '../reducers/upcomingSermonsReducer'
+import {
+  getMinistryJobOpenings,
+  createMinistryJobOpening,
+  updateMinistryJobOpening,
+  deleteMinistryJobOpening,
+} from '../reducers/ministryJobOpeningsReducer'
+import {
+  getMissions,
+  createMission,
+  updateMission,
+  deleteMission,
+} from '../reducers/missionsReducer'
+import {
+  getOurHistory,
+  createOurHistory,
+  updateOurHistory,
+  deleteOurHistory,
+} from '../reducers/ourHistoryReducer'
+import {
+  getOurTeam,
+  createOurTeam,
+  updateOurTeam,
+  deleteOurTeam,
+} from '../reducers/ourTeamReducer'
+import {
+  getOutreach,
+  createOutreach,
+  updateOutreach,
+  deleteOutreach,
+} from '../reducers/outreachReducer'
+import {
+  getServices,
+  createService,
+  updateService,
+  deleteService,
+} from '../reducers/servicesReducer'
+import {
+  getStatementOfFaith,
+  createStatementOfFaith,
+  updateStatementOfFaith,
+  deleteStatementOfFaith,
+} from '../reducers/statementOfFaithReducer'
 
 // Read
 const getFunction = {
@@ -16,6 +72,7 @@ const getFunction = {
   announcements: getAnnouncements(),
   events: getEvents(),
   'upcoming-sermons': getUpcomingSermons(),
+  'ministry-job-openings': getMinistryJobOpenings(),
   missions: getMissions(),
   'our-history': getOurHistory(),
   administrative: getOurTeam('administrative'),
@@ -36,6 +93,7 @@ const createFunction = {
   announcements: createAnnouncement,
   events: createEvent,
   'upcoming-sermons': createUpcomingSermon,
+  'ministry-job-openings': createMinistryJobOpening,
   missions: createMission,
   'our-history': createOurHistory,
   administrative: createOurTeam,
@@ -50,16 +108,17 @@ const createFunction = {
 
 // Update
 const updateFunction = {
-  'discipleship': updateDiscipleship,
-  'announcements': updateAnnouncement,
-  'events': updateEvent,
+  discipleship: updateDiscipleship,
+  announcements: updateAnnouncement,
+  events: updateEvent,
   'upcoming-sermons': updateUpcomingSermon,
-  'missions': updateMission,
+  'ministry-job-openings': updateMinistryJobOpening,
+  missions: updateMission,
   'our-history': updateOurHistory,
-  'administrative': updateOurTeam,
-  'ministry': updateOurTeam,
-  'pastoral': updateOurTeam,
-  'outreach': updateOutreach,
+  administrative: updateOurTeam,
+  ministry: updateOurTeam,
+  pastoral: updateOurTeam,
+  outreach: updateOutreach,
   'english-service': updateService,
   'sunset-service-english-mandarin': updateService,
   'teo-chew-chinese-service': updateService,
@@ -68,25 +127,21 @@ const updateFunction = {
 
 // Delete
 const deleteFunction = {
-  'discipleship': deleteDiscipleship,
-  'announcements': deleteAnnouncement,
-  'events': deleteEvent,
+  discipleship: deleteDiscipleship,
+  announcements: deleteAnnouncement,
+  events: deleteEvent,
   'upcoming-sermons': deleteUpcomingSermon,
-  'missions': deleteMission,
+  'ministry-job-openings': deleteMinistryJobOpening,
+  missions: deleteMission,
   'our-history': deleteOurHistory,
-  'administrative': deleteOurTeam,
-  'ministry': deleteOurTeam,
-  'pastoral': deleteOurTeam,
-  'outreach': deleteOutreach,
+  administrative: deleteOurTeam,
+  ministry: deleteOurTeam,
+  pastoral: deleteOurTeam,
+  outreach: deleteOutreach,
   'english-service': deleteService,
   'sunset-service-english-mandarin': deleteService,
   'teo-chew-chinese-service': deleteService,
   'statement-of-faith': deleteStatementOfFaith,
 }
 
-export {
-  getFunction,
-  createFunction,
-  updateFunction,
-  deleteFunction,
-}
+export { getFunction, createFunction, updateFunction, deleteFunction }

@@ -10,6 +10,9 @@ const pageSections = {
   // events
   events: 'events',
 
+  // ministry-job-openings
+  ministryJobOpenings: 'ministry-job-openings',
+
   // missions
   missions: 'missions',
 
@@ -40,6 +43,7 @@ const {
   announcements,
   discipleship,
   events,
+  ministryJobOpenings,
   missions,
   ourHistory,
   administrative,
@@ -100,6 +104,18 @@ const details = {
     value: 'passage',
     tags: [upcomingSermons],
   },
+  type: {
+    value: 'type',
+    tags: [ministryJobOpenings],
+  },
+  keyResponsibilities: {
+    value: 'keyResponsibilities',
+    tags: [ministryJobOpenings],
+  },
+  requirements: {
+    value: 'requirements',
+    tags: [ministryJobOpenings],
+  },
 }
 
 const langItems = {
@@ -124,6 +140,7 @@ const langItems = {
     tags: [
       announcements,
       events,
+      ministryJobOpenings,
       outreach,
       englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
       upcomingSermons,
