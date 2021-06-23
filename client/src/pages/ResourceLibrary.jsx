@@ -22,7 +22,8 @@ const ResourceLibrary = () => {
         ]}
       />
 
-      <div className="">
+
+      <div className="resource-library-container">
       </div>
     </>
   )

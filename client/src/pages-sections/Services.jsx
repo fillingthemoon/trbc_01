@@ -41,23 +41,19 @@ const Services = () => {
   }
 
   return (
-    <>
-      <div className="services">
-        <Col className="service-details">
-          <TitleText
-            titleUnderlineStyle={titleUnderlineStyle}
-            title={getWord('Service Details', language)}
-            titleStyle={{ textAlign: 'center', fontSize: '2.5rem' }}
-            underlineAlign="center"
-          />
-          <ServicesNavBar
-            currService={currService}
-            setCurrService={setCurrService}
-          />
-          <ServiceSectionsTemplate serviceData={currServiceData} />
-        </Col>
-      </div>
-    </>
+    <Col className="service-details">
+      <TitleText
+        titleUnderlineStyle={titleUnderlineStyle}
+        title={getWord('Service Details', language)}
+        titleStyle={{ textAlign: 'center', fontSize: '2.5rem' }}
+        underlineAlign="center"
+      />
+      <ServicesNavBar
+        currService={currService}
+        setCurrService={setCurrService}
+      />
+      <ServiceSectionsTemplate serviceData={currServiceData} />
+    </Col>
   )
 }
 
