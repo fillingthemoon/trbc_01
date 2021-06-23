@@ -42,17 +42,15 @@ const ServiceCard = ({ resourceLibraryItem }) => {
 
   return (
     // Technically, Services is on the I'm New page not the Services page, but this is an exception
-    <Link href="www.youtube.com">
+    <a href="www.youtube.com" target="_blank">
       <Card
         cover={<img alt="img" src={imgSrc} style={styles.img} />}
         hoverable
         className="service-card"
       >
         <Title style={styles.title}>{title}</Title>
-        <Col style={styles.details}>
-        </Col>
       </Card>
-    </Link>
+    </a>
   )
 }
 

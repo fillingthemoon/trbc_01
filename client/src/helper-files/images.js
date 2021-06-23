@@ -48,7 +48,7 @@ const desk = `${baseUrl}ministry-job-openings/desk.jpg`
 const plantWall = `${baseUrl}ministry-job-openings/plant-wall.jpg`
 
 // resource-library
-const trbcYoutube = `${baseUrl}resource-library/trbc-youtube.jpg`
+const trbcYoutube = `${baseUrl}resource-library/trbc-youtube.png`
 // const trbcYoutbe = `${baseUrl}ministry-job-openings/desk.jpg`
 
 const general = {
