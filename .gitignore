@@ -19,6 +19,7 @@ TODO.txt
 /server/mongodb-import-cmds.txt
 /server/mongodb-import-data.sh
 /server/mongodb-export-data.sh
+/server/mongodb-reimport-data.sh
 /server/data-json
 /server/data-backup
 /server/requests
