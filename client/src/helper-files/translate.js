@@ -31,6 +31,8 @@ const dictionaryEnToCh = {
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
   'I\'m New': '我是新来的',
+  'Connect With Us': '联系我们',
+  'Contact Us': '联系我们',
 
   'Ministries': '教会性事工',
   'Outreach': '外展事工',
