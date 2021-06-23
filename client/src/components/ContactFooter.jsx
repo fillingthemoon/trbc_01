@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { Layout } from 'antd'
 const { Footer } = Layout
-import { Row, Col, Image } from 'antd'
+import { Row, Col } from 'antd'
 
 import { IoMail } from 'react-icons/io5'
 import { AiFillPhone } from 'react-icons/ai'
-import { FaMapMarkerAlt } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaLock } from 'react-icons/fa'
 
 import TitleText from '../components-reusable/TitleText'
 
@@ -58,7 +59,6 @@ const ContactFooter = () => {
               <IoMail />
             </Col>
             <Col className="footer-contact-details">
-              {' '}
               <a href="mailto:admin@trbc.org.sg">admin@trbc.org.sg</a>
             </Col>
           </Row>
@@ -67,6 +67,14 @@ const ContactFooter = () => {
               <AiFillPhone />
             </Col>
             <Col className="footer-contact-details"> +65 6256 2277</Col>
+          </Row>
+          <Row gutter={10} className="footer-info-icon-details">
+            <Col className="footer-info-icon">
+              <FaLock />
+            </Col>
+            <Col className="footer-contact-details">
+              <Link to="/privacy-policy">Privacy Policy</Link>
+            </Col>
           </Row>
         </Col>
         <Col className="footer-img-container">

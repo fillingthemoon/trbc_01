@@ -45,6 +45,8 @@ const dictionaryEnToCh = {
 
   'Admin': '行政人员',
   'Admin Portal': '管理门户',
+
+  'Privacy Policy': '隐私政策',
 }
 
 const getWord = (word, language) => {

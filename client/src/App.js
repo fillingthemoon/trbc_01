@@ -59,6 +59,7 @@ import Discipleship from './pages/Discipleship'
 import FacilityBooking from './pages/FacilityBooking'
 import ResourceLibrary from './pages/ResourceLibrary'
 import ContactFooter from './components/ContactFooter'
+import PrivacyPolicy from './pages-sections/PrivacyPolicy'
 
 // Admin Pages
 import Admin from './pages-admin/Admin'
@@ -170,6 +171,9 @@ const App = () => {
             <EditSectionPage editPageSectionName={
               matchEditSection && matchEditSection.params.sectionId
             } />
+          </Route >
+          <Route path='/privacy-policy' exact>
+            <PrivacyPolicy />
           </Route >
         </Switch >
       </Content>
