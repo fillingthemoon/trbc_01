@@ -103,7 +103,7 @@ Despite our best efforts, there may be queries and a need for investigation of t
 [2] If you wish to be endorsed, please let the TRBC PDPA Committee know via privacy@trbc.org.sg
 `
 
-const StatementOfFaith = () => {
+const PrivacyPolicy = () => {
   const language = useSelector((state) => state.language)
 
   return (
@@ -123,4 +123,4 @@ const StatementOfFaith = () => {
   )
 }
 
-export default StatementOfFaith
+export default PrivacyPolicy
