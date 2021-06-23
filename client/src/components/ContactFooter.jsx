@@ -9,9 +9,6 @@ import { IoMail } from 'react-icons/io5'
 import { AiFillPhone } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 
-import { general } from '../helper-files/images'
-const { trbcMap } = general
-
 import TitleText from '../components-reusable/TitleText'
 
 const iframe = `<iframe
@@ -60,7 +57,10 @@ const ContactFooter = () => {
             <Col className="footer-info-icon">
               <IoMail />
             </Col>
-            <Col className="footer-contact-details"> admin@trbc.org.sg</Col>
+            <Col className="footer-contact-details">
+              {' '}
+              <a href="mailto:admin@trbc.org.sg">admin@trbc.org.sg</a>
+            </Col>
           </Row>
           <Row gutter={10} className="footer-info-icon-details">
             <Col className="footer-info-icon">
