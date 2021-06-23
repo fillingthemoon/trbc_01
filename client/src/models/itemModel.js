@@ -151,6 +151,7 @@ const langItems = {
     tags: [
       announcements,
       discipleship,
+      ministryJobOpenings,
       missions,
       ourHistory,
       administrative,
