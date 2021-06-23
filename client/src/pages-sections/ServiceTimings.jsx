@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import TitleText from '../components-reusable/TitleText'
 import serviceTimingsData from './service-timings-data'
 
 import { getWord } from '../helper-files/translate'
+import { colorLOrange, colorPrimaryOrange } from '../helper-files/colors'
 
-import { Table } from 'antd'
+import { Table, Button } from 'antd'
 
 const styles = {
   titleUnderline: {
@@ -15,7 +17,19 @@ const styles = {
   },
   tableContainer: {
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  button: {
+    marginTop: '1.2rem',
+    backgroundColor: colorLOrange,
+    color: colorPrimaryOrange,
+    fontSize: '1.2rem',
+    borderRadius: '10px',
+    border: 'none',
+    height: '45px',
+    fontWeight: '500',
+    letterSpacing: '2px',
   },
 }
 
@@ -69,6 +83,9 @@ const ServiceTimings = () => {
           pagination={false}
           className="table-container"
         />
+        <Button style={styles.button}>
+          <Link to="/im-new">Find out more here!</Link>
+        </Button>
       </div>
     </div>
   )
