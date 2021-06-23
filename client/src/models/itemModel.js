@@ -1,4 +1,7 @@
-import { pageSectionConvert, convertName } from '../helper-files/helperFunctions'
+import {
+  pageSectionConvert,
+  convertName,
+} from '../helper-files/helperFunctions'
 
 const pageSections = {
   // announcements
@@ -70,7 +73,9 @@ const link = {
   },
 }
 
-// Need to update AddNewRow.js when more items are added to details
+// Should be kept updated with
+// - AddNewRow.js when more items are added to details
+// - helperFunctions.js's flattenNestedObject and nestFlattenedObjectCreate
 const details = {
   date: {
     value: 'date',
@@ -81,7 +86,9 @@ const details = {
     tags: [
       events,
       outreach,
-      englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
+      englishService,
+      sunsetServiceEnglishMandarin,
+      teoChewChineseService,
       upcomingSermons,
     ],
   },
@@ -90,15 +97,14 @@ const details = {
     tags: [
       events,
       outreach,
-      englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
+      englishService,
+      sunsetServiceEnglishMandarin,
+      teoChewChineseService,
     ],
   },
   person: {
     value: 'person',
-    tags: [
-      outreach,
-      upcomingSermons,
-    ],
+    tags: [outreach, upcomingSermons],
   },
   passage: {
     value: 'passage',
@@ -142,7 +148,9 @@ const langItems = {
       events,
       ministryJobOpenings,
       outreach,
-      englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
+      englishService,
+      sunsetServiceEnglishMandarin,
+      teoChewChineseService,
       upcomingSermons,
     ],
   },
@@ -158,7 +166,9 @@ const langItems = {
       ministry,
       pastoral,
       outreach,
-      englishService, sunsetServiceEnglishMandarin, teoChewChineseService,
+      englishService,
+      sunsetServiceEnglishMandarin,
+      teoChewChineseService,
     ],
   },
   link: {
@@ -174,7 +184,7 @@ const itemEn = {
   },
   pageSectionEn: {
     value: 'pageSectionEn',
-    tags: Object.values(pageSections)
+    tags: Object.values(pageSections),
   },
   ...langItems,
 }
@@ -182,11 +192,11 @@ const itemEn = {
 const itemCh = {
   pageCh: {
     value: 'pageCh',
-    tags: Object.values(pageSections)
+    tags: Object.values(pageSections),
   },
   pageSectionCh: {
     value: 'pageSectionCh',
-    tags: Object.values(pageSections)
+    tags: Object.values(pageSections),
   },
   ...langItems,
 }
@@ -220,25 +230,21 @@ const itemSchema = {
 
 // Get the relevant fields/items for this specific pageSection
 const getRelevantItems = (relevantItems, itemObject, pageSectionArg) => {
-
   // Iterate through each field in itemObject
   for (const field of Object.keys(itemObject)) {
-
     // If the pageSectionArg is tagged to this particular field
     if (itemObject[field].tags.includes(pageSectionArg)) {
-
       // If the value of the field is a string
       if (typeof itemObject[field].value === 'string') {
         relevantItems[field] = itemObject[field].value
 
         // If the value of the field is an object
       } else {
-
         // Recursively access nested objects
         relevantItems[field] = getRelevantItems(
-          relevantItems[field] = {},
+          (relevantItems[field] = {}),
           itemObject[field].value,
-          pageSectionArg,
+          pageSectionArg
         )
       }
     }
@@ -269,8 +275,8 @@ const getItemSchema = (pageArg, pageSectionArg, language) => {
   const itemLang = `item${convertName('dashed', 'proper', language)}`
   const serviceFields = ['service', 'serviceAcronym']
   serviceFields
-    .filter(field => Object.keys(relevantItems[itemLang]).includes(field))
-    .forEach(field => {
+    .filter((field) => Object.keys(relevantItems[itemLang]).includes(field))
+    .forEach((field) => {
       relevantItems[itemLang][field] = pageSectionConvert(pageSectionArg, field)
     })
 
