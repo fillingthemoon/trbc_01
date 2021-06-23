@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 
 import Services from '../pages-sections/Services'
+import ConnectForm from '../components-reusable/ConnectForm'
 
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
@@ -40,14 +41,7 @@ const YourFirstVisit = () => {
   const language = useSelector((state) => state.language)
 
   return (
-    <div
-      className="your-first-visit-container"
-      style={{
-        padding: '2rem 5%',
-        maxWidth: '1000px',
-        textAlign: 'justify'
-      }}
-    >
+    <div className="your-first-visit-container">
       <TitleText
         titleUnderlineStyle={titleUnderlineStyle}
         title={getWord('Your First Visit', language)}
@@ -76,6 +70,7 @@ const ImNew = () => {
         <Services />
         <SectionDivider />
         <YourFirstVisit />
+        <ConnectForm />
       </div>
     </>
   )

@@ -10,11 +10,12 @@ const ConnectForm = () => {
     <div
       style={{
         backgroundColor: colorLOrange,
-        margin: 'auto',
+        margin: '0',
         textAlign: 'center',
         display: 'flex',
         justifyContent: 'center',
         padding: '50px',
+        width: '100vw',
       }}
     >
       <Card title="Connect with us" style={{ minWidth: 300 }}>
