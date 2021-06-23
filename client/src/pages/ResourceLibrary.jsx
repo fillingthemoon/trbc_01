@@ -4,8 +4,18 @@ import Banner from '../components-reusable/Banner'
 
 import { getWord } from '../helper-files/translate'
 
-import { general } from '../helper-files/images'
-const { resourceLibrary } = general
+import { general, resourceLibrary } from '../helper-files/images'
+const { libraryStairs } = general
+const { trbcYoutube } = resourceLibrary
+
+const resourceLibraryData = [
+  {
+    title: 'TRBC Youtube Channel',
+    text: 'Come join us for our online services on Youtube!',
+    url: 'https://www.youtube.com/c/SingaporeThomsonRoadBaptistChurch',
+    imgSrc: trbcYoutube,
+  },
+]
 
 const ResourceLibrary = () => {
 
@@ -17,13 +27,12 @@ const ResourceLibrary = () => {
         imageTitlePairs={[
           {
             title: getWord('Resource Library', language),
-            image: resourceLibrary,
+            image: libraryStairs,
           },
         ]}
       />
-
-
       <div className="resource-library-container">
+
       </div>
     </>
   )

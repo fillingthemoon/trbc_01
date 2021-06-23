@@ -10,7 +10,7 @@ const trbcMap = `${baseUrl}general/trbc-map.jpg`
 const paSystem = `${baseUrl}general/pa-system.jpg`
 const tc01 = `${baseUrl}general/tc-01.jpg`
 const mountain = `${baseUrl}general/mountain.jpg`
-const resourceLibrary = `${baseUrl}general/resource-library.jpg`
+const libraryStairs = `${baseUrl}general/resource-library.jpg`
 const admin = `${baseUrl}general/admin.jpg`
 const statementOfFaith = `${baseUrl}general/statement-of-faith.jpg`
 const lock = `${baseUrl}general/lock.jpg`
@@ -47,6 +47,10 @@ const gardeningFellowship = `${baseUrl}outreach/gardening-fellowship.jpg`
 const desk = `${baseUrl}ministry-job-openings/desk.jpg`
 const plantWall = `${baseUrl}ministry-job-openings/plant-wall.jpg`
 
+// resource-library
+const trbcYoutube = `${baseUrl}resource-library/trbc-youtube.jpg`
+// const trbcYoutbe = `${baseUrl}ministry-job-openings/desk.jpg`
+
 const general = {
   gathering,
   exterior,
@@ -57,7 +61,7 @@ const general = {
   paSystem,
   tc01,
   mountain,
-  resourceLibrary,
+  libraryStairs,
   admin,
   statementOfFaith,
   lock,
@@ -99,10 +103,15 @@ const ministryJobOpenings = {
   plantWall,
 }
 
+const resourceLibrary = {
+  trbcYoutube,
+}
+
 export {
   general,
   aboutUs,
   ourTeam,
   outreach,
   ministryJobOpenings,
+  resourceLibrary,
 }
