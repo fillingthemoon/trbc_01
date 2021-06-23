@@ -84,6 +84,11 @@ const NavBar = () => {
             {getWord('Statement of Faith', language)}
           </Link>
         </Menu.Item>
+        <Menu.Item key="ministry-job-openings">
+          <Link replace to="/ministry-job-openings">
+            {getWord('Ministry/Job Openings', language)}
+          </Link>
+        </Menu.Item>
       </SubMenu>
       <Menu.Item key="im-new">
         <Link replace to="/im-new">

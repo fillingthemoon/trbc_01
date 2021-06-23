@@ -7,36 +7,36 @@ import TitleText from '../components-reusable/TitleText'
 import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'
-const { statementOfFaith } = general
+const { desk } = general
 
 import { getStatementOfFaith } from '../reducers/statementOfFaithReducer'
 
 const StatementOfFaith = () => {
   const dispatch = useDispatch()
 
-  const statementOfFaithData = useSelector((state) => state.statementOfFaith)
+  // const statementOfFaithData = useSelector((state) => state.statementOfFaith)
   const language = useSelector((state) => state.language)
 
-  useEffect(() => {
-    dispatch(getStatementOfFaith())
-  }, [language])
+  // useEffect(() => {
+  //   dispatch(getStatementOfFaith())
+  // }, [language])
 
-  if (statementOfFaithData.length <= 0) {
-    return null
-  }
+  // if (statementOfFaithData.length <= 0) {
+  //   return null
+  // }
 
   return (
     <div>
       <Banner
         imageTitlePairs={[
           {
-            title: getWord('Statement of Faith', language),
-            image: statementOfFaith,
+            title: getWord('Ministry/Job Openings', language),
+            image: desk,
           },
         ]}
       />
-      <div className="all-statement-container">
-        {statementOfFaithData.map((statement, i) => (
+      <div className="">
+        {/* {statementOfFaithData.map((statement, i) => (
           <div key={i} style={{ padding: '30px' }}>
             <TitleText
               title={statement.title}
@@ -49,7 +49,7 @@ const StatementOfFaith = () => {
               }}
             ></TitleText>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   )

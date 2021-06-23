@@ -16,6 +16,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Missions,
  *  Our History,
  *  Our Team,
+ *  Ministry/Job Openings,
  *  Outreach,
  *  Statement of Faith
  *
@@ -25,6 +26,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Missions,
  *  Our History,
  *  Our Team,
+ *  Ministry/Job Openings,
  *  Outreach,
  *  Services,
  *  Statement of Faith
@@ -36,6 +38,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Missions,
  *  Our History,
  *  Administrative, Ministry, Pastoral,
+ *  Ministry/Job Openings,
  *  Children, Community, Interest Groups,
  *  English Service, Sunset Service (English/Mandarin), Teo Chew/Chinese Service,
  *  Statement of Faith
@@ -47,6 +50,7 @@ import Home from './pages/Home'
 import MissionVision from './pages/MissionVision'
 import OurHistory from './pages/OurHistory'
 import OurTeam from './pages/OurTeam'
+import MinistryJobOpenings from './pages/MinistryJobOpenings'
 import StatementOfFaith from './pages/StatementOfFaith'
 import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
@@ -136,6 +140,9 @@ const App = () => {
           </Route >
           <Route path='/statement-of-faith' exact>
             <StatementOfFaith />
+          </Route >
+          <Route path='/ministry-job-openings' exact>
+            <MinistryJobOpenings />
           </Route >
           <Route path='/im-new' exact>
             <ImNew />
