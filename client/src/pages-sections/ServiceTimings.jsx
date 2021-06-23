@@ -81,7 +81,7 @@ const ServiceTimings = () => {
           dataSource={dataSource}
           columns={columns}
           pagination={false}
-          className="table-container"
+          className="table"
         />
         <Button style={styles.button}>
           <Link to="/im-new">Find out more</Link>
