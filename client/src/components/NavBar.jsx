@@ -55,7 +55,7 @@ const NavBar = () => {
         setCurrent(key)
       }}
       selectedKeys={pageUrl}
-      style={{ border: 'None' }}
+      className="nav-bar"
       subMenuOpenDelay={0}
     >
       <Menu.Item key="home" title={getWord('Home', language)}>
