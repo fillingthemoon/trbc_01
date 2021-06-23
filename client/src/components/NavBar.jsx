@@ -90,13 +90,13 @@ const NavBar = () => {
           </Link>
         </Menu.Item>
         <Menu.Item key="contact-us">
-          <Typography.Text
+          <a
             onClick={() => {
               window.scrollTo(0, document.body.scrollHeight)
             }}
           >
             {getWord('Contact Us', language)}
-          </Typography.Text>
+          </a>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key="im-new">

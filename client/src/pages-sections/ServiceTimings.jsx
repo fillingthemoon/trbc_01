@@ -46,8 +46,6 @@ Object.keys(serviceTimingsData).forEach((service, i) => {
   })
 })
 
-console.log(dataSource)
-
 const columns = [
   {
     title: 'Service',
