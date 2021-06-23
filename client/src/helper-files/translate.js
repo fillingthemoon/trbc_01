@@ -16,6 +16,8 @@ const dictionaryEnToCh = {
 
   'Statement of Faith': '信仰宣言',
 
+  'Ministry/Job Openings': '教会性事工',
+
   'Services': '崇拜聚会',
   'Attitude of Worship': '敬拜的态度',
   '3 Elements of Worship': '3 崇拜的要素',
