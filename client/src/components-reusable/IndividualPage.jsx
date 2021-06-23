@@ -20,53 +20,58 @@ import {
   colorLGray,
 } from '../helper-files/colors'
 
-const rowStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  padding: '20px',
-}
-
-const infoImgStyle = {
-  display: 'flex',
-  justifyContent: 'flex',
-  margin: '20px',
-}
-
-const imgStyle = {
-  maxWidth: '400px',
-  maxHeight: '500px',
-  objectFit: 'scale-down',
-}
-
-const infoColStyle = {
-  maxWidth: '550px',
-  margin: '20px',
-}
-
-const detailsStyle = {
-  margin: '30px 0 0 0',
-  padding: '10px 20px',
-  backgroundColor: colorLGray,
-}
-
-const detailItemStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  margin: '6px 0',
-  fontWeight: '500',
-}
-
-const iconStyle = {
-  fontSize: '1rem',
-  marginRight: '10px',
-  color: iconColor,
+const styles = {
+  rowStyle: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '20px',
+  },
+  infoImg: {
+    display: 'flex',
+    justifyContent: 'flex',
+    margin: '20px',
+  },
+  img: {
+    maxWidth: '400px',
+    maxHeight: '500px',
+    objectFit: 'scale-down',
+  },
+  infoCol: {
+    maxWidth: '550px',
+    margin: '20px',
+  },
+  details: {
+    margin: '30px 0 0 0',
+    padding: '10px 20px',
+    backgroundColor: colorLGray,
+  },
+  detailItem: {
+    display: 'flex',
+    alignItems: 'center',
+    margin: '6px 0',
+    fontWeight: '500',
+  },
+  icon: {
+    fontSize: '1rem',
+    marginRight: '10px',
+    color: iconColor,
+  },
 }
 
 const IndividualPage = ({ item }) => {
   const { title, text, details, imgSrc } = item
+
+  // Services, Outreach, Missions
   const { time } = details ? details : { time: null }
   const { location } = details ? details : { location: null }
   const { person } = details ? details : { person: null }
+
+  // Ministry/Job Openings
+  const { type } = details ? details : { type: null }
+  const { keyResponsibilities } = details
+    ? details
+    : { keyResponsibilities: null }
+  const { requirements } = details ? details : { requirements: null }
 
   return (
     <>
@@ -80,33 +85,48 @@ const IndividualPage = ({ item }) => {
           },
         ]}
       />
-      <Row justify="center" style={rowStyle}>
-        <Col style={infoImgStyle}>
-          <Image alt="img" src={imgSrc} style={imgStyle} preview={false} />
+      <Row justify="center" style={styles.rowStyle}>
+        <Col style={styles.infoImg}>
+          <Image alt="img" src={imgSrc} style={styles.img} preview={false} />
         </Col>
-        <Col style={infoColStyle}>
+        <Col style={styles.infoCol}>
           <TitleText title={title} underlineAlign="left" />
           <Paragraph style={{ fontSize: '0.9rem', fontWeight: '400' }}>
             {text}
           </Paragraph>
           {details && (
-            <Col style={detailsStyle}>
+            <Col style={styles.details}>
               {time && (
-                <Row style={detailItemStyle}>
-                  <AiFillClockCircle style={iconStyle} />
+                <Row style={styles.detailItem}>
+                  <AiFillClockCircle style={styles.icon} />
                   <Text>{time}</Text>
                 </Row>
               )}
               {location && (
-                <Row style={detailItemStyle}>
-                  <FaMapMarkerAlt style={iconStyle} />
+                <Row style={styles.detailItem}>
+                  <FaMapMarkerAlt style={styles.icon} />
                   <Text>{location}</Text>
                 </Row>
               )}
               {person && (
-                <Row style={detailItemStyle}>
-                  <FaUser style={iconStyle} />
+                <Row style={styles.detailItem}>
+                  <FaUser style={styles.icon} />
                   <Text>{person}</Text>
+                </Row>
+              )}
+              {type && (
+                <Row style={styles.detailItem}>
+                  <Text>Type: {type}</Text>
+                </Row>
+              )}
+              {keyResponsibilities && (
+                <Row style={styles.detailItem}>
+                  <Paragraph>{keyResponsibilities}</Paragraph>
+                </Row>
+              )}
+              {requirements && (
+                <Row style={styles.detailItem}>
+                  <Paragraph>{requirements}</Paragraph>
                 </Row>
               )}
             </Col>

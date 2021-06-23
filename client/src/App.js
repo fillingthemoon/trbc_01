@@ -87,6 +87,7 @@ const App = () => {
   const matchEditSection = useRouteMatch('/admin/:sectionId')
   const urlsWithIdParams = [
     '/outreach/:id',
+    '/ministry-job-openings/:id',
     '/missions/:id',
     '/services/:id',
   ]
