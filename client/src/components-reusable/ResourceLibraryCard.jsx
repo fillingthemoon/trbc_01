@@ -48,10 +48,9 @@ const ServiceCard = ({ resourceLibraryItem }) => {
         hoverable
         className="service-card"
       >
-        <Title style={styles.title}>{title}</Title>(
+        <Title style={styles.title}>{title}</Title>
         <Col style={styles.details}>
         </Col>
-        )
       </Card>
     </Link>
   )
