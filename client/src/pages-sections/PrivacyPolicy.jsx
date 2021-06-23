@@ -11,7 +11,9 @@ import { general } from '../helper-files/images'
 const { lock, pdpaEnquiry } = general
 
 const markdown = `
-Dear members, friends and visitors, The Singapore government has
+# Dear members, friends and visitors,
+
+The Singapore government has
 enacted the Personal Data Privacy Act (2012), and as such, we would
 like to inform you of a few things as you visit us both online and
 offline, in our many places of worship. God has certainly worked
@@ -20,25 +22,28 @@ such as:
 
 - at our physical location – 45 Thomson Road, Singapore 307584, or
 - at our virtual location – http://www.trbc.org.sg, or
-- online[1] on Facebook at these various groups[2], with the group IC noted in brackets
-- https://www.facebook.com/groups/TRBC.Singapore/ [May-Ann – EC, Chong Nim – SS, Isaac Wong – TC]
-- https://www.facebook.com/groups/trbc.eng/ [May-Ann, EC]
-- https://www.facebook.com/groups/31988768931/ [Pastor Goh PG, TC]
-- https://www.facebook.com/groups/cec.trbc/ [May-Ann, EC]
+- online [1] on Facebook at these various groups [2], with the group IC noted in brackets
+  - https://www.facebook.com/groups/TRBC.Singapore/ [May-Ann – EC, Chong Nim – SS, Isaac Wong – TC]
+  - https://www.facebook.com/groups/trbc.eng/ [May-Ann, EC]
+  - https://www.facebook.com/groups/31988768931/ [Pastor Goh PG, TC]
+  - https://www.facebook.com/groups/cec.trbc/ [May-Ann, EC]
 
 This document serves as TRBC’s data protection policies and practices document. We have prepared this document to let you know of our personal data privacy policies, and how we are managing your personal information. We will update the date stamp if there have been changes made.
 
 If you have any complaints, please direct them to the TRBC Secretary Mr Isaac Wong, c/o the TRBC PDPA Committee at privacy@trbc.org.sg, or call +65-62562277 to leave a message for him.
 
-Your servants in Christ,
-TRBC PDPA Committee 2015
-Isaac Wong (Teochew/Chinese Congregation)
-Beverly Poon (Sunset Congregation)
-Yeo Chong Nim (Sunset Congregation)
-Toh Minghui (English Congregation)
-Lim May-Ann (English Congregation)
+Your servants in Christ,  
+**TRBC PDPA Committee 2015**  
+Isaac Wong (Teochew/Chinese Congregation)  
+Beverly Poon (Sunset Congregation)  
+Yeo Chong Nim (Sunset Congregation)  
+Toh Minghui (English Congregation)  
+Lim May-Ann (English Congregation)  
+&nbsp; 
 
-This document was last updated on 28 Mar 2015.
+**This document was last updated on 28 Mar 2015.**
+
+&nbsp; 
 
 ## 1. Consent Obligation
 
@@ -89,13 +94,13 @@ The TRBC PDPA committee will make information about TRBC’s data protection pol
 
 Despite our best efforts, there may be queries and a need for investigation of the violation of personal data privacy. TRBC has set out an enquiry and investigation process, which starts with contacting the Data Protection Officer at privacy@trbc.org.sg A more detailed flowchart is appended for your reference.
 
-[](${pdpaEnquiry})
+![](${pdpaEnquiry})
 
 ---
+&nbsp;  
+[1] There may be other online groups which have been set up that bear TRBC’s name, but these are not endorsed, and will not be covered under the TRBC PDPA Compliance Policies.
 
-[1]There may be other online groups which have been set up that bear TRBC’s name, but these are not endorsed, and will not be covered under the TRBC PDPA Compliance Policies.
-
-[2]If you wish to be endorsed, please let the TRBC PDPA Committee know via privacy@trbc.org.sg
+[2] If you wish to be endorsed, please let the TRBC PDPA Committee know via privacy@trbc.org.sg
 `
 
 const StatementOfFaith = () => {
