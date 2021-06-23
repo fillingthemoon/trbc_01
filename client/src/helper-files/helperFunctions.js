@@ -63,7 +63,7 @@ const pageSectionConvert = (pageSection, toType) => {
     // Ministry/Job Openings
     case ('ministry-job-openings'): {
       switch (toType) {
-        case ('proper'): return 'Minsitry/Job Openings'
+        case ('proper'): return 'Ministry/Job Openings'
       }
       break
     }
