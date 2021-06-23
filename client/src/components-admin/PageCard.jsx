@@ -8,12 +8,11 @@ import { Card, Divider } from 'antd'
 import {
   FaCampground,
   FaHistory,
-  FaStar,
   FaPeopleCarry,
   FaHandsHelping,
   FaChurch,
+  FaBriefcase,
   FaHome,
-  FaCalendar,
 } from 'react-icons/fa'
 
 import { BsFillPeopleFill } from 'react-icons/bs'
@@ -22,7 +21,7 @@ import { HiSpeakerphone } from 'react-icons/hi'
 
 const cardStyle = {
   margin: '10px',
-  width: '220px',
+  width: '250px',
   boxShadow: '1px 1px 10px 0px rgba(0, 0, 0, 0.12)',
   border: 'none',
 }
@@ -36,11 +35,12 @@ const iconDictionary = {
   cec: <FaCampground style={iconStyle} />,
   discipleship: <BsFillPeopleFill style={iconStyle} />,
   home: <FaHome style={iconStyle} />,
+  'ministry-job-openings': <FaBriefcase style={iconStyle} />,
   missions: <BiWorld style={iconStyle} />,
   'our-history': <FaHistory style={iconStyle} />,
   'our-team': <FaPeopleCarry style={iconStyle} />,
   outreach: <FaHandsHelping style={iconStyle} />,
-  services: <FaCalendar style={iconStyle} />,
+  services: <FaChurch style={iconStyle} />,
   'statement-of-faith': <HiSpeakerphone style={iconStyle} />,
 }
 
