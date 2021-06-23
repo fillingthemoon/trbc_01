@@ -9,8 +9,6 @@ import { Card, Typography } from 'antd'
 const { Title, Paragraph } = Typography
 
 const imgStyle = {
-  maxWidth: '300px',
-  objectFit: 'cover',
   padding: '5%',
 }
 

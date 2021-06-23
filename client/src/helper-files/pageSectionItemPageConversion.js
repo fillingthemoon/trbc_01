@@ -21,7 +21,7 @@ const pageSectionToPage = {
   'announcements': 'home',
   'events': 'home',
   'upcoming-sermons': 'home',
-  'ministry-job-openings': 'ministryJobOpenings',
+  'ministry-job-openings': 'ministry-job-openings',
   'missions': 'missions',
   'our-history': 'our-history',
   'administrative': 'our-team',
