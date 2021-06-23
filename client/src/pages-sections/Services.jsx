@@ -17,7 +17,7 @@ const titleUnderlineStyle = {
 }
 
 const Services = () => {
-  const [currService, setCurrService] = useState('tc')
+  const [currService, setCurrService] = useState('en')
   const [currServiceData, setCurrServiceData] = useState([])
 
   const dispatch = useDispatch()
