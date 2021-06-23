@@ -13,7 +13,7 @@ import { useMediaQuery } from 'react-responsive'
 import { general } from '../helper-files/images'
 const { trbcLogo } = general
 
-import { Menu, Dropdown, Button, Layout, Spin } from 'antd'
+import { Menu, Dropdown, Button, Layout, Spin, Typography } from 'antd'
 import { MenuOutlined } from '@ant-design/icons'
 const { Header } = Layout
 const { SubMenu } = Menu
@@ -88,6 +88,15 @@ const NavBar = () => {
           <Link replace to="/ministry-job-openings">
             {getWord('Ministry/Job Openings', language)}
           </Link>
+        </Menu.Item>
+        <Menu.Item key="contact-us">
+          <Typography.Text
+            onClick={() => {
+              window.scrollTo(0, document.body.scrollHeight)
+            }}
+          >
+            {getWord('Contact Us', language)}
+          </Typography.Text>
         </Menu.Item>
       </SubMenu>
       <Menu.Item key="im-new">
