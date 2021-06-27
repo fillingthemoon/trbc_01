@@ -67,6 +67,10 @@ import Admin from './pages-admin/Admin'
 import EditSectionPage from './pages-admin/pages-edit/EditSectionPage'
 import IndividualPage from './components-reusable/IndividualPage'
 
+// Not Found 404
+
+import NotFound404 from './pages/NotFound404'
+
 // Style sheet
 import './style.less'
 
@@ -175,6 +179,9 @@ const App = () => {
           <Route path='/privacy-policy' exact>
             <PrivacyPolicy />
           </Route >
+          <Route path="/*">
+            <NotFound404/>
+          </Route>
         </Switch >
       </Content>
       <ContactFooter />
