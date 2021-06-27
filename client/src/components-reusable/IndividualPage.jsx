@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
@@ -69,6 +70,10 @@ const styles = {
 }
 
 const IndividualPage = ({ item }) => {
+  if (!item) {
+    return <Redirect to='/page-not-found' />
+  }
+
   const { title, text, details, imgSrc } = item
 
   // Services, Outreach, Missions
