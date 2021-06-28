@@ -11,6 +11,9 @@ import { getWord } from '../../helper-files/translate'
 
 import { createFunction } from '../../helper-files/crudFunctions'
 
+import { general } from '../../helper-files/images'
+const { mountain } = general
+
 import { Input, Form, Button, Modal, Row, Col } from 'antd'
 
 const { TextArea } = Input
@@ -118,15 +121,13 @@ const AddNewRow = ({ modelFields }) => {
     pageSection: modelFields.pageSection,
     'pageEn-en': modelFields.page,
     'pageSectionEn-en': modelFields.pageSection,
-    'imgSrc-en':
-      'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+    'imgSrc-en': mountain,
     'pageCh-ch': modelFields.page,
     'pageSectionCh-ch': getWord(
       convertName('dashed', 'proper', modelFields.pageSection),
       'ch'
     ),
-    'imgSrc-ch':
-      'https://raw.githubusercontent.com/fillingthemoon/trbc_01/main/client/src/imgs/general/mountain.jpg',
+    'imgSrc-ch': mountain,
 
     // Conditionally add the 'service-en/ch' and 'serviceAcronym-en/ch' fields
     ...(modelFields.service && { 'service-en': modelFields.service }),
