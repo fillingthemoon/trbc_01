@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 
 import Services from '../pages-sections/Services'
-import ConnectForm from '../components-reusable/ConnectForm'
 
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
@@ -13,6 +12,10 @@ import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'
 const { sanctuary01 } = general
+
+import {
+  colorLOrange,
+} from '../helper-files/colors'
 
 const titleUnderlineStyle = {
   display: 'flex',
@@ -68,7 +71,17 @@ const ImNew = () => {
         <Services />
         <SectionDivider />
         <YourFirstVisit />
-        <ConnectForm />
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScgtxR8htjfGrAmdpbaSteFdQWvB52Cr99CrzkVMN9mqwd8Ww/viewform?embedded=true"
+          width="100%"
+          height="950"
+          style={{ backgroundColor: colorLOrange, padding: '40px 0' }}
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
+        >
+          Loading…
+        </iframe>
       </div>
     </>
   )
