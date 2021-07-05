@@ -44,8 +44,8 @@ const gardeningFellowship = `${imgUrl}/v1625113930/outreach/gardening-fellowship
 const pingPongFellowship = `${imgUrl}/v1625113930/outreach/ping-pong-fellowship_sk7pdt.jpg`
 
 // ministry-job-openings
-const desk = `${imgUrl}/v1625113710/ministry-job-openings/plant-wall_jwhlsg.jpg`
-const plantWall = `${imgUrl}/v1625113710/ministry-job-openings/desk_vmqykv.jpg`
+const desk = `${imgUrl}/v1625113710/ministry-job-openings/desk_vmqykv.jpg`
+const plantWall = `${imgUrl}/v1625113710/ministry-job-openings/plant-wall_jwhlsg.jpg`
 
 // resource-library
 const trbcYoutube = `${imgUrl}/v1625113986/resource-library/trbc-youtube_jxveag.png`
