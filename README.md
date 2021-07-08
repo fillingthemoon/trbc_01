@@ -1,6 +1,6 @@
 # Singapore Thomson Road Baptist Church Website
 
-This website is live at https://arcane-crag-98386.herokuapp.com/#/.
+This website is live at https://trbc.herokuapp.com.
 
 ---
 
