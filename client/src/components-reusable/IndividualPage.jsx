@@ -102,7 +102,7 @@ const IndividualPage = ({ item }) => {
       />
       <Row justify="center" style={styles.rowStyle}>
         <Col style={styles.infoImg}>
-          <Image alt="img" src={imgSrc} style={styles.img} preview={false} />
+          {imgSrc !== 'null' && <Image alt="img" src={imgSrc} style={styles.img} preview={false} />}
         </Col>
         <Col style={styles.infoCol}>
           <TitleText title={title} underlineAlign="left" />

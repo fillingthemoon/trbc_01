@@ -30,7 +30,7 @@ const AnnouncementCard = ({ announcement }) => {
 
   return (
     <Card
-      cover={<img alt="img" src={imgSrc} style={imgStyle} />}
+      cover={imgSrc !== 'null' && <img alt="img" src={imgSrc} style={imgStyle} />}
       style={cardStyle}
     >
       <Title style={{ fontSize: '1.2rem', marginBottom: '20px' }}>

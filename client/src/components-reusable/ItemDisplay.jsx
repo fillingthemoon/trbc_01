@@ -24,7 +24,14 @@ const ItemDisplay = ({ item }) => {
     <Link to={`/${page}/${id}`} style={itemDisplayStyle}>
       <Card
         cover={
-          <img alt="img" src={imgSrc} style={imgStyle} fallback={fallbackImg} />
+          imgSrc !== 'null' && (
+            <img
+              alt="img"
+              src={imgSrc}
+              style={imgStyle}
+              fallback={fallbackImg}
+            />
+          )
         }
         className="item-display"
         hoverable
