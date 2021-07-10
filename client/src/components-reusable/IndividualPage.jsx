@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom'
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
+import { InfoBanner } from '../pages/MinistryJobOpenings'
+
 import { general } from '../helper-files/images'
 const { exterior } = general
 
@@ -70,8 +72,11 @@ const styles = {
 }
 
 const IndividualPage = ({ item }) => {
+  const href = window.location.href.split('/')
+  const pageUrl = href[4]
+
   if (!item) {
-    return <Redirect to='/page-not-found' />
+    return <Redirect to="/page-not-found" />
   }
 
   const { title, text, details, imgSrc } = item
@@ -100,9 +105,12 @@ const IndividualPage = ({ item }) => {
           },
         ]}
       />
+      {pageUrl === 'ministry-job-openings' && <InfoBanner />}
       <Row justify="center" style={styles.rowStyle}>
         <Col style={styles.infoImg}>
-          {imgSrc !== 'null' && <Image alt="img" src={imgSrc} style={styles.img} preview={false} />}
+          {imgSrc !== 'null' && (
+            <Image alt="img" src={imgSrc} style={styles.img} preview={false} />
+          )}
         </Col>
         <Col style={styles.infoCol}>
           <TitleText title={title} underlineAlign="left" />
