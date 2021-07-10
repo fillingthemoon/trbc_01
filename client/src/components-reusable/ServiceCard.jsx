@@ -14,6 +14,9 @@ import {
 const { Title, Text } = Typography
 
 const styles = {
+  link: {
+    flex: '1',
+  },
   img: {
     maxHeight: '250px',
     objectFit: 'cover',
@@ -47,7 +50,7 @@ const ServiceCard = ({ serviceItem }) => {
 
   return (
     // Technically, Services is on the I'm New page not the Services page, but this is an exception
-    <Link to={`/${page}/${id}`}>
+    <Link to={`/${page}/${id}`} style={styles.link}>
       <Card
         cover={imgSrc !== 'null' && <img alt="img" src={imgSrc} style={styles.img} />}
         hoverable
