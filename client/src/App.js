@@ -52,6 +52,7 @@ import MissionVision from './pages/MissionVision'
 import OurHistory from './pages/OurHistory'
 import OurTeam from './pages/OurTeam'
 import StatementOfFaith from './pages/StatementOfFaith'
+import ContactUs from './pages/ContactUs'
 import ImNew from './pages/ImNew'
 import Outreach from './pages/Outreach'
 import Missions from './pages/Missions'
@@ -149,6 +150,9 @@ const App = () => {
           </Route >
           <Route path='/ministry-job-openings' exact>
             <MinistryJobOpenings />
+          </Route >
+          <Route path='/contact-us' exact>
+            <ContactUs />
           </Route >
           <Route path='/im-new' exact>
             <ImNew />

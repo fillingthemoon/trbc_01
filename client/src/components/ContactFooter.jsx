@@ -43,7 +43,7 @@ const ContactFooter = () => {
           <TitleText title={language === 'en' ? 'Contact Us' : '联系我们'} />
           <Row className="footer-info-trbc">
             {language === 'en'
-              ? 'Singapore Thomson Road Baptist Church'
+              ? 'The Singapore Thomson Road Baptist Church'
               : '新加坡淡申律浸信教会'}
           </Row>
           <Row gutter={10} className="footer-info-icon-details">
