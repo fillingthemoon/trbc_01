@@ -66,7 +66,7 @@ const pageSectionConvert = (pageSection, toType) => {
       switch (toType) {
         case 'proper':
         case 'service':
-          return 'Teo Chew/Chinese Service'
+          return 'Teochew/Chinese Service'
         case 'serviceAcronym':
           return 'tc'
       }

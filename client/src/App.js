@@ -40,7 +40,7 @@ import { useSelector, useDispatch } from 'react-redux'
  *  Administrative, Ministry, Pastoral,
  *  Ministry/Job Openings,
  *  Children, Community, Interest Groups,
- *  English Service, Sunset Service (English/Mandarin), Teo Chew/Chinese Service,
+ *  English Service, Sunset Service (English/Mandarin), Teochew/Chinese Service,
  *  Statement of Faith
  */
 

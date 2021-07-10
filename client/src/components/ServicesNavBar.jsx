@@ -41,7 +41,7 @@ const ServicesNavBar = (props) => {
       </Menu.Item>
       <Menu.Item key="tc" style={menuItemStyle}>
         <Link replace to={pageUrl}>
-          {getWord('Teo Chew/Chinese Service', language)}
+          {getWord('Teochew/Chinese Service', language)}
         </Link>
       </Menu.Item>
       <Menu.Item key="ss" style={menuItemStyle}>

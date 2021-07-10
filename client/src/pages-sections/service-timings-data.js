@@ -25,10 +25,10 @@ const servicesData = {
   },
   tc: {
     en: {
-      service: 'Teo Chew/Chinese Chinese Service',
+      service: 'Teochew/Chinese Chinese Service',
       main: [
         {
-          name: 'Teo Chew Service',
+          name: 'Teochew Service',
           location: 'Main Sanctuary (level 2)',
           time: 'Sundays, 10:30 am',
         },
@@ -40,10 +40,10 @@ const servicesData = {
       ],
     },
     ch: {
-      service: getWord('Teo Chew/Chinese Chinese Service'),
+      service: getWord('Teochew/Chinese Chinese Service'),
       main: [
         {
-          name: 'Teo Chew Service (ch)',
+          name: 'Teochew Service (ch)',
           location: 'Main Sanctuary (level 2) (ch)',
           time: 'Sundays, 10:30 am (ch)',
         },

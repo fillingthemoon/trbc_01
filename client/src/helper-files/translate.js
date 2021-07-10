@@ -27,7 +27,7 @@ const dictionaryEnToCh = {
   'Service Details': '崇拜聚会细节',
 
   'English Service': '英文崇拜',
-  'Teo Chew/Chinese Service': '潮华华语崇拜',
+  'Teochew/Chinese Service': '潮华华语崇拜',
   'Sunset Service (English/Mandarin)': '夕阳崇拜',
 
   'I\'m New': '我是新来的',
