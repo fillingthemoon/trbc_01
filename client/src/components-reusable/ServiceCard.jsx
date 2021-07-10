@@ -49,7 +49,7 @@ const ServiceCard = ({ serviceItem }) => {
     // Technically, Services is on the I'm New page not the Services page, but this is an exception
     <Link to={`/${page}/${id}`}>
       <Card
-        cover={<img alt="img" src={imgSrc} style={styles.img} />}
+        cover={imgSrc !== 'null' && <img alt="img" src={imgSrc} style={styles.img} />}
         hoverable
         className="service-card"
       >
