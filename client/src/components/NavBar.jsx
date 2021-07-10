@@ -133,11 +133,11 @@ const NavBar = () => {
           </Link>
         </Menu.Item>
       </SubMenu>
-      <Menu.Item key="admin">
+      {/* <Menu.Item key="admin">
         <Link replace to="/admin">
           {getWord('Admin', language)}
         </Link>
-      </Menu.Item>
+      </Menu.Item> */}
 
       <Menu.Item key="language" disabled>
         {/* Language toggling disabled when editing
