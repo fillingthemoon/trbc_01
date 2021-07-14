@@ -6,22 +6,8 @@ import ResourceLibraryCard from '../components-reusable/ResourceLibraryCard'
 import { getResourceLibrary } from '../reducers/resourceLibraryReducer'
 import { getWord } from '../helper-files/translate'
 
-import { general, resourceLibrary } from '../helper-files/images'
-const { libraryStairs, mountain } = general
-const { trbcYoutube } = resourceLibrary
-
-const resourceLibraryData2 = [
-  {
-    title: 'TRBC Youtube Channel',
-    url: 'https://www.youtube.com/c/SingaporeThomsonRoadBaptistChurch',
-    imgSrc: trbcYoutube,
-  },
-  {
-    title: 'How to know Jesus',
-    url: 'http://www.gty.org/resources/articles/A335',
-    imgSrc: mountain,
-  },
-]
+import { general } from '../helper-files/images'
+const { libraryStairs } = general
 
 const ResourceLibrary = () => {
   const dispatch = useDispatch()
