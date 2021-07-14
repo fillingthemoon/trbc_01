@@ -33,6 +33,7 @@ const styles = {
   },
   notif: {
     textAlign: 'center',
+    padding: '0 10px'
   }
 }
 
