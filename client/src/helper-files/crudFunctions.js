@@ -54,6 +54,12 @@ import {
   deleteOutreach,
 } from '../reducers/outreachReducer'
 import {
+  getResourceLibrary,
+  createResourceLibrary,
+  updateResourceLibrary,
+  deleteResourceLibrary,
+} from '../reducers/resourceLibraryReducer'
+import {
   getServices,
   createService,
   updateService,
@@ -79,6 +85,7 @@ const getFunction = {
   ministry: getOurTeam('ministry'),
   pastoral: getOurTeam('pastoral'),
   outreach: getOutreach('outreach'),
+  resourceLibrary: getResourceLibrary(),
   'english-service': getServices('english-service'),
   'sunset-service-english-mandarin': getServices(
     'sunset-service-english-mandarin'
@@ -100,6 +107,7 @@ const createFunction = {
   ministry: createOurTeam,
   pastoral: createOurTeam,
   outreach: createOutreach,
+  resourceLibrary: createResourceLibrary,
   'english-service': createService,
   'sunset-service-english-mandarin': createService,
   'teochew-chinese-service': createService,
@@ -119,6 +127,7 @@ const updateFunction = {
   ministry: updateOurTeam,
   pastoral: updateOurTeam,
   outreach: updateOutreach,
+  resourceLibrary: updateResourceLibrary,
   'english-service': updateService,
   'sunset-service-english-mandarin': updateService,
   'teochew-chinese-service': updateService,
@@ -138,6 +147,7 @@ const deleteFunction = {
   ministry: deleteOurTeam,
   pastoral: deleteOurTeam,
   outreach: deleteOutreach,
+  resourceLibrary: deleteResourceLibrary,
   'english-service': deleteService,
   'sunset-service-english-mandarin': deleteService,
   'teochew-chinese-service': deleteService,
