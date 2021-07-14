@@ -24,7 +24,7 @@ const ServiceCard = ({ resourceLibraryItem }) => {
     // Technically, Services is on the I'm New page not the Services page, but this is an exception
     <a href={linkPath} target="_blank" rel="noreferrer">
       <Card
-        cover={<img alt="img" src={imgSrc} style={styles.img} />}
+        cover={imgSrc !== 'null' && <img alt="img" src={imgSrc} style={styles.img} />}
         hoverable
         className="resource-library-card"
       >
