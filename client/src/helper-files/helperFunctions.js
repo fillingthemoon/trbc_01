@@ -62,7 +62,7 @@ const pageSectionConvert = (pageSection, toType) => {
       }
       break
     }
-    case 'teo-chew-chinese-service': {
+    case 'teochew-chinese-service': {
       switch (toType) {
         case 'proper':
         case 'service':
@@ -117,7 +117,7 @@ const convertName = (fromType, toType, name) => {
             [
               'english-service',
               'sunset-service-english-mandarin',
-              'teo-chew-chinese-service',
+              'teochew-chinese-service',
               'ministry-job-openings',
             ].includes(name)
           ) {

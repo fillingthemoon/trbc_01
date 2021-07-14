@@ -83,7 +83,7 @@ const getFunction = {
   'sunset-service-english-mandarin': getServices(
     'sunset-service-english-mandarin'
   ),
-  'teo-chew-chinese-service': getServices('teo-chew-chinese-service'),
+  'teochew-chinese-service': getServices('teochew-chinese-service'),
   'statement-of-faith': getStatementOfFaith(),
 }
 
@@ -102,7 +102,7 @@ const createFunction = {
   outreach: createOutreach,
   'english-service': createService,
   'sunset-service-english-mandarin': createService,
-  'teo-chew-chinese-service': createService,
+  'teochew-chinese-service': createService,
   'statement-of-faith': createStatementOfFaith,
 }
 
@@ -121,7 +121,7 @@ const updateFunction = {
   outreach: updateOutreach,
   'english-service': updateService,
   'sunset-service-english-mandarin': updateService,
-  'teo-chew-chinese-service': updateService,
+  'teochew-chinese-service': updateService,
   'statement-of-faith': updateStatementOfFaith,
 }
 
@@ -140,7 +140,7 @@ const deleteFunction = {
   outreach: deleteOutreach,
   'english-service': deleteService,
   'sunset-service-english-mandarin': deleteService,
-  'teo-chew-chinese-service': deleteService,
+  'teochew-chinese-service': deleteService,
   'statement-of-faith': deleteStatementOfFaith,
 }
 

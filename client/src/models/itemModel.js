@@ -33,7 +33,7 @@ const pageSections = {
   // services
   englishService: 'english-service',
   sunsetServiceEnglishMandarin: 'sunset-service-english-mandarin',
-  teoChewChineseService: 'teo-chew-chinese-service',
+  teoChewChineseService: 'teochew-chinese-service',
 
   // statement of faith
   statementOfFaith: 'statement-of-faith',

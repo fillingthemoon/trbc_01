@@ -12,7 +12,7 @@ const pageSectionToItem = {
   'outreach': 'outreach',
   'english-service': 'services',
   'sunset-service-english-mandarin': 'services',
-  'teo-chew-chinese-service': 'services',
+  'teochew-chinese-service': 'services',
   'statement-of-faith': 'statementOfFaith',
 }
 
@@ -30,7 +30,7 @@ const pageSectionToPage = {
   'outreach': 'outreach',
   'english-service': 'services',
   'sunset-service-english-mandarin': 'services',
-  'teo-chew-chinese-service': 'services',
+  'teochew-chinese-service': 'services',
   'statement-of-faith': 'statement-of-faith',
 }
 
