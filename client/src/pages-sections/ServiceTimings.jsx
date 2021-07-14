@@ -21,7 +21,7 @@ const styles = {
     alignItems: 'center',
   },
   button: {
-    marginTop: '1.2rem',
+    margin: '1.2rem 0',
     backgroundColor: colorLOrange,
     color: colorPrimaryOrange,
     fontSize: '1.2rem',
@@ -31,6 +31,9 @@ const styles = {
     fontWeight: '500',
     letterSpacing: '2px',
   },
+  notif: {
+    textAlign: 'center',
+  }
 }
 
 let dataSource = []
@@ -84,6 +87,13 @@ const ServiceTimings = () => {
         <Button style={styles.button}>
           <Link to="/im-new">Find out more</Link>
         </Button>
+        <span style={styles.notif}>
+          Please note that there may be combined services on certain Sundays.
+        </span>
+        <span style={styles.notif}>
+          Please contact our Church Office (6256 2277) to confirm service
+          timings if you&apos;re visiting us for the first time.
+        </span>
       </div>
     </div>
   )
