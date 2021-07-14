@@ -30,6 +30,9 @@ const pageSections = {
   // outreach
   outreach: 'outreach',
 
+  // resource-library
+  resourceLibrary: 'resource-library',
+
   // services
   englishService: 'english-service',
   sunsetServiceEnglishMandarin: 'sunset-service-english-mandarin',
@@ -53,6 +56,7 @@ const {
   ministry,
   pastoral,
   outreach,
+  resourceLibrary,
   englishService,
   sunsetServiceEnglishMandarin,
   teoChewChineseService,
@@ -166,6 +170,7 @@ const langItems = {
       ministry,
       pastoral,
       outreach,
+      resourceLibrary,
       englishService,
       sunsetServiceEnglishMandarin,
       teoChewChineseService,
@@ -173,7 +178,7 @@ const langItems = {
   },
   link: {
     value: link,
-    tags: [],
+    tags: [resourceLibrary],
   },
 }
 

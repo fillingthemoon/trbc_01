@@ -1,15 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 
 import ResourceLibraryCard from '../components-reusable/ResourceLibraryCard'
+import { getResourceLibrary } from '../reducers/resourceLibraryReducer'
 import { getWord } from '../helper-files/translate'
 
 import { general, resourceLibrary } from '../helper-files/images'
 const { libraryStairs, mountain } = general
 const { trbcYoutube } = resourceLibrary
 
-const resourceLibraryData = [
+const resourceLibraryData2 = [
   {
     title: 'TRBC Youtube Channel',
     url: 'https://www.youtube.com/c/SingaporeThomsonRoadBaptistChurch',
@@ -23,7 +24,18 @@ const resourceLibraryData = [
 ]
 
 const ResourceLibrary = () => {
+  const dispatch = useDispatch()
+
+  const resourceLibraryData = useSelector((state) => state.resourceLibrary)
   const language = useSelector((state) => state.language)
+
+  useEffect(() => {
+    dispatch(getResourceLibrary())
+  }, [language])
+
+  if (resourceLibraryData.length <= 0) {
+    return null
+  }
 
   return (
     <>

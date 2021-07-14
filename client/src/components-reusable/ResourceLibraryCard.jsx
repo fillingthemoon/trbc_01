@@ -17,11 +17,12 @@ const styles = {
 }
 
 const ServiceCard = ({ resourceLibraryItem }) => {
-  const { title, text, imgSrc, url } = resourceLibraryItem
+  const { title, text, imgSrc, link } = resourceLibraryItem
+  const { linkPath, linkText } = link
 
   return (
     // Technically, Services is on the I'm New page not the Services page, but this is an exception
-    <a href={url} target="_blank" rel="noreferrer">
+    <a href={linkPath} target="_blank" rel="noreferrer">
       <Card
         cover={<img alt="img" src={imgSrc} style={styles.img} />}
         hoverable

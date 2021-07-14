@@ -10,6 +10,7 @@ import ministryJobOpeningsReducer from './reducers/ministryJobOpeningsReducer'
 import ourHistoryReducer from './reducers/ourHistoryReducer'
 import ourTeamReducer from './reducers/ourTeamReducer'
 import outreachReducer from './reducers/outreachReducer'
+import resourceLibraryReducer from './reducers/resourceLibraryReducer'
 import servicesReducer from './reducers/servicesReducer'
 import statementOfFaithReducer from './reducers/statementOfFaithReducer'
 import upcomingSermonsReducer from './reducers/upcomingSermonsReducer'
@@ -32,6 +33,7 @@ const reducer = combineReducers({
   ourHistory: ourHistoryReducer,
   ourTeam: ourTeamReducer,
   outreach: outreachReducer,
+  resourceLibrary: resourceLibraryReducer,
   services: servicesReducer,
   statementOfFaith: statementOfFaithReducer,
   upcomingSermons: upcomingSermonsReducer,
