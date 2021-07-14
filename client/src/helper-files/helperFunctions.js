@@ -224,6 +224,8 @@ const detailsFields = [
   'type',
   'keyResponsibilities',
   'requirements',
+  'linkPath',
+  'linkText',
 ]
 
 const nestFlattenedObjectCreate = (flattenedObject) => {

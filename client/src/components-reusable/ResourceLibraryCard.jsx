@@ -17,8 +17,8 @@ const styles = {
 }
 
 const ServiceCard = ({ resourceLibraryItem }) => {
-  const { title, text, imgSrc, link } = resourceLibraryItem
-  const { linkPath, linkText } = link
+  const { title, text, imgSrc, details } = resourceLibraryItem
+  const { linkPath, linkText } = details
 
   return (
     // Technically, Services is on the I'm New page not the Services page, but this is an exception

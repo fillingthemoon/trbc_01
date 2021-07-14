@@ -66,17 +66,6 @@ const {
 
 /* Keep updated with server/models/itemModel.js */
 
-const link = {
-  linkPath: {
-    value: 'path',
-    tags: [],
-  },
-  linkText: {
-    value: 'text',
-    tags: [],
-  },
-}
-
 // Should be kept updated with
 // - AddNewRow.js when more items are added to details
 // - helperFunctions.js's flattenNestedObject and nestFlattenedObjectCreate
@@ -126,6 +115,14 @@ const details = {
     value: 'requirements',
     tags: [ministryJobOpenings],
   },
+  linkPath: {
+    value: 'linkPath',
+    tags: [resourceLibrary],
+  },
+  linkText: {
+    value: 'linkText',
+    tags: [resourceLibrary],
+  },
 }
 
 const langItems = {
@@ -152,6 +149,7 @@ const langItems = {
       events,
       ministryJobOpenings,
       outreach,
+      resourceLibrary,
       englishService,
       sunsetServiceEnglishMandarin,
       teoChewChineseService,
@@ -175,10 +173,6 @@ const langItems = {
       sunsetServiceEnglishMandarin,
       teoChewChineseService,
     ],
-  },
-  link: {
-    value: link,
-    tags: [resourceLibrary],
   },
 }
 
