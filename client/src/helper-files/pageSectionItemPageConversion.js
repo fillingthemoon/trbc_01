@@ -10,6 +10,7 @@ const pageSectionToItem = {
   'ministry': 'ourTeam',
   'pastoral': 'ourTeam',
   'outreach': 'outreach',
+  'resource-library': 'resourceLibrary',
   'english-service': 'services',
   'sunset-service-english-mandarin': 'services',
   'teochew-chinese-service': 'services',
@@ -28,6 +29,7 @@ const pageSectionToPage = {
   'ministry': 'our-team',
   'pastoral': 'our-team',
   'outreach': 'outreach',
+  'resource-library': 'resource-library',
   'english-service': 'services',
   'sunset-service-english-mandarin': 'services',
   'teochew-chinese-service': 'services',
@@ -44,6 +46,7 @@ const itemToPage = {
   'ourHistory': 'our-history',
   'ourTeam': 'our-team',
   'outreach': 'outreach',
+  'resourceLibrary': 'resource-library',
   'services': 'services',
   'statementOfFaith': 'statement-of-faith',
 }
