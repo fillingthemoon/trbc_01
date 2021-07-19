@@ -11,7 +11,7 @@ import {
   colorLGray,
 } from '../helper-files/colors'
 
-const { Title, Text } = Typography
+const { Title, Text, Paragraph } = Typography
 
 const styles = {
   card: {
@@ -24,6 +24,11 @@ const styles = {
   title: {
     fontSize: '1.5rem',
     textAlign: 'left',
+    margin: '15px',
+  },
+  summary: {
+    fontSize: '0.9rem',
+    fontWeight: '300',
     margin: '15px',
   },
   details: {
@@ -44,7 +49,7 @@ const styles = {
 }
 
 const ServiceCard = ({ serviceItem }) => {
-  const { title, text, imgSrc, details, page, id } = serviceItem
+  const { title, text, summary, imgSrc, details, page, id } = serviceItem
   const { time } = details ? details : { time: null }
   const { location } = details ? details : { location: null }
 
@@ -52,12 +57,15 @@ const ServiceCard = ({ serviceItem }) => {
     // Technically, Services is on the I'm New page not the Services page, but this is an exception
     <Link to={`/${page}/${id}`}>
       <Card
-        cover={imgSrc !== 'null' && <img alt="img" src={imgSrc} style={styles.img} />}
+        cover={
+          imgSrc !== 'null' && <img alt="img" src={imgSrc} style={styles.img} />
+        }
         hoverable
         className="service-card"
         style={styles.card}
       >
         <Title style={styles.title}>{title}</Title>
+        <Paragraph style={styles.summary}>{summary}</Paragraph>
         {details && (
           <Col style={styles.details}>
             {time && (
