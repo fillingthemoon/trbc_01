@@ -18,7 +18,7 @@ const itemDisplayStyle = {
 }
 
 const ItemDisplay = ({ item }) => {
-  const { title, text, imgSrc, id, page } = item
+  const { title, summary, text, imgSrc, id, page } = item
 
   return (
     <Link to={`/${page}/${id}`} style={itemDisplayStyle}>
@@ -44,7 +44,7 @@ const ItemDisplay = ({ item }) => {
             margin: '20px 0 0 0',
           }}
         >
-          {text}
+          {summary}
         </Paragraph>
       </Card>
     </Link>

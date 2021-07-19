@@ -142,6 +142,17 @@ const langItems = {
     value: 'text',
     tags: Object.values(pageSections),
   },
+  summary: {
+    value: 'summary',
+    tags: [
+      ministryJobOpenings,
+      englishService,
+      sunsetServiceEnglishMandarin,
+      teoChewChineseService,
+      outreach,
+      missions,
+    ],
+  },
   details: {
     value: details,
     tags: [
