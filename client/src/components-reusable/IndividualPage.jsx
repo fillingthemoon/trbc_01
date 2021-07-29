@@ -115,7 +115,7 @@ const IndividualPage = ({ item }) => {
         <Col style={styles.infoCol}>
           <TitleText title={title} underlineAlign="left" />
           {splitLines(text).map((paragraph, i) => (
-            <Paragraph key={i} style={{ fontSize: '0.9rem', fontWeight: '400' }}>
+            <Paragraph key={i} style={{ fontSize: '0.9rem', fontWeight: '400', margin: '0' }}>
               {formatParagraph(paragraph)}
             </Paragraph>
           ))}

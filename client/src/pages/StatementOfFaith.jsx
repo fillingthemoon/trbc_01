@@ -21,6 +21,7 @@ const statementStyle = {
   lineHeight: '30px',
   fontWeight: 250,
   textAlign: 'justify',
+  margin: '0',
 }
 
 const StatementOfFaith = () => {
