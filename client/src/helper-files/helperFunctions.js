@@ -41,10 +41,8 @@ const formatParagraph = (paragraph) => {
 const formatText = (paragraph) => {
   if (paragraph.type === 'br') {
     return paragraph
-  } else if (paragraph.match(/(<b>(.*?)<\/b>)|(<i>(.*?)<\/i>)|(<u>(.*?)<\/u>)/g)) {
-    return(<div dangerouslySetInnerHTML={{ __html: paragraph }} />)
   } else {
-    return paragraph
+    return(<div dangerouslySetInnerHTML={{ __html: paragraph }} />)
   }
 }
 
