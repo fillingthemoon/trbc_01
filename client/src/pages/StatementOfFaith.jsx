@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components-reusable/Banner'
 import TitleText from '../components-reusable/TitleText'
 
-import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
+import { splitLines, formatParagraph, formatText } from '../helper-files/helperFunctions'
 import { getWord } from '../helper-files/translate'
 
 import { general } from '../helper-files/images'

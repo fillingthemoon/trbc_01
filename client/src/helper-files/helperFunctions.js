@@ -21,7 +21,7 @@ const formatParagraph = (paragraph) => {
       </AntdLink>
     )
   } else if (paragraph === '') {
-    return <span>&nbsp;</span>
+    return <br/>
   } else if (paragraph.match('https://')) {
     const splitParagraph = paragraph.split(/(https:\/\/[\w.-]*[^.])/)
     return splitParagraph.map((text, i) =>
@@ -33,6 +33,17 @@ const formatParagraph = (paragraph) => {
         text
       )
     )
+  } else {
+    return paragraph
+  }
+}
+
+const formatText = (paragraph) => {
+  console.log(paragraph)
+  if (paragraph.type === 'br') {
+    return paragraph
+  } else if (paragraph.match(/<b>(.*?)<\/b>/g)) {
+    return <b>{paragraph.replace(/(<b>)|(<\/b>)/g, '')}</b>
   } else {
     return paragraph
   }
@@ -301,6 +312,7 @@ const filterItemByLanguage = (item, language) => {
 export {
   splitLines,
   formatParagraph,
+  formatText,
   pageSectionConvert,
   convertName,
   flattenNestedObject,

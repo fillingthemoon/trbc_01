@@ -10,7 +10,7 @@ import { general } from '../helper-files/images'
 const { exterior } = general
 
 import { convertName } from '../helper-files/helperFunctions'
-import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
+import { splitLines, formatParagraph, formatText } from '../helper-files/helperFunctions'
 
 import { Row, Col, Typography, Image } from 'antd'
 
@@ -116,7 +116,7 @@ const IndividualPage = ({ item }) => {
           <TitleText title={title} underlineAlign="left" />
           {splitLines(text).map((paragraph, i) => (
             <Paragraph key={i} style={{ fontSize: '0.9rem', fontWeight: '400', margin: '0' }}>
-              {formatParagraph(paragraph)}
+              {formatText(formatParagraph(paragraph))}
             </Paragraph>
           ))}
           {details && (
