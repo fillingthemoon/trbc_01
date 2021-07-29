@@ -114,9 +114,11 @@ const IndividualPage = ({ item }) => {
         </Col>
         <Col style={styles.infoCol}>
           <TitleText title={title} underlineAlign="left" />
-          <Paragraph style={{ fontSize: '0.9rem', fontWeight: '400' }}>
-            {text}
-          </Paragraph>
+          {splitLines(text).map((paragraph, i) => (
+            <Paragraph key={i} style={{ fontSize: '0.9rem', fontWeight: '400' }}>
+              {formatParagraph(paragraph)}
+            </Paragraph>
+          ))}
           {details && (
             <Col style={styles.details}>
               {/* Services, Outreach, Missions fields */}
