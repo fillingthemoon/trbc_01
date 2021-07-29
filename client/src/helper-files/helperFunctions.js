@@ -21,7 +21,7 @@ const formatParagraph = (paragraph) => {
       </AntdLink>
     )
   } else if (paragraph === '') {
-    return <br/>
+    return <br />
   } else if (paragraph.match('https://')) {
     const splitParagraph = paragraph.split(/(https:\/\/[\w.-]*[^.])/)
     return splitParagraph.map((text, i) =>
@@ -39,11 +39,10 @@ const formatParagraph = (paragraph) => {
 }
 
 const formatText = (paragraph) => {
-  console.log(paragraph)
   if (paragraph.type === 'br') {
     return paragraph
-  } else if (paragraph.match(/<b>(.*?)<\/b>/g)) {
-    return <b>{paragraph.replace(/(<b>)|(<\/b>)/g, '')}</b>
+  } else if (paragraph.match(/(<b>(.*?)<\/b>)|(<i>(.*?)<\/i>)|(<u>(.*?)<\/u>)/g)) {
+    return(<div dangerouslySetInnerHTML={{ __html: paragraph }} />)
   } else {
     return paragraph
   }

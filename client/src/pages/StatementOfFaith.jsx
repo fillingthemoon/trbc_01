@@ -61,7 +61,7 @@ const StatementOfFaith = () => {
             ></TitleText>
             {splitLines(statement.text).map((paragraph, i) => (
               <Paragraph key={i} style={statementStyle}>
-                {formatParagraph(paragraph)}
+                {formatText(formatParagraph(paragraph))}
               </Paragraph>
             ))}
           </div>
