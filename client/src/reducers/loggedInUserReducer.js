@@ -37,14 +37,24 @@ export const logUserIn = (username, password) => {
   }
 }
 
-export const stayLoggedIn = (user) => {
+export const stayLoggedIn = (loggedInUser) => {
   return async dispatch => {
-    dispatch({
-      type: 'STAY_LOGGED_IN',
-      data: {
-        user,
-      }
-    })
+    try {
+      const user = await loginService.stayLoggedIn({
+        username: loggedInUser.username
+      })
+
+      dispatch({
+        type: 'STAY_LOGGED_IN',
+        data: {
+          user,
+        },
+      })
+    } catch (error) {
+      dispatch(setNotification('error', 'Login session has expired. Please log out and log in again.', 5))
+      window.localStorage.removeItem('loggedInAdminUser')
+      logUserOut()
+    }
   }
 }
 
