@@ -23,19 +23,30 @@ const titleUnderlineStyle = {
 }
 
 const yourFirstVisitMd = `
-Welcome to Thomson Road Baptist Church and this being your first visit, allow us to give you an orientation of our building. We have two blocks consisting of the main building where most of our activities are held and an educational block which houses our **kindergarten ministry**.
+Thinking of visiting TRBC? Here are some commonly asked questions our visitors have.
 
-The main building consist of five floors, our main ministries are located on the first three floors and the second floor of the educational block.
+&nbsp;
 
-The first floor is where our **multi-purpose hall** is located and on Sundays we usually will have a Tea Fellowship after the service in this place.
+# What are your services like?
+Our Sunday worship services (8:30am, 10:30am, 5:00pm) are a time of praising God through songs and being taught from the Bible through our pastors.
 
-Our **main sanctuary** is on the 2nd floor.
+Before or after the worship services, we also have Sunday school classes where we gather in small classes either online or in-person, to learn from the Bible. 
 
-Our **classrooms, library, choir room and Church Office** are located on the 3rd floor.
+We hope that your heart will be drawn closer to Him through each service and gathering in TRBC.
 
-You can find the **restrooms** located on all floors.
+&nbsp;
 
-Please do not hesitate to ask any of us to assist you in finding your way when you visit us.
+# Is your church family friendly?
+We have children, youth and senior fellowship groups in TRBC. Whether you have young children or senior family members, we hope your first visit to TRBC will be friendly and enjoyable for your whole family.
+
+&nbsp;
+
+# How do I get to TRBC?
+We are located at 45 Thomson Road, accessible by car via Suffolk Walk.
+
+Limited parking is available.
+
+From Novena MRT, it is a 10 minute unsheltered walking distance. From Newton MRT, it is a 15 minute unsheltered walking distance.
 `
 
 const YourFirstVisit = () => {
