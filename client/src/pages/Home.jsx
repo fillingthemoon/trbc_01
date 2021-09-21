@@ -3,6 +3,7 @@ import React from 'react'
 import Banner from '../components-reusable/Banner'
 import ServiceTimings from '../pages-sections/ServiceTimings'
 import Announcements from '../pages-sections/Announcements'
+import AboutTRBC from '../pages-sections/AboutTRBC'
 import UpcomingSermons from '../pages-sections/UpcomingSermons'
 import Events from '../pages-sections/Events'
 
@@ -19,13 +20,14 @@ const Home = () => {
       <Banner
         imageTitlePairs={[
           {
-            title: language === 'en' ? 'Welcome' : '欢迎',
+            title: language === 'en' ? '' : '',
             image: homeBanner,
             titleFontSize: '3vw',
           },
         ]}
       />
       <div className="home">
+        <AboutTRBC />
         <ServiceTimings />
         {/* <UpcomingSermons /> */}
         <Announcements />
