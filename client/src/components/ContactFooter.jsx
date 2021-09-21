@@ -7,7 +7,7 @@ const { Footer } = Layout
 import { Row, Col } from 'antd'
 
 import { IoMail } from 'react-icons/io5'
-import { AiFillPhone } from 'react-icons/ai'
+import { AiFillPhone, AiFillYoutube } from 'react-icons/ai'
 import { FaMapMarkerAlt, FaLock } from 'react-icons/fa'
 
 import TitleText from '../components-reusable/TitleText'
@@ -74,6 +74,14 @@ const ContactFooter = () => {
             </Col>
             <Col className="footer-contact-details">
               <Link to="/privacy-policy">Privacy Policy</Link>
+            </Col>
+          </Row>
+          <Row gutter={10} className="footer-info-icon-details">
+            <Col className="footer-info-icon">
+              <AiFillYoutube />
+            </Col>
+            <Col className="footer-contact-details">
+              <a href="https://www.youtube.com/channel/UCLdT5PZRFghsCWlTJPY5VPQ">TRBC YouTube</a>
             </Col>
           </Row>
         </Col>
