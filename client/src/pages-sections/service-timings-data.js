@@ -28,13 +28,8 @@ const servicesData = {
       service: 'Teochew/Chinese Chinese Service',
       main: [
         {
-          name: 'Teochew Service',
+          name: 'Teochew/Chinese Service',
           location: 'Main Sanctuary (level 2)',
-          time: 'Sundays, 10:30 am',
-        },
-        {
-          name: 'Chinese Service',
-          location: 'Music Hall (level 2)',
           time: 'Sundays, 10:30 am',
         },
       ],
@@ -43,13 +38,8 @@ const servicesData = {
       service: getWord('Teochew/Chinese Chinese Service'),
       main: [
         {
-          name: 'Teochew Service (ch)',
+          name: 'Teochew/Chinese Service (ch)',
           location: 'Main Sanctuary (level 2) (ch)',
-          time: 'Sundays, 10:30 am (ch)',
-        },
-        {
-          name: 'Chinese Service (ch)',
-          location: 'Music Hall (level 2) (ch)',
           time: 'Sundays, 10:30 am (ch)',
         },
       ],
