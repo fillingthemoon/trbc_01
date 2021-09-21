@@ -1,6 +1,8 @@
 const dictionaryEnToCh = {
   'Home': '主页',
 
+  'About TRBC': '关于新加坡淡申律浸信教会',
+
   'Service Timings': '崇拜定时',
   'Announcements': '公告',
   'Events': '事件',
@@ -25,6 +27,7 @@ const dictionaryEnToCh = {
   'God is spirit, and his worshipers must worship in the Spirit and in truth. - John 4:24 (NIV)':
     '24 神 是 個 靈 （ 或 無 個 字 ） ， 所 以 拜 他 的 必 須 用 心 靈 和 誠 實 拜 他 。 」 - 約 翰 福 音 4:24',
   'Service Details': '崇拜聚会细节',
+  'Sunday Worship & Weekday Fellowship': '崇拜聚会细节',
 
   'English Service': '英文崇拜',
   'Teochew/Chinese Service': '潮华华语崇拜',
@@ -49,7 +52,10 @@ const dictionaryEnToCh = {
   'Admin': '行政人员',
   'Admin Portal': '管理门户',
 
+  'Your First Visit': '你的范围很广',
+
   'Privacy Policy': '隐私政策',
+  'TRBC Data Protection and Privacy Policy': '隐私政策',
 }
 
 const getWord = (word, language) => {
