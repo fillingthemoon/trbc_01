@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import ReactMarkdown from 'react-markdown'
 
 import Banner from '../components-reusable/Banner'
 
@@ -8,8 +9,16 @@ import { getWord } from '../helper-files/translate'
 import { general } from '../helper-files/images'
 const { exterior } = general
 
-import { Typography } from 'antd'
-const { Link: AntdLink } = Typography
+const facilityBookingText = `
+# Booking of Sanctuary for Weddings
+Thank you for your interest in looking to book our church premises for your wedding. However, due to the current Covid-19 situation, we are suspending new wedding bookings until further notice. Kindly check this page periodically for new updates.
+ 
+&nbsp;
+
+# Room Booking for TRBC Members
+Please contact the Church Office for booking of rooms (for TRBC members only).
+
+`
 
 const FacilityBooking = () => {
   const language = useSelector((state) => state.language)
@@ -25,10 +34,7 @@ const FacilityBooking = () => {
         ]}
       />
       <div style={{ padding: '50px' }}>
-        Room booking system:
-        <AntdLink href="https://www.trbc.org.sg/mrbs2/day.php?year=2021&month=05&day=26&area=8&room=23">
-          https://www.trbc.org.sg/mrbs2/day.php?year=2021&month=05&day=26&area=8&room=23
-        </AntdLink>
+        <ReactMarkdown>{facilityBookingText}</ReactMarkdown>
       </div>
     </div>
   )
