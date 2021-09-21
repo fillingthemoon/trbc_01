@@ -21,6 +21,7 @@ const Home = () => {
           {
             title: language === 'en' ? 'Welcome' : '欢迎',
             image: homeBanner,
+            titleFontSize: '3vw',
           },
         ]}
       />
