@@ -169,9 +169,9 @@ const App = () => {
           <Route path='/facility-booking' exact>
             <FacilityBooking />
           </Route >
-          <Route path='/resource-library'>
+          {/* <Route path='/resource-library'>
             <ResourceLibrary />
-          </Route >
+          </Route > */}
           <Route path='/admin' exact>
             <Admin />
           </Route >
