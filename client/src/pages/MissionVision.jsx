@@ -25,9 +25,9 @@ const MissionVision = () => {
         ]}
       />
       <Row justify="center" align="middle" id="mission-vision">
-        <Col className="mv-img-col">
+        {/* <Col className="mv-img-col">
           <Image className="mv-img" src={mountain} fallback={fallbackImg} />
-        </Col>
+        </Col> */}
         <Col className="mv-text-col">
           <TitleText
             className="mv-text-mission"
