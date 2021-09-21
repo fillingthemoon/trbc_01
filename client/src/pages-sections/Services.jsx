@@ -44,7 +44,7 @@ const Services = () => {
     <Col className="service-details">
       <TitleText
         titleUnderlineStyle={titleUnderlineStyle}
-        title={getWord('Service Details', language)}
+        title={getWord('Sunday Worship & Weekday Fellowship', language)}
         titleStyle={{ textAlign: 'center', fontSize: '2.5rem' }}
         underlineAlign="center"
       />

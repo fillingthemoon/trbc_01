@@ -75,7 +75,7 @@ const ServiceTimings = () => {
     <div className="service-timings-container">
       <TitleText
         titleUnderlineStyle={styles.titleUnderline}
-        title={getWord('Service Timings', language)}
+        title={getWord('Sunday Worship & Weekday Fellowship', language)}
         underlineAlign="center"
       />
       <div style={styles.tableContainer}>
