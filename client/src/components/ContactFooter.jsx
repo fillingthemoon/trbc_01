@@ -81,7 +81,7 @@ const ContactFooter = () => {
               <AiFillYoutube />
             </Col>
             <Col className="footer-contact-details">
-              <a href="https://www.youtube.com/channel/UCLdT5PZRFghsCWlTJPY5VPQ">TRBC YouTube</a>
+              <a href="https://www.youtube.com/channel/UCLdT5PZRFghsCWlTJPY5VPQ" target="_blank" rel="noreferrer">TRBC YouTube</a>
             </Col>
           </Row>
         </Col>
