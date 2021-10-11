@@ -25,7 +25,9 @@ const formatParagraph = (paragraph) => {
   } else if (paragraph.match('https://')) {
     const splitParagraph = paragraph.split(/(https:\/\/[\w.-]*[^.])/)
     return splitParagraph.map((text, i) =>
-      text.includes('https://') ? (
+
+      // add space before " https://" so that <img> tags work
+      text.includes(' https://') ? (
         <AntdLink key={i} href={text} target="_blank">
           {text}
         </AntdLink>
