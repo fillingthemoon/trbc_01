@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
+import { splitLines, formatText } from '../helper-files/helperFunctions'
 import { getWord } from '../helper-files/translate'
 
 import TitleText from '../components-reusable/TitleText'
@@ -65,7 +65,7 @@ const Event = ({ event }) => {
             key={i}
             style={{ fontSize: '1rem', fontWeight: '300', margin: '0' }}
           >
-            {formatParagraph(paragraph)}
+            {formatText(paragraph)}
           </Paragraph>
         ))}
       </div>

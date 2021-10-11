@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import TitleText from '../components-reusable/TitleText'
 
-import { splitLines, formatParagraph } from '../helper-files/helperFunctions'
+import { splitLines, formatText } from '../helper-files/helperFunctions'
 import { getWord } from '../helper-files/translate'
 
 import { Row, Card, Typography } from 'antd'
@@ -42,7 +42,7 @@ const AnnouncementCard = ({ announcement }) => {
             key={i}
             style={{ fontSize: '0.95rem', fontWeight: '300', margin: '0' }}
           >
-            {formatParagraph(paragraph)}
+            {formatText(paragraph)}
           </Paragraph>
         ))}
       </div>
