@@ -1,8 +1,19 @@
 # Singapore Thomson Road Baptist Church Website
 
-This website is live at https://trbc.herokuapp.com.
+This updated website is live at https://sgtrbc.vercel.app.
+
+### Updated Tech Stack
+- NextJS
+- Redux
+- Chakra-UI
+- Vercel
+- Contentful
 
 ---
+
+# Old Website
+
+This website is live at ~~https://trbc.herokuapp.com~~.
 
 ## Condensed Architecture of Application
 ![ ](https://trbcbucket.s3-ap-southeast-1.amazonaws.com/diagram.JPG)
